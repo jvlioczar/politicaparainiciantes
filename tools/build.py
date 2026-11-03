@@ -736,11 +736,11 @@ def governos():
 <div class="tabela"><table><thead><tr><th>Maioria da Câmara</th><th>Anos</th><th>Do total</th></tr></thead><tbody>{tc}</tbody></table></div>
 <h2>O que a linha mostra</h2>
 <ul>
-<li><strong>O Brasil nunca foi governado pela extrema-esquerda</strong>, e pela esquerda só nos {esq} anos de Dilma Rousseff. Os governos de centro-esquerda, de Vargas a Lula, somam {ces} anos.</li>
+<li><strong>O Brasil nunca foi governado pela esquerda nem pela extrema-esquerda.</strong> O mais à esquerda que o país chegou foi a centro-esquerda: de Vargas a Lula e Dilma, esses governos somam {ces} anos.</li>
 <li><strong>Direita e centro-direita governaram {dir_} anos</strong>, quase todo o período da República Velha e as transições, e a extrema-direita, {exd} anos de regime militar.</li>
 <li><strong>A Câmara quase nunca acompanhou o governo.</strong> Sob Vargas, Goulart, Lula e Dilma, a maioria era de centro ou centro-direita; é por isso que todo presidente negocia, como explica a lição sobre o <a href="presidencialismo-de-coalizao.html">presidencialismo de coalizão</a>.</li>
 <li><strong>Os únicos períodos em que governo e Câmara estiveram alinhados</strong> foram a República Velha, com as oligarquias dos dois lados, e a ditadura, com a Arena fabricada pelo regime.</li>
-<li><strong>“Governo de esquerda” no Brasil quase sempre significou centro-esquerda com maioria de centro</strong>, e isso ajuda a explicar por que as reformas de cada lado saem menores do que as promessas.</li>
+<li><strong>“Governo de esquerda” no Brasil sempre significou centro-esquerda com maioria de centro</strong>, e isso ajuda a explicar por que as reformas de cada lado saem menores do que as promessas.</li>
 </ul>
 <h2>Governo a governo</h2></div>
 <div class="wrap secao" style="padding-top:0"><div class="tabela"><table><thead><tr><th>Período</th><th>Presidente</th><th>Governo</th><th>Câmara</th><th>Como chegou e o que marcou</th></tr></thead><tbody>{linhas}</tbody></table></div>

@@ -39,7 +39,7 @@ G(1990, 1992, 'Fernando Collor', 'PRN', CDI, CDI, 'Eleição direta', 'Câmara f
 G(1992, 1994, 'Itamar Franco', 'PMDB', CEN, CDI, 'Sucessão do vice', 'Plano Real.'),
 G(1995, 2002, 'Fernando Henrique Cardoso', 'PSDB', CEN, CDI, 'Eleição direta, duas vezes', 'Base PSDB, PFL e PMDB; emenda da reeleição.'),
 G(2003, 2010, 'Luiz Inácio Lula da Silva', 'PT', CES, CEN, 'Eleição direta, duas vezes', 'PT com a maior bancada em 2003; governo com PMDB e centro; mensalão.'),
-G(2011, 2016, 'Dilma Rousseff', 'PT', ESQ, CEN, 'Eleição direta, duas vezes', 'Base PT-PMDB até 2015; depois, Centrão sob Eduardo Cunha, e impeachment.'),
+G(2011, 2016, 'Dilma Rousseff', 'PT', CES, CEN, 'Eleição direta, duas vezes', 'Base PT-PMDB até 2015; depois, Centrão sob Eduardo Cunha, e impeachment.'),
 G(2016, 2018, 'Michel Temer', 'MDB', CDI, CDI, 'Sucessão do vice', 'Centrão sustenta teto de gastos e reforma trabalhista.'),
 G(2019, 2022, 'Jair Bolsonaro', 'PSL, depois PL', EXD, CDI, 'Eleição direta', 'Câmara do Centrão, com PT e PSL como maiores bancadas; orçamento secreto.'),
 G(2023, 2026, 'Luiz Inácio Lula da Silva', 'PT', CES, CDI, 'Eleição direta', 'PL é a maior bancada, de direita; o governo negocia com o Centrão. Lula reeleito em 2026.'),
