@@ -325,3 +325,8 @@ F.extend(NOVAS_F)
 from lote_debates_livros import FIGS_NOVAS
 F.extend(FIGS_NOVAS)
 assert len({f[0] for f in F}) == len(F)
+
+# ex-presidentes acrescentados em novembro de 2026
+from presidentes import PRES
+assert not {x[0] for x in PRES} & {x[0] for x in F}, {x[0] for x in PRES} & {x[0] for x in F}
+F += PRES
