@@ -267,9 +267,9 @@ next(d for d in DEBATES_P if d['s'] == 'aborto').update(extra='''<h2>Duas formas
 ''', fx=[('Reconsidering fetal pain (2020)', 'https://jme.bmj.com/content/46/1/3'), ('A Defense of Abortion', 'https://en.wikipedia.org/wiki/A_Defense_of_Abortion'), ('Beginning of human personhood (Wikipédia)', 'https://en.wikipedia.org/wiki/Beginning_of_human_personhood'), ('Fetal pain (Wikipédia)', 'https://en.wikipedia.org/wiki/Fetal_pain')])
 # nome, url, descrição, grupo, âmbito
 NAC, INT = 'Nacionais', 'Internacionais'
-GRUPOS_S = ['Checagem de fatos', 'Avaliação de viés midiático', 'Jornalismo investigativo', 'Transparência governamental', 'Observatório de políticos', 'Observatório do terceiro setor']
+GRUPOS_S = ['Dados e evidências', 'Checagem de fatos', 'Avaliação de viés midiático', 'Jornalismo investigativo', 'Transparência governamental', 'Observatório de políticos', 'Observatório do terceiro setor']
 SITES_U = [
-('Lupa','https://lupa.uol.com.br','Agência de checagem e educação midiática.','Checagem de fatos',NAC),
+('Agência Lupa','https://www.agencialupa.org/','Agência de checagem e educação midiática.','Checagem de fatos',NAC),
 ('Aos Fatos','https://www.aosfatos.org','Checagem e monitoramento de desinformação.','Checagem de fatos',NAC),
 ('Projeto Comprova','https://projetocomprova.com.br','Coalizão de veículos que investiga boatos.','Checagem de fatos',NAC),
 ('Fato ou Fake','https://g1.globo.com/fato-ou-fake','Serviço de checagem do Grupo Globo.','Checagem de fatos',NAC),
@@ -324,16 +324,21 @@ SITES_U = [
 
 from lote_debates_livros import DEBATES_NOVOS
 DEBATES_P += DEBATES_NOVOS
+SITES_U.append(('Our World in Data','https://ourworldindata.org','Dados e gráficos, em inglês, sobre pobreza, saúde, democracia, clima e quase todo tema que entra no debate político, com as fontes de cada número.','Dados e evidências',INT))
+SITES_U.append(('Sentient Media','https://sentientmedia.org','Redação sem fins lucrativos, em inglês, que cobre a pecuária industrial, o sistema alimentar e as políticas que afetam os animais, com dados e reportagens.','Notícias e reportagem',INT))
 # antigos sites de "Onde acompanhar", mesclados aqui
 from brasil import SITES as _SA
 _MAP = {'Investigação e bastidores': 'Jornalismo investigativo', 'Checar fatos': 'Checagem de fatos', 'Medir viés': 'Avaliação de viés midiático'}
 _dom = lambda u: u.split('//')[-1].split('/')[0].removeprefix('www.')
 _tem = {_dom(x[1]) for x in SITES_U}
+_nome = lambda n: n.lower().removeprefix('revista ').strip()  # evita o mesmo site com dois endereços
+_nomes = {_nome(x[0]) for x in SITES_U}
+_INT_NOMES = {'AP', 'Reuters'}  # agências estrangeiras da lista antiga
 for _g, _its in _SA.items():
     _gr = _MAP.get(_g, _g)
     if _gr not in GRUPOS_S: GRUPOS_S.append(_gr)
     for _n, _u, _d in _its:
-        if _dom(_u) in _tem: continue
-        _tem.add(_dom(_u)); SITES_U.append((_n, _u, _d.rstrip('.') + '.', _gr, NAC))
-_ORD = ['Aprender política', 'Notícias e reportagem', 'Checagem de fatos', 'Avaliação de viés midiático', 'Jornalismo investigativo', 'Transparência governamental', 'Fontes oficiais', 'Observatório de políticos', 'Observatório do terceiro setor']
+        if _dom(_u) in _tem or _nome(_n) in _nomes: continue
+        _tem.add(_dom(_u)); _nomes.add(_nome(_n)); SITES_U.append((_n, _u, _d.rstrip('.') + '.', _gr, INT if _n in _INT_NOMES else NAC))
+_ORD = ['Aprender política', 'Notícias e reportagem', 'Checagem de fatos', 'Avaliação de viés midiático', 'Jornalismo investigativo', 'Transparência governamental', 'Fontes oficiais', 'Dados e evidências', 'Observatório de políticos', 'Observatório do terceiro setor']
 GRUPOS_S.sort(key=lambda x: _ORD.index(x) if x in _ORD else 99)

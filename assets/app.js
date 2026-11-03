@@ -35,11 +35,13 @@
   /* menu */
   var hamb = $('.hamb'), menu = $('.menu');
   if (hamb) hamb.addEventListener('click', function () { menu.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', menu.classList.contains('aberto')); });
-  var bx = $('.drop button'), mega = $('.mega');
-  if (bx) {
-    bx.addEventListener('click', function (e) { e.stopPropagation(); mega.hidden = !mega.hidden; bx.setAttribute('aria-expanded', !mega.hidden); });
-    document.addEventListener('click', function (e) { if (!e.target.closest('.mega')) mega.hidden = true; });
-  }
+  var drops = $$('.drop');
+  function fechaMenus(fora) { drops.forEach(function (d) { if (d !== fora) { $('.mega', d).hidden = true; $('button', d).setAttribute('aria-expanded', 'false'); } }); }
+  drops.forEach(function (d) {
+    var b = $('button', d), m = $('.mega', d);
+    b.addEventListener('click', function (e) { e.stopPropagation(); fechaMenus(d); m.hidden = !m.hidden; b.setAttribute('aria-expanded', !m.hidden); });
+  });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.drop')) fechaMenus(); });
 
   /* busca */
   var ov = $('#busca'), q = $('#q'), res = $('#res'), dados = null;
@@ -48,7 +50,7 @@
   $$('.bbusca').forEach(function (b) { b.addEventListener('click', abre); });
   document.addEventListener('keydown', function (e) {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); abre(); }
-    if (e.key === 'Escape') { fecha(); if (mega) mega.hidden = true; }
+    if (e.key === 'Escape') { fecha(); fechaMenus(); }
   });
   if (ov) {
     ov.addEventListener('click', function (e) { if (e.target === ov) fecha(); });

@@ -37,7 +37,7 @@ from conceitos import CONCEITOS, META_CONCEITOS
 from sofismo import SOFISMO, META_SOFISMO, SOFISMAS, TRUQUES
 from basico import BASICO
 from dossies import D, ROTULO, FAMILIAS, PROBLEMAS, FRASES, TROCAS, CHECK
-from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
+from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,12 +78,14 @@ INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] ==
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'perigo-do-reacionarismo') + 1, ULTRA)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'politica-do-medo') + 1, ESTRANGEIRO)
 # lições da revisão de novembro de 2026
+assert set(RENIVEL) <= {x[0] for x in LIVROS}, set(RENIVEL) - {x[0] for x in LIVROS}
+LIVROS[:] = [(x[0], x[1], x[2], RENIVEL.get(x[0], x[3]), x[4]) for x in LIVROS] + [x + ('Vertentes', 'https://www.google.com/search?tbm=bks&q=' + quote(x[0] + ' ' + x[1])) for x in LIVROS_VERTENTES]
 META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
 def _apos(ls, slug, nova): ls.insert(next(i for i, l in enumerate(ls) if l['slug'] == slug) + 1, nova)
 _NI = {l['slug']: l for l in NOVAS_INICIANTE}; _NM = {l['slug']: l for l in NOVAS_INTERMEDIARIO}
 _apos(INICIANTE, 'democracia', _NI['como-uma-lei-e-feita']); _apos(INICIANTE, 'como-uma-lei-e-feita', _NI['o-que-e-um-partido'])
 _apos(INTERMEDIARIO, 'imposto-e-roubo', _NM['economia-para-entender-politica']); _apos(INTERMEDIARIO, 'perigo-do-messianismo', _NM['perigo-do-populismo'])
-_apos(AVANCADO, 'politicas-baseadas-em-evidencias', NOVAS_AVANCADO[0]); _apos(INTERMEDIARIO, 'numero-de-projetos', _NM['corrupcao']); _apos(INTERMEDIARIO, 'perigo-da-midia-alternativa', _NM['como-ler-a-midia-tradicional']); _apos(INTERMEDIARIO, 'cambridge-analytica', _NM['pesquisas-eleitorais'])
+_apos(AVANCADO, 'politicas-baseadas-em-evidencias', NOVAS_AVANCADO[0]); _apos(AVANCADO, 'pragmatismo-politico', COLETIVO); _apos(INTERMEDIARIO, 'perigo-do-populismo', OUTSIDER); _apos(INTERMEDIARIO, 'numero-de-projetos', _NM['corrupcao']); _apos(INTERMEDIARIO, 'perigo-da-midia-alternativa', _NM['como-ler-a-midia-tradicional']); _apos(INTERMEDIARIO, 'cambridge-analytica', _NM['pesquisas-eleitorais'])
 # grupos e ordem de cada nível: a lista é ordenada pelos grupos (ordenação estável mantém a sequência dentro do grupo)
 for _n, _ls in (('iniciante', INICIANTE), ('intermediario', INTERMEDIARIO), ('avancado', AVANCADO)):
     for _l in _ls: _l['grupo'] = GRUPOS.get(_l['slug'], _l.get('grupo', ''))
@@ -203,10 +205,17 @@ def page(path, title, desc, corpo, atual='', home=False):
     pre_tag = '<base href="/"/>\n' if erro else ''
     indexa = '<meta name="robots" content="noindex"/>\n' if erro else f'<link rel="canonical" href="{url}"/>\n' + dados(path, title, desc, url, atual, home) + '\n'
     l = lambda u, t: f'<a href="{pre}{u}">{e(t)}</a>'
-    niveis = ''.join(l(f'{s}.html', r) for s, r, *_ in NIVEIS)
-    ferr = ''.join(l(f'ferramentas/{a}.html', b) for a, b, _, _ in FERR[:7]) + l('ferramentas.html', 'Todas as ferramentas →')
-    br = ''.join(l(u, t) for u, t, _ in BR)
-    item = lambda u, t: f'<a href="{pre}{u}"{" aria-current=page" if u == atual else ""}>{e(t)}</a>'
+    def grupo(nome, itens, cls=''):
+        # um dropdown do cabeçalho; o botão fica marcado quando a página atual está no grupo
+        ativo = any(u == atual for u, _ in itens)
+        links = ''.join(f'<a href="{pre}{u}"{" aria-current=page" if u == atual else ""}>{e(t)}</a>' for u, t in itens)
+        gid = 'm-' + re.sub(r'[^a-z]', '', unicodedata.normalize('NFD', nome.lower()))
+        return f'<div class="drop{" ativo" if ativo else ""}"><button type="button" aria-expanded="false" aria-controls="{gid}">{e(nome)} ▾</button><div class="mega{" " + cls if cls else ""}" id="{gid}" hidden>{links}</div></div>'
+    menu = grupo('Aprender', [('comece-aqui.html', 'Comece aqui')] + [(f'{s}.html', r) for s, r, *_ in NIVEIS] + [('catalogo.html', 'Todas as lições')])
+    menu += grupo('Brasil', [('brasil.html', 'Política brasileira'), ('cargos.html', 'O que cada cargo faz'), ('poderes.html', 'Os Poderes e órgãos'), ('historia.html', 'História'), ('partidos.html', 'Partidos'), ('politicos.html', 'Políticos e figuras'), ('ferramentas/como-votaram.html', 'Como os partidos votaram'), ('ranking-da-mentira.html', 'Ranking da mentira')])
+    menu += grupo('Ideias', [('vertentes.html', 'Vertentes políticas'), ('vieses.html', 'Vieses cognitivos'), ('debates.html', 'Principais debates'), ('mundo.html', 'Figuras internacionais')])
+    menu += grupo('Ferramentas', [(f'ferramentas/{a}.html', b) for a, b, _, _ in FERR] + [('ferramentas.html', 'Todas as ferramentas')], 'duas')
+    menu += grupo('Biblioteca', [('biblioteca.html', 'Livros'), ('sites.html', 'Sites sobre política'), ('sobre.html', 'Sobre e método')])
     html = f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -241,7 +250,8 @@ def page(path, title, desc, corpo, atual='', home=False):
 <a class="skip" href="#main">Pular para o conteúdo</a>
 <header class="topo"><div class="wrap topo-in">
 <a class="marca" href="{pre}index.html">{arte.LOGO}<span>Política<br/>Para Iniciantes</span></a>
-<nav class="menu" aria-label="Principal"><div class="drop"><button type="button" aria-expanded="false">Explorar ▾</button><div class="mega" hidden><div><p class="ti">Níveis</p>{niveis}{l('vertentes.html', 'Vertentes políticas')}{l('vieses.html', 'Vieses cognitivos')}{l('debates.html', 'Principais debates')}{l('catalogo.html', 'Tudo, com filtros →')}</div><div><p class="ti">Brasil</p>{br}</div><div><p class="ti">Ferramentas</p>{ferr}</div></div></div>{item('partidos.html', 'Partidos')}{item('politicos.html', 'Políticos')}{item('mundo.html', 'Mundo')}{item('debates.html', 'Debates')}{item('vertentes.html', 'Vertentes')}{item('vieses.html', 'Vieses')}{item('ferramentas.html', 'Ferramentas')}{item('biblioteca.html', 'Biblioteca')}</nav>
+<nav class="menu" aria-label="Principal">{menu}</nav>
+<a class="btn cta-topo" href="{pre}comece-aqui.html">Comece aqui</a>
 <button class="bbusca" type="button" aria-label="Buscar no site">🔍<span> Buscar</span> <kbd>Ctrl K</kbd></button>
 <button class="hamb" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
 </div></header>
@@ -249,7 +259,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <main id="main">{corpo}</main>
 <footer class="rodape"><div class="wrap rodape-in">
 <div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
-<div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Catálogo')}</li></ul></div>
+<div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Todas as lições')}</li></ul></div>
 <div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
 <div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
@@ -323,8 +333,8 @@ def catalogo():
     bt = lambda k, v, t: f'<button type="button" data-k="{k}" data-v="{v}" aria-pressed="false">{e(t)}</button>'
     filt = '<div class="filtros" role="group" aria-label="Nível">' + bt('nivel', '', 'Todos os níveis') + ''.join(bt('nivel', s, r) for s, r, *_ in NIVEIS) + bt('nivel', 'ferr', 'Ferramentas') + '</div><div class="filtros" role="group" aria-label="Tema">' + bt('tema', '', 'Todos os temas') + ''.join(bt('tema', k, v) for k, v in TEMAS.items()) + '</div>'
     itens = ''.join(cartao_licao(l) for l in TODAS) + ''.join(cartao_ferr(*f) for f in FERR)
-    corpo = cabeca('Biblioteca / Catálogo', 'Tudo em um só lugar', 'Filtre por nível ou por tema.') + f'<div class="wrap secao"><input class="fq" id="fq" type="search" placeholder="Filtrar por palavra" aria-label="Filtrar"/>{filt}<p class="contagem" id="contagem" role="status"></p><div class="grade" id="catalogo">{itens}</div></div>'
-    page('catalogo.html', 'Catálogo', 'Todas as lições e ferramentas, com filtros por nível e tema.', corpo, atual='catalogo.html')
+    corpo = cabeca('Lições', 'Todas as lições', 'Filtre por nível ou por tema.') + f'<div class="wrap secao"><input class="fq" id="fq" type="search" placeholder="Filtrar por palavra" aria-label="Filtrar"/>{filt}<p class="contagem" id="contagem" role="status"></p><div class="grade" id="catalogo">{itens}</div></div>'
+    page('catalogo.html', 'Todas as lições', 'Todas as lições e ferramentas, com filtros por nível e tema.', corpo, atual='catalogo.html')
 
 # ---------- níveis e lições ----------
 def nivel(slug, rot, ls, titulo, desc, g):
@@ -347,7 +357,7 @@ LICAO_DEBATES = {
  'senciocentrismo': ['direitos-animais', 'animais-de-rua'], 'progresso-moral-e-politico': ['direitos-animais', 'identidade-lgbt'], 'politicas-baseadas-em-evidencias': ['evidencias-debate', 'pseudociencias'], 'perigo-do-ultraconservadorismo': ['identidade-lgbt', 'aborto'], 'perigo-do-reacionarismo': ['identidade-lgbt'],
  'regras-e-desobediencia': ['reforma-agraria'], 'presidencialismo-de-coalizao': ['poder-do-stf', 'supersalarios'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'voto-obrigatorio'], 'melhorar-a-democracia': ['voto-obrigatorio', 'poder-do-stf'], 'teorias-da-justica': ['grandes-fortunas', 'programas-sociais'],
  'testar-visao-moral': ['aborto', 'direitos-animais'], 'poder-paralelo': ['narcoterrorismo', 'seguranca-publica'],
- 'como-uma-lei-e-feita': ['poder-do-stf'], 'o-que-e-um-partido': ['voto-obrigatorio', 'representatividade'], 'economia-para-entender-politica': ['impostos', 'previdencia', 'desemprego'], 'perigo-do-populismo': ['representatividade', 'poder-do-stf'], 'corrupcao': ['supersalarios', 'subsidios'], 'como-ler-a-midia-tradicional': ['fake-news', 'regulamentacao-redes'], 'pesquisas-eleitorais': ['voto-obrigatorio', 'fake-news'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
+ 'como-uma-lei-e-feita': ['poder-do-stf'], 'o-que-e-um-partido': ['voto-obrigatorio', 'representatividade'], 'economia-para-entender-politica': ['impostos', 'previdencia', 'desemprego'], 'perigo-do-populismo': ['representatividade', 'poder-do-stf'], 'corrupcao': ['supersalarios', 'subsidios'], 'como-ler-a-midia-tradicional': ['fake-news', 'regulamentacao-redes'], 'pesquisas-eleitorais': ['voto-obrigatorio', 'fake-news'], 'perigo-do-outsider': ['representatividade'], 'mandatos-coletivos': ['representatividade', 'voto-obrigatorio'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
 APELIDOS_MUNDO = {'Franklin Roosevelt': 'Franklin D. Roosevelt', 'Mustafa Kemal Atatürk': 'Mustafa Kemal Atatürk', 'Martin Luther King Jr.': 'Martin Luther King Jr.'}
 def debates_da_licao(l):
@@ -779,11 +789,13 @@ def acompanhar():
     open(os.path.join(ROOT, 'acompanhar.html'), 'w', encoding='utf-8', newline='\n').write('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Biblioteca de sites sobre política</title><meta name="robots" content="noindex"><link rel="canonical" href="sites.html"><meta http-equiv="refresh" content="0; url=sites.html"></head><body><p>Esta página mudou para a <a href="sites.html">biblioteca de sites sobre política</a>.</p></body></html>')
 
 def biblioteca():
-    n_cls = {'Iniciante': 'iniciante', 'Intermediário': 'intermediario', 'Avançado': 'avancado'}
-    cart = lambda t, a, d, n, u: f'<a class="cartao" href="{e(u)}" {EXT}><span class="tipo {n_cls[n]}">{e(n)}</span><h3 class="ext" style="margin-top:.3rem">{e(t)}</h3><p><em>{e(a)}</em></p><p>{e(d)}</p></a>'
-    NIV_L = [('Iniciante', 'Para começar: leitura acessível, sem exigir formação prévia.'), ('Intermediário', 'Ideias mais densas, mas ainda boas para o público geral.'), ('Avançado', 'Clássicos e obras acadêmicas: pedem mais tempo e, às vezes, um guia de leitura.')]
-    li = ''.join(f'<h2 class="grupo">{n} <small>({sum(1 for x in LIVROS if x[3] == n)})</small></h2><p>{d}</p><div class="grade">' + ''.join(cart(*x) for x in LIVROS if x[3] == n) + '</div>' for n, d in NIV_L)
-    corpo = cabeca('Fontes', 'Biblioteca', f'{len(LIVROS)} livros para entender política, separados por nível de dificuldade.') + f'<div class="wrap secao">{li}<p class="legenda">Procura sites em vez de livros? Veja a <a href="sites.html">biblioteca de sites sobre política</a>.</p></div>'
+    n_cls = {'Iniciante': 'iniciante', 'Intermediário': 'intermediario', 'Avançado': 'avancado', 'Vertentes': 'ferr'}
+    sem_ed = lambda a: re.sub(r'\s*\((?!org\.)[^)]*\)', '', a)  # tira o nome da editora, mantém (org.)
+    cart = lambda t, a, d, n, u: f'<a class="cartao" href="{e(u)}" {EXT}><span class="tipo {n_cls[n]}">{e(n)}</span><h3 class="ext" style="margin-top:.3rem">{e(t)}</h3><p><em>{e(sem_ed(a))}</em></p><p>{e(d)}</p></a>'
+    NIV_L = [('Iniciante', 'Para começar: leitura acessível, sem exigir formação prévia.'), ('Intermediário', 'Ideias mais densas, mas ainda boas para o público geral.'), ('Avançado', 'Clássicos e obras acadêmicas: pedem mais tempo e, às vezes, um guia de leitura.'), ('Vertentes', 'Sobre vertentes e figuras: livros críticos, investigativos ou biográficos sobre movimentos, partidos e líderes específicos. Têm ponto de vista declarado e, às vezes, respostas públicas dos citados: leia sabendo disso e cruze com outras fontes. Para a explicação de cada corrente, veja as <a href="vertentes.html">vertentes políticas</a>.')]
+    rot = {'Vertentes': 'Sobre vertentes e figuras'}
+    li = ''.join(f'<h2 class="grupo">{rot.get(n, n)} <small>({sum(1 for x in LIVROS if x[3] == n)})</small></h2><p>{d}</p><div class="grade">' + ''.join(cart(*x) for x in LIVROS if x[3] == n) + '</div>' for n, d in NIV_L)
+    corpo = cabeca('Fontes', 'Biblioteca', f'{len(LIVROS)} livros para entender política: três níveis de dificuldade e uma seção sobre vertentes e figuras.') + f'<div class="wrap secao">{li}<p class="legenda">Procura sites em vez de livros? Veja a <a href="sites.html">biblioteca de sites sobre política</a>.</p></div>'
     page('biblioteca.html', 'Biblioteca', 'Livros e leituras recomendadas sobre política, por nível.', corpo, atual='biblioteca.html')
 
 def privacidade():

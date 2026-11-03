@@ -457,3 +457,146 @@ REFORCO_REVISAO['pragmatismo-politico'] = dict(
  analogia='Um velejador tem o porto definido e não discute isso com o vento. Mas ajusta a vela, muda o ângulo e às vezes faz zigue-zague para chegar. Pragmatismo é isso: firme no destino, flexível na rota. Quem muda de porto a cada rajada não está velejando, está à deriva.',
  crianca='Você quer que a turma toda brinque junto. Se um jogo não funciona, você tenta outro, sem desistir da ideia de incluir todo mundo. Isso é ser pragmático. Agora, se você trocar a ideia de incluir todos só para ganhar, aí não é mais pragmatismo, é só querer vencer.')
 GRUPOS['pragmatismo-politico'] = 'Melhorar a democracia'
+
+# ---------- lições acrescentadas em 2026-11-04: outsiders e mandatos coletivos ----------
+OUTSIDER = dict(slug='perigo-do-outsider', grupo=PI, titulo='O mito do outsider', resumo='“Não sou político” virou a promessa mais vendida das eleições. O que é um outsider de verdade, por que ele atrai, o que costuma acontecer depois e as perguntas que separam renovação de marketing.', corpo='''
+<p class="abre">A cada eleição aparece alguém que se apresenta como gente de fora: o empresário, o apresentador, o juiz, o influenciador, o militar. A promessa é sempre a mesma: “não sou político, por isso não tenho os vícios deles”. Às vezes é verdade. Com frequência, é só a frase mais eficiente do marketing eleitoral, e a falta de experiência é vendida como se fosse uma qualidade.</p>
+<h2>O que é um outsider</h2>
+<p>Na ciência política, outsider é quem chega a um cargo alto sem ter feito carreira em partidos ou em cargos eletivos. O oposto é o <em>insider</em>, que subiu degrau por degrau. Entre os dois há uma faixa cinzenta, em que vive a maior parte dos “outsiders” de campanha.</p>
+<table><thead><tr><th>Tipo</th><th>Quem é</th><th>Exemplos</th></tr></thead><tbody>
+<tr><td><strong>Outsider de fato</strong></td><td>Nunca disputou nem exerceu cargo antes de chegar ao topo</td><td><a href="mundo/volodymyr-zelensky.html">Volodymyr Zelensky</a>, ator, eleito presidente da Ucrânia em 2019; Alberto Fujimori, reitor, eleito no Peru em 1990; <a href="mundo/donald-trump.html">Donald Trump</a>, empresário, eleito em 2016</td></tr>
+<tr><td><strong>Outsider de dentro</strong></td><td>Tem carreira política, mas se vende como estranho ao sistema</td><td>Jair Bolsonaro, 28 anos de Câmara; <a href="politicos/fernando-collor.html">Fernando Collor</a>, governador e herdeiro de uma oligarquia de Alagoas; <a href="mundo/emmanuel-macron.html">Emmanuel Macron</a>, ministro que fundou o próprio movimento</td></tr>
+<tr><td><strong>Celebridade convertida</strong></td><td>Fama em outra área usada como capital político</td><td><a href="politicos/pablo-marcal.html">Pablo Marçal</a>, coach, em São Paulo, 2024; <a href="mundo/javier-milei.html">Javier Milei</a>, economista de TV, na Argentina, 2023; Jânio Quadros, com a vassoura, em 1960</td></tr>
+</tbody></table>
+<p>Nenhuma dessas categorias é, por si, boa ou ruim. O que a tabela mostra é que “não sou político” costuma ser slogan, e não biografia. Vale conferir a ficha antes de acreditar na frase.</p>
+<h2>Por que o outsider atrai</h2>
+<ul>
+<li><strong>Os partidos perderam a confiança.</strong> Quando o eleitor acha que são todos iguais, quem não é de nenhum parece a única opção limpa. Veja <a href="o-que-e-um-partido.html">para que servem os partidos</a>.</li>
+<li><strong>Corrupção e escândalos</strong> transformam experiência em suspeita: quem esteve lá dentro “deve ter se sujado”.</li>
+<li><strong>A antipolítica</strong> promete resolver problemas “com gestão” ou “com bom senso”, sem a negociação lenta que a democracia exige.</li>
+<li><strong>As redes dispensam a estrutura.</strong> Antes, era preciso partido, tempo de TV e militância para ser conhecido. Hoje, um perfil com milhões de seguidores substitui parte disso.</li>
+<li><strong>Os porteiros falharam.</strong> Steven Levitsky e Daniel Ziblatt mostram que, por décadas, os partidos barraram candidatos despreparados ou perigosos. Quando deixaram de filtrar, outsiders passaram a chegar direto ao topo.</li>
+</ul>
+<h2>O que costuma acontecer depois</h2>
+<table><thead><tr><th>Caso</th><th>O que aconteceu</th></tr></thead><tbody>
+<tr><td><strong>Jânio Quadros</strong>, Brasil, 1960</td><td>Eleito com a vassoura contra a corrupção, renunciou sete meses depois, sem base no Congresso, e abriu a crise que levou ao golpe de 1964</td></tr>
+<tr><td><strong>Fernando Collor</strong>, Brasil, 1989</td><td>“Caçador de marajás”, de um partido criado para a eleição. Confiscou a poupança, perdeu o apoio e sofreu impeachment em 1992</td></tr>
+<tr><td><strong>Alberto Fujimori</strong>, Peru, 1990</td><td>Venceu um escritor famoso como o “desconhecido”. Dois anos depois, fechou o Congresso em um autogolpe. Governou dez anos e foi condenado por crimes contra a humanidade</td></tr>
+<tr><td><strong>Donald Trump</strong>, EUA, 2016</td><td>Governou em conflito com o próprio partido e as instituições, e não aceitou a derrota de 2020. Foi reeleito em 2024</td></tr>
+<tr><td><strong>Volodymyr Zelensky</strong>, Ucrânia, 2019</td><td>Eleito contra a corrupção, virou líder de guerra em 2022, com apoio amplo. O balanço ainda está em aberto</td></tr>
+<tr><td><strong>Javier Milei</strong>, Argentina, 2023</td><td>Sem bancada própria, governa por decreto e por acordos com os partidos que atacava, com inflação em queda e custo social alto</td></tr>
+</tbody></table>
+<p>O padrão não é “outsider sempre dá errado”. É outro: quem chega sem partido, sem bancada e sem equipe descobre que não consegue governar sozinho, e tem dois caminhos. Ou negocia com a “velha política” que prometeu destruir, ou ataca as instituições que o limitam. No Brasil, o primeiro caminho tem nome: veja o <a href="presidencialismo-de-coalizao.html">presidencialismo de coalizão</a>.</p>
+<h2>Os perigos</h2>
+<ul>
+<li><strong>Inexperiência vendida como virtude.</strong> Em qualquer outro emprego, nunca ter feito o trabalho é uma desvantagem. Governar um país é um dos trabalhos mais difíceis que existem.</li>
+<li><strong>Sem partido, sem freio interno.</strong> O partido também é quem diz “não” ao líder. O outsider costuma criar uma legenda de aluguel ou um movimento que só obedece a ele.</li>
+<li><strong>Da antipolítica ao ataque às instituições.</strong> Quem foi eleito contra “o sistema” tende a tratar Congresso, Justiça e imprensa como parte do problema quando eles o contrariam. Veja o <a href="perigo-de-questionar-a-democracia.html">perigo de questionar a democracia</a>.</li>
+<li><strong>Personalismo.</strong> O outsider é, por definição, uma pessoa e não um programa. É a porta de entrada mais comum do <a href="perigo-do-messianismo.html">messianismo</a>.</li>
+<li><strong>Simplificação.</strong> “É só ter vontade” e “é só gestão” escondem a complexidade de cada problema. Veja o <a href="perigo-do-maniqueismo.html">perigo de simplificar</a>.</li>
+<li><strong>Quem está por trás.</strong> Toda campanha sem partido tem financiadores e estrategistas. Quem não os mostra, esconde.</li>
+</ul>
+<h2>O que há de legítimo</h2>
+<p>Partidos fechados, carreiras de quarenta anos e cúpulas que escolhem candidatos entre si produzem a demanda por gente de fora. Renovação é saudável, e muitos outsiders trouxeram pautas que ninguém defendia e eleitores que ninguém ouvia. O problema não é vir de fora. É vender a falta de experiência como qualidade, não dizer como pretende governar e tratar as regras como coisa de político.</p>
+<table><thead><tr><th>Renovação de verdade</th><th>Marketing de outsider</th></tr></thead><tbody>
+<tr><td>Tem equipe, plano e aliados nomeados</td><td>“Eu resolvo”, sem dizer com quem</td></tr>
+<tr><td>Explica o que fez antes, inclusive fora da política</td><td>Apaga o passado, ou o passado político</td></tr>
+<tr><td>Aceita as regras e os limites do cargo</td><td>Promete o que o cargo não pode fazer. Veja <a href="cargos.html">o que cada cargo faz</a></td></tr>
+<tr><td>Critica práticas específicas</td><td>Ataca “os políticos” em bloco, e logo entra em um partido deles</td></tr>
+<tr><td>Vai para dentro de um partido e disputa nele</td><td>Cria uma sigla de aluguel ou troca de partido a cada eleição</td></tr>
+</tbody></table>
+<h2>Perguntas antes de votar em um outsider</h2>
+<ol class="roteiro">
+<li><strong>O que ele fez na vida?</strong> Empresa, carreira ou fama dizem algo sobre como lida com dinheiro, pessoas e regras.</li>
+<li><strong>Com quem vai governar?</strong> Sem bancada, de quem virão os votos no Congresso ou na Câmara?</li>
+<li><strong>Quem é a equipe?</strong> Um bom governo são centenas de pessoas, não uma.</li>
+<li><strong>Quem financia e quem aconselha?</strong> Consulte o <a href="https://divulgacandcontas.tse.jus.br/" target="_blank" rel="noopener">DivulgaCandContas</a>.</li>
+<li><strong>Ele aceita perder?</strong> O que disse sobre urnas, tribunais e imprensa quando foi contrariado?</li>
+<li><strong>A mudança é de pessoas ou de práticas?</strong> Trocar o nome e manter o método não é renovação.</li>
+</ol>
+<div class="nota"><strong>Para guardar:</strong> “não sou político” é uma informação sobre o currículo, não sobre o caráter. Quem vai ocupar um cargo político se torna político no primeiro dia. A pergunta é que tipo de político vai ser, e isso se descobre olhando o que a pessoa já fez, e não o que ela diz que não é.</div>
+''', fontes=[('Como as democracias morrem', 'https://pt.wikipedia.org/wiki/How_Democracies_Die'), ('The Rise of Outsiders in Latin America, 1980-2010 (Miguel Carreras)', 'https://www.google.com/search?tbm=bks&q=Carreras+The+Rise+of+Outsiders+in+Latin+America'), ('Fernando Collor (Wikipédia)', 'https://pt.wikipedia.org/wiki/Fernando_Collor'), ('Alberto Fujimori (Wikipédia)', 'https://pt.wikipedia.org/wiki/Alberto_Fujimori'), ('Jânio Quadros (Wikipédia)', 'https://pt.wikipedia.org/wiki/J%C3%A2nio_Quadros'), ('Antipolítica (Wikipédia)', 'https://pt.wikipedia.org/wiki/Antipol%C3%ADtica')])
+META_REVISAO['perigo-do-outsider'] = (['perigos', 'eleicoes'], ('O que costuma acontecer com um outsider eleito sem partido e sem bancada?', ['Governa sozinho, como prometeu', 'Precisa negociar com os partidos que atacava, ou passa a atacar as instituições', 'Perde o cargo automaticamente'], 1, 'Sem base, ninguém governa. Os dois caminhos mais comuns são o acordo com a “velha política” e o conflito com quem o limita.'))
+REFORCO_REVISAO['perigo-do-outsider'] = dict(
+ analogia='É como contratar para pilotar o avião alguém cuja principal qualidade é nunca ter sido piloto, porque “os pilotos estão todos viciados”. Pode até ser uma pessoa ótima. Mas o avião continua exigindo saber pilotar, e, na primeira turbulência, ou ela chama um piloto de verdade ou culpa a torre de controle.',
+ crianca='Imagine que alguém quer ser o capitão do time dizendo: “eu nunca joguei futebol, por isso não tenho os vícios dos jogadores”. Pode ser uma pessoa legal, mas o jogo continua sendo futebol. Antes de escolher, vale perguntar o que ela sabe fazer e com quem vai jogar.')
+GRUPOS['perigo-do-outsider'] = PI
+
+COLETIVO = dict(slug='mandatos-coletivos', grupo='Melhorar a democracia', titulo='Candidaturas coletivas e mandatos compartilhados', resumo='Um grupo se candidata junto, mas só uma pessoa tem o mandato na lei. O que é, de onde veio, o que promete, os riscos e como avaliar um mandato coletivo.', corpo='''
+<p class="abre">Em uma candidatura coletiva, um grupo de pessoas disputa a eleição junto e promete exercer o mandato em conjunto. Na urna e na lei, porém, só uma delas é a candidata: as outras são “cocandidatas” por um acordo político, sem cargo nem voto na Câmara. É uma inovação brasileira recente, que tenta resolver um problema real de representação, e que ainda não tem regra própria.</p>
+<h2>Como funciona na prática</h2>
+<ol class="passos">
+<li><strong>Uma pessoa registra a candidatura</strong> no TSE, como qualquer outra. É a titular: só ela aparece na lista de eleitos, vota no plenário e responde perante a lei.</li>
+<li><strong>O grupo assina um compromisso</strong>, em geral público, com as regras do mandato: como as decisões são tomadas, como os votos em plenário são definidos, como se divide o salário e o que acontece se alguém sair.</li>
+<li><strong>Os demais entram no gabinete</strong>, muitas vezes como assessores pagos com a verba de gabinete, e dividem o trabalho: projetos, emendas, atendimento, articulação.</li>
+<li><strong>As decisões são coletivas</strong> por acordo, mas a palavra final, na lei, é sempre da titular. Se ela discordar do grupo, nada a obriga.</li>
+</ol>
+<h2>De onde veio</h2>
+<table><thead><tr><th>Quando</th><th>O que aconteceu</th></tr></thead><tbody>
+<tr><td>2002</td><td>Na Suécia, o partido Demoex elege um vereador em Vallentuna que votava conforme decisões online dos filiados. Na Argentina, o Partido de la Red (2013) propôs o mesmo</td></tr>
+<tr><td>2016</td><td>Em Alto Paraíso de Goiás, um vereador é eleito com o compromisso de decidir junto com um grupo de moradores: é considerado o primeiro mandato coletivo do Brasil</td></tr>
+<tr><td>2018</td><td>A Bancada Ativista elege uma deputada estadual em São Paulo com nove cocandidatas, e as Juntas elegem uma deputada em Pernambuco com cinco. As duas entram em assembleias legislativas</td></tr>
+<tr><td>2020</td><td>Centenas de candidaturas coletivas disputam as eleições municipais, e algumas vencem em capitais, em geral ligadas a mulheres, pessoas negras, periferias e pessoas LGBT</td></tr>
+<tr><td>2022 e 2024</td><td>O modelo se repete nas eleições estaduais e municipais, com rachas públicos em alguns mandatos e a continuidade de outros</td></tr>
+</tbody></table>
+<h2>O que diz a lei</h2>
+<p>Nada, até agora. A legislação eleitoral só conhece a candidatura individual. O TSE já afirmou que o mandato pertence a quem foi registrado e que o coletivo é um arranjo político, sem efeito jurídico. Uma proposta de emenda à Constituição apresentada em 2017 na Câmara tenta reconhecer o mandato compartilhado, mas não foi votada. Enquanto isso, cada tribunal regional decide caso a caso sobre o uso de nomes coletivos na urna.</p>
+<h2>O que promete</h2>
+<ul>
+<li><strong>Mais gente representada.</strong> Uma cadeira pode levar ao parlamento várias trajetórias: uma mulher negra da periferia, uma pessoa trans, um morador de rua, um agricultor. Veja o <a href="debates/representatividade.html">debate sobre representatividade</a>.</li>
+<li><strong>Menos personalismo.</strong> A decisão é do grupo, e não de um nome. É uma resposta ao <a href="perigo-do-messianismo.html">messianismo</a> e ao <a href="perigo-do-outsider.html">culto à pessoa</a>.</li>
+<li><strong>Campanha mais barata.</strong> Grupos sem dinheiro dividem o custo e a exposição de uma única candidatura.</li>
+<li><strong>Mais trabalho feito.</strong> Várias pessoas com mandato político, e não só uma, acompanham comissões, bairros e pautas.</li>
+<li><strong>Transparência interna.</strong> Os melhores mandatos publicam suas regras e suas decisões, o que poucos gabinetes tradicionais fazem.</li>
+</ul>
+<h2>Os riscos</h2>
+<ul>
+<li><strong>Insegurança jurídica.</strong> Quem responde por um voto errado ou por um gasto irregular é só a titular. Os demais não podem ser cobrados pelo eleitor nem pela Justiça.</li>
+<li><strong>Quando o grupo racha, a cadeira fica com uma pessoa.</strong> Já houve rompimentos públicos em mandatos coletivos, e o eleitor que votou no grupo descobriu que tinha votado em um nome.</li>
+<li><strong>O eleitor pode não saber em quem está votando.</strong> Quem decide de fato: o grupo, a titular ou um partido?</li>
+<li><strong>Pode ser só marketing.</strong> Um candidato com “cocandidatos” que são, na prática, assessores comuns usa a ideia sem o conteúdo.</li>
+<li><strong>Dinheiro público para o grupo.</strong> Pagar os cocandidatos com verba de gabinete é legal, porque são assessores, mas críticos veem aí um uso da estrutura pública para sustentar um projeto eleitoral.</li>
+<li><strong>Diluição da responsabilidade.</strong> Se a decisão foi “do coletivo”, ninguém errou. A responsabilização individual é uma das proteções da democracia representativa.</li>
+</ul>
+<h2>Um debate em aberto</h2>
+<table><thead><tr><th>A favor de regulamentar</th><th>Contra, ou com cautela</th></tr></thead><tbody>
+<tr><td>Dar segurança jurídica ao que já existe na prática</td><td>A Constituição liga o mandato à pessoa eleita, e mudar isso afeta todo o sistema</td></tr>
+<tr><td>Ampliar a representação de grupos sub-representados</td><td>Grupos podem ser representados por partidos, listas e cotas, sem dividir uma cadeira</td></tr>
+<tr><td>Reduzir o personalismo</td><td>O eleitor precisa saber quem responde por cada voto</td></tr>
+<tr><td>Experimentar formas novas de democracia</td><td>Experimentos devem ser avaliados antes de virar regra. Veja <a href="politicas-baseadas-em-evidencias.html">políticas baseadas em evidências</a></td></tr>
+</tbody></table>
+<h2>Como avaliar um mandato coletivo</h2>
+<ol class="roteiro">
+<li><strong>As regras do grupo são públicas?</strong> Como decidem, e o que acontece em caso de divergência?</li>
+<li><strong>Quem é a titular, e o que ela fez antes?</strong> Na lei, é nela que você vota.</li>
+<li><strong>Os cocandidatos têm trajetória própria</strong>, ou são nomes de preenchimento?</li>
+<li><strong>Como votou o mandato</strong> nas pautas decisivas? Veja <a href="numero-de-projetos.html">o que olhar em um mandato</a>.</li>
+<li><strong>O coletivo presta contas</strong> do que fez e de como gastou a verba de gabinete?</li>
+</ol>
+<div class="nota"><strong>Para guardar:</strong> o mandato coletivo é uma promessa política apoiada em uma cadeira individual. Vale pelo que o grupo faz, e não pela ideia. Ele compartilha o trabalho; a responsabilidade, por enquanto, a lei não deixa compartilhar. Veja outras <a href="melhorar-a-democracia.html">ideias para melhorar a democracia</a>.</div>
+''', fontes=[('Mandato coletivo (Wikipédia)', 'https://pt.wikipedia.org/wiki/Mandato_coletivo'), ('Candidatura coletiva (Wikipédia)', 'https://pt.wikipedia.org/wiki/Candidatura_coletiva'), ('Bancada Ativista (Wikipédia)', 'https://pt.wikipedia.org/wiki/Bancada_Ativista'), ('RAPS: Rede de Ação Política pela Sustentabilidade', 'https://www.raps.org.br/'), ('Demoex (Wikipédia)', 'https://en.wikipedia.org/wiki/Demoex')])
+META_REVISAO['mandatos-coletivos'] = (['democracia', 'eleicoes'], ('Em uma candidatura coletiva, quem tem o mandato perante a lei?', ['Todo o grupo, em partes iguais', 'Só a pessoa registrada como candidata', 'O partido'], 1, 'A lei só conhece a candidatura individual. O coletivo é um compromisso político, sem efeito jurídico.'))
+REFORCO_REVISAO['mandatos-coletivos'] = dict(
+ analogia='É como uma banda que se inscreve em um festival que só aceita artistas solo. Um músico assina o contrato e recebe o cachê, e o grupo combina entre si como dividir tudo e decidir o repertório. Enquanto a banda se entende, funciona. Se brigar, quem assinou fica com o palco.',
+ crianca='Imagine que só uma criança pode ser a representante da turma, mas ela combina com quatro amigos que vão decidir tudo juntos. Isso pode ser ótimo, porque mais gente participa. Mas, se os amigos discordarem, quem foi escolhida é quem decide, porque foi nela que a turma votou.')
+GRUPOS['mandatos-coletivos'] = 'Melhorar a democracia'
+
+# ---------- biblioteca: seção sobre vertentes e figuras (2026-11-04) ----------
+# Livros já cadastrados que mudam para a seção "Sobre vertentes e figuras".
+RENIVEL = {
+ 'O Negócio do Jair: a história proibida do clã Bolsonaro': 'Vertentes',
+ 'Jornalismo Wando: os personagens bizarros que explicam a nova política': 'Vertentes',
+ 'A Elite do Atraso: da escravidão a Bolsonaro': 'Vertentes',
+ 'Cartografia da extrema direita': 'Vertentes',
+ 'Mulheres e extrema direita no Brasil': 'Vertentes',
+ 'O Populismo Reacionário': 'Vertentes',
+ 'A Extrema Direita Hoje': 'Vertentes',
+}
+# Livros novos da seção: (título, autor, descrição). O link é gerado no build.
+LIVROS_VERTENTES = [
+ ('Os Sentidos do Lulismo: reforma gradual e pacto conservador', 'André Singer', 'A análise que deu nome ao lulismo: redução da pobreza sem confronto com o capital, e a base entre os mais pobres.'),
+ ('O Brasil Dobrou à Direita: uma radiografia da eleição de Bolsonaro em 2018', 'Jairo Nicolau', 'Quem votou em quem, e por quê, na eleição que consolidou o antipetismo como força eleitoral.'),
+ ('A Organização: a Odebrecht e o esquema de corrupção que chocou o mundo', 'Malu Gaspar', 'Reportagem sobre a maior empreiteira do país e as propinas pagas a políticos de vários partidos.'),
+ ('A Privataria Tucana', 'Amaury Ribeiro Jr.', 'Investigação sobre as privatizações do governo FHC. Contestada pelos citados, e vale ler junto com as respostas.'),
+ ('O Cadete e o Capitão: a vida de Jair Bolsonaro no quartel', 'Luiz Maklouf Carvalho', 'Reportagem sobre os anos de Bolsonaro no Exército, com documentos dos processos militares.'),
+]

@@ -133,6 +133,8 @@ dict(slug='perigo-do-messianismo', grupo='Os perigos', titulo='Idolatria, messia
 <p>O Brasil conhece o padrão: Getúlio como “pai dos pobres”, Jânio e a vassoura, Collor “caçador de marajás”, e os dias atuais, com “mito” e “pai” em comícios de lados diferentes.</p>
 <h2>Sinais de alerta</h2>
 <ul><li>Você não consegue citar um erro grave do seu político.</li><li>Toda acusação contra ele é perseguição.</li><li>Ele diz ser o único capaz de salvar o país.</li><li>Tudo que dá errado é culpa de inimigos.</li><li>Você muda de opinião quando ele muda.</li></ul>
+<h2>A porta de entrada: o outsider</h2>
+<p>O messias raramente surge de dentro de um partido. Costuma chegar como quem “não é político”: o empresário, o juiz, o apresentador, o militar, alguém que promete limpar tudo justamente por nunca ter estado lá. A ausência de passado político vira prova de pureza, e a pureza dispensa a cobrança. Antes de acreditar na frase, veja <a href="perigo-do-outsider.html">o mito do outsider</a>.</p>
 <h2>Massa de manobra</h2>
 <p>Pessoas viram massa de manobra quando são mobilizadas por emoção para servir a interesses que não conhecem: compartilhando boatos, atacando alvos escolhidos, indo a atos pagos por quem lucra com eles. Pode acontecer com qualquer pessoa, à esquerda e à direita.</p>
 <div class="nota"><strong>Regra simples:</strong> apoie propostas e cobre pessoas. Político não é ídolo: você paga o salário dele.</div>
