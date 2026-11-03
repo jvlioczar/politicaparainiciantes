@@ -15,10 +15,12 @@ from debates import DEBATES, ANTIGOS
 from vieses import V as VIES, CATS
 from vieses_explica import E as VIES_E
 from vieses_wiki import W as VIES_W
+from vieses_fundo import F as VIES_F
 VIES_TDL = {x[0] for x in VIES}
 for _x in VIES_W:
     VIES.append(_x[:4] + _x[6:8]); VIES_E[_x[0]] = (_x[4], _x[5])
 assert len({x[0] for x in VIES}) == len(VIES)
+assert set(VIES_F) == {x[0] for x in VIES}, (set(VIES_F) ^ {x[0] for x in VIES})
 from tribalismo import TRIBALISMO, META_TRIBALISMO
 from medo_eco import MEDO, META_MEDO, ECO, META_ECO
 from informacao import PERIGOS_INFO, HISTORIA_LICOES, META_INFORMACAO
@@ -703,7 +705,7 @@ def vieses():
         j = i % max(1, len(mesmos)); rel = (mesmos[j:] + mesmos[:j])[:3]
         ant, prox = VIES[i - 1], VIES[(i + 1) % len(VIES)]
         corpo = cabeca('<a href="../vieses.html">Vieses cognitivos</a>', x[1], e(x[3]), meta=f'<div class="meta"><span class="tipo cvies v{CAT_V.index(c)}">{e(c)}</span></div>')
-        corpo += f"""<div class="wrap estreito leitura secao"><h2 style="margin-top:0">O que é</h2><p class="abre">{e(VIES_E[x[0]][0])}</p><div class="ex-vies"><strong>No dia a dia:</strong> {e(VIES_E[x[0]][1])}</div><h2>Como isso afeta a moral e a política</h2><div class="efeitos"><section class="efeito-m"><h2>No pensamento moral</h2><p>{e(x[4])}</p></section><section class="efeito-p"><h2>No pensamento político</h2><p>{e(x[5])}</p></section></div><div class="nota"><strong>Como reduzir:</strong> {e(CATS[c])}</div>{fontes([("The Decision Lab: " + x[0].replace("-", " "), TDL + x[0])] if x[0] in VIES_TDL else [("Wikipédia: List of cognitive biases", "https://en.wikipedia.org/wiki/List_of_cognitive_biases")])}<nav class="pager" aria-label="Vieses"><a href="{slug_v(ant)}.html"><small>← Anterior</small>{e(ant[1])}</a><a class="prox" href="{slug_v(prox)}.html"><small>Próximo →</small>{e(prox[1])}</a></nav></div><section class="relac"><div class="wrap"><h2>Na mesma categoria</h2><div class="grade">{"".join(cartao_vies(y) for y in rel)}</div></div></section>"""
+        corpo += f"""<div class="wrap estreito leitura secao"><h2 style="margin-top:0">O que é</h2><p class="abre">{e(VIES_E[x[0]][0])}</p><div class="ex-vies"><strong>No dia a dia:</strong> {e(VIES_E[x[0]][1])}</div><h2>Como funciona e como se proteger</h2>{"".join(f"<p>{e(par)}</p>" for par in VIES_F[x[0]].splitlines() if par.strip())}<h2>Como isso afeta a moral e a política</h2><div class="efeitos"><section class="efeito-m"><h2>No pensamento moral</h2><p>{e(x[4])}</p></section><section class="efeito-p"><h2>No pensamento político</h2><p>{e(x[5])}</p></section></div><div class="nota"><strong>Como reduzir:</strong> {e(CATS[c])}</div>{fontes([("The Decision Lab: " + x[0].replace("-", " "), TDL + x[0])] if x[0] in VIES_TDL else [("Wikipédia: List of cognitive biases", "https://en.wikipedia.org/wiki/List_of_cognitive_biases")])}<nav class="pager" aria-label="Vieses"><a href="{slug_v(ant)}.html"><small>← Anterior</small>{e(ant[1])}</a><a class="prox" href="{slug_v(prox)}.html"><small>Próximo →</small>{e(prox[1])}</a></nav></div><section class="relac"><div class="wrap"><h2>Na mesma categoria</h2><div class="grade">{"".join(cartao_vies(y) for y in rel)}</div></div></section>"""
         page(f'vieses/{slug_v(x)}.html', x[1], f'{x[1]}: {x[3]}', corpo, atual='vieses.html')
 
 # ---------- ferramentas ----------
