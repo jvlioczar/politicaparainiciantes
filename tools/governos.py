@@ -29,7 +29,7 @@ G(1955, 1956, 'Carlos Luz e Nereu Ramos', 'PSD', CEN, CEN, 'Interinos', 'Contrag
 G(1956, 1961, 'Juscelino Kubitschek', 'PSD', CEN, CEN, 'Eleição direta', 'Aliança PSD-PTB dá maioria estável.'),
 G(1961, 1961, 'Jânio Quadros', 'PTN (apoio da UDN)', CDI, CEN, 'Eleição direta', 'Renunciou em sete meses.'),
 G(1961, 1964, 'João Goulart', 'PTB', CES, CEN, 'Sucessão do vice, com parlamentarismo até 1963', 'Câmara de maioria PSD e UDN resiste às reformas de base; golpe em 1964.'),
-G(1964, 1967, 'Castelo Branco', 'Militar', EXD, DIR, 'Golpe militar, eleito pelo Congresso', 'Cassações, AI-2 e bipartidarismo: Arena com maioria.'),
+G(1964, 1967, 'Humberto Castello Branco', 'Militar', EXD, DIR, 'Golpe militar, eleito pelo Congresso', 'Cassações, AI-2 e bipartidarismo: Arena com maioria.'),
 G(1967, 1969, 'Artur da Costa e Silva', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'AI-5 em 1968; Congresso fechado até 1969.'),
 G(1969, 1974, 'Emílio Médici', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'Anos de chumbo; Arena com maioria ampla.'),
 G(1974, 1979, 'Ernesto Geisel', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'Abertura lenta; MDB cresce em 1974, Arena mantém maioria.'),
