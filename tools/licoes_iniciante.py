@@ -61,12 +61,24 @@ dict(slug='valores-e-decisoes', titulo='Valores morais × decisões políticas',
 ''', fontes=[VINDING]),
 
 dict(slug='etica-normativa', titulo='As grandes teorias da ética', resumo='Consequências, deveres ou caráter: as três famílias que mais moldam como pensamos o certo e o errado.', corpo='''
-<p class="abre">A ética normativa é a parte da filosofia que pergunta como devemos agir. Três grandes famílias respondem de formas diferentes, e cada uma leva a políticas diferentes.</p>
+<p class="abre">A ética normativa é a parte da filosofia que pergunta como devemos agir. Três grandes famílias respondem de formas diferentes, e cada uma dá mais peso a uma pergunta na hora de julgar uma lei ou uma política.</p>
 <div class="tres">
-<div><h3>Consequencialismo</h3><p><strong>O que importa é o resultado.</strong> Uma política é boa se melhora a vida dos afetados.</p><p class="pol">Na política: “quanto sofrimento isso evita, e de quem?”</p></div>
-<div><h3>Deontologia</h3><p><strong>O que importa são os deveres e direitos.</strong> Certas coisas não se fazem, mesmo com bons resultados.</p><p class="pol">Na política: “isso viola um direito?”</p></div>
-<div><h3>Ética do caráter</h3><p><strong>O que importa é quem você é.</strong> Virtudes e cuidado com os outros.</p><p class="pol">Na política: “que tipo de sociedade isso nos torna?”</p></div>
+<div><h3>Consequencialismo</h3><p><strong>O que pesa mais é o resultado.</strong> Uma política é boa se melhora a vida dos afetados.</p><p class="pol">Na política: “quanto sofrimento isso evita, e de quem?”</p></div>
+<div><h3>Deontologia</h3><p><strong>O que pesa mais são os deveres e direitos.</strong> Certas coisas não se fazem, mesmo com bons resultados.</p><p class="pol">Na política: “isso viola um direito?”</p></div>
+<div><h3>Ética do caráter</h3><p><strong>O que pesa mais é quem você se torna.</strong> Virtudes e cuidado com os outros.</p><p class="pol">Na política: “que tipo de sociedade isso nos torna?”</p></div>
 </div>
+<h2>Ponto focal, e não exclusividade</h2>
+<p>As três famílias não são caixas fechadas. Quem pende para a deontologia também olha as consequências; quem pende para o consequencialismo também respeita regras, porque regras costumam produzir bons resultados. A diferença está no <strong>ponto focal</strong>: qual consideração ganha quando elas entram em conflito. Um deontologista aceita que a regra de não punir inocentes vale mesmo quando puni-los reduziria o crime; um consequencialista aceita quebrar uma regra se o ganho for grande e certo. Na maior parte dos casos do dia a dia, as três lentes concordam, e é nos casos difíceis que o peso de cada uma aparece.</p>
+<h2>Como isso aparece na política</h2>
+<p>Quase todo debate político tem as três perguntas dentro, com pesos diferentes para cada pessoa. Veja o mesmo problema pelas três lentes:</p>
+<table><thead><tr><th>Decisão</th><th>Pelo resultado</th><th>Pelos direitos e deveres</th><th>Pelo caráter</th></tr></thead><tbody>
+<tr><td>Prender um suspeito perigoso antes do julgamento</td><td>Quantos crimes isso evita, e quantos inocentes serão presos?</td><td>A presunção de inocência vale mesmo para quem parece culpado</td><td>Que tipo de sociedade prende por suspeita?</td></tr>
+<tr><td>Vacinação obrigatória</td><td>Quantas vidas salva, comparada à adesão voluntária?</td><td>O Estado pode impor um procedimento no corpo de alguém? E a pessoa pode expor os outros?</td><td>O que uma pessoa cuidadosa faria pelos vizinhos?</td></tr>
+<tr><td>Imposto maior sobre os mais ricos</td><td>O que o dinheiro produz em saúde e escola, e o que o imposto desestimula?</td><td>Há direito ao que se ganhou? Há dever de sustentar quem está pior?</td><td>Que relação com a riqueza queremos como sociedade?</td></tr>
+<tr><td>Torturar um suspeito para obter uma informação</td><td>Um consequencialista rígido perguntaria se funciona; a evidência diz que não</td><td>Nunca, em nenhum caso: é o exemplo clássico de limite absoluto</td><td>Quem tortura deixa de ser o tipo de pessoa que diz defender</td></tr>
+<tr><td>Proteger animais em fazendas industriais</td><td>Quanto sofrimento é evitado, a que custo?</td><td>Seres que sentem têm interesses que criam deveres?</td><td>O que a crueldade tolerada faz com quem a tolera?</td></tr>
+</tbody></table>
+<p>Repare em dois padrões. Constituições democráticas são, em geral, <strong>deontológicas no limite e consequencialistas no resto</strong>: fixam direitos que nenhuma maioria pode tirar, e deixam as políticas serem julgadas pelos resultados. E as frases de efeito da política costumam ser lentes mal usadas: “os fins justificam os meios” é consequencialismo sem contar os meios como consequência; “regra é regra” é deontologia sem perguntar para que a regra existe. Saber qual lente alguém está usando ajuda a entender por que duas pessoas de boa-fé chegam a conclusões opostas a partir dos mesmos fatos. Veja <a href="valores-e-decisoes.html">valores e decisões</a>, e, mais adiante, as <a href="teorias-da-justica.html">teorias da justiça</a>, que levam essas lentes à pergunta sobre como dividir o que é de todos.</p>
 <h2>Os subtipos que mudam tudo</h2>
 <table><thead><tr><th>Família</th><th>Variações</th><th>A diferença</th></tr></thead><tbody>
 <tr><td>Consequencialismo</td><td>Utilitarismo, prioritarismo, maximin, igualitarismo, suficientismo</td><td>Somar o bem de todos? Priorizar quem está pior? Garantir um mínimo?</td></tr>
