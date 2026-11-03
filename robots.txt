@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://politicaparainiciantes.biblioverse.org/sitemap.xml

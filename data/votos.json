@@ -1,0 +1,1107 @@
+[
+{
+"rot": "Teto de Gastos",
+"ano": "2016",
+"desc": "Limitou o crescimento das despesas federais por 20 anos.",
+"id": "2088351-235",
+"data": "2016-10-10",
+"texto": "Aprovado o Substitutivo adotado pela Comissão Especial à Proposta de Emenda à Constituição nº 241 de 2016, em primeiro turno, ressalvados os destaques. Sim: 366; Não: 111; Total: 479.",
+"tot": {
+"Sim": 366,
+"Abstenção": 2,
+"Não": 111,
+"Artigo 17": 1
+},
+"partidos": {
+"DEM": {
+"Sim": 23,
+"Não": 1,
+"Artigo 17": 1
+},
+"PSB": {
+"Sim": 22,
+"Não": 10
+},
+"PSDB": {
+"Sim": 47
+},
+"PT": {
+"Abstenção": 1,
+"Não": 54
+},
+"REDE": {
+"Não": 3
+},
+"PPS": {
+"Não": 3,
+"Sim": 4
+},
+"PSD": {
+"Sim": 34,
+"Não": 1
+},
+"PROS": {
+"Sim": 4,
+"Não": 3
+},
+"PSOL": {
+"Não": 6
+},
+"PR": {
+"Sim": 37,
+"Abstenção": 1,
+"Não": 2
+},
+"PP": {
+"Sim": 42,
+"Não": 2
+},
+"PSC": {
+"Sim": 6
+},
+"PTB": {
+"Sim": 14,
+"Não": 1
+},
+"PMDB": {
+"Sim": 63
+},
+"PV": {
+"Sim": 6
+},
+"SD": {
+"Sim": 12,
+"Não": 1
+},
+"PMB": {
+"Sim": 1,
+"Não": 1
+},
+"PDT": {
+"Sim": 6,
+"Não": 11
+},
+"PSL": {
+"Sim": 2
+},
+"PCdoB": {
+"Não": 10
+},
+"PRB": {
+"Sim": 20
+},
+"PHS": {
+"Sim": 7
+},
+"PTdoB": {
+"Não": 1,
+"Sim": 2
+},
+"PTN": {
+"Sim": 11
+},
+"PEN": {
+"Não": 1,
+"Sim": 2
+},
+"PRP": {
+"Sim": 1
+}
+}
+},
+{
+"rot": "Reforma trabalhista",
+"ano": "2017",
+"desc": "Mudou a CLT e deu mais peso a acordos entre empresas e trabalhadores.",
+"id": "2122076-348",
+"data": "2017-04-26",
+"texto": "Aprovada a Subemenda Substitutiva Global apresentada pelo Relator da Comissão Especial, ressalvados os destaques. Sim: 296; não:177; total: 473.",
+"tot": {
+"Sim": 296,
+"Não": 177,
+"Artigo 17": 1
+},
+"partidos": {
+"PTN": {
+"Sim": 7,
+"Não": 5
+},
+"PP": {
+"Não": 9,
+"Sim": 35
+},
+"PSDB": {
+"Sim": 43,
+"Não": 1
+},
+"PDT": {
+"Não": 15,
+"Sim": 1
+},
+"PSD": {
+"Não": 5,
+"Sim": 29
+},
+"PSB": {
+"Não": 16,
+"Sim": 14
+},
+"PRB": {
+"Sim": 15,
+"Não": 4
+},
+"PCdoB": {
+"Não": 9
+},
+"PT": {
+"Não": 56
+},
+"PSC": {
+"Sim": 8,
+"Não": 2
+},
+"SD": {
+"Sim": 5,
+"Não": 8
+},
+"DEM": {
+"Sim": 29,
+"Artigo 17": 1
+},
+"PR": {
+"Sim": 28,
+"Não": 7
+},
+"PV": {
+"Sim": 4,
+"Não": 2
+},
+"PMDB": {
+"Sim": 51,
+"Não": 7
+},
+"PTB": {
+"Não": 4,
+"Sim": 13
+},
+"PHS": {
+"Não": 4,
+"Sim": 2
+},
+"PPS": {
+"Sim": 6,
+"Não": 3
+},
+"REDE": {
+"Não": 4
+},
+"PROS": {
+"Não": 4,
+"Sim": 1
+},
+"PSOL": {
+"Não": 6
+},
+"PSL": {
+"Sim": 1,
+"Não": 1
+},
+"PTdoB": {
+"Sim": 1,
+"Não": 3
+},
+"PEN": {
+"Sim": 2,
+"Não": 1
+},
+"PMB": {
+"Não": 1
+},
+"PRP": {
+"Sim": 1
+}
+}
+},
+{
+"rot": "Reforma da Previdência",
+"ano": "2019",
+"desc": "Mudou idades e regras de aposentadoria.",
+"id": "2192459-636",
+"data": "2019-07-10",
+"texto": "Aprovado, em primeiro turno, o Substitutivo da Comissão Especial à Proposta de Emenda à Constituição nº 6, de 2019, ressalvados os destaques. Sim: 379; não: 131; total: 510.",
+"tot": {
+"Não": 131,
+"Sim": 379
+},
+"partidos": {
+"PROS": {
+"Não": 3,
+"Sim": 7
+},
+"PSOL": {
+"Não": 10
+},
+"PT": {
+"Não": 54
+},
+"PL": {
+"Sim": 37,
+"Não": 1
+},
+"PSB": {
+"Não": 21,
+"Sim": 11
+},
+"PV": {
+"Não": 2,
+"Sim": 2
+},
+"PDT": {
+"Sim": 8,
+"Não": 19
+},
+"MDB": {
+"Sim": 34
+},
+"PSC": {
+"Sim": 7,
+"Não": 1
+},
+"PP": {
+"Não": 3,
+"Sim": 36
+},
+"PRB": {
+"Sim": 29,
+"Não": 2
+},
+"PTB": {
+"Sim": 12
+},
+"DEM": {
+"Sim": 30
+},
+"PSD": {
+"Não": 2,
+"Sim": 34
+},
+"PSL": {
+"Sim": 52
+},
+"PSDB": {
+"Não": 1,
+"Sim": 28
+},
+"PCdoB": {
+"Não": 8
+},
+"PODE": {
+"Sim": 10
+},
+"CIDADANIA": {
+"Sim": 8
+},
+"SOLIDARIEDADE": {
+"Sim": 13,
+"Não": 1
+},
+"AVANTE": {
+"Sim": 6,
+"Não": 1
+},
+"REDE": {
+"Não": 1
+},
+"PATRIOTA": {
+"Sim": 5
+},
+"NOVO": {
+"Sim": 8
+},
+"S.PART.": {
+"Sim": 1
+},
+"PMN": {
+"Não": 1
+},
+"PHS": {
+"Sim": 1
+}
+}
+},
+{
+"rot": "Autonomia do Banco Central",
+"ano": "2021",
+"desc": "Deu mandato próprio à diretoria do BC.",
+"id": "2265124-70",
+"data": "2021-02-10",
+"texto": "Aprovado o Projeto de Lei Complementar nº 19, de 2019, ressalvados os destaques. Sim: 339; não: 114; abstenção: 1; total: 454.",
+"tot": {
+"Sim": 339,
+"Não": 114,
+"Abstenção": 1,
+"Artigo 17": 1
+},
+"partidos": {
+"PSDB": {
+"Sim": 25,
+"Não": 5
+},
+"DEM": {
+"Sim": 27
+},
+"PP": {
+"Sim": 31,
+"Artigo 17": 1
+},
+"PDT": {
+"Não": 20,
+"Sim": 3
+},
+"PSB": {
+"Sim": 11,
+"Abstenção": 1,
+"Não": 17
+},
+"PT": {
+"Não": 47
+},
+"REPUBLICANOS": {
+"Sim": 30
+},
+"CIDADANIA": {
+"Sim": 7
+},
+"PSOL": {
+"Não": 9
+},
+"MDB": {
+"Sim": 27,
+"Não": 2
+},
+"PCdoB": {
+"Não": 7
+},
+"PSD": {
+"Sim": 32
+},
+"PTB": {
+"Sim": 10,
+"Não": 1
+},
+"PL": {
+"Sim": 29,
+"Não": 1
+},
+"PROS": {
+"Sim": 9
+},
+"PSC": {
+"Sim": 9
+},
+"PSL": {
+"Sim": 47
+},
+"SOLIDARIEDADE": {
+"Não": 2,
+"Sim": 12
+},
+"NOVO": {
+"Sim": 8
+},
+"PATRIOTA": {
+"Sim": 6
+},
+"PODE": {
+"Sim": 8
+},
+"PV": {
+"Sim": 3,
+"Não": 1
+},
+"AVANTE": {
+"Sim": 5,
+"Não": 1
+},
+"REDE": {
+"Não": 1
+}
+}
+},
+{
+"rot": "Privatização da Eletrobras",
+"ano": "2021",
+"desc": "Autorizou a desestatização da empresa.",
+"id": "2270789-73",
+"data": "2021-05-19",
+"texto": "Aprovada a Subemenda Substitutiva Global oferecida ao Projeto de Lei de Conversão, adotada pelo Relator da Comissão Mista, ressalvados os destaques. Sim: 313; não: 166; abstenção: 5; total: 484.",
+"tot": {
+"Sim": 313,
+"Não": 166,
+"Abstenção": 5,
+"Artigo 17": 1
+},
+"partidos": {
+"PP": {
+"Sim": 31,
+"Não": 4,
+"Artigo 17": 1
+},
+"PSL": {
+"Sim": 51,
+"Abstenção": 1
+},
+"MDB": {
+"Sim": 24,
+"Não": 6,
+"Abstenção": 1
+},
+"DEM": {
+"Sim": 25,
+"Não": 4
+},
+"PATRIOTA": {
+"Sim": 6
+},
+"PV": {
+"Não": 3
+},
+"PL": {
+"Sim": 34,
+"Não": 6
+},
+"PDT": {
+"Não": 20,
+"Sim": 4
+},
+"PSDB": {
+"Sim": 25,
+"Abstenção": 2,
+"Não": 4
+},
+"PSB": {
+"Não": 21,
+"Sim": 5
+},
+"REPUBLICANOS": {
+"Sim": 31
+},
+"CIDADANIA": {
+"Não": 1,
+"Sim": 6
+},
+"PT": {
+"Não": 53
+},
+"PCdoB": {
+"Não": 7
+},
+"PODE": {
+"Sim": 6,
+"Não": 4
+},
+"PSD": {
+"Sim": 23,
+"Abstenção": 1,
+"Não": 6
+},
+"PTB": {
+"Sim": 9,
+"Não": 1
+},
+"PSC": {
+"Sim": 9
+},
+"AVANTE": {
+"Não": 3,
+"Sim": 5
+},
+"SOLIDARIEDADE": {
+"Não": 2,
+"Sim": 12
+},
+"PSOL": {
+"Não": 9
+},
+"PROS": {
+"Não": 3,
+"Sim": 7
+},
+"NOVO": {
+"Não": 8
+},
+"REDE": {
+"Não": 1
+}
+}
+},
+{
+"rot": "Voto impresso",
+"ano": "2021",
+"desc": "Propunha cédula impressa auditável. Teve maioria simples, mas não os 308 votos exigidos, e foi rejeitada.",
+"id": "2220292-229",
+"data": "2021-08-10",
+"texto": "Rejeitada, em primeiro turno, a Proposta de Emenda à Constituição nº 135, de 2019. Sim: 229; não: 218; abstenção: 1; total: 448.",
+"tot": {
+"Sim": 229,
+"Não": 218,
+"Abstenção": 1,
+"Artigo 17": 1
+},
+"partidos": {
+"SOLIDARIEDADE": {
+"Sim": 5,
+"Não": 7
+},
+"PP": {
+"Não": 13,
+"Sim": 16,
+"Artigo 17": 1
+},
+"PL": {
+"Sim": 11,
+"Não": 23
+},
+"PV": {
+"Não": 2,
+"Sim": 2
+},
+"PSD": {
+"Não": 11,
+"Sim": 20
+},
+"PT": {
+"Não": 51
+},
+"REPUBLICANOS": {
+"Sim": 26,
+"Não": 3
+},
+"DEM": {
+"Sim": 13,
+"Não": 8
+},
+"PTB": {
+"Sim": 6,
+"Não": 2
+},
+"CIDADANIA": {
+"Não": 5,
+"Sim": 3
+},
+"PSL": {
+"Sim": 45,
+"Não": 6
+},
+"NOVO": {
+"Não": 3,
+"Sim": 5
+},
+"PDT": {
+"Não": 18,
+"Sim": 6
+},
+"PSB": {
+"Sim": 11,
+"Não": 17
+},
+"MDB": {
+"Não": 10,
+"Sim": 15
+},
+"PSC": {
+"Sim": 11
+},
+"PSDB": {
+"Não": 12,
+"Sim": 14,
+"Abstenção": 1
+},
+"PSOL": {
+"Não": 8
+},
+"PATRIOTA": {
+"Não": 2,
+"Sim": 4
+},
+"AVANTE": {
+"Sim": 2,
+"Não": 4
+},
+"S.PART.": {
+"Não": 1
+},
+"PODE": {
+"Sim": 6,
+"Não": 2
+},
+"PROS": {
+"Sim": 8,
+"Não": 1
+},
+"PCdoB": {
+"Não": 8
+},
+"REDE": {
+"Não": 1
+}
+}
+},
+{
+"rot": "Marco temporal",
+"ano": "2023",
+"desc": "Limitava a demarcação de terras indígenas às ocupadas em 1988.",
+"id": "345311-270",
+"data": "2023-05-30",
+"texto": "Aprovada a Subemenda Substitutiva Global ao Projeto de Lei nº 490, de 2007, adotada pelo relator da Comissão de Constituição e Justiça e de Cidadania, ressalvados os destaques. Sim: 283; não: 155; abstenção: 1; total: 439.",
+"tot": {
+"Não": 155,
+"Sim": 283,
+"Abstenção": 1,
+"Artigo 17": 1
+},
+"partidos": {
+"PSD": {
+"Não": 8,
+"Sim": 25,
+"Abstenção": 1
+},
+"PV": {
+"Não": 5,
+"Sim": 1
+},
+"PSOL": {
+"Não": 12
+},
+"MDB": {
+"Não": 8,
+"Sim": 22
+},
+"PT": {
+"Não": 65
+},
+"PP": {
+"Não": 4,
+"Sim": 37,
+"Artigo 17": 1
+},
+"UNIÃO": {
+"Sim": 48,
+"Não": 2
+},
+"PL": {
+"Sim": 82,
+"Não": 1
+},
+"PSB": {
+"Sim": 3,
+"Não": 12
+},
+"REPUBLICANOS": {
+"Sim": 33,
+"Não": 4
+},
+"PODE": {
+"Sim": 7,
+"Não": 3
+},
+"PDT": {
+"Não": 14,
+"Sim": 1
+},
+"PATRIOTA": {
+"Não": 2,
+"Sim": 2
+},
+"AVANTE": {
+"Sim": 4,
+"Não": 3
+},
+"CIDADANIA": {
+"Sim": 2,
+"Não": 1
+},
+"REDE": {
+"Não": 1
+},
+"PSDB": {
+"Não": 2,
+"Sim": 10
+},
+"PSC": {
+"Sim": 2
+},
+"PCdoB": {
+"Não": 6
+},
+"NOVO": {
+"Sim": 3
+},
+"SOLIDARIEDADE": {
+"Não": 2,
+"Sim": 1
+}
+}
+},
+{
+"rot": "Arcabouço fiscal",
+"ano": "2023",
+"desc": "Substituiu o Teto de Gastos por novas regras fiscais.",
+"id": "2357053-47",
+"data": "2023-05-23",
+"texto": "Aprovado o Substitutivo ao Projeto de Lei Complementar nº 93, de 2023, adotado pelo relator da Comissão de Finanças e Tributação, ressalvados os destaques. Sim: 372; não: 108; abstenção: 1; total: 481.",
+"tot": {
+"Sim": 372,
+"Não": 108,
+"Abstenção": 1
+},
+"partidos": {
+"PSD": {
+"Sim": 40,
+"Não": 2
+},
+"PL": {
+"Não": 60,
+"Sim": 30
+},
+"UNIÃO": {
+"Sim": 50,
+"Não": 7
+},
+"PODE": {
+"Sim": 10,
+"Não": 2
+},
+"PT": {
+"Sim": 66
+},
+"PDT": {
+"Sim": 18
+},
+"REPUBLICANOS": {
+"Não": 5,
+"Sim": 34
+},
+"PSDB": {
+"Sim": 11,
+"Não": 3
+},
+"PCdoB": {
+"Sim": 7
+},
+"MDB": {
+"Sim": 32,
+"Abstenção": 1,
+"Não": 3
+},
+"PP": {
+"Não": 7,
+"Sim": 39
+},
+"NOVO": {
+"Não": 3
+},
+"PV": {
+"Sim": 4,
+"Não": 1
+},
+"PSB": {
+"Sim": 14
+},
+"PSOL": {
+"Não": 12
+},
+"PATRIOTA": {
+"Sim": 2,
+"Não": 1
+},
+"CIDADANIA": {
+"Sim": 3
+},
+"PSC": {
+"Não": 1,
+"Sim": 3
+},
+"SOLIDARIEDADE": {
+"Sim": 4
+},
+"AVANTE": {
+"Sim": 5
+},
+"REDE": {
+"Não": 1
+}
+}
+},
+{
+"rot": "Reforma tributária",
+"ano": "2023",
+"desc": "Unificou impostos sobre o consumo. Votação em 1º turno.",
+"id": "2196833-326",
+"data": "2023-07-06",
+"texto": "Aprovado, em primeiro turno, o Substitutivo adotado pelo relator da Comissão Especial à Proposta de Emenda Constitucional nº 45, de 2019, ressalvados os destaques. Sim: 382; não: 118; abstenção: 3; total: 503.",
+"tot": {
+"Sim": 382,
+"Não": 118,
+"Abstenção": 3
+},
+"partidos": {
+"PODE": {
+"Sim": 10,
+"Não": 2
+},
+"PSB": {
+"Sim": 15
+},
+"MDB": {
+"Não": 6,
+"Sim": 36
+},
+"PL": {
+"Não": 75,
+"Sim": 20
+},
+"REPUBLICANOS": {
+"Sim": 36,
+"Não": 3
+},
+"AVANTE": {
+"Sim": 6,
+"Não": 1
+},
+"PT": {
+"Sim": 67
+},
+"UNIÃO": {
+"Sim": 48,
+"Não": 11
+},
+"PSD": {
+"Sim": 39,
+"Não": 4
+},
+"PP": {
+"Sim": 40,
+"Não": 9
+},
+"PSOL": {
+"Abstenção": 3,
+"Sim": 10
+},
+"PSDB": {
+"Sim": 12,
+"Não": 2
+},
+"CIDADANIA": {
+"Sim": 4
+},
+"PDT": {
+"Sim": 16,
+"Não": 1
+},
+"PV": {
+"Sim": 6
+},
+"NOVO": {
+"Não": 2,
+"Sim": 1
+},
+"PATRIOTA": {
+"Sim": 3,
+"Não": 1
+},
+"REDE": {
+"Sim": 1
+},
+"PCdoB": {
+"Sim": 6
+},
+"PSC": {
+"Sim": 2,
+"Não": 1
+},
+"SOLIDARIEDADE": {
+"Sim": 4
+}
+}
+},
+{
+"rot": "PEC da Blindagem",
+"ano": "2025",
+"desc": "Dificultava processos contra parlamentares. Votação em 1º turno.",
+"id": "2270800-135",
+"data": "2025-09-16",
+"texto": "Aprovado, em primeiro turno, o Substitutivo Reformulado à Proposta de Emenda à Constituição nº 3, de 2021, adotado pelo Relator da Comissão Especial. Sim: 353; Não: 134; Abstenção: 1; Total: 488.",
+"tot": {
+"Sim": 353,
+"Não": 134,
+"Abstenção": 1
+},
+"partidos": {
+"UNIÃO": {
+"Sim": 53,
+"Não": 4
+},
+"PDT": {
+"Não": 5,
+"Sim": 10
+},
+"PL": {
+"Sim": 83
+},
+"PT": {
+"Não": 51,
+"Sim": 12
+},
+"PSOL": {
+"Não": 14
+},
+"PSD": {
+"Sim": 25,
+"Não": 18
+},
+"PP": {
+"Sim": 46,
+"Não": 3
+},
+"MDB": {
+"Sim": 35,
+"Não": 5
+},
+"PCdoB": {
+"Não": 9
+},
+"PODE": {
+"Sim": 14,
+"Não": 3
+},
+"REPUBLICANOS": {
+"Sim": 42,
+"Abstenção": 1
+},
+"PSB": {
+"Sim": 9,
+"Não": 6
+},
+"AVANTE": {
+"Não": 1,
+"Sim": 6
+},
+"PV": {
+"Sim": 2,
+"Não": 2
+},
+"PSDB": {
+"Sim": 6,
+"Não": 6
+},
+"CIDADANIA": {
+"Não": 1,
+"Sim": 3
+},
+"PRD": {
+"Sim": 5
+},
+"REDE": {
+"Não": 1
+},
+"NOVO": {
+"Não": 4
+},
+"SOLIDARIEDADE": {
+"Não": 1,
+"Sim": 2
+}
+}
+},
+{
+"rot": "PL da Dosimetria",
+"ano": "2025",
+"desc": "Reduz penas de condenados pelos atos de 8 de janeiro de 2023.",
+"id": "2358548-89",
+"data": "2025-12-09",
+"texto": "Aprovado o Substitutivo ao Projeto de Lei nº 2.162, de 2023, adotado pelo relator da Comissão Especial, ressalvados os destaques. Sim: 291; Não: 148; Abstenção: 1; Total: 440.",
+"tot": {
+"Sim": 291,
+"Não": 148,
+"Abstenção": 1,
+"Artigo 17": 1
+},
+"partidos": {
+"REPUBLICANOS": {
+"Sim": 32,
+"Não": 2,
+"Artigo 17": 1
+},
+"SOLIDARIEDADE": {
+"Sim": 4,
+"Não": 1
+},
+"PL": {
+"Sim": 75,
+"Não": 1
+},
+"CIDADANIA": {
+"Sim": 3
+},
+"UNIÃO": {
+"Sim": 47,
+"Não": 4
+},
+"PSD": {
+"Sim": 24,
+"Não": 12,
+"Abstenção": 1
+},
+"PP": {
+"Sim": 39,
+"Não": 2
+},
+"PSB": {
+"Não": 12,
+"Sim": 1
+},
+"PODE": {
+"Sim": 14,
+"Não": 1
+},
+"PT": {
+"Não": 65
+},
+"REDE": {
+"Não": 3
+},
+"PDT": {
+"Não": 13,
+"Sim": 1
+},
+"PSOL": {
+"Não": 12
+},
+"AVANTE": {
+"Não": 1,
+"Sim": 6
+},
+"PSDB": {
+"Não": 2,
+"Sim": 10
+},
+"MDB": {
+"Sim": 25,
+"Não": 5
+},
+"PCdoB": {
+"Não": 9
+},
+"PRD": {
+"Sim": 5
+},
+"PV": {
+"Não": 3
+},
+"NOVO": {
+"Sim": 5
+}
+}
+}
+]

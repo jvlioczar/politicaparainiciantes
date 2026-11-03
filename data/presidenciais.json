@@ -1,0 +1,1018 @@
+{
+"pt": [
+{
+"ano": "1989",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "46,97",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,07",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "31,71",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "61,27",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "60,83",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Fernando Haddad",
+"pct": "44,87",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"pl": [
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Jair Bolsonaro",
+"pct": "49,1",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Flávio Bolsonaro",
+"pct": "48,21",
+"pos": ""
+}
+],
+"mdb": [
+{
+"ano": "1989",
+"cand": "Ulysses Guimarães",
+"pct": "4,73",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Orestes Quércia",
+"pct": "4,38",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "José Serra",
+"pct": "38,72",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Henrique Meirelles",
+"pct": "1,20",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Simone Tebet",
+"pct": "4,16",
+"pos": ""
+}
+],
+"psdb": [
+{
+"ano": "1989",
+"cand": "Mário Covas",
+"pct": "10,78",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Fernando Henrique Cardoso",
+"pct": "54,27",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Fernando Henrique Cardoso",
+"pct": "53,06",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "José Serra",
+"pct": "38,72",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Geraldo Alckmin",
+"pct": "39,17",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Serra",
+"pct": "43,95",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Simone Tebet",
+"pct": "4,16",
+"pos": ""
+}
+],
+"missao": [],
+"rede": [
+{
+"ano": "2018",
+"cand": "Marina Silva",
+"pct": "1,00",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"uniao": [
+{
+"ano": "2022",
+"cand": "Soraya Thronicke",
+"pct": "0,51",
+"pos": ""
+}
+],
+"pp": [
+{
+"ano": "1998",
+"cand": "Fernando Henrique Cardoso",
+"pct": "53,06",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Jair Bolsonaro",
+"pct": "49,1",
+"pos": ""
+}
+],
+"republicanos": [
+{
+"ano": "2006",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "60,83",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Jair Bolsonaro",
+"pct": "49,1",
+"pos": ""
+}
+],
+"psd": [
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Ronaldo Caiado",
+"pct": "2,18",
+"pos": ""
+}
+],
+"pdt": [
+{
+"ano": "1989",
+"cand": "Leonel Brizola",
+"pct": "15,45",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Leonel Brizola",
+"pct": "3,18",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "31,71",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Ciro Gomes",
+"pct": "11,97",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Cristovam Buarque",
+"pct": "2,64",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"psb": [
+{
+"ano": "1989",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "46,97",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "31,71",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Anthony Garotinho",
+"pct": "17,86",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "60,83",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Marina Silva",
+"pct": "21,32",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"psol": [
+{
+"ano": "2006",
+"cand": "Heloísa Helena",
+"pct": "6,85",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Plínio de Arruda Sampaio",
+"pct": "0,87",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Luciana Genro",
+"pct": "1,55",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Guilherme Boulos",
+"pct": "0,58",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"novo": [
+{
+"ano": "2018",
+"cand": "João Amoêdo",
+"pct": "2,50",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Felipe d'Avila",
+"pct": "0,47",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Romeu Zema",
+"pct": "0,27",
+"pos": ""
+}
+],
+"pode": [
+{
+"ano": "1998",
+"cand": "Thereza Ruiz",
+"pct": "0,23",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Alvaro Dias",
+"pct": "0,8",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Simone Tebet",
+"pct": "4,16",
+"pos": ""
+}
+],
+"cidadania": [
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Ciro Gomes",
+"pct": "10,97",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Ciro Gomes",
+"pct": "11,97",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Geraldo Alckmin",
+"pct": "39,17",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Serra",
+"pct": "43,95",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Marina Silva",
+"pct": "21,32",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Simone Tebet",
+"pct": "4,16",
+"pos": ""
+}
+],
+"pcdob": [
+{
+"ano": "1989",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "44,23",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "31,71",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "61,27",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "60,83",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Dilma Rousseff",
+"pct": "51,64",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Fernando Haddad",
+"pct": "44,87",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"pv": [
+{
+"ano": "1989",
+"cand": "Fernando Gabeira",
+"pct": "0,17",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Alfredo Sirkis",
+"pct": "0,31",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Marina Silva",
+"pct": "19,33",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Eduardo Jorge",
+"pct": "0,61",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Marina Silva",
+"pct": "1,00",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "51,79",
+"pos": ""
+}
+],
+"solidariedade": [
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Geraldo Alckmin",
+"pct": "4,76",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+}
+],
+"prd": [],
+"avante": [
+{
+"ano": "1994",
+"cand": "Caetano Matanó Junior",
+"pct": "00,00",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "João de Deus",
+"pct": "0,29",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Serra",
+"pct": "43,95",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Ciro Gomes",
+"pct": "12,47",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Augusto Cury",
+"pct": "2,89",
+"pos": ""
+}
+],
+"mobiliza": [
+{
+"ano": "1989",
+"cand": "Celso Brant",
+"pct": "0,15",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "Leonel Brizola",
+"pct": "3,18",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Ivan Frota",
+"pct": "0,37",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "61,27",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Serra",
+"pct": "43,95",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+}
+],
+"agir": [
+{
+"ano": "1989",
+"cand": "Fernando Collor",
+"pct": "53,03",
+"pos": ""
+},
+{
+"ano": "1994",
+"cand": "|centro|semmoldura|80x80px",
+"pct": "0,61",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Anthony Garotinho",
+"pct": "17,86",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Dilma Rousseff",
+"pct": "56,05",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Aécio Neves",
+"pct": "48,36",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Alvaro Dias",
+"pct": "0,80",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "50,90",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Augusto Cury",
+"pct": "2,89",
+"pos": ""
+}
+],
+"dc": [
+{
+"ano": "1998",
+"cand": "José Maria Eymael",
+"pct": "0,25",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "José Maria Eymael",
+"pct": "0,07",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Maria Eymael",
+"pct": "0,09",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "José Maria Eymael",
+"pct": "0,06",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "José Maria Eymael",
+"pct": "0,04",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Constituinte Eymael",
+"pct": "0,01",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Clariana Barão",
+"pct": "0,03",
+"pos": ""
+}
+],
+"prtb": [
+{
+"ano": "2010",
+"cand": "Levy Fidelix",
+"pct": "0,06",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Levy Fidelix",
+"pct": "0,43",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Jair Bolsonaro",
+"pct": "55,13",
+"pos": ""
+}
+],
+"democrata": [],
+"up": [],
+"pstu": [
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "José Maria de Almeida",
+"pct": "0,30",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "José Maria de Almeida",
+"pct": "0,47",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Heloísa Helena",
+"pct": "6,85",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "José Maria de Almeida",
+"pct": "0,08",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "José Maria de Almeida",
+"pct": "0,09",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Vera Lúcia Salgado",
+"pct": "0,05",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Vera Lúcia Salgado",
+"pct": "0,02",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Hertz Dias",
+"pct": "0,04",
+"pos": ""
+}
+],
+"pcb": [
+{
+"ano": "1994",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "27,04",
+"pos": ""
+},
+{
+"ano": "1998",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "31,71",
+"pos": ""
+},
+{
+"ano": "2002",
+"cand": "Luiz Inácio Lula da Silva",
+"pct": "61,27",
+"pos": ""
+},
+{
+"ano": "2006",
+"cand": "Heloísa Helena",
+"pct": "6,85",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Ivan Pinheiro",
+"pct": "0,04",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Mauro Iasi",
+"pct": "0,05",
+"pos": ""
+},
+{
+"ano": "2018",
+"cand": "Guilherme Boulos",
+"pct": "0,58",
+"pos": ""
+},
+{
+"ano": "2022",
+"cand": "Imagem:|69x69px",
+"pct": "0,04",
+"pos": ""
+},
+{
+"ano": "2026",
+"cand": "Edmilson Costa",
+"pct": "0,02",
+"pos": ""
+}
+],
+"pco": [
+{
+"ano": "2002",
+"cand": "Rui Costa Pimenta",
+"pct": "0,04",
+"pos": ""
+},
+{
+"ano": "2010",
+"cand": "Rui Costa Pimenta",
+"pct": "0,01",
+"pos": ""
+},
+{
+"ano": "2014",
+"cand": "Rui Costa Pimenta",
+"pct": "0,01",
+"pos": ""
+}
+]
+}
