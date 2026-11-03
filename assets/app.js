@@ -4,6 +4,30 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
   var norm = function (s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); };
+  /* busca: o nome vem antes da descrição (0 nome igual, 1 começa, 2 palavra, 3 trecho, 4 só no resto) */
+  var pontua = function (titulo, t) {
+    var n = norm(titulo).trim();
+    if (n === t) return 0;
+    if (n.indexOf(t) === 0) return 1;
+    if (n.split(/[^a-z0-9]+/).some(function (w) { return w.indexOf(t) === 0; })) return 2;
+    return n.indexOf(t) >= 0 ? 3 : 4;
+  };
+  var ordena = function (raiz, cards, t) {
+    t = t.trim();
+    cards.forEach(function (c, i) { if (!c._casa) { c._casa = c.parentNode; c._pos = i; } });
+    cards.forEach(function (c) { if (c.parentNode !== c._casa) c._casa.appendChild(c); });
+    cards.slice().sort(function (a, b) { return a._pos - b._pos; }).forEach(function (c) { c._casa.appendChild(c); });
+    var rb = raiz._rb;
+    if (rb) rb.hidden = true;
+    if (!t) return;
+    var vis = cards.filter(function (c) { return !c.hidden; }).map(function (c) { var h = c.querySelector('h3'); return { c: c, p: pontua(h ? h.textContent : c.textContent, t) }; });
+    vis.sort(function (a, b) { return a.p - b.p || a.c._pos - b.c._pos; });
+    var unica = cards.every(function (c) { return c._casa === cards[0]._casa; });
+    if (unica) { vis.forEach(function (x) { x.c._casa.appendChild(x.c); }); return; }
+    if (!rb) { rb = raiz._rb = document.createElement('div'); rb.className = 'grade res-busca'; raiz.insertBefore(rb, raiz.firstChild); }
+    rb.hidden = false;
+    vis.forEach(function (x) { rb.appendChild(x.c); });
+  };
   var el = function (t, a, tx) { var e = document.createElement(t); if (a) Object.keys(a).forEach(function (k) { e.setAttribute(k, a[k]); }); if (tx != null) e.textContent = tx; return e; };
   var ler = function (k, d) { try { return JSON.parse(localStorage.getItem(k)) || d; } catch (x) { return d; } };
   var grava = function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (x) {} };
@@ -31,7 +55,7 @@
     q.addEventListener('input', function () {
       var t = norm(q.value.trim()); res.textContent = '';
       if (t.length < 2 || !dados) return;
-      var a = dados.filter(function (d) { return norm(d.t + ' ' + d.d).indexOf(t) >= 0; }).slice(0, 9);
+      var a = dados.filter(function (d) { return norm(d.t + ' ' + d.d).indexOf(t) >= 0; }).map(function (d, i) { return { d: d, p: pontua(d.t, t), i: i }; }).sort(function (x, y) { return x.p - y.p || x.i - y.i; }).slice(0, 9).map(function (x) { return x.d; });
       if (!a.length) res.appendChild(el('p', null, 'Nada encontrado.'));
       a.forEach(function (d) { var l = el('a', { href: base + d.u }, d.t); l.appendChild(el('small', null, d.d)); res.appendChild(l); });
     });
@@ -124,6 +148,7 @@
     var aplicaC = function () {
       var t = norm(busca.value), n = 0;
       cs.forEach(function (c) { var ok = (!f.tema || c.dataset.temas.split(' ').indexOf(f.tema) >= 0) && (!f.nivel || c.dataset.nivel === f.nivel) && norm(c.textContent).indexOf(t) >= 0; c.hidden = !ok; if (ok) n++; });
+      ordena(cat, cs, t);
       cont.textContent = n + (n === 1 ? ' item' : ' itens');
       $$('.filtros button').forEach(function (b) { b.setAttribute('aria-pressed', f[b.dataset.k] === b.dataset.v); });
     };
@@ -136,7 +161,7 @@
   var lista = $('#partidos');
   if (lista) {
     var cards = [].slice.call(lista.children), fq = $('#fq'), atual = '';
-    var aplica = function () { var t = norm(fq.value); cards.forEach(function (c) { c.hidden = !((!atual || c.dataset.e === atual) && norm(c.textContent).indexOf(t) >= 0); }); };
+    var aplica = function () { var t = norm(fq.value); cards.forEach(function (c) { c.hidden = !((!atual || c.dataset.e === atual) && norm(c.textContent).indexOf(t) >= 0); }); ordena(lista, cards, t); };
     fq.addEventListener('input', aplica);
     $$('.filtros button').forEach(function (b) { b.addEventListener('click', function () { atual = b.dataset.e; $$('.filtros button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); }); aplica(); }); });
   }
@@ -148,6 +173,7 @@
     var aplicaF = function () {
       var t = norm(fb.value), n = 0;
       fc.forEach(function (c) { var ok = (!ff.cat || c.dataset.cat === ff.cat) && (!ff.tipo || c.dataset.tipo === ff.tipo) && (!ff.deb || c.dataset.deb === ff.deb) && (!ff.reg || c.dataset.reg === ff.reg) && norm(c.textContent).indexOf(t) >= 0; c.hidden = !ok; if (ok) n++; });
+      ordena(figs, fc, t);
       gs.forEach(function (g) { g.hidden = !$$('.fig', g).some(function (c) { return !c.hidden; }); });
       ctg.textContent = n + (n === 1 ? ' figura' : ' figuras');
     };
@@ -170,7 +196,7 @@
   var vz = $('#vertentes');
   if (vz) {
     var vc = $$('.vert', vz), vg = $$('.grupo-v', vz), vq = $('#vq'), vf = '';
-    var aplicaV = function () { var t = norm(vq.value); vc.forEach(function (c) { c.hidden = !((!vf || c.dataset.f === vf) && norm(c.textContent).indexOf(t) >= 0); }); vg.forEach(function (g) { g.hidden = !$$('.vert', g).some(function (c) { return !c.hidden; }); }); };
+    var aplicaV = function () { var t = norm(vq.value); vc.forEach(function (c) { c.hidden = !((!vf || c.dataset.f === vf) && norm(c.textContent).indexOf(t) >= 0); }); ordena(vz, vc, t); vg.forEach(function (g) { g.hidden = !$$('.vert', g).some(function (c) { return !c.hidden; }); }); };
     vq.addEventListener('input', aplicaV);
     $$('#vfam button').forEach(function (b) { b.addEventListener('click', function () { vf = b.dataset.f; $$('#vfam button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); }); aplicaV(); }); });
     var VD = JSON.parse($('#dados-vert').textContent), vs = [$('#va'), $('#vb'), $('#vc')], ini = ['liberalismo-classico', 'social-democracia', 'marxismo'];
@@ -189,7 +215,7 @@
   var vbz = $('#vieses');
   if (vbz) {
     var vbs = $$('.vies', vbz), vbg = $$('.grupo-vies', vbz), vbq = $('#vbq'), vbc = '', vbn = $('#vbc');
-    var aplicaB = function () { var t = norm(vbq.value), n = 0; vbs.forEach(function (c) { var ok = (!vbc || c.dataset.c === vbc) && norm(c.textContent).indexOf(t) >= 0; c.hidden = !ok; if (ok) n++; }); vbg.forEach(function (g) { g.hidden = !$$('.vies', g).some(function (c) { return !c.hidden; }); }); vbn.textContent = n + (n === 1 ? ' viés' : ' vieses'); };
+    var aplicaB = function () { var t = norm(vbq.value), n = 0; vbs.forEach(function (c) { var ok = (!vbc || c.dataset.c === vbc) && norm(c.textContent).indexOf(t) >= 0; c.hidden = !ok; if (ok) n++; }); ordena(vbz, vbs, t); vbg.forEach(function (g) { g.hidden = !$$('.vies', g).some(function (c) { return !c.hidden; }); }); vbn.textContent = n + (n === 1 ? ' viés' : ' vieses'); };
     vbq.addEventListener('input', aplicaB);
     $$('#vbf button').forEach(function (b) { b.addEventListener('click', function () { vbc = b.dataset.c; $$('#vbf button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); }); aplicaB(); }); });
     aplicaB();
