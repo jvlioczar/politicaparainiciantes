@@ -43,6 +43,7 @@ from indicadores import IND, GRUPOS_I
 from glossario_economico import IND_EXTRA, GLOSSARIO, GRUPOS_G
 for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == ('inflacao' if _x['s'] == 'selic' else 'divida-publica')) + 1, _x)
 assert len({x['s'] for x in IND}) == len(IND)
+from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
@@ -87,6 +88,8 @@ INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] ==
 assert set(RENIVEL) <= {x[0] for x in LIVROS}, set(RENIVEL) - {x[0] for x in LIVROS}
 LIVROS[:] = [(x[0], x[1], x[2], RENIVEL.get(x[0], x[3]), x[4]) for x in LIVROS] + [x + ('Vertentes', 'https://www.google.com/search?tbm=bks&q=' + quote(x[0] + ' ' + x[1])) for x in LIVROS_VERTENTES]
 META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
+META.update(META_DIREITO); REFORCO.update(REFORCO_DIREITO); INTERMEDIARIO.extend(LICOES_DIREITO)
+for _l in LICOES_DIREITO: GRUPOS[_l['slug']] = _l['grupo']
 def _apos(ls, slug, nova): ls.insert(next(i for i, l in enumerate(ls) if l['slug'] == slug) + 1, nova)
 _NI = {l['slug']: l for l in NOVAS_INICIANTE}; _NM = {l['slug']: l for l in NOVAS_INTERMEDIARIO}
 _apos(INICIANTE, 'democracia', _NI['como-uma-lei-e-feita']); _apos(INICIANTE, 'como-uma-lei-e-feita', _NI['o-que-e-um-partido'])
@@ -365,6 +368,7 @@ LICAO_DEBATES = {
  'regras-e-desobediencia': ['reforma-agraria'], 'presidencialismo-de-coalizao': ['poder-do-stf', 'supersalarios'],   'teorias-da-justica': ['grandes-fortunas', 'programas-sociais'],
  'testar-visao-moral': ['aborto', 'direitos-animais', 'idades-minimas'], 'poder-paralelo': ['narcoterrorismo', 'seguranca-publica'],
  'como-uma-lei-e-feita': ['poder-do-stf'], 'perigo-do-populismo': ['representatividade', 'poder-do-stf'],  'como-ler-a-midia-tradicional': ['fake-news', 'regulamentacao-redes'], 'pesquisas-eleitorais': ['voto-obrigatorio', 'fake-news'], 'perigo-do-outsider': ['representatividade'], 'mandatos-coletivos': ['representatividade', 'voto-obrigatorio'],
+ 'direito-internacional': ['imigracao', 'armas-nucleares'], 'direitos-humanos': ['pena-de-morte', 'maioridade-penal', 'liberdade-expressao-debate'], 'direito-ambiental': ['clima', 'terras-indigenas', 'petroleo-margem-equatorial'], 'direito-animal': ['direitos-animais', 'animais-de-rua'], 'guerra-ao-terror': ['narcoterrorismo', 'armas-nucleares', 'alistamento-militar'],
  'economia-para-entender-politica': ['impostos', 'previdencia', 'autonomia-do-banco-central', 'jornada-6x1', 'pix-e-os-eua'], 'geopolitica': ['pix-e-os-eua', 'imigracao'], 'melhorar-a-democracia': ['voto-obrigatorio', 'sistema-eleitoral', 'reeleicao-e-mandatos'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'anistia-8-de-janeiro'], 'corrupcao': ['supersalarios', 'reforma-administrativa'], 'o-que-e-um-partido': ['sistema-eleitoral', 'representatividade'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas', 'idades-minimas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
 APELIDOS_MUNDO = {'Franklin Roosevelt': 'Franklin D. Roosevelt', 'Mustafa Kemal Atatürk': 'Mustafa Kemal Atatürk', 'Martin Luther King Jr.': 'Martin Luther King Jr.'}

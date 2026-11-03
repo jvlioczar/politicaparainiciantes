@@ -394,7 +394,7 @@ GRUPOS = {
 }
 ORDEM_GRUPOS = {
  'iniciante': ['O básico', 'Valores e escolhas', 'Os lados', INI, 'Voto e informação'],
- 'intermediario': [CE, 'Como a mente nos engana', PI, DR, EI, 'Perguntas difíceis', 'Quem fez história'],
+ 'intermediario': [CE, 'Como a mente nos engana', PI, DR, EI, 'Direito e mundo', 'Perguntas difíceis', 'Quem fez história'],
  'avancado': ['Quem chega ao poder', 'Mente, identidade e política', 'Melhorar a democracia', 'O sistema brasileiro', 'Quem conta e o que é justo', 'Riscos do futuro'],
 }
 

@@ -293,3 +293,6 @@ select{max-width:100%}
 
 /* glossário */
 .glossario dt{font:700 1.05rem var(--sans);margin-top:1.1rem}.glossario dd{margin:.25rem 0 0}.glossario dd p{margin:0 0 .35rem}.glossario .pol{color:var(--suave);font-size:.95rem}
+
+/* capa: conteúdo centralizado no bloco em telas largas */
+@media (min-width:821px){.capa-in{padding-block:clamp(10px,2.2vw,28px) 0}}

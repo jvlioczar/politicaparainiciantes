@@ -326,6 +326,9 @@ from lote_debates_livros import DEBATES_NOVOS
 DEBATES_P += DEBATES_NOVOS
 from debates_2026 import DEBATES_REV, PREVIDENCIA
 DEBATES_P[:] = [PREVIDENCIA if d['s'] == 'previdencia' else d for d in DEBATES_P] + DEBATES_REV
+from direito import DEBATES_DIREITO, MD as _MD
+DEBATES_P += DEBATES_DIREITO
+if _MD not in TEMAS_D: TEMAS_D.append(_MD)
 assert len({d['s'] for d in DEBATES_P}) == len(DEBATES_P)
 SITES_U.append(('Our World in Data','https://ourworldindata.org','Dados e gráficos sobre o mundo todo.','Dados e evidências',INT))
 SITES_U.append(('Sentient Media','https://sentientmedia.org','Jornalismo sobre pecuária e animais.','Notícias e reportagem',INT))
