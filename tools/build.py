@@ -560,7 +560,7 @@ def figuras():
     for f in FIG:
         wiki = '' if f['wiki'] is None else W + quote(f['wiki'] or f['nome'], safe='()_').replace('%20', '_')
         par = PARTIDO.get(f['pid'])
-        pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{e(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui nenhum caso de grande repercussão. Isso não significa que não exista: consulte as fontes abaixo.</p>'
+        pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{pol_txt(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui nenhum caso de grande repercussão. Isso não significa que não exista: consulte as fontes abaixo.</p>'
         aviso = f'<div class="nota alerta aviso-pag"><strong>⚠ {AVISO}</strong> Esta categoria reúne discursos muito militantes. Confira o que é dito em mais de uma fonte.</div>' if extrema(f) else f'<div class="nota alerta aviso-pag"><strong>⚠ {ATENTO}</strong> Compare o que é dito com o que é feito, e com o que a mesma pessoa já defendeu.</div>' if alerta(f['cat']) else ''
         fontes_f = ([('Wikipédia: ' + f['nome'], wiki)] if wiki else []) + [(f'Wikipédia: eleição presidencial de {x[0]}', f'https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_{x[0]}') for x in DEBATES.get(f['nome'], [])] + [('Buscar na Lupa', 'https://www.agencialupa.org/?s=' + quote(f['nome'])), ('Buscar no Aos Fatos', 'https://www.aosfatos.org/noticias/?q=' + quote(f['nome'])), ('Buscar no Nexo Jornal', 'https://www.nexojornal.com.br/search?q=' + quote(f['nome']))]
         lado = f'<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Categoria</dt><dd>{e(f["cat"])}</dd><dt>Tipo</dt><dd>{e(f["tipo"])}</dd>' + (f'<dt>Partido</dt><dd><a href="../partidos/{par["id"]}.html">{e(par["s"])}</a></dd>' if par else '') + '</dl></div></aside>'
@@ -602,7 +602,7 @@ def mundo():
     page('mundo.html', 'Figuras políticas internacionais', 'Presidentes e primeiros-ministros, estadistas, ativistas e jornalistas políticos do mundo, com contexto e controvérsias.', corpo, atual='mundo.html')
     for f in MUN:
         wiki = f['wiki'] if f['wiki'].startswith('http') else W + quote(f['wiki'] or f['nome'], safe='()_.').replace('%20', '_')
-        pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{e(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui uma controvérsia específica. Isso não significa que não exista: consulte as fontes abaixo.</p>'
+        pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{pol_txt(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui uma controvérsia específica. Isso não significa que não exista: consulte as fontes abaixo.</p>'
         aviso = f'<div class="nota alerta aviso-pag"><strong>⚠ {AVISO}</strong> Confira o que é dito em mais de uma fonte.</div>' if extrema(f) else f'<div class="nota alerta aviso-pag"><strong>⚠ {ATENTO}</strong> Compare o que é dito com o que é feito.</div>' if alerta(f['cat']) else ''
         fontes_f = [('Wikipédia: ' + f['nome'], wiki), ('Buscar na BBC', 'https://www.bbc.co.uk/search?q=' + quote(f['nome'])), ('Buscar na Britannica', 'https://www.britannica.com/search?query=' + quote(f['nome']))]
         lado = f'<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Grupo</dt><dd>{e(f["grupo"])}</dd><dt>País</dt><dd>{e(f["pais"])}</dd><dt>Categoria</dt><dd>{e(f["cat"])}</dd></dl></div></aside>'
@@ -655,6 +655,11 @@ def sites_uteis():
 
 # ---------- vertentes ----------
 COR_FAM = {f: i for i, f in enumerate(FAMILIAS_V)}
+_LNK = re.compile(r'\[([^\]]+)\]\((https?://[^)\s]+)\)')
+def pol_txt(x):
+    """Texto de polêmica: escapa o HTML e converte [trecho](url) em link externo para a fonte."""
+    return _LNK.sub(lambda m: f'<a href="{m.group(2)}" {EXT}>{m.group(1)}</a>', e(x))
+def pol_plain(x): return _LNK.sub(lambda m: m.group(1), x)
 def fig_slug(n): return next((f['slug'] for f in FIG if f['nome'] == n), None)
 def cartao_v(v, pre=''):
     al = f'<span class="aviso-ext">⚠ {e(v["a"])}</span>' if v.get('a') else ''
