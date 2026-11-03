@@ -41,7 +41,10 @@
     var b = $('button', d), m = $('.mega', d);
     b.addEventListener('click', function (e) { e.stopPropagation(); fechaMenus(d); m.hidden = !m.hidden; b.setAttribute('aria-expanded', !m.hidden); });
   });
-  document.addEventListener('click', function (e) { if (!e.target.closest('.drop')) fechaMenus(); });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.drop')) fechaMenus();
+    if (hamb && menu.classList.contains('aberto') && !e.target.closest('.topo')) { menu.classList.remove('aberto'); hamb.setAttribute('aria-expanded', 'false'); }
+  });
 
   /* busca */
   var ov = $('#busca'), q = $('#q'), res = $('#res'), dados = null;
