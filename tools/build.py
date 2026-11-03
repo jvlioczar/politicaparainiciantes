@@ -39,6 +39,10 @@ from conceitos import CONCEITOS, META_CONCEITOS
 from sofismo import SOFISMO, META_SOFISMO, SOFISMAS, TRUQUES
 from basico import BASICO
 from dossies import D, ROTULO, FAMILIAS, PROBLEMAS, FRASES, TROCAS, CHECK
+from indicadores import IND, GRUPOS_I
+from glossario_economico import IND_EXTRA, GLOSSARIO, GRUPOS_G
+for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == ('inflacao' if _x['s'] == 'selic' else 'divida-publica')) + 1, _x)
+assert len({x['s'] for x in IND}) == len(IND)
 from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
@@ -136,9 +140,9 @@ FAIXA = {'Extrema-esquerda': 'Esquerda', 'Esquerda': 'Esquerda', 'Centro-esquerd
 
 ATUALIZADO = '2026-11-03'
 PAGINAS = []
-SECOES = {'debates': ('debates.html', 'Principais debates', 'Os dois lados, a complexidade e o que os dados indicam.'), 'mundo': ('mundo.html', 'Figuras internacionais', 'Trajetória, posições e controvérsias, com fontes.'), 'politicos': ('politicos.html', 'Políticos e figuras', 'Trajetória, posições e controvérsias, com fontes.'), 'vertentes': ('vertentes.html', 'Vertentes políticas', 'Ideias, história, forças e contradições explicadas.'), 'vieses': ('vieses.html', 'Vieses cognitivos', 'Entenda com exemplo e veja os efeitos no julgamento moral e político.'), 'partidos': ('partidos.html', 'Partidos', 'Dossiê com fontes.'), 'ferramentas': ('ferramentas.html', 'Ferramentas', 'Ferramenta interativa e gratuita, sem cadastro.')}
+SECOES = {'debates': ('debates.html', 'Principais debates', 'Os dois lados, a complexidade e o que os dados indicam.'), 'mundo': ('mundo.html', 'Figuras internacionais', 'Trajetória, posições e controvérsias, com fontes.'), 'politicos': ('politicos.html', 'Políticos e figuras', 'Trajetória, posições e controvérsias, com fontes.'), 'vertentes': ('vertentes.html', 'Vertentes políticas', 'Ideias, história, forças e contradições explicadas.'), 'vieses': ('vieses.html', 'Vieses cognitivos', 'Entenda com exemplo e veja os efeitos no julgamento moral e político.'), 'partidos': ('partidos.html', 'Partidos', 'Dossiê com fontes.'), 'ferramentas': ('ferramentas.html', 'Ferramentas', 'Ferramenta interativa e gratuita, sem cadastro.'), 'indicadores': ('indicadores.html', 'Indicadores internacionais', 'O que mede, quem publica, onde o Brasil fica e os limites de cada índice.')}
 PAIS_NIVEL = {'iniciante.html': 'Iniciante', 'intermediario.html': 'Intermediário', 'avancado.html': 'Avançado'}
-HUBS = {'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'partidos.html', 'politicos.html', 'mundo.html', 'debates.html', 'sites.html', 'vertentes.html', 'vieses.html', 'ferramentas.html', 'biblioteca.html', 'acompanhar.html'}
+HUBS = {'indicadores.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'partidos.html', 'politicos.html', 'mundo.html', 'debates.html', 'sites.html', 'vertentes.html', 'vieses.html', 'ferramentas.html', 'biblioteca.html', 'acompanhar.html'}
 
 def desc_seo(path, desc):
     d = re.sub(r'\s+', ' ', re.sub('<[^>]+>', '', desc)).strip()
@@ -215,7 +219,7 @@ def page(path, title, desc, corpo, atual='', home=False):
         return f'<div class="drop{" ativo" if ativo else ""}"><button type="button" aria-expanded="false" aria-controls="{gid}">{e(nome)} ▾</button><div class="mega{" " + cls if cls else ""}" id="{gid}" hidden>{links}</div></div>'
     menu = grupo('Aprender', [('comece-aqui.html', 'Comece aqui')] + [(f'{s}.html', r) for s, r, *_ in NIVEIS] + [('catalogo.html', 'Todas as lições')])
     menu += grupo('Brasil', [('brasil.html', 'Política brasileira'), ('cargos.html', 'O que cada cargo faz'), ('poderes.html', 'Os Poderes e órgãos'), ('historia.html', 'História'), ('partidos.html', 'Partidos'), ('politicos.html', 'Políticos e figuras'), ('ferramentas/como-votaram.html', 'Como os partidos votaram'), ('ranking-da-mentira.html', 'Ranking da mentira')])
-    menu += grupo('Ideias', [('vertentes.html', 'Vertentes políticas'), ('vieses.html', 'Vieses cognitivos'), ('debates.html', 'Principais debates'), ('mundo.html', 'Figuras internacionais')])
+    menu += grupo('Ideias', [('vertentes.html', 'Vertentes políticas'), ('vieses.html', 'Vieses cognitivos'), ('debates.html', 'Principais debates'), ('mundo.html', 'Figuras internacionais'), ('indicadores.html', 'Indicadores internacionais'), ('glossario-economico.html', 'Glossário de economia')])
     menu += grupo('Ferramentas', [(f'ferramentas/{a}.html', b) for a, b, _, _ in FERR] + [('ferramentas.html', 'Todas as ferramentas')], 'duas')
     menu += grupo('Biblioteca', [('biblioteca.html', 'Livros'), ('sites.html', 'Sites sobre política'), ('sobre.html', 'Sobre e método')])
     html = f'''<!doctype html>
@@ -263,7 +267,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
 <div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Todas as lições')}</li></ul></div>
 <div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
-<div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
+<div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('indicadores.html', 'Indicadores internacionais')}</li><li>{l('glossario-economico.html', 'Glossário de economia')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
 <script src="{pre}assets/app.js" defer></script>
 </body></html>
@@ -304,6 +308,7 @@ def inicio():
         ('vieses.html', 'valor', 'Vieses cognitivos', f'{len(VIES)} atalhos e erros do pensamento.'),
         ('debates.html', 'valor', 'Principais debates', f'{len(DEBATES_P)} temas: os dois lados e onde os dados pesam.'),
         ('sites.html', 'ficha', 'Sites sobre política', f'{len(SITES_U)} sites para checar, investigar e acompanhar.'),
+        ('indicadores.html', 'compara', 'Indicadores internacionais', f'{len(IND)} índices, de IDH a corrupção: o que medem e onde o Brasil fica.'),
         ('ferramentas.html', 'compara', 'Ferramentas', f'{len(FERR)} jogos, comparadores e simuladores.'),
         ('ranking-da-mentira.html', 'votos', 'Ranking da mentira', 'Quem mais teve frases checadas como falsas.'),
         ('biblioteca.html', 'livro', 'Biblioteca', 'Livros e leituras para cada nível.'),
@@ -684,6 +689,35 @@ def vertentes():
 {fontes([(v.get("wl") or "Wikipédia: " + v["n"], wiki)] + v.get("fx", []))}<nav class="pager" aria-label="Vertentes"><a href="{ant["s"]}.html"><small>← Anterior</small>{e(ant["n"])}</a><a class="prox" href="{prox["s"]}.html"><small>Próxima →</small>{e(prox["n"])}</a></nav></article>{lado}</div><section class="relac"><div class="wrap"><h2>Vertentes próximas</h2><div class="grade">{"".join(cartao_v(x) for x in mesmas)}</div></div></section>"""
         page(f'vertentes/{v["s"]}.html', v['n'], v['r'], corpo, atual='vertentes.html')
 
+
+# ---------- indicadores internacionais e glossário ----------
+COR_IND = {g: i for i, g in enumerate(GRUPOS_I)}
+def cartao_ind(x, pre=''):
+    return f'<a class="cartao" href="{pre}indicadores/{x["s"]}.html"><span class="linha-cartao"><span class="tipo fam f{COR_IND[x["g"]]}">{e(x["g"])}</span></span><h3>{e(x["n"])}</h3><p>{e(x["r"])}</p></a>'
+def indicadores():
+    gr = ''.join(f'<h2 class="grupo">{e(g)}</h2><div class="grade">' + ''.join(cartao_ind(x) for x in IND if x['g'] == g) + '</div>' for g in GRUPOS_I)
+    corpo = cabeca('Dados', 'Indicadores internacionais', f'{len(IND)} índices e medidas usados para comparar países: o que cada um mede, quem publica, como é calculado, onde o Brasil fica e o que ele não mostra.')
+    corpo += f"""<div class="wrap secao"><div class="nota" style="margin-top:0"><strong>Como ler qualquer ranking:</strong> pergunte quem publica e com que interesse, o que entra na conta e com que peso, se mede fato ou percepção, qual é a margem de erro e se a posição mudou de verdade ou só oscilou. Quase todo índice é útil para tendências de longo prazo e fraco para comparar anos vizinhos. Os termos usados aqui estão no <a href="glossario-economico.html">glossário de economia</a>.</div>{gr}
+<h2 class="grupo">Para entender os termos</h2><div class="grade"><a class="cartao" href="glossario-economico.html"><h3>Glossário de economia para a política</h3><p>Selic, câmbio, superávit primário, econometria e outros {len(GLOSSARIO)} termos que aparecem no debate.</p></a><a class="cartao" href="economia-para-entender-politica.html"><h3>Economia básica para entender política</h3><p>PIB, inflação, juros, dívida e déficit explicados sem fórmulas.</p></a><a class="cartao" href="sites.html"><h3>Sites sobre política</h3><p>Onde consultar os dados originais, de checagem a transparência.</p></a></div></div>"""
+    page('indicadores.html', 'Indicadores internacionais', 'IDH, PIB, Gini, índices de democracia, corrupção, felicidade e outros: o que medem, quem publica e onde o Brasil fica.', corpo, atual='indicadores.html')
+    for i, x in enumerate(IND):
+        ant, prox = IND[i - 1], IND[(i + 1) % len(IND)]
+        mesmos = [y for y in IND if y['g'] == x['g'] and y['s'] != x['s']][:3]
+        lado = f'<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Quem publica</dt><dd>{e(x["org"])}</dd><dt>Periodicidade</dt><dd>{e(x["per"])}</dd><dt>Escala</dt><dd>{e(x["esc"])}</dd><dt>Cobertura</dt><dd>{e(x["cob"])}</dd></dl></div><div class="caixa toc-caixa"><h2>Nesta página</h2><ul class="toc"></ul></div></aside>'
+        corpo = cabeca('<a href="../indicadores.html">Indicadores internacionais</a>', x['n'], e(x['r']), meta=f'<div class="meta"><span class="tipo fam f{COR_IND[x["g"]]}">{e(x["g"])}</span></div>')
+        corpo += f"""<div class="wrap layout"><article class="leitura"><h2>O que mede</h2><p>{e(x["mede"])}</p><h2>Como é calculado</h2><p>{e(x["como"])}</p><h2>Quem publica</h2><p>{e(x["publica"])}</p><h2>Onde o Brasil fica</h2><p>{e(x["brasil"])}</p><h2>Limites e críticas</h2><ul class="lista-contra">{"".join(f"<li>{e(l)}</li>" for l in x["limites"])}</ul><h2>Como usar</h2><ol class="roteiro">{"".join(f"<li>{e(l)}</li>" for l in x["usar"])}</ol>
+{fontes(x["fontes"])}<nav class="pager" aria-label="Indicadores"><a href="{ant["s"]}.html"><small>← Anterior</small>{e(ant["n"])}</a><a class="prox" href="{prox["s"]}.html"><small>Próximo →</small>{e(prox["n"])}</a></nav></article>{lado}</div><section class="relac"><div class="wrap"><h2>No mesmo grupo</h2><div class="grade">{"".join(cartao_ind(y, "../") for y in mesmos)}</div></div></section>"""
+        page(f'indicadores/{x["s"]}.html', x['n'], x['r'], corpo, atual='indicadores.html')
+
+def glossario():
+    secs = ''
+    for g in GRUPOS_G:
+        its = ''.join(f'<dt>{e(t)}</dt><dd><p>{e(d)}</p><p class="pol"><strong>Na política:</strong> {e(p)}</p></dd>' for gg, t, d, p in GLOSSARIO if gg == g)
+        secs += f'<h2>{e(g)}</h2><dl class="glossario">{its}</dl>'
+    corpo = cabeca('<a href="indicadores.html">Indicadores internacionais</a>', 'Glossário de economia para a política', f'{len(GLOSSARIO)} termos que aparecem em todo debate sobre juros, impostos, câmbio e desigualdade, com o que cada um significa e por que importa na política.')
+    corpo += f'<div class="wrap estreito leitura secao"><p class="abre">Boa parte das brigas políticas usa palavras de economia que poucos definem. Este glossário é o complemento da lição <a href="economia-para-entender-politica.html">economia básica para entender política</a> e dos <a href="indicadores.html">indicadores internacionais</a>.</p>{secs}{fontes([("Banco Central: glossário", "https://www.bcb.gov.br/acessoinformacao/glossario"), ("IBGE Explica", "https://www.ibge.gov.br/explica/"), ("Tesouro Nacional: entenda a dívida", "https://www.tesourotransparente.gov.br/"), ("Our World in Data", "https://ourworldindata.org/")])}</div>'
+    page('glossario-economico.html', 'Glossário de economia para a política', 'Selic, câmbio, superávit primário, econometria, Gini e outros termos de economia explicados para quem quer entender política.', corpo, atual='indicadores.html')
+
 # ---------- vieses ----------
 TDL = 'https://thedecisionlab.com/biases/'
 def slug_v(x): return x[0].removeprefix('the-')
@@ -828,14 +862,14 @@ def arquivos():
     urls = ['index.html', 'comece-aqui.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'cargos.html', 'poderes.html', 'historia.html', 'partidos.html', 'ranking-da-mentira.html', 'ferramentas.html', 'biblioteca.html', 'sobre.html'] + [l['slug'] + '.html' for l in TODAS] + [f'partidos/{p["id"]}.html' for p in P] + [f'ferramentas/{f[0]}.html' for f in FERR] + ['politicos.html', 'vertentes.html', 'vieses.html'] + [f'vieses/{slug_v(x)}.html' for x in VIES] + [f'vertentes/{v["s"]}.html' for v in V] + [f'politicos/{f["slug"]}.html' for f in FIG]
     w = lambda n, t: open(os.path.join(ROOT, n), 'w', encoding='utf-8', newline='\n').write(t)
     w('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}/{"" if u == "index.html" else u}</loc><lastmod>{ATUALIZADO}</lastmod></url>\n' for u in sorted(set(PAGINAS + urls) - {'404.html'})) + '</urlset>\n')
-    w('llms.txt', f'# {NOME}\n\n> Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.\n\n## Principais seções\n\n- [Comece aqui]({SITE}/comece-aqui.html)\n- [Catálogo de lições]({SITE}/catalogo.html)\n- [Política brasileira]({SITE}/brasil.html)\n- [Partidos]({SITE}/partidos.html)\n- [Políticos e figuras]({SITE}/politicos.html)\n- [Figuras internacionais]({SITE}/mundo.html)\n- [Principais debates]({SITE}/debates.html)\n- [Vertentes políticas]({SITE}/vertentes.html)\n- [Vieses cognitivos]({SITE}/vieses.html)\n- [Ferramentas]({SITE}/ferramentas.html)\n- [Biblioteca]({SITE}/biblioteca.html)\n- [Sites sobre política]({SITE}/sites.html)\n- [Sobre e método]({SITE}/sobre.html)\n')
+    w('llms.txt', f'# {NOME}\n\n> Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.\n\n## Principais seções\n\n- [Comece aqui]({SITE}/comece-aqui.html)\n- [Catálogo de lições]({SITE}/catalogo.html)\n- [Política brasileira]({SITE}/brasil.html)\n- [Partidos]({SITE}/partidos.html)\n- [Políticos e figuras]({SITE}/politicos.html)\n- [Figuras internacionais]({SITE}/mundo.html)\n- [Principais debates]({SITE}/debates.html)\n- [Vertentes políticas]({SITE}/vertentes.html)\n- [Vieses cognitivos]({SITE}/vieses.html)\n- [Ferramentas]({SITE}/ferramentas.html)\n- [Biblioteca]({SITE}/biblioteca.html)\n- [Sites sobre política]({SITE}/sites.html)\n- [Indicadores internacionais]({SITE}/indicadores.html)\n- [Glossário de economia]({SITE}/glossario-economico.html)\n- [Sobre e método]({SITE}/sobre.html)\n')
     w('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
     w('CNAME', 'politicaparainiciantes.biblioverse.org\n')
     w('.nojekyll', '')
     w('.gitignore', '__pycache__/\n')
     w('manifest.webmanifest', json.dumps(dict(name=NOME, short_name='Política', start_url='/', display='standalone', background_color='#fbf9f5', theme_color='#14206b', icons=[dict(src='assets/icon.svg', sizes='any', type='image/svg+xml'), dict(src='assets/icon-192.png', sizes='192x192', type='image/png'), dict(src='assets/icon-512.png', sizes='512x512', type='image/png')]), ensure_ascii=False))
     w('assets/icon.svg', arte.LOGO.replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))
-    busca = [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
+    busca = [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
     w('assets/busca.json', json.dumps(busca, ensure_ascii=False))
     page('404.html', 'Página não encontrada', 'Esta página não existe.', cabeca('Erro 404', 'Página não encontrada', 'Volte para o <a href="/" style="color:#fff">início</a> ou use a busca.'))
 
@@ -844,5 +878,5 @@ inicio(); comece(); catalogo()
 for s, r, ls, t, d, g in NIVEIS:
     nivel(s, r, ls, t, d, g)
     for l in ls: licao(l, ls)
-figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
+figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
 print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(FERR)} ferramentas.')

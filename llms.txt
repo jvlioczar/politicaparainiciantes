@@ -16,4 +16,6 @@
 - [Ferramentas](https://politicaparainiciantes.biblioverse.org/ferramentas.html)
 - [Biblioteca](https://politicaparainiciantes.biblioverse.org/biblioteca.html)
 - [Sites sobre política](https://politicaparainiciantes.biblioverse.org/sites.html)
+- [Indicadores internacionais](https://politicaparainiciantes.biblioverse.org/indicadores.html)
+- [Glossário de economia](https://politicaparainiciantes.biblioverse.org/glossario-economico.html)
 - [Sobre e método](https://politicaparainiciantes.biblioverse.org/sobre.html)

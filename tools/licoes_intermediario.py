@@ -212,7 +212,7 @@ dict(slug='um-sistema-para-todos', grupo='Os perigos', titulo='Um sistema não s
 <h2>O que muda de país para país</h2>
 <ul><li><strong>Estágio de desenvolvimento:</strong> renda, instrução e infraestrutura.</li><li><strong>História:</strong> colonização, escravidão, guerras e exploração por outros países.</li><li><strong>Tamanho e diversidade:</strong> governar 5 milhões é diferente de governar 200 milhões em um território continental.</li><li><strong>Confiança nas instituições:</strong> regras que dependem de cidadãos e burocratas honestos falham sem eles.</li><li><strong>Posição global:</strong> dependência de exportar matérias-primas, por exemplo.</li></ul>
 <p>Daron Acemoglu e James Robinson, Nobel de Economia em 2024, enfatizam que instituições inclusivas ou extrativistas ajudam a explicar por que nações prosperam ou fracassam. Transplantar leis sem transplantar as condições costuma falhar, e tentativas de impor regimes de fora têm um histórico ruim.</p>
-<div class="nota">Comparar países é ótimo para aprender. Só pergunte sempre: “o que tornava isso possível lá, e existe aqui?”.</div>
+<div class="nota">Comparar países é ótimo para aprender. Só pergunte sempre: “o que tornava isso possível lá, e existe aqui?”. Para comparar com dados, veja os <a href="indicadores.html">indicadores internacionais</a>.</div>
 ''', fontes=[('Por que as nações fracassam', 'https://en.wikipedia.org/wiki/Why_Nations_Fail'), ('Our World in Data', 'https://ourworldindata.org/')]),
 
 dict(slug='regras-e-desobediencia', grupo='Os perigos', titulo='Regras cegas e desobediência civil', resumo='Lei não é sinônimo de justiça. Quando é legítimo desobedecer, e como.', corpo='''
