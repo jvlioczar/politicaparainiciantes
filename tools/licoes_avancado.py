@@ -154,8 +154,22 @@ dict(slug='teorias-da-justica', grupo='Quem conta', titulo='Teorias da justiça 
 <tr><td>Comunitarismo</td><td>Justiça depende da comunidade e de suas tradições</td><td>Pode legitimar injustiças locais</td></tr>
 <tr><td>Focada no sofrimento</td><td>Priorizar a redução do sofrimento, sobretudo o extremo</td><td>Pode subestimar outros bens</td></tr>
 </tbody></table>
+<h2>As três que mais aparecem nos debates</h2>
+<p><strong>Rawls</strong> propõe dois princípios, em ordem. Primeiro, liberdades básicas iguais para todos, que nenhum ganho econômico justifica reduzir. Segundo, as desigualdades só são aceitáveis se os cargos e as posições estiverem abertos a todos em igualdade de oportunidades, e se beneficiarem quem está em pior situação. É o chamado princípio da diferença: um país pode ter ricos, desde que isso melhore a vida dos mais pobres em comparação com as alternativas. Veja o <a href="contrato-social.html">contrato social</a>.</p>
+<p><strong>Nozick</strong> responde que a justiça não está no desenho final da distribuição, e sim na história de cada bem: é justo o que foi adquirido sem fraude nem violência e trocado de forma voluntária. Redistribuir pelo Estado seria tratar as pessoas como meios para o bem-estar de outras. Ele admite corrigir injustiças passadas, o que abre uma porta enorme, já que boa parte da riqueza do mundo tem origem em conquista e escravidão. Veja <a href="imposto-e-roubo.html">imposto é roubo?</a>.</p>
+<p><strong>Sen e Nussbaum</strong> mudam a pergunta: não interessa só quanto dinheiro alguém tem, e sim o que ela consegue de fato ser e fazer com ele. Uma pessoa com deficiência, ou que mora onde não há escola, precisa de mais recursos para ter as mesmas capacidades. É a base do Índice de Desenvolvimento Humano, que combina renda, saúde e educação.</p>
+<h2>Onde isso aparece na política brasileira</h2>
+<table><thead><tr><th>Política</th><th>Lógica predominante</th><th>A crítica vem de</th></tr></thead><tbody>
+<tr><td>SUS universal e gratuito</td><td>Suficientismo e igualdade: um mínimo garantido a todos, sem olhar renda</td><td>Quem prefere focalizar o gasto em quem não pode pagar</td></tr>
+<tr><td>Bolsa Família</td><td>Prioritarismo: cada real vale mais para quem tem menos</td><td>Libertários (coerção) e quem teme dependência</td></tr>
+<tr><td>Cotas em universidades</td><td>Igualdade de oportunidades e correção de injustiças passadas</td><td>Quem defende o critério exclusivo do mérito. Veja o <a href="debates/cotas.html">debate</a></td></tr>
+<tr><td>Imposto progressivo e sobre grandes fortunas</td><td>Rawls e prioritarismo</td><td>Nozick: a riqueza obtida de forma justa pertence a quem a obteve</td></tr>
+<tr><td>Redução de burocracia para abrir empresas</td><td>Libertarismo e liberalismo: liberdade de trocar e empreender</td><td>Quem teme menos proteção ao trabalhador e ao consumidor</td></tr>
+<tr><td>Proteção legal aos animais</td><td>Ética focada no sofrimento e senciocentrismo</td><td>Quem restringe a justiça aos humanos. Veja <a href="senciocentrismo.html">senciocentrismo</a></td></tr>
+</tbody></table>
+<p>Quase ninguém segue uma teoria só. A maioria das pessoas aceita um mínimo para todos, alguma recompensa ao mérito e alguma correção da sorte. O que as teorias fazem é obrigar a dizer onde cada princípio termina e o outro começa, e é aí que as disputas políticas de verdade acontecem.</p>
 <div class="cta"><a class="btn" href="https://ethicstest.biblioverse.org/" target="_blank" rel="noopener">Descubra sua visão no Teste de Visão Moral</a></div>
-''', fontes=[('Teste de Visão Moral: mapa', 'https://ethicstest.biblioverse.org/map.html'), ('Uma teoria da justiça', 'https://pt.wikipedia.org/wiki/Uma_Teoria_da_Justi%C3%A7a'), ('Anarquia, Estado e Utopia', 'https://en.wikipedia.org/wiki/Anarchy,_State,_and_Utopia'), VINDING]),
+''', fontes=[('Teste de Visão Moral: mapa', 'https://ethicstest.biblioverse.org/map.html'), ('Uma teoria da justiça', 'https://pt.wikipedia.org/wiki/Uma_Teoria_da_Justi%C3%A7a'), ('Anarquia, Estado e Utopia', 'https://en.wikipedia.org/wiki/Anarchy,_State,_and_Utopia'), ('Capability approach (Wikipédia)', 'https://en.wikipedia.org/wiki/Capability_approach'), VINDING]),
 
 dict(slug='presidencialismo-de-coalizao', grupo='O sistema brasileiro', titulo='Presidencialismo de coalizão e Centrão', resumo='Por que o presidente do Brasil precisa negociar tanto, e o que isso produz.', corpo='''
 <p class="abre">O cientista político Sérgio Abranches cunhou em 1988 o termo “presidencialismo de coalizão”: o presidente é eleito por milhões, mas seu partido nunca tem maioria no Congresso. Para governar, monta alianças com vários partidos.</p>

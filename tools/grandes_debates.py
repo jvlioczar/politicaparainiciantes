@@ -281,7 +281,7 @@ SITES_U = [
 ('Full Fact','https://fullfact.org','Checagem independente no Reino Unido.','Checagem de fatos',INT),
 ('AFP Factuel','https://factcheck.afp.com','Checagem da agência francesa AFP.','Checagem de fatos',INT),
 ('IFCN','https://www.poynter.org/ifcn','Rede internacional que define padrões de checagem.','Checagem de fatos',INT),
-('Manchetômetro','http://www.manchetometro.com.br','Acompanha a cobertura da política na grande mídia brasileira.','Avaliação de viés midiático',NAC),
+('Manchetômetro','https://www.manchetometro.com.br','Acompanha a cobertura da política na grande mídia brasileira.','Avaliação de viés midiático',NAC),
 ('AllSides','https://www.allsides.com','Mostra como veículos à esquerda, ao centro e à direita tratam o mesmo tema.','Avaliação de viés midiático',INT),
 ('Ad Fontes Media','https://adfontesmedia.com','Criadora de um mapa de viés e confiabilidade de veículos.','Avaliação de viés midiático',INT),
 ('Media Bias/Fact Check','https://mediabiasfactcheck.com','Grande base que classifica o viés de fontes.','Avaliação de viés midiático',INT),

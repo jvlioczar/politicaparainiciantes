@@ -37,6 +37,7 @@ from conceitos import CONCEITOS, META_CONCEITOS
 from sofismo import SOFISMO, META_SOFISMO, SOFISMAS, TRUQUES
 from basico import BASICO
 from dossies import D, ROTULO, FAMILIAS, PROBLEMAS, FRASES, TROCAS, CHECK
+from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,6 +77,18 @@ INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] ==
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'mudar-de-ideia') + 1, TESTAR)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'perigo-do-reacionarismo') + 1, ULTRA)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'politica-do-medo') + 1, ESTRANGEIRO)
+# lições da revisão de novembro de 2026
+META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
+def _apos(ls, slug, nova): ls.insert(next(i for i, l in enumerate(ls) if l['slug'] == slug) + 1, nova)
+_NI = {l['slug']: l for l in NOVAS_INICIANTE}; _NM = {l['slug']: l for l in NOVAS_INTERMEDIARIO}
+_apos(INICIANTE, 'democracia', _NI['como-uma-lei-e-feita']); _apos(INICIANTE, 'como-uma-lei-e-feita', _NI['o-que-e-um-partido'])
+_apos(INTERMEDIARIO, 'imposto-e-roubo', _NM['economia-para-entender-politica']); _apos(INTERMEDIARIO, 'perigo-do-messianismo', _NM['perigo-do-populismo'])
+_apos(AVANCADO, 'politicas-baseadas-em-evidencias', NOVAS_AVANCADO[0]); _apos(INTERMEDIARIO, 'numero-de-projetos', _NM['corrupcao']); _apos(INTERMEDIARIO, 'perigo-da-midia-alternativa', _NM['como-ler-a-midia-tradicional']); _apos(INTERMEDIARIO, 'cambridge-analytica', _NM['pesquisas-eleitorais'])
+# grupos e ordem de cada nível: a lista é ordenada pelos grupos (ordenação estável mantém a sequência dentro do grupo)
+for _n, _ls in (('iniciante', INICIANTE), ('intermediario', INTERMEDIARIO), ('avancado', AVANCADO)):
+    for _l in _ls: _l['grupo'] = GRUPOS.get(_l['slug'], _l.get('grupo', ''))
+    _o = ORDEM_GRUPOS[_n]; assert all(_l['grupo'] in _o for _l in _ls), [_l['slug'] for _l in _ls if _l['grupo'] not in _o]
+    _ls.sort(key=lambda l: _o.index(l['grupo']))
 NIVEIS = [('iniciante', 'Iniciante', INICIANTE, 'Política para iniciantes', 'Os conceitos, sem enrolação: o que é política, o que está por trás dela e como votar melhor.', 'v'),
           ('intermediario', 'Intermediário', INTERMEDIARIO, 'Política intermediária', 'Como nossa mente nos engana, os grandes perigos e as perguntas difíceis.', ''),
           ('avancado', 'Avançado', AVANCADO, 'Política avançada', 'Quem chega ao poder, como reformar a democracia e quem deve contar.', 'a')]
@@ -296,9 +309,10 @@ def inicio():
     page('index.html', 'Política Para Iniciantes: do básico ao avançado', 'Guia de política em três níveis, com ferramentas interativas e dossiês dos partidos brasileiros.', corpo, home=True)
 
 def comece():
-    p1 = [l for l in INICIANTE if l['slug'] in ('o-que-e-politica', 'valores-e-decisoes', 'esquerda-e-direita', 'como-votar-bem', 'checagem-de-fatos')]
-    corpo = cabeca('Comece aqui', 'Novo em política? Comece por aqui', 'Um caminho curto para ter o básico em cerca de meia hora. Depois, siga pelo tema que mais te interessar.')
-    corpo += f'''<div class="wrap secao"><h2>1. Entenda o básico</h2><p>Cinco lições curtas.</p><div class="grade">{"".join(cartao_licao(l) for l in p1)}</div>
+    _p1 = ['o-que-e-politica', 'valores-e-decisoes', 'esquerda-e-direita', 'democracia', 'como-uma-lei-e-feita', 'o-que-e-um-partido', 'como-votar-bem', 'checagem-de-fatos']
+    p1 = sorted((l for l in INICIANTE if l['slug'] in _p1), key=lambda l: _p1.index(l['slug']))
+    corpo = cabeca('Comece aqui', 'Novo em política? Comece por aqui', 'Um caminho curto para ter o básico em cerca de uma hora. Depois, siga pelo tema que mais te interessar.')
+    corpo += f'''<div class="wrap secao"><h2>1. Entenda o básico</h2><p>Oito lições curtas, nesta ordem: o que é política, valores e fatos, os lados, como o sistema funciona e como votar.</p><div class="grade">{"".join(cartao_licao(l) for l in p1)}</div>
 <h2 style="margin-top:2.4rem">2. Saiba quem faz o quê</h2><div class="grade">{cartao_ferr(*FERR[0])}<a class="cartao" href="cargos.html"><h3>O que cada cargo faz</h3><p>Funções, mandatos e limites.</p></a><a class="cartao" href="poderes.html"><h3>Os Poderes</h3><p>Quem faz leis, quem executa, quem julga.</p></a></div>
 <h2 style="margin-top:2.4rem">3. Descubra o que você pensa</h2><div class="grade"><a class="cartao" href="https://ethicstest.biblioverse.org/" {EXT}><h3 class="ext">Teste de Visão Moral</h3><p>Como você pensa o certo e o errado.</p></a><a class="cartao" href="https://www.idrlabs.com/pt/coordenadas-politicas/teste.php" {EXT}><h3 class="ext">Teste de Coordenadas Políticas</h3><p>Sua posição em dois eixos.</p></a>{cartao_ferr(*FERR[5])}</div>
 <h2 style="margin-top:2.4rem">4. Olhe os partidos</h2><div class="grade">{cartao_ferr(*FERR[2])}{cartao_ferr(*FERR[3])}<a class="cartao" href="partidos.html"><h3>Todos os dossiês</h3><p>{len(P)} partidos.</p></a></div>
@@ -332,7 +346,8 @@ LICAO_DEBATES = {
  'checagem-de-fatos': ['fake-news', 'regulamentacao-redes'], 'perigo-da-midia-alternativa': ['fake-news'], 'perigo-dos-grupos-de-mensagem': ['fake-news'], 'perigo-dos-bots': ['regulamentacao-redes', 'inteligencia-artificial'], 'cambridge-analytica': ['bigtechs'], 'camaras-de-eco': ['regulamentacao-redes'],
  'senciocentrismo': ['direitos-animais', 'animais-de-rua'], 'progresso-moral-e-politico': ['direitos-animais', 'identidade-lgbt'], 'politicas-baseadas-em-evidencias': ['evidencias-debate', 'pseudociencias'], 'perigo-do-ultraconservadorismo': ['identidade-lgbt', 'aborto'], 'perigo-do-reacionarismo': ['identidade-lgbt'],
  'regras-e-desobediencia': ['reforma-agraria'], 'presidencialismo-de-coalizao': ['poder-do-stf', 'supersalarios'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'voto-obrigatorio'], 'melhorar-a-democracia': ['voto-obrigatorio', 'poder-do-stf'], 'teorias-da-justica': ['grandes-fortunas', 'programas-sociais'],
- 'testar-visao-moral': ['aborto', 'direitos-animais'], 'poder-paralelo': ['narcoterrorismo', 'seguranca-publica'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
+ 'testar-visao-moral': ['aborto', 'direitos-animais'], 'poder-paralelo': ['narcoterrorismo', 'seguranca-publica'],
+ 'como-uma-lei-e-feita': ['poder-do-stf'], 'o-que-e-um-partido': ['voto-obrigatorio', 'representatividade'], 'economia-para-entender-politica': ['impostos', 'previdencia', 'desemprego'], 'perigo-do-populismo': ['representatividade', 'poder-do-stf'], 'corrupcao': ['supersalarios', 'subsidios'], 'como-ler-a-midia-tradicional': ['fake-news', 'regulamentacao-redes'], 'pesquisas-eleitorais': ['voto-obrigatorio', 'fake-news'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
 APELIDOS_MUNDO = {'Franklin Roosevelt': 'Franklin D. Roosevelt', 'Mustafa Kemal Atatürk': 'Mustafa Kemal Atatürk', 'Martin Luther King Jr.': 'Martin Luther King Jr.'}
 def debates_da_licao(l):
@@ -376,7 +391,7 @@ def licao(l, ls):
 
 # ---------- Brasil ----------
 def brasil_hub():
-    extra = [('presidencialismo-de-coalizao.html', 'Presidencialismo de coalizão', 'Por que o presidente negocia tanto, e o que é o Centrão.'), ('politicas-publicas.html', 'Orçamento e políticas públicas', 'De onde vem e para onde vai o dinheiro.'), ('como-votar-bem.html', 'Como votar da melhor forma', 'Um roteiro para a próxima eleição.'), ('numero-de-projetos.html', 'O perigo de contar projetos', 'O que olhar em um mandato.')]
+    extra = [('presidencialismo-de-coalizao.html', 'Presidencialismo de coalizão', 'Por que o presidente negocia tanto, e o que é o Centrão.'), ('politicas-publicas.html', 'Orçamento e políticas públicas', 'De onde vem e para onde vai o dinheiro.'), ('como-votar-bem.html', 'Como votar da melhor forma', 'Um roteiro para a próxima eleição.'), ('numero-de-projetos.html', 'O perigo de contar projetos', 'O que olhar em um mandato.'), ('como-uma-lei-e-feita.html', 'Como uma lei é feita', 'Da proposta ao veto, e quem pode barrar.'), ('corrupcao.html', 'Corrupção', 'Por que existe e o que funciona contra ela.')]
     cards = ''.join(f'<a class="cartao" href="{u}"><h3>{e(t)}</h3><p>{e(d)}</p></a>' for u, t, d in BR + extra)
     page('brasil.html', 'Política brasileira', 'Cargos, poderes, história, partidos e checagem: como a política funciona no Brasil.', cabeca('Brasil', 'Política brasileira', 'Como o sistema funciona, de onde veio e quem o disputa.') + f'<div class="wrap secao"><div class="grade">{cards}</div></div>', atual='brasil.html')
 
@@ -408,7 +423,7 @@ def historia():
     corpo = cabeca('Brasil', 'História da política brasileira', 'Golpes, constituições, ditaduras e aberturas. Muita coisa de hoje vem daqui.')
     corpo += f'''<div class="wrap estreito secao"><ol class="tempo">{li}</ol>
 <div class="nota"><strong>O que se repete:</strong> o Brasil já teve sete constituições e várias rupturas. O período desde 1985 é o mais longo de democracia com voto amplo da nossa história.</div>
-{fontes([('História do Brasil (Wikipédia)', 'https://pt.wikipedia.org/wiki/Hist%C3%B3ria_do_Brasil'), ('Comissão Nacional da Verdade', 'http://cnv.memoriasreveladas.gov.br/'), ('Nexo Jornal', 'https://www.nexojornal.com.br/'), ('Agência Brasil', 'https://agenciabrasil.ebc.com.br/')])}</div>'''
+{fontes([('História do Brasil (Wikipédia)', 'https://pt.wikipedia.org/wiki/Hist%C3%B3ria_do_Brasil'), ('Comissão Nacional da Verdade', 'https://cnv.memoriasreveladas.gov.br/'), ('Nexo Jornal', 'https://www.nexojornal.com.br/'), ('Agência Brasil', 'https://agenciabrasil.ebc.com.br/')])}</div>'''
     page('historia.html', 'História da política brasileira', 'Da Colônia à eleição de 2026: uma linha do tempo da política no Brasil.', corpo, atual='brasil.html')
 
 # ---------- partidos ----------

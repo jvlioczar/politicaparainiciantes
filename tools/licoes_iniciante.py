@@ -75,8 +75,10 @@ dict(slug='etica-normativa', titulo='As grandes teorias da ética', resumo='Cons
 <tr><td>Caráter</td><td>Ética das virtudes, ética do cuidado</td><td>Traços admiráveis ou relações de cuidado</td></tr>
 <tr><td>Outras</td><td>Egoísmo ético, relativismo, ceticismo</td><td>Interesse próprio, cultura, ou dúvida sobre haver resposta</td></tr>
 </tbody></table>
-<h2>Senciência: quem entra na conta?</h2>
-<p>Toda teoria precisa dizer quem conta moralmente. Senciência é a capacidade de sentir, de ter experiências boas e ruins. Para o senciocentrismo, se um ser pode sofrer, seu sofrimento importa. Essa resposta inclui animais não humanos e tem consequências políticas enormes. Veja a lição sobre <a href="senciocentrismo.html">inclusão moral</a>.</p>
+<h2>Quem entra na conta? O círculo moral</h2>
+<p>Toda teoria precisa dizer quem conta moralmente, e a resposta mudou ao longo da história. Durante séculos, escravizados, mulheres, estrangeiros e pessoas de outra religião ficaram fora do círculo de quem “importa”. O filósofo Peter Singer chama de <strong>expansão do círculo moral</strong> esse movimento de incluir quem antes era ignorado.</p>
+<p>O que empurra o círculo para fora é um princípio simples, a <strong>universalidade</strong>: casos iguais devem ser tratados de forma igual, a menos que exista uma diferença relevante. A cor da pele, o sexo ou o lugar de nascimento não mudam a capacidade de sofrer, de pensar ou de querer, e por isso não serviam como razão para excluir ninguém. Quase todo avanço moral foi a descoberta de que uma diferença tratada como importante não era.</p>
+<p>Isso permite falar em <strong>progresso</strong>: a abolição e o voto feminino não foram só mudanças de costume, e sim correções de uma incoerência. A pergunta que fica aberta, e que os níveis seguintes discutem, é se o círculo terminou de crescer, e quem mais poderia entrar nele. Veja <a href="testar-visao-moral.html">como testar sua visão moral</a> e <a href="progresso-moral-e-politico.html">progresso moral e político</a>.</p>
 <div class="cta"><a class="btn" href="https://ethicstest.biblioverse.org/" target="_blank" rel="noopener">Faça o Teste de Visão Moral</a><a class="btn alt" href="https://ethicstest.biblioverse.org/map.html" target="_blank" rel="noopener">Veja o mapa das teorias</a></div>
 ''', fontes=[('Teste de Visão Moral: mapa', 'https://ethicstest.biblioverse.org/map.html'), ('Ética normativa (Wikipédia)', 'https://pt.wikipedia.org/wiki/%C3%89tica_normativa'), VINDING]),
 
@@ -132,10 +134,19 @@ dict(slug='democracia', titulo='Democracia, sem enrolação', resumo='Mais do qu
 <tr><td>Direta</td><td>Os cidadãos decidem diretamente. No Brasil: plebiscito, referendo e lei de iniciativa popular.</td></tr>
 <tr><td>Participativa</td><td>Conselhos, audiências e orçamento participativo somam-se aos eleitos.</td></tr>
 </tbody></table>
+<h2>Por que ela costuma dar resultados melhores</h2>
+<p>Não é só uma questão de princípio. O economista Amartya Sen, Nobel de 1998, observou que nenhuma grande fome aconteceu em um país com eleições e imprensa livre: quando o governo pode ser cobrado e a notícia circula, ele é forçado a agir. O mesmo mecanismo vale para epidemias, desastres e corrupção. Ditaduras escondem os próprios erros, porque ninguém pode denunciá-los, e por isso os repetem. A democracia não garante bons governos. Garante que os ruins possam ser trocados sem sangue, e que os erros apareçam a tempo de serem corrigidos.</p>
+<h2>Quem vota no Brasil</h2>
+<table><thead><tr><th>Quem</th><th>Voto</th></tr></thead><tbody>
+<tr><td>De 18 a 70 anos</td><td>Obrigatório. Quem não vota nem justifica paga uma multa pequena e fica com pendências, como não poder tirar passaporte</td></tr>
+<tr><td>16 e 17 anos, mais de 70 anos e analfabetos</td><td>Facultativo</td></tr>
+<tr><td>Estrangeiros e conscritos no serviço militar</td><td>Não votam</td></tr>
+</tbody></table>
+<p>O voto é direto, secreto e tem o mesmo peso para todos. O eleitorado passou de 155 milhões de pessoas em 2022, e as eleições acontecem a cada dois anos, alternando as gerais (presidente, governador, Congresso e assembleias) e as municipais. Se o voto obrigatório é bom ou ruim é uma pergunta em aberto: veja o <a href="debates/voto-obrigatorio.html">debate</a>.</p>
 <h2>Como democracias morrem hoje</h2>
 <p>Steven Levitsky e Daniel Ziblatt mostram que, hoje, o risco costuma vir de dentro: líderes eleitos que atacam juízes, imprensa e regras do jogo aos poucos, sempre dizendo defender a democracia. Os sinais são rejeitar resultados, tratar adversários como inimigos, tolerar violência e limitar liberdades civis.</p>
 <div class="nota">A democracia tem muitos defeitos, e criticá-la para melhorá-la é saudável. O perigo está em <a href="perigo-de-questionar-a-democracia.html">abandoná-la</a> sem nada melhor no lugar.</div>
-''', fontes=[('Como as democracias morrem', 'https://pt.wikipedia.org/wiki/How_Democracies_Die'), ('Constituição Federal, art. 14', 'https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm')]),
+''', fontes=[('Como as democracias morrem', 'https://pt.wikipedia.org/wiki/How_Democracies_Die'), ('Constituição Federal, art. 14', 'https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm'), ('Desenvolvimento como liberdade (Amartya Sen)', 'https://pt.wikipedia.org/wiki/Amartya_Sen'), ('TSE: estatísticas do eleitorado', 'https://www.tse.jus.br/eleicoes/estatisticas')]),
 
 dict(slug='como-votar-bem', titulo='Como votar da melhor forma', resumo='Um roteiro simples: conheça a história, leia as propostas, cheque os números, pense além de você.', corpo='''
 <p class="abre">Votar bem dá trabalho, mas não é complicado. Quatro passos resolvem a maior parte.</p>
@@ -149,7 +160,7 @@ dict(slug='como-votar-bem', titulo='Como votar da melhor forma', resumo='Um rote
 <p>Deputados, senadores, governadores, prefeitos e vereadores decidem muita coisa do seu dia a dia. Veja <a href="cargos.html">o que cada cargo faz</a>. E anote em quem votou para poder cobrar.</p>
 <h2>Como a conta funciona</h2>
 <ul>
-<li><strong>Eleição majoritária</strong> (presidente, governador, senador, prefeito): vence quem tem mais votos. Havendo mais de 200 mil eleitores (no caso de prefeitos) e para presidente e governador, pode haver segundo turno.</li>
+<li><strong>Eleição majoritária</strong> (presidente, governador, senador, prefeito): vence quem tem mais votos. Para presidente, governador e prefeito de cidade com mais de 200 mil eleitores, há segundo turno entre os dois primeiros se ninguém passar da metade dos votos válidos. Senador não tem segundo turno.</li>
 <li><strong>Eleição proporcional</strong> (deputados e vereadores): as vagas são divididas conforme os votos do partido ou da federação. Seu voto ajuda o partido, por isso pode eleger outra pessoa da lista.</li>
 <li><strong>Branco e nulo</strong> não entram nos votos válidos. Não “vão para o primeiro colocado” nem anulam a eleição.</li>
 </ul>

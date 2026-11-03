@@ -84,6 +84,22 @@ dict(slug='politicas-publicas', titulo='Políticas públicas e orçamento', resu
 <tr><td>PPA (Plano Plurianual)</td><td>4 anos</td><td>Metas de médio prazo</td></tr><tr><td>LDO (Diretrizes Orçamentárias)</td><td>1 ano</td><td>Prioridades e regras para o orçamento</td></tr><tr><td>LOA (Orçamento Anual)</td><td>1 ano</td><td>Quanto entra e quanto sai</td></tr>
 </tbody></table>
 <p>O Executivo propõe e o Legislativo vota e altera. Boa parte do orçamento federal já é obrigatória: Previdência, salários, saúde e educação.</p>
+<h2>Por que sobra tão pouco para decidir</h2>
+<p>Quem assume um governo descobre que quase todo o dinheiro já tem dono. Esse é um dos fatos mais importantes, e menos explicados, da política brasileira.</p>
+<table><thead><tr><th>Tipo de despesa</th><th>Exemplos</th><th>Dá para cortar?</th></tr></thead><tbody>
+<tr><td><strong>Obrigatória</strong></td><td>Aposentadorias e pensões, salários de servidores, Bolsa Família, juros da dívida</td><td>Só mudando a lei ou a Constituição. É cerca de 90% do gasto federal</td></tr>
+<tr><td><strong>Vinculada</strong></td><td>Pisos de saúde e educação: a União deve aplicar ao menos 15% da receita corrente líquida em saúde e 18% da receita de impostos em educação; estados e municípios, 12% e 15% em saúde e 25% em educação</td><td>Não, abaixo do piso</td></tr>
+<tr><td><strong>Discricionária</strong></td><td>Obras, custeio de ministérios, programas novos, emendas</td><td>Sim, e é por isso que ela é a primeira a ser contingenciada quando falta dinheiro</td></tr>
+</tbody></table>
+<p>Por isso, promessas como “vou cortar gastos” ou “vou dobrar o investimento” precisam dizer onde: cortar o que é obrigatório exige mudar a lei, e a parte livre é pequena. Veja a lição sobre <a href="economia-para-entender-politica.html">economia básica</a>.</p>
+<h2>De onde vem o dinheiro</h2>
+<ul>
+<li><strong>Impostos:</strong> sobre a renda (IR), sobre o consumo (ICMS, dos estados, e IPI e os novos IBS e CBS, da reforma de 2023), sobre a propriedade (IPTU, IPVA, ITR).</li>
+<li><strong>Contribuições:</strong> para a Previdência (INSS), para a saúde e a assistência social (como a Cofins).</li>
+<li><strong>Taxas:</strong> cobradas por um serviço específico, como a emissão de um documento.</li>
+<li><strong>Dívida:</strong> quando a receita não cobre a despesa, o governo emite títulos e paga juros.</li>
+</ul>
+<p>A União arrecada a maior parte e repassa aos estados e municípios por fundos de participação, o que torna muitos municípios dependentes de Brasília.</p>
 <h2>Emendas parlamentares</h2>
 <p>Deputados e senadores indicam parte do orçamento por meio de emendas, cujo volume cresceu muito na última década, e muitas se tornaram de execução obrigatória. Defensores dizem que o parlamentar conhece a realidade local. Críticos apontam o peso eleitoral, o mau planejamento e a falta de transparência, como no chamado “orçamento secreto”, que o STF considerou inconstitucional em 2022.</p>
 <h2>Quem paga</h2>
