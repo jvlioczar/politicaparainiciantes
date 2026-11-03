@@ -52,7 +52,7 @@ REFORCO = {
  analogia='Imagine dividir um bolo sem saber qual pedaço será o seu. Você tenderia a cortar com mais cuidado. Pensar no bem comum é decidir as regras como quem ainda não sabe em que lugar da mesa vai se sentar.',
  crianca='Quando alguém divide o lanche, pode pensar: “quem está com mais fome?” e “vai sobrar para amanhã?”. Pensar no bem comum é lembrar de todo mundo, inclusive de quem não está aqui agora, e não só de si.',
  fundo='''<h2>O bem de quem?</h2>
-<p>O bem comum nem sempre é fácil de definir. Médias enganam: uma cidade pode ficar mais rica enquanto metade dela piora. Por isso vale perguntar quem ganha, quem perde e se há quem nem é contado, como crianças, gerações futuras e <a href="senciocentrismo.html">animais</a>.</p>
+<p>O bem comum nem sempre é fácil de definir. Médias enganam: uma cidade pode ficar mais rica enquanto metade dela piora. Por isso vale perguntar quem ganha, quem perde e se há quem nem é contado, como crianças, gerações futuras e <a href="sencientismo.html">animais</a>.</p>
 <h2>Bens públicos e o carona</h2>
 <p>Ar limpo, vacinação e segurança beneficiam quem paga e quem não paga. Quando cada um espera que os outros contribuam, todos saem perdendo. É o chamado problema do carona, uma das razões pelas quais existem <a href="imposto-e-roubo.html">impostos</a> e regras coletivas.</p>
 <h2>As críticas</h2>
@@ -267,7 +267,7 @@ REFORCO = {
 <ul><li><strong>Sistema eleitoral:</strong> o voto proporcional dá mais diversidade, e o distrital aproximaria o eleitor.</li><li><strong>Partidos:</strong> cláusula de barreira e federações. Veja o <a href="presidencialismo-de-coalizao.html">presidencialismo de coalizão</a>.</li><li><strong>Dinheiro:</strong> fundo eleitoral alto, e controlado pelas cúpulas.</li><li><strong>Emendas:</strong> mais transparência e planejamento.</li><li><strong>Participação:</strong> orçamento participativo, conselhos e assembleias sorteadas.</li></ul>
 <h2>Como avaliar uma reforma</h2>
 <ol class="roteiro"><li>Quem ganha com ela? Costuma ser quem a propõe.</li><li>Ela foi testada, e em que condições?</li><li>Ela seria aceita se o seu grupo estivesse fora do poder?</li><li>Pode ser desfeita, se der errado?</li></ol>'''),
-'senciocentrismo': dict(
+'sencientismo': dict(
  analogia='Pense em um círculo de pessoas ao redor de uma fogueira. Ao longo da história, gente foi deixada no frio pelo sexo, pela cor ou pela origem, e a roda foi se abrindo. A pergunta é quem ainda está de fora, e se sentir dor já basta para ter lugar.',
  crianca='Um cachorro sente dor e medo, e fica feliz ao ver você. Mesmo sem falar nem votar, o que acontece com ele importa. Pensar em todos que podem sentir é lembrar deles quando fazemos regras, e isso vale para pessoas e para animais.',
  fundo='''<h2>Como isso apareceria na prática</h2>

@@ -390,7 +390,7 @@ GRUPOS = {
  'liberdade-de-expressao': 'Perguntas difíceis', 'respeitar-crencas': 'Perguntas difíceis', 'nem-tudo-e-politico': 'Perguntas difíceis',
  'maiores-estadistas': 'Quem fez história', 'maiores-ativistas': 'Quem fez história', 'america-do-sul-e-ditaduras': 'Quem fez história',
  # Avançado
- 'teorias-da-justica': 'Quem conta e o que é justo', 'progresso-moral-e-politico': 'Quem conta e o que é justo', 'senciocentrismo': 'Quem conta e o que é justo', 'relativismo-e-circulo-moral': 'Quem conta e o que é justo', 'politica-baseada-na-senciencia': 'Quem conta e o que é justo', 'libertarismo-de-coracao-sangrante': 'Quem conta e o que é justo',
+ 'teorias-da-justica': 'Quem conta e o que é justo', 'progresso-moral-e-politico': 'Quem conta e o que é justo', 'sencientismo': 'Quem conta e o que é justo', 'relativismo-e-circulo-moral': 'Quem conta e o que é justo', 'politica-baseada-na-senciencia': 'Quem conta e o que é justo', 'libertarismo-de-coracao-sangrante': 'Quem conta e o que é justo',
 }
 ORDEM_GRUPOS = {
  'iniciante': ['O básico', 'Valores e escolhas', 'Os lados', INI, 'Voto e informação'],

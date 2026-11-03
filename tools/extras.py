@@ -148,7 +148,7 @@ META = {
  'direta-ou-epistocracia': (['democracia'], ('Quem defende a epistocracia?', ['Jason Brennan', 'Rousseau', 'Norberto Bobbio'], 0, 'Brennan, em Against Democracy.')),
  'melhorar-a-democracia': (['democracia', 'eleicoes'], ('No voto preferencial, você…', ['Vota em um só', 'Ordena os candidatos', 'Vota duas vezes'], 1, 'Isso reduz o voto útil.')),
  'politicas-baseadas-em-evidencias': (['economia', 'democracia'], ('Qual é a evidência mais fraca?', ['Revisão sistemática', 'Experimento aleatorizado', 'Caso e opinião'], 2, 'Casos são ilustrativos, mas não provam efeito.')),
- 'senciocentrismo': (['etica'], ('Qual o critério do senciocentrismo?', ['Ser humano', 'Poder sentir', 'Ser racional'], 1, 'Quem pode sofrer conta moralmente.')),
+ 'sencientismo': (['etica'], ('Qual o critério do sencientismo?', ['Ser humano', 'Poder sentir', 'Ser racional'], 1, 'Quem pode sofrer conta moralmente.')),
  'teorias-da-justica': (['etica', 'economia'], ('“É justo o que resulta de trocas voluntárias” é de…', ['Rawls', 'Nozick', 'Sen'], 1, 'Nozick, em Anarquia, Estado e Utopia.')),
  'presidencialismo-de-coalizao': (['brasil', 'democracia'], ('Quem criou o termo “presidencialismo de coalizão”?', ['Sérgio Abranches', 'FHC', 'Ulysses Guimarães'], 0, 'Abranches, em 1988.')),
 }

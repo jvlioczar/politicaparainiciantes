@@ -188,7 +188,7 @@ D(AN,'direitos-animais','Direitos dos animais','Animais merecem direitos, ou só
  ('Uso com bem-estar',['Humanos têm prioridade','Cultura e economia dependem desses usos','Melhorar o trato basta']),
  ('Direitos e inclusão',['Senciência é o que importa, e não a espécie','Interesses semelhantes pedem consideração semelhante','Alternativas existem para boa parte dos usos']),
  ['Até onde vai o círculo: insetos, animais selvagens?','Transição econômica exige cuidado com trabalhadores','Cultura e religião têm peso real'],
- ('forte','A imparcialidade pesa aqui: a espécie, assim como a cor, não muda o fato de que dor é dor. Que práticas evitáveis causem enorme sofrimento é difícil de justificar por trás do véu. Como fazer a transição, e até onde vai a proteção, segue em aberto.'),f=[('Inclusão moral e senciocentrismo','../senciocentrismo.html')]),
+ ('forte','A imparcialidade pesa aqui: a espécie, assim como a cor, não muda o fato de que dor é dor. Que práticas evitáveis causem enorme sofrimento é difícil de justificar por trás do véu. Como fazer a transição, e até onde vai a proteção, segue em aberto.'),f=[('Inclusão moral e sencientismo','../sencientismo.html')]),
 D(AN,'animais-de-rua','Animais de rua','Castrar, abrigar, sacrificar ou culpar os donos?','Milhões de cães e gatos vivem nas ruas no Brasil, e o tema passa muito por prefeituras.',
  ('Foco em controle',['Risco de doenças e acidentes','Recolher e reduzir a população','Orçamento tem outras prioridades']),
  ('Foco em bem-estar',['Animais sofrem nas ruas','Castração em massa e adoção','Punição para abandono e maus-tratos']),

@@ -35,7 +35,7 @@ ESTRANGEIRO = dict(slug='perigo-de-culpar-o-estrangeiro', grupo='Os perigos', ti
 <tr><td>Cor ou etnia</td><td>Isso muda o que uma pessoa pode sentir ou merecer?</td></tr>
 <tr><td>Gênero</td><td>Justifica ter menos direitos ou menos segurança?</td></tr>
 <tr><td>Classe social</td><td>Quem nasceu com pouco tem menos valor?</td></tr>
-<tr><td>Espécie</td><td>Se um ser pode sofrer, por que a dor dele não contaria? Veja o <a href="senciocentrismo.html">senciocentrismo</a>.</td></tr>
+<tr><td>Espécie</td><td>Se um ser pode sofrer, por que a dor dele não contaria? Veja o <a href="sencientismo.html">sencientismo</a>.</td></tr>
 </tbody></table>
 <p>Aqui voltam os testes da lição <a href="testar-visao-moral.html">como testar sua visão moral</a>. Atrás do <strong>véu da ignorância</strong>, sem saber onde nasceria, você aceitaria ser tratado como inferior? Pela <strong>regra de ouro</strong>, gostaria de ser recebido assim se tivesse que fugir do seu país? E a ideia passa pela <strong>universalidade</strong>: o que você diz dos outros valeria quando brasileiros migram para os EUA, para Portugal ou para o Japão, como milhões fizeram?</p>
 <h2>Amar o próprio país é errado?</h2>

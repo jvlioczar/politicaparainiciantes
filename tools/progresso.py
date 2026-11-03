@@ -30,7 +30,7 @@ PROGRESSO = dict(slug='progresso-moral-e-politico', grupo='Quem conta', titulo='
 <tr><td>2023</td><td>Ataques de 8 de janeiro às sedes dos Três Poderes</td><td>Ameaça, seguida de reação das instituições</td></tr>
 </tbody></table>
 <h2>Como saber se foi progresso?</h2>
-<p>Se cada época só julga pelos próprios valores, “progresso” seria apenas o nome que damos à nossa opinião. A filosofia recente trata desse problema: Buchanan e Powell, por exemplo, pensam o progresso moral em mudanças específicas, e Peter Singer descreve a <a href="senciocentrismo.html">expansão do círculo</a> de quem conta. Alguns testes ajudam, sem ser definitivos:</p>
+<p>Se cada época só julga pelos próprios valores, “progresso” seria apenas o nome que damos à nossa opinião. A filosofia recente trata desse problema: Buchanan e Powell, por exemplo, pensam o progresso moral em mudanças específicas, e Peter Singer descreve a <a href="sencientismo.html">expansão do círculo</a> de quem conta. Alguns testes ajudam, sem ser definitivos:</p>
 <ol class="roteiro"><li><strong>Menos sofrimento:</strong> há menos dor e morte evitáveis?</li><li><strong>Mais gente conta:</strong> quem era ignorado passou a ser considerado?</li><li><strong>Coerência:</strong> a mudança corrige uma contradição, como pregar liberdade e manter escravizados?</li><li><strong>Melhores razões:</strong> ela se apoia em argumentos, ou em força e preconceito? Veja <a href="mudar-de-ideia.html">mudar de ideia</a>.</li><li><strong>Quem vive a mudança:</strong> quem é afetado aceitaria essa regra, se pudesse escolher livremente?</li></ol>
 <h2>O que faz o progresso acontecer</h2>
 <ul>

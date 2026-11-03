@@ -21,7 +21,7 @@ TESTAR = dict(slug='testar-visao-moral', titulo='Como testar se sua visão moral
 <tr><td>“Liberdade de expressão”, só para quem concorda</td><td>Eu defenderia esse direito para quem me critica?</td></tr>
 <tr><td>“Quem sofre importa”, só se for do meu grupo</td><td>O que justifica a diferença, além de ser do meu grupo?</td></tr>
 </tbody></table>
-<p>Diferenças só são aceitáveis quando há uma razão relevante. Tratar um adulto e um bebê de forma diferente na hora de votar é defensável. Fazer isso pela cor da pele não é, porque a cor não muda nada de relevante. É com esse tipo de pergunta que o <a href="senciocentrismo.html">círculo moral</a> vem se ampliando: se o que importa é poder sofrer, a espécie é uma razão relevante?</p>
+<p>Diferenças só são aceitáveis quando há uma razão relevante. Tratar um adulto e um bebê de forma diferente na hora de votar é defensável. Fazer isso pela cor da pele não é, porque a cor não muda nada de relevante. É com esse tipo de pergunta que o <a href="sencientismo.html">círculo moral</a> vem se ampliando: se o que importa é poder sofrer, a espécie é uma razão relevante?</p>
 <h2>Um exemplo, com os três testes</h2>
 <p>Proposta: <strong>“Quem é acusado de crime grave pode ser preso sem julgamento.”</strong></p>
 <ul><li><strong>Véu:</strong> sem saber se você seria um acusado inocente, aceitaria isso?</li><li><strong>Regra de ouro:</strong> você aceitaria que fizessem isso com você ou com seu filho?</li><li><strong>Universalidade:</strong> aceitaria essa regra nas mãos de um governo adversário?</li></ul>

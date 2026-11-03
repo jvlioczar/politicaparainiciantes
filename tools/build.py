@@ -79,7 +79,7 @@ META[SUL['slug']] = META_SUL
 AVANCADO.extend(AV_NOVAS)
 META.update(META_AV)
 INTERMEDIARIO.append(NEM_TUDO)
-AVANCADO.insert(next(i for i, l in enumerate(AVANCADO) if l['slug'] == 'senciocentrismo'), PROGRESSO)
+AVANCADO.insert(next(i for i, l in enumerate(AVANCADO) if l['slug'] == 'sencientismo'), PROGRESSO)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'vieses-cognitivos') + 1, MUDAR)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'mudar-de-ideia') + 1, TESTAR)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'perigo-do-reacionarismo') + 1, ULTRA)
@@ -364,7 +364,7 @@ LICAO_DEBATES = {
  'imposto-e-roubo': ['impostos', 'grandes-fortunas'], 'estado-e-mercado': ['tamanho-do-estado', 'privatizacao', 'estatizacao'], 'politicas-publicas': ['programas-sociais', 'subsidios'], 'bem-comum': ['programas-sociais', 'saude'],
  'perigo-de-culpar-o-estrangeiro': ['imigracao'], 'globalizacao': ['imigracao'], 'religiao-e-estado': ['religiao-estado'], 'liberdade-de-expressao': ['liberdade-expressao-debate', 'regulamentacao-redes'], 'respeitar-crencas': ['liberdade-expressao-debate', 'pseudociencias'],
  'checagem-de-fatos': ['fake-news', 'regulamentacao-redes'], 'perigo-da-midia-alternativa': ['fake-news'], 'perigo-dos-grupos-de-mensagem': ['fake-news'], 'perigo-dos-bots': ['regulamentacao-redes', 'inteligencia-artificial'], 'cambridge-analytica': ['bigtechs', 'pix-e-os-eua'], 'camaras-de-eco': ['regulamentacao-redes'],
- 'senciocentrismo': ['direitos-animais', 'animais-de-rua'], 'progresso-moral-e-politico': ['direitos-animais', 'identidade-lgbt'], 'politicas-baseadas-em-evidencias': ['evidencias-debate', 'pseudociencias'], 'perigo-do-ultraconservadorismo': ['identidade-lgbt', 'aborto'], 'perigo-do-reacionarismo': ['identidade-lgbt'],
+ 'sencientismo': ['direitos-animais', 'animais-de-rua'], 'progresso-moral-e-politico': ['direitos-animais', 'identidade-lgbt'], 'politicas-baseadas-em-evidencias': ['evidencias-debate', 'pseudociencias'], 'perigo-do-ultraconservadorismo': ['identidade-lgbt', 'aborto'], 'perigo-do-reacionarismo': ['identidade-lgbt'],
  'regras-e-desobediencia': ['reforma-agraria'], 'presidencialismo-de-coalizao': ['poder-do-stf', 'supersalarios'],   'teorias-da-justica': ['grandes-fortunas', 'programas-sociais'],
  'testar-visao-moral': ['aborto', 'direitos-animais', 'idades-minimas'], 'poder-paralelo': ['narcoterrorismo', 'seguranca-publica'],
  'como-uma-lei-e-feita': ['poder-do-stf'], 'perigo-do-populismo': ['representatividade', 'poder-do-stf'],  'como-ler-a-midia-tradicional': ['fake-news', 'regulamentacao-redes'], 'pesquisas-eleitorais': ['voto-obrigatorio', 'fake-news'], 'perigo-do-outsider': ['representatividade'], 'mandatos-coletivos': ['representatividade', 'voto-obrigatorio'],
@@ -875,6 +875,9 @@ def arquivos():
     w('assets/icon.svg', arte.LOGO.replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))
     busca = [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
     w('assets/busca.json', json.dumps(busca, ensure_ascii=False))
+    # endereços antigos de senciocentrismo: redirecionam para sencientismo
+    for _old, _new in (('senciocentrismo.html', 'sencientismo.html'), ('vertentes/senciocentrismo.html', 'sencientismo.html')):
+        open(os.path.join(ROOT, _old), 'w', encoding='utf-8', newline='\n').write(f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Sencientismo</title><meta name="robots" content="noindex"><link rel="canonical" href="{_new}"><meta http-equiv="refresh" content="0; url={_new}"></head><body><p>Esta página mudou para <a href="{_new}">sencientismo</a>.</p></body></html>')
     page('404.html', 'Página não encontrada', 'Esta página não existe.', cabeca('Erro 404', 'Página não encontrada', 'Volte para o <a href="/" style="color:#fff">início</a> ou use a busca.'))
 
 os.makedirs(os.path.join(ROOT, 'assets'), exist_ok=True)
