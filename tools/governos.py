@@ -1,0 +1,47 @@
+"""Como o Brasil foi governado (governos.html): posição política de cada governo e da maioria da Câmara, de 1889 a 2026.
+Campos: ini, fim, presidente (nome como está em Políticos e figuras, para o link), partido, gov (categoria do governo),
+cam (categoria da maioria da Câmara; None = Congresso fechado), como (como chegou ao poder), nota.
+As categorias são as de figuras.py. A posição da Câmara é uma aproximação pela maior bancada e pela base de apoio."""
+EXD, DIR, CDI, CEN, CES, ESQ = 'Extrema-direita', 'Direita', 'Centro-direita', 'Centro', 'Centro-esquerda', 'Esquerda'
+def G(ini, fim, presidente, partido, gov, cam, como, nota=''): return dict(ini=ini, fim=fim, presidente=presidente, partido=partido, gov=gov, cam=cam, como=como, nota=nota)
+GOVERNOS = [
+G(1889, 1891, 'Deodoro da Fonseca', 'Militar', DIR, CDI, 'Golpe contra o Império', 'Congresso constituinte dominado pelas oligarquias; fechado em 1891, antes da renúncia.'),
+G(1891, 1894, 'Floriano Peixoto', 'Militar', DIR, CDI, 'Sucessão do vice', 'Estado de sítio e repressão às revoltas da Armada e Federalista.'),
+G(1894, 1898, 'Prudente de Morais', 'PRP', CDI, CDI, 'Eleição direta, com voto restrito', 'Primeiro civil; começa a política dos governadores.'),
+G(1898, 1902, 'Campos Sales', 'PRP', CDI, CDI, 'Eleição direta, com voto restrito', 'Política dos governadores consolida o controle das oligarquias sobre a Câmara.'),
+G(1902, 1906, 'Rodrigues Alves', 'PRP', CDI, CDI, 'Eleição direta, com voto restrito', ''),
+G(1906, 1909, 'Afonso Pena', 'PRM', CDI, CDI, 'Eleição direta, com voto restrito', 'Morreu no cargo.'),
+G(1909, 1910, 'Nilo Peçanha', 'PRF', CEN, CDI, 'Sucessão do vice', ''),
+G(1910, 1914, 'Hermes da Fonseca', 'Militar (PRC)', DIR, CDI, 'Eleição direta, com voto restrito', 'Política das salvações: intervenções militares nos estados.'),
+G(1914, 1918, 'Venceslau Brás', 'PRM', CDI, CDI, 'Eleição direta, com voto restrito', ''),
+G(1918, 1919, 'Delfim Moreira', 'PRM', CDI, CDI, 'Sucessão do vice', ''),
+G(1919, 1922, 'Epitácio Pessoa', 'PRP', CDI, CDI, 'Eleição direta, com voto restrito', ''),
+G(1922, 1926, 'Artur Bernardes', 'PRM', DIR, CDI, 'Eleição direta, com voto restrito', 'Estado de sítio durante quase todo o mandato.'),
+G(1926, 1930, 'Washington Luís', 'PRP', CDI, CDI, 'Eleição direta, com voto restrito', 'Deposto pela Revolução de 1930.'),
+G(1930, 1934, 'Getúlio Vargas', 'Sem partido', CES, None, 'Revolução de 1930', 'Governo provisório: Congresso fechado; Ministério do Trabalho, voto feminino e secreto.'),
+G(1934, 1937, 'Getúlio Vargas', 'Sem partido', CES, CEN, 'Eleição indireta pela Constituinte', 'Congresso de 1934 reúne oligarquias, tenentes e as primeiras bancadas classistas.'),
+G(1937, 1945, 'Getúlio Vargas', 'Sem partido', DIR, None, 'Golpe do Estado Novo', 'Ditadura corporativista, com censura e tortura, que também consolidou a CLT; Congresso fechado.'),
+G(1945, 1946, 'José Linhares', 'Sem partido', CEN, None, 'Deposição de Vargas pelos militares', 'Transição até a Constituinte de 1946.'),
+G(1946, 1951, 'Eurico Gaspar Dutra', 'PSD', DIR, CEN, 'Eleição direta', 'Maioria do PSD, de centro; PCB cassado em 1947.'),
+G(1951, 1954, 'Getúlio Vargas', 'PTB', CES, CEN, 'Eleição direta', 'Câmara de maioria PSD e UDN, hostil ao governo; crise termina no suicídio.'),
+G(1954, 1955, 'Café Filho', 'PSP', CDI, CEN, 'Sucessão do vice', ''),
+G(1955, 1956, 'Carlos Luz e Nereu Ramos', 'PSD', CEN, CEN, 'Interinos', 'Contragolpe de Lott garante a posse de JK.'),
+G(1956, 1961, 'Juscelino Kubitschek', 'PSD', CEN, CEN, 'Eleição direta', 'Aliança PSD-PTB dá maioria estável.'),
+G(1961, 1961, 'Jânio Quadros', 'PTN (apoio da UDN)', CDI, CEN, 'Eleição direta', 'Renunciou em sete meses.'),
+G(1961, 1964, 'João Goulart', 'PTB', CES, CEN, 'Sucessão do vice, com parlamentarismo até 1963', 'Câmara de maioria PSD e UDN resiste às reformas de base; golpe em 1964.'),
+G(1964, 1967, 'Castelo Branco', 'Militar', EXD, DIR, 'Golpe militar, eleito pelo Congresso', 'Cassações, AI-2 e bipartidarismo: Arena com maioria.'),
+G(1967, 1969, 'Artur da Costa e Silva', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'AI-5 em 1968; Congresso fechado até 1969.'),
+G(1969, 1974, 'Emílio Médici', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'Anos de chumbo; Arena com maioria ampla.'),
+G(1974, 1979, 'Ernesto Geisel', 'Militar (Arena)', EXD, DIR, 'Eleição indireta', 'Abertura lenta; MDB cresce em 1974, Arena mantém maioria.'),
+G(1979, 1985, 'João Figueiredo', 'Militar (Arena/PDS)', EXD, DIR, 'Eleição indireta', 'Anistia, pluripartidarismo e Diretas Já; PDS mantém maioria até o fim.'),
+G(1985, 1990, 'José Sarney', 'PMDB', CDI, CEN, 'Sucessão do vice, eleito indiretamente', 'PMDB com maioria absoluta na Constituinte de 1988.'),
+G(1990, 1992, 'Fernando Collor', 'PRN', CDI, CDI, 'Eleição direta', 'Câmara fragmentada, com PMDB e PFL no comando; impeachment.'),
+G(1992, 1994, 'Itamar Franco', 'PMDB', CEN, CDI, 'Sucessão do vice', 'Plano Real.'),
+G(1995, 2002, 'Fernando Henrique Cardoso', 'PSDB', CEN, CDI, 'Eleição direta, duas vezes', 'Base PSDB, PFL e PMDB; emenda da reeleição.'),
+G(2003, 2010, 'Luiz Inácio Lula da Silva', 'PT', CES, CEN, 'Eleição direta, duas vezes', 'PT com a maior bancada em 2003; governo com PMDB e centro; mensalão.'),
+G(2011, 2016, 'Dilma Rousseff', 'PT', ESQ, CEN, 'Eleição direta, duas vezes', 'Base PT-PMDB até 2015; depois, Centrão sob Eduardo Cunha, e impeachment.'),
+G(2016, 2018, 'Michel Temer', 'MDB', CDI, CDI, 'Sucessão do vice', 'Centrão sustenta teto de gastos e reforma trabalhista.'),
+G(2019, 2022, 'Jair Bolsonaro', 'PSL, depois PL', EXD, CDI, 'Eleição direta', 'Câmara do Centrão, com PT e PSL como maiores bancadas; orçamento secreto.'),
+G(2023, 2026, 'Luiz Inácio Lula da Silva', 'PT', CES, CDI, 'Eleição direta', 'PL é a maior bancada, de direita; o governo negocia com o Centrão. Lula reeleito em 2026.'),
+]
+assert all(g['fim'] >= g['ini'] for g in GOVERNOS)

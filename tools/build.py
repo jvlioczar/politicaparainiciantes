@@ -40,6 +40,7 @@ from sofismo import SOFISMO, META_SOFISMO, SOFISMAS, TRUQUES
 from basico import BASICO
 from dossies import D, ROTULO, FAMILIAS, PROBLEMAS, FRASES, TROCAS, CHECK
 from indicadores import IND, GRUPOS_I
+from governos import GOVERNOS
 from glossario_economico import IND_EXTRA, GLOSSARIO, GRUPOS_G
 for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == ('inflacao' if _x['s'] == 'selic' else 'divida-publica')) + 1, _x)
 assert len({x['s'] for x in IND}) == len(IND)
@@ -142,7 +143,7 @@ def voto_de(pid, v):
         if c in v['p']: return c, v['p'][c]
     return None, None
 FERR = [('quem-faz-o-que', 'Quem faz o quê?', 'Um problema, sete cargos. Você sabe quem cobrar?', 'cargo'), ('valor-ou-fato', 'Valor ou fato?', 'Treine separar o que se discute com argumento moral do que se checa com dados.', 'valor'), ('como-votaram', 'Como os partidos votaram', 'Dados oficiais da Câmara, partido por partido, em votações decisivas.', 'votos'), ('comparador', 'Comparador de partidos', 'Coloque até três partidos lado a lado.', 'compara'), ('arvore-dos-partidos', 'Árvore dos partidos', 'De onde veio cada sigla, de Arena a Missão.', 'arvore'), ('teste-de-troca', 'Teste de troca', 'Você julgaria o mesmo ato de quem você rejeita?', 'troca'), ('ficha-do-candidato', 'Ficha do candidato', 'Um checklist que fica salvo no seu navegador.', 'ficha'), ('simulador-de-cadeiras', 'Simulador de cadeiras', 'Veja como votos viram vagas em uma eleição proporcional.', 'cadeira'), ('voto-preferencial', 'Simulador de voto preferencial', 'Os mesmos eleitores, duas regras, resultados diferentes.', 'urna'), ('que-truque-e-esse', 'Que truque é esse?', 'Identifique os sofismas mais comuns em frases políticas.', 'troca')]
-BR = [('cargos.html', 'O que cada cargo faz', 'De vereador a presidente: quem decide o quê.'), ('poderes.html', 'Os Poderes e órgãos', 'Executivo, Legislativo, Judiciário, MP, TCU e mais.'), ('historia.html', 'História da política brasileira', 'Da Colônia à eleição de 2026.'), ('partidos.html', f'Dossiê dos {len(P)} partidos', 'Linha do tempo, casos, votos e eleições de cada um.'), ('politicos.html', 'Políticos e figuras', 'Cards e dossiês, do espectro inteiro.'), ('ranking-da-mentira.html', 'Ranking da mentira', 'O que dizem as agências de checagem.'), ('sites.html', 'Onde acompanhar', 'Sites e projetos para se informar com ponderação.')]
+BR = [('cargos.html', 'O que cada cargo faz', 'De vereador a presidente: quem decide o quê.'), ('poderes.html', 'Os Poderes e órgãos', 'Executivo, Legislativo, Judiciário, MP, TCU e mais.'), ('historia.html', 'História da política brasileira', 'Da Colônia à eleição de 2026.'), ('governos.html', 'Como o Brasil foi governado', 'Esquerda e direita no governo e na Câmara, de 1889 a hoje.'), ('partidos.html', f'Dossiê dos {len(P)} partidos', 'Linha do tempo, casos, votos e eleições de cada um.'), ('politicos.html', 'Políticos e figuras', 'Cards e dossiês, do espectro inteiro.'), ('ranking-da-mentira.html', 'Ranking da mentira', 'O que dizem as agências de checagem.'), ('sites.html', 'Onde acompanhar', 'Sites e projetos para se informar com ponderação.')]
 ESP_POS = {'Extrema-esquerda': 6, 'Esquerda': 20, 'Centro-esquerda': 36, 'Centro': 50, 'Independente (declarado)': 54, 'Independente (declarado); centro-direita': 62, 'Centro a centro-direita': 58, 'Centro-direita': 68, 'Direita': 86}
 FAIXA = {'Extrema-esquerda': 'Esquerda', 'Esquerda': 'Esquerda', 'Centro-esquerda': 'Centro-esquerda', 'Centro': 'Centro', 'Independente (declarado)': 'Centro', 'Independente (declarado); centro-direita': 'Centro-direita', 'Centro a centro-direita': 'Centro-direita', 'Centro-direita': 'Centro-direita', 'Direita': 'Direita'}
 
@@ -226,7 +227,7 @@ def page(path, title, desc, corpo, atual='', home=False):
         gid = 'm-' + re.sub(r'[^a-z]', '', unicodedata.normalize('NFD', nome.lower()))
         return f'<div class="drop{" ativo" if ativo else ""}"><button type="button" aria-expanded="false" aria-controls="{gid}">{e(nome)} ▾</button><div class="mega{" " + cls if cls else ""}" id="{gid}" hidden>{links}</div></div>'
     menu = grupo('Aprender', [('comece-aqui.html', 'Comece aqui')] + [(f'{s}.html', r) for s, r, *_ in NIVEIS] + [('catalogo.html', 'Todas as lições')])
-    menu += grupo('Brasil', [('brasil.html', 'Política brasileira'), ('cargos.html', 'O que cada cargo faz'), ('poderes.html', 'Os Poderes e órgãos'), ('historia.html', 'História'), ('partidos.html', 'Partidos'), ('politicos.html', 'Políticos e figuras'), ('ferramentas/como-votaram.html', 'Como os partidos votaram'), ('ranking-da-mentira.html', 'Ranking da mentira')])
+    menu += grupo('Brasil', [('brasil.html', 'Política brasileira'), ('cargos.html', 'O que cada cargo faz'), ('poderes.html', 'Os Poderes e órgãos'), ('historia.html', 'História'), ('governos.html', 'Como o Brasil foi governado'), ('partidos.html', 'Partidos'), ('politicos.html', 'Políticos e figuras'), ('ferramentas/como-votaram.html', 'Como os partidos votaram'), ('ranking-da-mentira.html', 'Ranking da mentira')])
     menu += grupo('Ideias', [('vertentes.html', 'Vertentes políticas'), ('vieses.html', 'Vieses cognitivos'), ('debates.html', 'Principais debates'), ('mundo.html', 'Figuras internacionais'), ('indicadores.html', 'Indicadores internacionais'), ('glossario-economico.html', 'Glossário de economia')])
     menu += grupo('Ferramentas', [(f'ferramentas/{a}.html', b) for a, b, _, _ in FERR] + [('ferramentas.html', 'Todas as ferramentas')], 'duas')
     menu += grupo('Biblioteca', [('biblioteca.html', 'Livros'), ('sites.html', 'Sites sobre política'), ('sobre.html', 'Sobre e método')])
@@ -274,7 +275,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <footer class="rodape"><div class="wrap rodape-in">
 <div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
 <div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Todas as lições')}</li></ul></div>
-<div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
+<div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('governos.html', 'Como o Brasil foi governado')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
 <div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('indicadores.html', 'Indicadores internacionais')}</li><li>{l('glossario-economico.html', 'Glossário de economia')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
 <script src="{pre}assets/app.js" defer></script>
@@ -329,8 +330,7 @@ def inicio():
 <section class="secao"><div class="wrap numeros"><div><b class="grad">{len(TODAS)}</b><span>lições em três níveis</span></div><div><b class="grad v">{len(P)}</b><span>partidos com dossiê</span></div><div><b class="grad a">{len(DEBATES_P)}</b><span>grandes debates explicados</span></div><div><b class="grad">{len(FERR)}</b><span>ferramentas interativas</span></div></div></section>
 <section class="secao areia"><div class="wrap"><div class="sec-cab"><h2>Política brasileira</h2><p>Como o sistema funciona, de onde veio e quem o disputa.</p></div><div class="grade">{br}</div></div></section>
 <section class="secao"><div class="wrap capa-in" style="padding-block:0"><div><h2>Liberal, marxista, anarquista?</h2><p style="font-size:1.1rem">{len(V)} vertentes políticas explicadas: o que defendem, de onde vieram e o que dizem seus críticos, em um mapa de dois eixos.</p><a class="btn" href="vertentes.html">Explorar as vertentes</a></div><div class="temas">{"".join(f'<a href="vertentes/{s}.html">{n}</a>' for s, n in [('liberalismo-classico','Liberalismo clássico'),('anarcocapitalismo','Anarcocapitalismo'),('social-democracia','Social-democracia'),('marxismo','Marxismo'),('anarquismo','Anarquismo'),('conservadorismo','Conservadorismo')])}</div></div></section>
-<section class="secao"><div class="wrap"><div class="sec-cab"><h2>O que você quer entender?</h2></div><div class="temas">{temas}</div></div></section>
-<section class="noite"><div class="wrap secao capa-in" style="padding-block:48px"><div><h2>Onde você está?</h2><p style="color:#fff">Dois testes para conhecer suas ideias antes de julgar as dos outros.</p></div><div class="cta"><a class="btn v" href="https://ethicstest.biblioverse.org/" {EXT}>Teste de Visão Moral</a><a class="btn" href="https://www.idrlabs.com/pt/coordenadas-politicas/teste.php" {EXT}>Teste de Coordenadas Políticas</a></div></div></section>'''
+<section class="secao"><div class="wrap"><div class="sec-cab"><h2>O que você quer entender?</h2></div><div class="temas">{temas}</div></div></section>'''
     page('index.html', 'Política Para Iniciantes: do básico ao avançado', 'Guia de política em três níveis, com ferramentas interativas e dossiês dos partidos brasileiros.', corpo, home=True)
 
 def comece():
@@ -699,6 +699,50 @@ def vertentes():
         page(f'vertentes/{v["s"]}.html', v['n'], v['r'], corpo, atual='vertentes.html')
 
 
+
+# ---------- como o Brasil foi governado ----------
+def governos():
+    from collections import Counter
+    anos = lambda g: max(1, g['fim'] - g['ini'])
+    tot = sum(anos(g) for g in GOVERNOS)
+    def faixa(chave):
+        segs = ''.join(f'<span class="{"cat c" + str(COR_CAT[g[chave]]) if g[chave] else "fechado"}" style="width:{100 * anos(g) / tot:.2f}%" title="{g["ini"]}–{g["fim"]}: {e(g["presidente"])}, {e(g[chave] or "Congresso fechado")}"></span>' for g in GOVERNOS)
+        return f'<div class="faixa">{segs}</div>'
+    def soma(chave):
+        c = Counter()
+        for g in GOVERNOS: c[g[chave] or 'Congresso fechado'] += anos(g)
+        ordem = CATEGORIAS + ['Congresso fechado']
+        return c, ''.join(f'<tr><td>{tag_cat(k) if k in COR_CAT else e(k)}</td><td>{c[k]} anos</td><td>{100 * c[k] / tot:.0f}%</td></tr>' for k in ordem if c[k])
+    cg, tg = soma('gov'); cc, tc = soma('cam')
+    def nome(g):
+        s = fig_slug(g['presidente'])
+        return f'<a href="politicos/{s}.html">{e(g["presidente"])}</a>' if s else e(g['presidente'])
+    linhas = ''.join(f'<tr><td><b>{g["ini"]}–{g["fim"]}</b></td><td>{nome(g)}<br><small>{e(g["partido"])}</small></td><td>{tag_cat(g["gov"])}</td><td>{tag_cat(g["cam"]) if g["cam"] else "<small>Congresso fechado</small>"}</td><td><small>{e(g["como"])}{(" " + e(g["nota"])) if g["nota"] else ""}</small></td></tr>' for g in GOVERNOS)
+    esq = cg['Esquerda'] + cg['Extrema-esquerda']; ces = cg['Centro-esquerda']; dir_ = cg['Direita'] + cg['Centro-direita']; exd = cg['Extrema-direita']
+    legenda = ''.join(f'<span>{tag_cat(c)}</span>' for c in CATEGORIAS) + '<span><span class="tipo fechado">Congresso fechado</span></span>'
+    corpo = cabeca('Brasil', 'Como o Brasil foi governado', f'A posição política de cada governo e da maioria da Câmara, de 1889 a 2026: {tot} anos de República, governo a governo.')
+    corpo += f"""<div class="wrap estreito leitura secao"><p class="abre">A pergunta “o Brasil foi mais governado pela esquerda ou pela direita?” tem resposta nos dados, desde que se use a mesma régua para todos. Esta página aplica as categorias de <a href="politicos.html">Políticos e figuras</a> a cada governo e à maioria da Câmara em cada período.</p>
+<div class="nota"><strong>Como ler:</strong> a posição do governo é a do presidente e de seu partido, segundo a régua do site. A posição da Câmara é uma aproximação, pela maior bancada e pela base que sustentou o governo. Até 1930, o voto era restrito e fraudado; de 1937 a 1945 e de 1964 a 1985, não havia eleição livre para presidente. As categorias são de hoje, aplicadas a épocas em que os termos significavam outras coisas: tome como orientação, e não como medida.</div>
+<h2>Os governos</h2>{faixa('gov')}
+<h2>A maioria da Câmara</h2>{faixa('cam')}
+<p class="leg faixa-leg">{legenda}</p>
+<h2>Anos por posição</h2>
+<div class="tabela"><table><thead><tr><th>Governo</th><th>Anos</th><th>Do total</th></tr></thead><tbody>{tg}</tbody></table></div>
+<div class="tabela"><table><thead><tr><th>Maioria da Câmara</th><th>Anos</th><th>Do total</th></tr></thead><tbody>{tc}</tbody></table></div>
+<h2>O que a linha mostra</h2>
+<ul>
+<li><strong>O Brasil nunca foi governado pela extrema-esquerda</strong>, e pela esquerda só nos {esq} anos de Dilma Rousseff. Os governos de centro-esquerda, de Vargas a Lula, somam {ces} anos.</li>
+<li><strong>Direita e centro-direita governaram {dir_} anos</strong>, quase todo o período da República Velha e as transições, e a extrema-direita, {exd} anos de regime militar.</li>
+<li><strong>A Câmara quase nunca acompanhou o governo.</strong> Sob Vargas, Goulart, Lula e Dilma, a maioria era de centro ou centro-direita; é por isso que todo presidente negocia, como explica a lição sobre o <a href="presidencialismo-de-coalizao.html">presidencialismo de coalizão</a>.</li>
+<li><strong>Os únicos períodos em que governo e Câmara estiveram alinhados</strong> foram a República Velha, com as oligarquias dos dois lados, e a ditadura, com a Arena fabricada pelo regime.</li>
+<li><strong>“Governo de esquerda” no Brasil quase sempre significou centro-esquerda com maioria de centro</strong>, e isso ajuda a explicar por que as reformas de cada lado saem menores do que as promessas.</li>
+</ul>
+<h2>Governo a governo</h2></div>
+<div class="wrap secao" style="padding-top:0"><div class="tabela"><table><thead><tr><th>Período</th><th>Presidente</th><th>Governo</th><th>Câmara</th><th>Como chegou e o que marcou</th></tr></thead><tbody>{linhas}</tbody></table></div>
+<p class="legenda">Fontes: perfis em <a href="politicos.html">Políticos e figuras</a>, com as razões de cada categoria; <a href="historia.html">História da política brasileira</a>; composição das legislaturas na Câmara dos Deputados e no TSE. Para as ideias de cada campo, veja as <a href="vertentes.html">vertentes</a>; para o mapa dos partidos de hoje, a <a href="ferramentas/arvore-dos-partidos.html">árvore dos partidos</a>.</p>
+{fontes([('Câmara dos Deputados: legislaturas', 'https://www.camara.leg.br/deputados/quem-sao'), ('Presidentes do Brasil (Wikipédia)', 'https://pt.wikipedia.org/wiki/Lista_de_presidentes_do_Brasil'), ('TSE: resultados de eleições', 'https://www.tse.jus.br/eleicoes/eleicoes-anteriores')])}</div>"""
+    page('governos.html', 'Como o Brasil foi governado', 'Esquerda, centro ou direita? A posição de cada governo e da maioria da Câmara, de 1889 a 2026, com os anos de cada campo.', corpo, atual='brasil.html')
+
 # ---------- indicadores internacionais e glossário ----------
 COR_IND = {g: i for i, g in enumerate(GRUPOS_I)}
 def cartao_ind(x, pre=''):
@@ -890,5 +934,5 @@ inicio(); comece(); catalogo()
 for s, r, ls, t, d, g in NIVEIS:
     nivel(s, r, ls, t, d, g)
     for l in ls: licao(l, ls)
-figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
+figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); governos(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
 print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(FERR)} ferramentas.')
