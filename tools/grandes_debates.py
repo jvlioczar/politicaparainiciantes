@@ -327,8 +327,8 @@ DEBATES_P += DEBATES_NOVOS
 from debates_2026 import DEBATES_REV, PREVIDENCIA
 DEBATES_P[:] = [PREVIDENCIA if d['s'] == 'previdencia' else d for d in DEBATES_P] + DEBATES_REV
 assert len({d['s'] for d in DEBATES_P}) == len(DEBATES_P)
-SITES_U.append(('Our World in Data','https://ourworldindata.org','Dados e gráficos, em inglês, sobre pobreza, saúde, democracia, clima e quase todo tema que entra no debate político, com as fontes de cada número.','Dados e evidências',INT))
-SITES_U.append(('Sentient Media','https://sentientmedia.org','Redação sem fins lucrativos, em inglês, que cobre a pecuária industrial, o sistema alimentar e as políticas que afetam os animais, com dados e reportagens.','Notícias e reportagem',INT))
+SITES_U.append(('Our World in Data','https://ourworldindata.org','Dados e gráficos sobre pobreza, saúde, clima e democracia.','Dados e evidências',INT))
+SITES_U.append(('Sentient Media','https://sentientmedia.org','Jornalismo sobre pecuária, alimentação e animais, em inglês.','Notícias e reportagem',INT))
 # antigos sites de "Onde acompanhar", mesclados aqui
 from brasil import SITES as _SA
 _MAP = {'Investigação e bastidores': 'Jornalismo investigativo', 'Checar fatos': 'Checagem de fatos', 'Medir viés': 'Avaliação de viés midiático'}
