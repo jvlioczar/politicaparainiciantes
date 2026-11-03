@@ -599,4 +599,5 @@ LIVROS_VERTENTES = [
  ('A Organização: a Odebrecht e o esquema de corrupção que chocou o mundo', 'Malu Gaspar', 'Reportagem sobre a maior empreiteira do país e as propinas pagas a políticos de vários partidos.'),
  ('A Privataria Tucana', 'Amaury Ribeiro Jr.', 'Investigação sobre as privatizações do governo FHC. Contestada pelos citados, e vale ler junto com as respostas.'),
  ('O Cadete e o Capitão: a vida de Jair Bolsonaro no quartel', 'Luiz Maklouf Carvalho', 'Reportagem sobre os anos de Bolsonaro no Exército, com documentos dos processos militares.'),
+ ('A Miséria do Estado', 'Denis Rosenfield', 'Crítica liberal, de um filósofo ligado ao pensamento liberal-conservador, ao crescimento do Estado e ao patrimonialismo brasileiro.'),
 ]
