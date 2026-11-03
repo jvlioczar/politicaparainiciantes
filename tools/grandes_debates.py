@@ -97,7 +97,8 @@ D(G,'armas','Armamento da população','Arma defende o cidadão ou aumenta as mo
  ('Menos armas',['Mais armas em circulação significam mais mortes','Brigas e acidentes viram tragédias','Armas legais podem ser desviadas ao crime']),
  ['Pesquisas variam entre países e métodos','Controle não elimina armas ilegais','Áreas rurais e urbanas têm realidades diferentes'],
  ('forte','A maior parte das pesquisas pesa contra a ampliação: no Brasil, estudos associam cada 1% a mais de armas a cerca de 1% a 2% a mais de homicídios, e o Estatuto do Desarmamento é associado a uma redução. Isso não elimina o argumento de autodefesa, mas mostra que seu custo coletivo é alto.'),
- [('Armas e violência doméstica','Uma arma em casa pode agravar o risco para mulheres.'),('Colecionadores e caçadores','O crescimento recente levantou o problema do desvio para o crime.')]),
+ [('Armas e violência doméstica','Uma arma em casa pode agravar o risco para mulheres.'),('Colecionadores e caçadores','O crescimento recente levantou o problema do desvio para o crime.')],
+ [('Dossiê armas, violência e crimes: o que nos dizem 61 pesquisas recentes','https://thomasvconti.com.br/2017/dossie-armas-violencia-e-crimes-o-que-nos-dizem-61-pesquisas-recentes')]),
 D(G,'seguranca-publica','Segurança pública','Penas duras ou prevenção e ressocialização?','O medo do crime é real, e costuma dominar as eleições.',
  ('Rigor',['Punição dissuade e protege vítimas','Impunidade estimula o crime','Direitos das vítimas vêm primeiro']),
  ('Prevenção',['Certeza da punição pesa mais do que o tamanho da pena','Presídios lotados fortalecem facções','Direitos humanos protegem também os inocentes']),
@@ -151,11 +152,12 @@ D(DR,'igualdade-salarial','Igualdade salarial','Lei resolve, ou as diferenças v
  ('Menos lei',['Parte da diferença vem de área e horas','Custos para empresas','Já é ilegal discriminar']),
  ['A diferença média não é igual à diferença na mesma função','“Escolhas” também são influenciadas pelo cuidado com os filhos','A licença-parental pode pesar mais do que a multa'],
  ('parcial','Parte da diferença se explica por função e jornada, e parte persiste depois disso. Salário igual para trabalho igual é princípio de fácil defesa. O debate está nas medidas: creche e licença compartilhada podem pesar tanto quanto a fiscalização.')),
-D(DR,'cotas','Cotas raciais e sociais','Reparação e oportunidade, ou injustiça com o mérito?','A Lei de Cotas de 2012 mudou o perfil das universidades federais.',
- ('Contra',['Mérito deveria decidir','Raça é difícil de definir','Critério social bastaria']),
- ('A favor',['Escravidão e racismo deixaram desigualdades','Diversidade beneficia todos','Mérito é influenciado pelo ponto de partida']),
- ['Cotas sociais e raciais podem se combinar','Fraudes nas autodeclarações são um problema','Por quanto tempo devem durar?'],
- ('parcial','Avaliações costumam mostrar que cotistas têm desempenho próximo ao de não cotistas, e que o acesso aumentou. A previsão de queda na qualidade não se confirmou como temido. A duração e o desenho seguem em debate.')),
+D(DR,'cotas','Cotas sociais e cotas raciais','Reservar vagas por renda, por escola pública ou por raça?','A Lei de Cotas de 2012 mudou o perfil das universidades federais. Ela combina critérios de escola pública, renda e raça, e foi revista em 2023.',
+ ('Contra, ou só cotas sociais',['Mérito deveria decidir','Renda e escola pública já atingem muitos negros pobres','Raça é difícil de definir no Brasil']),
+ ('A favor, inclusive das raciais',['Escravidão e racismo deixaram desigualdades','Pesquisas mostram desigualdade racial mesmo com a mesma renda','Negros de classe média também sofrem racismo','Mérito é influenciado pelo ponto de partida']),
+ ['Cotas sociais e raciais podem se combinar','Fraudes nas autodeclarações levaram a bancas de verificação, que também geram polêmica','Por quanto tempo devem durar?','Cotas no serviço público e nas empresas seguem em debate'],
+ ('parcial','Avaliações costumam mostrar que cotistas têm desempenho próximo ao de não cotistas, e que o acesso aumentou. A previsão de queda na qualidade não se confirmou como temido. Combinar critérios sociais e raciais tem boa justificativa, porque a desigualdade racial persiste mesmo entre pessoas com renda parecida. A duração e o desenho seguem em debate.'),
+ [('Cotas sociais','Usam renda e escola pública. Atingem pobres de todas as cores.'),('Cotas raciais','Usam a autodeclaração de pretos, pardos e indígenas, com verificação em alguns casos.'),('A revisão de 2023','Manteve o sistema, reduziu o limite de renda e incluiu quilombolas.')]),
 D(DR,'liberdade-expressao-debate','Liberdade de expressão irrestrita e discurso de ódio','Falar tudo, ou leis contra o ódio para proteger minorias?','O debate entre desregulamentação e defesa de minorias é um dos mais vivos das redes.',
  ('Liberdade ampla',['Calar opiniões impede correção de erros','Quem decide o que é ódio pode abusar','Mais fala é melhor do que censura']),
  ('Limites legais',['Ódio pode preparar violência','Ataques silenciam minorias','Racismo é crime']),
@@ -288,6 +290,7 @@ SITES_U = [
 ('Abraji','https://www.abraji.org.br','Associação Brasileira de Jornalismo Investigativo.','Jornalismo investigativo',NAC),
 ('Revista piauí','https://piaui.uol.com.br','Revista mensal de reportagens longas.','Jornalismo investigativo',NAC),
 ('Agência Pública','https://apublica.org','Jornalismo investigativo sem fins lucrativos.','Jornalismo investigativo',NAC),
+('Spotniks','https://www.youtube.com/spotniks','Canal de vídeos e reportagens sobre política e economia, com linha liberal declarada.','Jornalismo investigativo',NAC),
 ('Repórter Brasil','https://reporterbrasil.org.br','Investiga trabalho escravo e violações de direitos.','Jornalismo investigativo',NAC),
 ('ProPublica','https://www.propublica.org','Redação independente e sem fins lucrativos dos EUA.','Jornalismo investigativo',INT),
 ('The Intercept','https://theintercept.com','Jornalismo adversarial sobre o poder.','Jornalismo investigativo',INT),
@@ -303,6 +306,8 @@ SITES_U = [
 ('OpenSecrets','https://www.opensecrets.org','Rastreia o dinheiro na política dos EUA.','Transparência governamental',INT),
 ('Ranking dos Políticos','https://ranking.org.br','Avalia deputados e senadores. Tem critérios próprios, com visão liberal: confira o método.','Observatório de políticos',NAC),
 ('Perfil Político','https://perfilpolitico.serenata.ai','Compara histórico e características de candidatos.','Observatório de políticos',NAC),
+('GPS Partidário 2026 (Folha)','https://www1.folha.uol.com.br/poder/2026/09/folha-lanca-gps-partidario-2026-analise-de-dados-que-mostra-posicao-politica-na-pratica.shtml','Posiciona os partidos no espectro pelo que fazem: votos, migrações, frentes, coligações e doações.','Observatório de políticos',NAC),
+('GPS Partidário: dados e método','https://github.com/deltafolha/gps-partidario-2026','Código e dados abertos do GPS Partidário.','Observatório de políticos',NAC),
 ('Observatório do Legislativo Brasileiro','https://olb.org.br','Pesquisas e dados sobre o Congresso.','Observatório de políticos',NAC),
 ('Publique-se','https://www.publique-se.org.br','Consulta a processos ligados a políticos.','Observatório de políticos',NAC),
 ('Observatório do Terceiro Setor','https://observatorio3setor.org.br','Portal de notícias sobre causas e projetos sociais.','Observatório do terceiro setor',NAC),
@@ -316,3 +321,19 @@ SITES_U = [
 ('Evidence Action','https://www.evidenceaction.org','Entidade de saúde global baseada em evidências.','Observatório do terceiro setor',INT),
 ('Rethink Priorities','https://rethinkpriorities.org','Pesquisa para melhorar vidas humanas e de animais.','Observatório do terceiro setor',INT),
 ]
+
+from lote_debates_livros import DEBATES_NOVOS
+DEBATES_P += DEBATES_NOVOS
+# antigos sites de "Onde acompanhar", mesclados aqui
+from brasil import SITES as _SA
+_MAP = {'Investigação e bastidores': 'Jornalismo investigativo', 'Checar fatos': 'Checagem de fatos', 'Medir viés': 'Avaliação de viés midiático'}
+_dom = lambda u: u.split('//')[-1].split('/')[0].removeprefix('www.')
+_tem = {_dom(x[1]) for x in SITES_U}
+for _g, _its in _SA.items():
+    _gr = _MAP.get(_g, _g)
+    if _gr not in GRUPOS_S: GRUPOS_S.append(_gr)
+    for _n, _u, _d in _its:
+        if _dom(_u) in _tem: continue
+        _tem.add(_dom(_u)); SITES_U.append((_n, _u, _d.rstrip('.') + '.', _gr, NAC))
+_ORD = ['Aprender política', 'Notícias e reportagem', 'Checagem de fatos', 'Avaliação de viés midiático', 'Jornalismo investigativo', 'Transparência governamental', 'Fontes oficiais', 'Observatório de políticos', 'Observatório do terceiro setor']
+GRUPOS_S.sort(key=lambda x: _ORD.index(x) if x in _ORD else 99)

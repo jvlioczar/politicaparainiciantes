@@ -10,6 +10,7 @@ for pasta, _, arqs in os.walk(ROOT):
     for a in arqs:
         if not a.endswith('.html'): continue
         n += 1; p = os.path.join(pasta, a); t = open(p, encoding='utf-8').read()
+        if 'http-equiv="refresh"' in t: continue  # redirecionamento de página antiga
         rel = os.path.relpath(p, ROOT).replace(os.sep, '/'); paginas.add(rel)
         if 'assuperlistas' in t.lower(): falha('assuperlistas em', rel)
         if len(re.findall(r'<h1[\s>]', t)) != 1: falha('h1 em', rel)

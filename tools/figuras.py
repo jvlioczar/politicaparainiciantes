@@ -322,4 +322,6 @@ F += [
 F = [x for x in F if x[5] != 'placeholder']
 from figuras_novas import NOVAS_F
 F.extend(NOVAS_F)
+from lote_debates_livros import FIGS_NOVAS
+F.extend(FIGS_NOVAS)
 assert len({f[0] for f in F}) == len(F)

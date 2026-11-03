@@ -27,6 +27,7 @@ from ultraconservadorismo import ULTRA, META_ULTRA
 from estrangeiro import ESTRANGEIRO, META_ESTRANGEIRO
 from testar_visao import TESTAR, META_TESTAR
 from progresso import PROGRESSO, META_PROGRESSO
+from avancado_novas import AV_NOVAS, META_AV, SUL, META_SUL
 from mapa_ed import ED
 from reforco import REFORCO
 from grandes_debates import DEBATES_P, TEMAS_D, ROT_PESO, SITES_U, GRUPOS_S, NAC, INT
@@ -65,6 +66,10 @@ INTERMEDIARIO.insert(i_pos, SOFISMO)
 INTERMEDIARIO.insert(i_pos, NOVA)
 INICIANTE.insert(1, DESPOLITIZADO)
 INTERMEDIARIO.extend(HISTORIA_LICOES)
+INTERMEDIARIO.append(SUL)
+META[SUL['slug']] = META_SUL
+AVANCADO.extend(AV_NOVAS)
+META.update(META_AV)
 INTERMEDIARIO.append(NEM_TUDO)
 AVANCADO.insert(next(i for i, l in enumerate(AVANCADO) if l['slug'] == 'senciocentrismo'), PROGRESSO)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'vieses-cognitivos') + 1, MUDAR)
@@ -233,7 +238,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
 <div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Catálogo')}</li></ul></div>
 <div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
-<div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('acompanhar.html', 'Onde acompanhar')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
+<div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
 <script src="{pre}assets/app.js" defer></script>
 </body></html>
@@ -277,7 +282,6 @@ def inicio():
         ('ferramentas.html', 'compara', 'Ferramentas', f'{len(FERR)} jogos, comparadores e simuladores.'),
         ('ranking-da-mentira.html', 'votos', 'Ranking da mentira', 'Quem mais teve frases checadas como falsas.'),
         ('biblioteca.html', 'livro', 'Biblioteca', 'Livros e leituras para cada nível.'),
-        ('acompanhar.html', 'urna', 'Onde acompanhar', 'Sites e pessoas para seguir a política.'),
     ])
     br = ''.join(f'<a class="cartao" href="{u}"><h3>{e(t)}</h3><p>{e(d)}</p></a>' for u, t, d in BR)
     votos = len(VOTOS)
@@ -444,20 +448,21 @@ def partidos():
             prs = '<h2>Eleições presidenciais</h2><p class="legenda">Candidato próprio ou apoiado, com o percentual do resultado que a Wikipédia registra para aquela chapa (no 2º turno, quando houve).</p><div class="tabela"><table><thead><tr><th>Ano</th><th>Candidato</th><th>Votos</th></tr></thead><tbody>' + ''.join(f'<tr><td>{x["ano"]}</td><td>{e(x["cand"])}</td><td>{x["pct"]}%</td></tr>' for x in pr) + '</tbody></table></div>'
         vt = linha_voto(p['id'])
         vts = f'<h2>Como votou na Câmara</h2><p>Dados oficiais: a favor × contra na bancada do partido na época.</p>{LEG}{vt}<p class="legenda">Fonte: <a href="https://dadosabertos.camara.leg.br/" {EXT}>Dados Abertos da Câmara</a>. <a href="../ferramentas/como-votaram.html">Ver todos os partidos</a>.</p>' if vt else '<h2>Como votou na Câmara</h2><p>O partido não aparece com bancada própria nas votações que reunimos. Veja <a href="../ferramentas/como-votaram.html">a comparação</a>.</p>'
-        f = [('Wikipédia: ' + p['n'], wiki), ('Partidos registrados no TSE', 'https://www.tse.jus.br/partidos/partidos-registrados-no-tse/registrados-no-tse'), ('Bancadas na Câmara', 'https://www.camara.leg.br/deputados/quem-sao'), ('Buscar na Lupa', 'https://www.agencialupa.org/?s=' + quote(p['n'])), ('Buscar no Aos Fatos', 'https://www.aosfatos.org/noticias/?q=' + quote(p['n']))]
+        f = [('Wikipédia: ' + p['n'], wiki), ('Partidos registrados no TSE', 'https://www.tse.jus.br/partidos/partidos-registrados-no-tse/registrados-no-tse'), ('Bancadas na Câmara', 'https://www.camara.leg.br/deputados/quem-sao'), ('Buscar na Lupa', 'https://www.agencialupa.org/?s=' + quote(p['n'])), ('Buscar no Aos Fatos', 'https://www.aosfatos.org/noticias/?q=' + quote(p['n']))] + p.get('fx', [])
         ant, prox = P[i - 1], P[(i + 1) % len(P)]
         mesmos = [x for x in P if x['id'] != p['id'] and ((p['fed'] and x['fed'] == p['fed']) or FAIXA[x['esp']] == FAIXA[p['esp']])][:3]
         rel = ''.join(f'<a class="cartao partido" href="{x["id"]}.html"><span class="n">{x["num"]}</span><span class="sig">{e(x["s"])}</span><p>{e(x["resumo"])}</p></a>' for x in mesmos)
         compara = f'../ferramentas/comparador.html?a={p["id"]}&b={"pl" if p["id"] != "pl" else "pt"}'
         lado = f'''<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Número</dt><dd>{p["num"]}</dd><dt>Fundação</dt><dd>{e(p["ano"])}</dd><dt>Registro no TSE</dt><dd>{e(p["reg"])}</dd><dt>Presidente</dt><dd>{e(p["pres"])}</dd>{"<dt>Federação</dt><dd>" + e(p["fed"]) + "</dd>" if p["fed"] else ""}<dt>Espectro</dt><dd>{e(p["esp"])}<div class="esp" aria-hidden="true"><i style="left:{ESP_POS[p["esp"]]}%"></i></div></dd></dl></div><div class="caixa toc-caixa"><h2>Neste dossiê</h2><ul class="toc"></ul></div><a class="btn alt" style="text-align:center" href="{compara}">Comparar</a></aside>'''
         meta = f'<div class="meta"><span class="tipo">Dossiê</span><a class="tag" href="../partidos.html">{e(p["esp"])}</a><span>Atualizado em novembro de 2026</span></div>'
+        espn = '<div class="nota"><strong>Sobre o espectro:</strong> ' + p['esp_nota'] + '</div>' if p.get('esp_nota') else ''
         corpo = cabeca('<a href="../partidos.html">Partidos</a>', f'{p["s"]}: {p["n"]}' if p['s'].lower() != p['n'].lower() else p['n'], e(p['resumo']), meta=meta)
         corpo += f'''<div class="wrap layout"><article class="leitura"><h2>Fundação e contexto</h2><p>{e(p["contexto"])}</p><p><strong>Fundadores e nomes da origem:</strong> {e(p["fund"])}</p>
 <h2>Linha do tempo</h2><ol class="tempo-p">{tl}</ol>
 <h2>Presidentes</h2><ul class="pres">{pres}</ul>{aviso}
 <h2>Políticos de destaque</h2><p>{liga_nomes(e(p["dest"]))}</p>
 <h2>Polêmicas e escândalos</h2><div class="nota alerta" style="font-size:.92rem;margin-top:0">Acusação não é condenação. Veja a etiqueta de cada caso, que resume a situação que conseguimos apurar, e o link da fonte. Decisões podem mudar.</div>{casos}
-<h2>Valores</h2><p>{e(p["val"])}</p>
+<h2>Valores</h2><p>{e(p["val"])}</p>{espn}
 <h2>Projetos relevantes</h2><p>{e(p["proj"])}</p>
 {vts}
 <h2>Votações e momentos históricos</h2><p>{e(p["vot"])}</p>
@@ -603,7 +608,7 @@ def sites_uteis():
         gr += f'<section class="grupo-s"><h2 class="grupo">{e(g)} <small>({len(its)})</small></h2>{cards}</section>'
     fil = f'<div class="filtros" id="famb" role="group" aria-label="Âmbito"><button type="button" data-a="" aria-pressed="true">Todos</button><button type="button" data-a="{NAC}" aria-pressed="false">{NAC}</button><button type="button" data-a="{INT}" aria-pressed="false">{INT}</button></div>'
     corpo = cabeca('Fontes', 'Biblioteca de sites sobre política', 'Sites para checar fatos, avaliar a mídia, investigar e acompanhar políticos e organizações.')
-    corpo += f'''<div class="wrap secao"><div class="nota alerta" style="margin-top:0">Nenhum site é neutro nem infalível. Alguns têm linha editorial declarada, e outros publicam material bruto. Compare fontes e confira o método.</div>{fil}<div id="sites">{gr}</div><p class="legenda">Veja também a <a href="biblioteca.html">biblioteca de livros</a>, <a href="acompanhar.html">onde acompanhar a política</a> e a lição sobre <a href="checagem-de-fatos.html">checagem de fatos</a>.</p></div>'''
+    corpo += f'''<div class="wrap secao"><div class="nota alerta" style="margin-top:0">Nenhum site é neutro nem infalível. Alguns têm linha editorial declarada, e outros publicam material bruto. Compare fontes e confira o método.</div>{fil}<div id="sites">{gr}</div><p class="legenda">Veja também a <a href="biblioteca.html">biblioteca de livros</a>, e a lição sobre <a href="checagem-de-fatos.html">checagem de fatos</a>.</p></div>'''
     page('sites.html', 'Biblioteca de sites sobre política', 'Checagem de fatos, viés midiático, jornalismo investigativo, transparência e observatórios, nacionais e internacionais.', corpo, atual='sites.html')
 
 # ---------- vertentes ----------
@@ -755,15 +760,8 @@ def ranking():
 
 # ---------- acompanhar, biblioteca, sobre ----------
 def acompanhar():
-    s = ''
-    for g, its in SITES.items():
-        s += f'<h3 style="margin:1.5rem 0 .6rem">{e(g)}</h3><div class="grade">' + ''.join(f'<a class="cartao" href="{e(u)}" {EXT}><h3 class="ext">{e(n)}</h3><p>{e(d)}</p></a>' for n, u, d in its) + '</div>'
-    pess = ''.join(f'<a class="cartao" href="politicos/{slug_de(n)}.html"><h3>{e(n)}</h3><p>{e(d)}</p></a>' for n, d, u in PESSOAS)
-    corpo = cabeca('Fontes', 'Onde acompanhar política', 'Sites e pessoas para se informar com ponderação. Nenhum é perfeito: varie, compare e cheque.')
-    corpo += f'''<div class="wrap secao"><div class="nota" style="margin-top:0"><strong>Regra de ouro:</strong> leia ao menos uma fonte de que você costuma discordar. Evite portais muito à direita ou muito à esquerda como fonte única. O <a href="https://adfontesmedia.com/" {EXT}>Ad Fontes</a> ajuda a enxergar o viés dos veículos.</div>
-<div class="nota">Para checar fatos, avaliar a mídia e fiscalizar governos, veja a <a href="sites.html">biblioteca de sites</a>.</div><h2>Sites</h2>{s}<h2 style="margin:2.2rem 0 .8rem">Pessoas que falam de política de forma ponderada</h2><p>Abra o dossiê de cada pessoa para ver a categoria e o link do perfil.</p><div class="grade">{pess}</div>
-<h2 style="margin:2.2rem 0 .8rem">Mais listas de checagem na BiblioVerse</h2><ul class="links"><li><a href="https://antiscam.biblioverse.org/#verificar-antes-de-confiar--checagem-de-fatos-e-boatos" {EXT}>Biblioteca Antigolpes: checagem</a></li><li><a href="https://data.biblioverse.org/#jornalismo-de-dados-e-checagem" {EXT}>Biblioteca de Dados: jornalismo e checagem</a></li></ul></div>'''
-    page('acompanhar.html', 'Onde acompanhar política', 'Sites, agências de checagem e pessoas para acompanhar a política brasileira de forma ponderada.', corpo, atual='acompanhar.html')
+    # a antiga página foi mesclada à biblioteca de sites: fica só o redirecionamento
+    open(os.path.join(ROOT, 'acompanhar.html'), 'w', encoding='utf-8', newline='\n').write('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Biblioteca de sites sobre política</title><meta name="robots" content="noindex"><link rel="canonical" href="sites.html"><meta http-equiv="refresh" content="0; url=sites.html"></head><body><p>Esta página mudou para a <a href="sites.html">biblioteca de sites sobre política</a>.</p></body></html>')
 
 def biblioteca():
     n_cls = {'Iniciante': 'iniciante', 'Intermediário': 'intermediario', 'Avançado': 'avancado'}
@@ -797,7 +795,7 @@ def sobre():
     page('sobre.html', 'Sobre', 'Posição editorial e método de apuração do Política Para Iniciantes.', corpo)
 
 def arquivos():
-    urls = ['index.html', 'comece-aqui.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'cargos.html', 'poderes.html', 'historia.html', 'partidos.html', 'ranking-da-mentira.html', 'ferramentas.html', 'acompanhar.html', 'biblioteca.html', 'sobre.html'] + [l['slug'] + '.html' for l in TODAS] + [f'partidos/{p["id"]}.html' for p in P] + [f'ferramentas/{f[0]}.html' for f in FERR] + ['politicos.html', 'vertentes.html', 'vieses.html'] + [f'vieses/{slug_v(x)}.html' for x in VIES] + [f'vertentes/{v["s"]}.html' for v in V] + [f'politicos/{f["slug"]}.html' for f in FIG]
+    urls = ['index.html', 'comece-aqui.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'cargos.html', 'poderes.html', 'historia.html', 'partidos.html', 'ranking-da-mentira.html', 'ferramentas.html', 'biblioteca.html', 'sobre.html'] + [l['slug'] + '.html' for l in TODAS] + [f'partidos/{p["id"]}.html' for p in P] + [f'ferramentas/{f[0]}.html' for f in FERR] + ['politicos.html', 'vertentes.html', 'vieses.html'] + [f'vieses/{slug_v(x)}.html' for x in VIES] + [f'vertentes/{v["s"]}.html' for v in V] + [f'politicos/{f["slug"]}.html' for f in FIG]
     w = lambda n, t: open(os.path.join(ROOT, n), 'w', encoding='utf-8', newline='\n').write(t)
     w('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}/{"" if u == "index.html" else u}</loc><lastmod>{ATUALIZADO}</lastmod></url>\n' for u in sorted(set(PAGINAS + urls) - {'404.html'})) + '</urlset>\n')
     w('llms.txt', f'# {NOME}\n\n> Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.\n\n## Principais seções\n\n- [Comece aqui]({SITE}/comece-aqui.html)\n- [Catálogo de lições]({SITE}/catalogo.html)\n- [Política brasileira]({SITE}/brasil.html)\n- [Partidos]({SITE}/partidos.html)\n- [Políticos e figuras]({SITE}/politicos.html)\n- [Figuras internacionais]({SITE}/mundo.html)\n- [Principais debates]({SITE}/debates.html)\n- [Vertentes políticas]({SITE}/vertentes.html)\n- [Vieses cognitivos]({SITE}/vieses.html)\n- [Ferramentas]({SITE}/ferramentas.html)\n- [Biblioteca]({SITE}/biblioteca.html)\n- [Sites sobre política]({SITE}/sites.html)\n- [Sobre e método]({SITE}/sobre.html)\n')

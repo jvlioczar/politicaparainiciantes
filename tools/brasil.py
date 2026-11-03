@@ -151,3 +151,7 @@ LIVROS.append(('Ideologias', 'Gabriela Prioli (Companhia das Letras)', 'Explica 
 LIVROS += [x + ('https://www.google.com/search?tbm=bks&q=' + _q(x[0] + ' ' + x[1]),) for x in _NOVOS]
 
 
+
+from lote_debates_livros import LIVROS_NOVOS as _L2
+assert not {x[0] for x in _L2} & {x[0] for x in LIVROS}, {x[0] for x in _L2} & {x[0] for x in LIVROS}
+LIVROS += [x + ('https://www.google.com/search?tbm=bks&q=' + _q(x[0] + ' ' + x[1]),) for x in _L2]
