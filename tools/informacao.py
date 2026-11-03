@@ -206,7 +206,7 @@ dict(slug='maiores-ativistas', grupo=H, titulo='Os maiores ativistas políticos 
 <tr><td><a href="politicos/marielle-franco.html"><strong>Marielle Franco</strong></a><br>Brasil</td><td>Direitos humanos nas favelas, assassinada em 2018</td><td>Sua imagem virou alvo de boatos e disputas</td></tr>
 </tbody></table>
 <h2>Além dos humanos</h2>
-<p><strong>Henry Spira</strong> (EUA) fez campanhas pragmáticas contra testes em animais nos anos 1970 e 1980, negociando com grandes empresas. Seu caso mostra que dá para mudar a prática sem esperar que todos concordem. Veja o <a href="vertentes/sencientismo.html">sencientismo</a>.</p>
+<p><strong>Henry Spira</strong> (EUA) fez campanhas pragmáticas contra testes em animais nos anos 1970 e 1980, negociando com grandes empresas. Seu caso mostra que dá para mudar a prática sem esperar que todos concordem. Veja o <a href="sencientismo.html">sencientismo</a>.</p>
 <p>Veja os perfis na seção de <a href="mundo.html">figuras internacionais</a>.</p>
 <h2>O que funciona</h2>
 <ul>
