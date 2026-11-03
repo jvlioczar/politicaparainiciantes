@@ -98,15 +98,15 @@ PROBLEMAS = [
  ('O Brasil vai assinar um acordo com outro país', 'Presidente', 'A política externa é do presidente, e o Congresso ratifica tratados.'),
 ]
 FRASES = [
- ('A pena de morte reduz homicídios.', 'Fato', 'É empírico: pode ser testado, e a maioria dos estudos não encontra efeito claro.'),
+ ('A pena de morte não reduz os homicídios de forma comprovada.', 'Fato', 'É empírico: pode ser testado, e a maioria dos estudos não encontra efeito de dissuasão.'),
  ('O Estado nunca pode tirar a vida de alguém.', 'Valor', 'É um princípio moral. Dados sozinhos não o decidem.'),
  ('As desigualdades de renda são injustas.', 'Valor', 'Trata do que é justo.'),
  ('O Brasil tem um dos maiores índices de desigualdade do mundo.', 'Fato', 'É mensurável, com o coeficiente de Gini.'),
- ('Reduzir impostos sempre aumenta a arrecadação.', 'Fato', 'É empírico, e a evidência mostra que isso nem sempre ocorre.'),
+ ('Reduzir impostos nem sempre aumenta a arrecadação.', 'Fato', 'É empírico: depende da alíquota de partida, e a evidência mostra que a arrecadação cai na maioria dos casos.'),
  ('É errado causar sofrimento a animais por prazer.', 'Valor', 'É um juízo moral.'),
- ('A urna eletrônica já foi fraudada em eleições nacionais.', 'Fato', 'É verificável, e nunca houve fraude comprovada que mudasse resultado.'),
+ ('Nunca se comprovou fraude na urna eletrônica que mudasse um resultado.', 'Fato', 'É verificável: as urnas passam por testes públicos e auditorias, e nenhuma fraude foi comprovada.'),
  ('A liberdade individual é mais importante que a igualdade.', 'Valor', 'É uma hierarquia de valores.'),
- ('Armar a população reduz crimes.', 'Fato', 'É empírico. Boa parte dos estudos aponta mais mortes com mais armas.'),
+ ('Desarmar a população tende a reduzir os homicídios.', 'Fato', 'É empírico: boa parte dos estudos associa mais armas a mais mortes, e o Estatuto do Desarmamento, a menos homicídios por arma de fogo.'),
  ('Quem mais precisa deve receber mais ajuda do governo.', 'Valor', 'Define um critério de justiça.'),
 ]
 TROCAS = [
