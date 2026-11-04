@@ -100,6 +100,13 @@ LIVROS[:] = [(x[0], x[1], x[2], RENIVEL.get(x[0], x[3]), x[4]) for x in LIVROS] 
 META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
 META.update(META_DIREITO); REFORCO.update(REFORCO_DIREITO); INTERMEDIARIO.extend(LICOES_DIREITO)
 META.update(META_ECO_MUNDO); REFORCO.update(REFORCO_ECO_MUNDO)
+# bloco Problemas sociais do Brasil (tools/brasil_problemas.py)
+from brasil_problemas import LICOES_BR, PB
+from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
+META.update(META_BR); REFORCO.update(REFORCO_BR); DID.update(DID_BR); DID2.update(DID2_BR)
+INTERMEDIARIO.extend(LICOES_BR)
+for _l in LICOES_BR: GRUPOS[_l['slug']] = PB
+if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert(ORDEM_GRUPOS['intermediario'].index('Perguntas difíceis'), PB)
 # quizzes de aplicação (tools/quizzes.py) substituem a pergunta de memorização de cada lição
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
 for _l in LICOES_ECO_MUNDO: GRUPOS[_l['slug']] = _l['grupo']
@@ -163,7 +170,7 @@ BR = [('cargos.html', 'O que cada cargo faz', 'De vereador a presidente: quem de
 ESP_POS = {'Extrema-esquerda': 6, 'Esquerda': 20, 'Centro-esquerda': 36, 'Centro': 50, 'Independente (declarado)': 54, 'Independente (declarado); centro-direita': 62, 'Centro a centro-direita': 58, 'Centro-direita': 68, 'Direita': 86}
 FAIXA = {'Extrema-esquerda': 'Esquerda', 'Esquerda': 'Esquerda', 'Centro-esquerda': 'Centro-esquerda', 'Centro': 'Centro', 'Independente (declarado)': 'Centro', 'Independente (declarado); centro-direita': 'Centro-direita', 'Centro a centro-direita': 'Centro-direita', 'Centro-direita': 'Centro-direita', 'Direita': 'Direita'}
 
-ATUALIZADO = '2026-11-04'
+ATUALIZADO = '2026-11-05'
 PAGINAS = []
 SECOES = {'debates': ('debates.html', 'Principais debates', 'Os dois lados, a complexidade e o que os dados indicam.'), 'mundo': ('mundo.html', 'Figuras internacionais', 'Trajetória, posições e controvérsias, com fontes.'), 'politicos': ('politicos.html', 'Políticos e figuras', 'Trajetória, posições e controvérsias, com fontes.'), 'vertentes': ('vertentes.html', 'Vertentes políticas', 'Ideias, história, forças e contradições explicadas.'), 'vieses': ('vieses.html', 'Vieses cognitivos', 'Entenda com exemplo e veja os efeitos no julgamento moral e político.'), 'partidos': ('partidos.html', 'Partidos', 'Dossiê com fontes.'), 'ferramentas': ('ferramentas.html', 'Ferramentas', 'Ferramenta interativa e gratuita, sem cadastro.'), 'indicadores': ('indicadores.html', 'Indicadores internacionais', 'O que mede, quem publica, onde o Brasil fica e os limites de cada índice.')}
 PAIS_NIVEL = {'iniciante.html': 'Iniciante', 'intermediario.html': 'Intermediário', 'avancado.html': 'Avançado'}
@@ -334,7 +341,7 @@ def inicio():
     temas = ''.join(f'<a href="catalogo.html?tema={k}">{e(v)}</a>' for k, v in TEMAS.items())
     secoes = ''.join(f'<a class="cartao" href="{u}">{arte.icone(i)}<h3>{e(t)}</h3><p>{e(d)}</p></a>' for u, i, t, d in [
         ('catalogo.html', 'ficha', 'Aprenda', f'{len(TODAS)} lições em três níveis, com busca por tema.'),
-        ('trilhas.html', 'arvore', 'Trilhas por tema', f'{len(TRILHAS)} caminhos curtos: duas horas, votar melhor, desinformação, perigos, economia, mente e ética.'),
+        ('trilhas.html', 'arvore', 'Trilhas por tema', f'{len(TRILHAS)} caminhos curtos: duas horas, votar melhor, desinformação, perigos, economia, mente, problemas do Brasil e ética.'),
         ('minha-posicao.html', 'troca', 'Minha posição política', 'Cinco escolhas, as vertentes mais próximas e os debates que testam a posição.'),
         ('brasil.html', 'cargo', 'Política brasileira', 'Cargos, Poderes e a história do país.'),
         ('partidos.html', 'cadeira', 'Partidos', f'Dossiê dos {len(P)} partidos e como votaram.'),
@@ -428,9 +435,9 @@ def trilhas():
         prog = f'<div class="barra-prog" id="pg-{t["s"]}" data-prog="{",".join(t["licoes"])}" style="max-width:420px"><i></i></div><small data-prog-t="pg-{t["s"]}"></small>'
         cards = ''.join(f'<div class="trilha-item"><span class="trilha-n">{i + 1}</span>{cartao_licao(l)}</div>' for i, l in enumerate(ls))
         secs += f'<section class="trilha-sec" id="{t["s"]}"><h2 class="grupo">{e(t["n"])} <small>{e(t["tempo"])} · {len(ls)} lições</small></h2><p>{e(t["d"])}</p>{prog}<div class="grade trilha-grade">{cards}</div></section>'
-    corpo = cabeca('Aprender', 'Trilhas de estudo', 'Sete caminhos curtos por tema. Cada um tem entre 7 e 9 lições, na ordem em que valem ser lidas, e guarda seu progresso.')
+    corpo = cabeca('Aprender', 'Trilhas de estudo', 'Oito caminhos curtos por tema. Cada um tem entre 7 e 9 lições, na ordem em que valem ser lidas, e guarda seu progresso.')
     corpo += f'<div class="wrap secao" style="padding-top:18px"><div class="nota" style="margin-top:0"><strong>Como usar:</strong> escolha a trilha que responde à sua pergunta de agora e siga a ordem. As trilhas se cruzam; uma lição lida conta em todas. Para o curso completo, siga os três níveis: <a href="iniciante.html">Iniciante</a>, <a href="intermediario.html">Intermediário</a> e <a href="avancado.html">Avançado</a>.</div>{secs}</div>'
-    page('trilhas.html', 'Trilhas de estudo', 'Sete trilhas curtas de política por tema: duas horas, votar melhor, desinformação, perigos ideológicos, economia, mente política e ética.', corpo, atual='trilhas.html')
+    page('trilhas.html', 'Trilhas de estudo', 'Oito trilhas curtas de política por tema: duas horas, votar, desinformação, perigos, economia, mente, problemas do Brasil e ética.', corpo, atual='trilhas.html')
 def teste_nivel(slug, rot, ls):
     itens = []
     for l in ls:
@@ -497,6 +504,7 @@ LICAO_DEBATES = {
  'direito-internacional': ['imigracao', 'armas-nucleares'], 'divisao-internacional-do-trabalho': ['subsidios', 'tamanho-do-estado', 'pix-e-os-eua'], 'blocos-economicos': ['imigracao', 'pix-e-os-eua'], 'direitos-humanos': ['pena-de-morte', 'maioridade-penal', 'liberdade-expressao-debate'], 'direito-ambiental': ['clima', 'terras-indigenas', 'petroleo-margem-equatorial'], 'direito-animal': ['direitos-animais', 'animais-de-rua'], 'guerra-ao-terror': ['narcoterrorismo', 'armas-nucleares', 'alistamento-militar'],
  'economia-para-entender-politica': ['impostos', 'previdencia', 'autonomia-do-banco-central', 'jornada-6x1', 'pix-e-os-eua'], 'geopolitica': ['pix-e-os-eua', 'imigracao'], 'melhorar-a-democracia': ['voto-obrigatorio', 'sistema-eleitoral', 'reeleicao-e-mandatos'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'anistia-8-de-janeiro'], 'corrupcao': ['supersalarios', 'reforma-administrativa'], 'o-que-e-um-partido': ['sistema-eleitoral', 'representatividade'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas', 'idades-minimas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
+LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', 'subsidios'], 'impunidade': ['seguranca-publica', 'maioridade-penal', 'pena-de-morte', 'justicamento'], 'os-protegidos': ['poder-do-stf', 'anistia-8-de-janeiro', 'supersalarios', 'estado-protege-a-burguesia'], 'golpes-e-fraudes': ['pix-e-os-eua', 'bigtechs', 'regulamentacao-redes'], 'transparencia-dos-gastos': ['supersalarios', 'reforma-administrativa'], 'faccoes-e-sistema-prisional': ['drogas', 'narcoterrorismo', 'seguranca-publica', 'desmilitarizacao'], 'milicias': ['seguranca-publica', 'desmilitarizacao', 'armas'], 'desigualdade-social': ['grandes-fortunas', 'programas-sociais', 'meritocracia', 'impostos', 'cotas'], 'bets': ['apostas']})
 APELIDOS_MUNDO = {'Franklin Roosevelt': 'Franklin D. Roosevelt', 'Mustafa Kemal Atatürk': 'Mustafa Kemal Atatürk', 'Martin Luther King Jr.': 'Martin Luther King Jr.'}
 def debates_da_licao(l):
     its = [d for d in DEBATES_P if d['s'] in LICAO_DEBATES.get(l['slug'], [])]
@@ -1063,7 +1071,7 @@ def arquivos():
     w('.gitignore', '__pycache__/\n')
     w('manifest.webmanifest', json.dumps(dict(name=NOME, short_name='Política', start_url='/', display='standalone', background_color='#fbf9f5', theme_color='#14206b', icons=[dict(src='assets/icon.svg', sizes='any', type='image/svg+xml'), dict(src='assets/icon-192.png', sizes='192x192', type='image/png'), dict(src='assets/icon-512.png', sizes='512x512', type='image/png')]), ensure_ascii=False))
     w('assets/icon.svg', arte.LOGO.replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))
-    busca = [dict(t='Trilhas por tema', d='Sete caminhos curtos de estudo', u='trilhas.html'), dict(t='Minha posição política', d='Cinco escolhas e as vertentes mais próximas', u='minha-posicao.html')] + [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
+    busca = [dict(t='Trilhas por tema', d='Oito caminhos curtos de estudo', u='trilhas.html'), dict(t='Minha posição política', d='Cinco escolhas e as vertentes mais próximas', u='minha-posicao.html')] + [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
     w('assets/busca.json', json.dumps(busca, ensure_ascii=False))
     # endereços antigos de senciocentrismo: redirecionam para sencientismo
     for _old, _new in (('senciocentrismo.html', 'sencientismo.html'), ('vertentes/senciocentrismo.html', 'senciocracia.html'), ('vertentes/sencientismo.html', 'senciocracia.html')):

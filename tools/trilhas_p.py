@@ -12,6 +12,8 @@ TRILHAS = [
       licoes=['economia-para-entender-politica', 'imposto-e-roubo', 'estado-e-mercado', 'politicas-publicas', 'bem-comum', 'globalizacao', 'divisao-internacional-do-trabalho', 'teorias-da-justica']),
  dict(s='mente', n='A mente política', d='Vieses, intuições morais, mudar de ideia, inteligência a serviço da crença, preconceito e sofismas.', tempo='2 horas',
       licoes=['vieses-cognitivos', 'mente-moralista', 'mudar-de-ideia', 'inteligencia-nao-protege', 'estereotipo-preconceito-discriminacao', 'sofismo', 'testar-visao-moral']),
+ dict(s='brasil', n='Os problemas do Brasil', d='Dívidas, impunidade, quem escapa da Justiça, golpes, transparência, facções, milícias, desigualdade e bets.', tempo='3 horas',
+      licoes=['dividas-e-devedores', 'impunidade', 'os-protegidos', 'golpes-e-fraudes', 'transparencia-dos-gastos', 'faccoes-e-sistema-prisional', 'milicias', 'desigualdade-social', 'bets']),
  dict(s='etica', n='Ética na política', d='Valores, teorias, testes de imparcialidade, relativismo, progresso, quem conta e os animais na política.', tempo='3 horas',
       licoes=['valores-e-decisoes', 'etica-normativa', 'testar-visao-moral', 'relativismo-e-circulo-moral', 'progresso-moral-e-politico', 'sencientismo', 'politica-baseada-na-senciencia', 'direito-animal']),
 ]
