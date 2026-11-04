@@ -48,6 +48,12 @@ from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
 from didatica import D as DID, EXTRA as DID_EXTRA
 from quizzes import QUIZ as DID_QUIZ
+from didatica_ini import E_INI
+from didatica_int_a import E_INT_A
+from didatica_int_b import E_INT_B
+from didatica_ava import E_AVA
+from trilhas_p import TRILHAS, CASOS_FIO, RESPOSTAS_FIO
+DID2 = {**E_INI, **E_INT_A, **E_INT_B, **E_AVA}
 from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
@@ -236,11 +242,12 @@ def page(path, title, desc, corpo, atual='', home=False):
         links = ''.join(f'<a href="{pre}{u}"{" aria-current=page" if u == atual else ""}>{e(t)}</a>' for u, t in itens)
         gid = 'm-' + re.sub(r'[^a-z]', '', unicodedata.normalize('NFD', nome.lower()))
         return f'<div class="drop{" ativo" if ativo else ""}"><button type="button" aria-expanded="false" aria-controls="{gid}">{e(nome)} ▾</button><div class="mega{" " + cls if cls else ""}" id="{gid}" hidden>{links}</div></div>'
-    menu = grupo('Aprender', [('comece-aqui.html', 'Comece aqui')] + [(f'{s}.html', r) for s, r, *_ in NIVEIS] + [('catalogo.html', 'Todas as lições')])
+    menu = grupo('Aprender', [('comece-aqui.html', 'Comece aqui'), ('trilhas.html', 'Trilhas por tema')] + [(f'{s}.html', r) for s, r, *_ in NIVEIS] + [('catalogo.html', 'Todas as lições'), ('minha-posicao.html', 'Minha posição política')])
     menu += grupo('Brasil', [('brasil.html', 'Política brasileira'), ('cargos.html', 'O que cada cargo faz'), ('poderes.html', 'Os Poderes e órgãos'), ('historia.html', 'História'), ('governos.html', 'Como o Brasil foi governado'), ('partidos.html', 'Partidos'), ('politicos.html', 'Políticos e figuras'), ('ferramentas/como-votaram.html', 'Como os partidos votaram'), ('ranking-da-mentira.html', 'Ranking da mentira')])
     menu += grupo('Ideias', [('vertentes.html', 'Vertentes políticas'), ('vieses.html', 'Vieses cognitivos'), ('debates.html', 'Principais debates'), ('mundo.html', 'Figuras internacionais'), ('indicadores.html', 'Indicadores internacionais'), ('glossario-economico.html', 'Glossário de economia')])
     menu += grupo('Ferramentas', [(f'ferramentas/{a}.html', b) for a, b, _, _ in FERR] + [('ferramentas.html', 'Todas as ferramentas')], 'duas')
-    menu += grupo('Biblioteca', [('biblioteca.html', 'Livros'), ('sites.html', 'Sites sobre política'), ('sobre.html', 'Sobre e método')])
+    menu += grupo('Biblioteca', [('biblioteca.html', 'Livros'), ('sites.html', 'Sites sobre política')])
+    menu += f'<a href="{pre}sobre.html"{" aria-current=page" if atual == "sobre.html" else ""}>Sobre</a>'
     html = f'''<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -284,7 +291,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <main id="main">{corpo}</main>
 <footer class="rodape"><div class="wrap rodape-in">
 <div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
-<div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('catalogo.html', 'Todas as lições')}</li></ul></div>
+<div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('trilhas.html', 'Trilhas por tema')}</li><li>{l('catalogo.html', 'Todas as lições')}</li><li>{l('minha-posicao.html', 'Minha posição política')}</li></ul></div>
 <div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('governos.html', 'Como o Brasil foi governado')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
 <div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('indicadores.html', 'Indicadores internacionais')}</li><li>{l('glossario-economico.html', 'Glossário de economia')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
@@ -310,8 +317,8 @@ def relacionados(l):
     alvos = [x for x in TODAS if x['slug'] != l['slug'] and set(x['temas']) & set(l['temas'])]
     alvos.sort(key=lambda x: (x['nivel'] != l['nivel'], -len(set(x['temas']) & set(l['temas']))))
     return f'<section class="relac"><div class="wrap"><h2>Continue</h2><div class="grade">{"".join(cartao_licao(x) for x in alvos[:3])}</div></div></section>'
-def bloco_quiz(q):
-    return f'<div class="quiz" data-quiz="{e(json.dumps(q, ensure_ascii=False))}"><p class="k">Teste rápido</p><div class="alvo"></div></div>'
+def bloco_quiz(q, rot='Teste rápido'):
+    return f'<div class="quiz" data-quiz="{e(json.dumps(q, ensure_ascii=False))}"><p class="k">{e(rot)}</p><div class="alvo"></div></div>'
 def objetivos(l):
     d = DID[l['slug']]
     pre = ', '.join(f'<a href="{p}.html">{e(POR_SLUG[p]["titulo"])}</a>' for p in d['pre'])
@@ -327,6 +334,8 @@ def inicio():
     temas = ''.join(f'<a href="catalogo.html?tema={k}">{e(v)}</a>' for k, v in TEMAS.items())
     secoes = ''.join(f'<a class="cartao" href="{u}">{arte.icone(i)}<h3>{e(t)}</h3><p>{e(d)}</p></a>' for u, i, t, d in [
         ('catalogo.html', 'ficha', 'Aprenda', f'{len(TODAS)} lições em três níveis, com busca por tema.'),
+        ('trilhas.html', 'arvore', 'Trilhas por tema', f'{len(TRILHAS)} caminhos curtos: duas horas, votar melhor, desinformação, perigos, economia, mente e ética.'),
+        ('minha-posicao.html', 'troca', 'Minha posição política', 'Cinco escolhas, as vertentes mais próximas e os debates que testam a posição.'),
         ('brasil.html', 'cargo', 'Política brasileira', 'Cargos, Poderes e a história do país.'),
         ('partidos.html', 'cadeira', 'Partidos', f'Dossiê dos {len(P)} partidos e como votaram.'),
         ('politicos.html', 'troca', 'Políticos e figuras', f'{len(F)} perfis, com posições e controvérsias.'),
@@ -371,6 +380,79 @@ def catalogo():
     page('catalogo.html', 'Todas as lições', 'Todas as lições e ferramentas, com filtros por nível e tema.', corpo, atual='catalogo.html')
 
 # ---------- níveis e lições ----------
+
+# ---------- camada didática (padrão compartilhado com o Ética Para Iniciantes) ----------
+GL_TERMS = sorted(((t, d) for _, t, d, _ in GLOSSARIO if len(t) >= 3), key=lambda x: -len(x[0]))
+GL_SKIP = {'a', 'h1', 'h2', 'h3', 'h4', 'summary', 'th', 'button', 'script', 'style', 'code'}
+def glossa(h, titulo, maximo=6):
+    partes = re.split(r'(<[^>]+>)', h); pilha = 0; usados = set(); n = 0; tl = titulo.lower()
+    for i, p in enumerate(partes):
+        if not p: continue
+        if p.startswith('<'):
+            m = re.match(r'</?([a-zA-Z0-9]+)', p); nome = m.group(1).lower() if m else ''
+            if nome in GL_SKIP and not p.endswith('/>'): pilha = max(0, pilha - 1) if p.startswith('</') else pilha + 1
+            continue
+        if pilha or n >= maximo: continue
+        off = 0; novo = ''
+        for termo, d in GL_TERMS:
+            if n >= maximo: break
+            if termo in usados or termo.lower() in tl: continue
+            m = re.search(r'(?<![\w-])' + re.escape(termo) + r'(?![\w-])', p[off:], flags=re.I)
+            if not m: continue
+            s, f = m.start() + off, m.end() + off
+            novo += p[off:s] + f'<span class="gl" tabindex="0" data-def="{e(d)}">{p[s:f]}</span>'; off = f; usados.add(termo); n += 1
+        partes[i] = novo + p[off:]
+    return ''.join(partes)
+def caso_abre(l):
+    d = DID2[l['slug']]
+    return f'<div class="caso-abre"><p class="k">Antes de ler: o que você faria?</p><p>{e(d["caso"][0])}</p><p class="q">{e(d["caso"][1])}</p><details><summary>Ver o que a lição responde</summary><p>{e(d["caso"][2])}</p></details></div>'
+def erro_pratica(l):
+    d = DID2[l['slug']]
+    out = f'<div class="nota erro-comum"><strong>Erro comum:</strong> <em>{e(d["erro"][0])}</em> {e(d["erro"][1])}</div>'
+    if d['ferr']:
+        f = next(x for x in FERR if x[0] == d['ferr'])
+        out += f'<div class="nota"><strong>Pratique:</strong> <a href="ferramentas/{f[0]}.html">{e(f[1])}</a>. {e(f[2])}</div>'
+    return out
+def quizzes(l):
+    d = DID2[l['slug']]
+    return bloco_quiz(l['quiz'], 'Teste rápido · 1 de 3') + bloco_quiz(d['quiz'][0], 'Aplique · 2 de 3') + bloco_quiz(d['quiz'][1], 'Confira · 3 de 3')
+def casos_fio(nivel):
+    cab = '<tr><th>Lente</th>' + ''.join(f'<th>{e(n)}</th>' for _, n, _ in CASOS_FIO) + '</tr>'
+    linhas = ''.join(f'<tr><th>{e(f)}</th><td>{e(a)}</td><td>{e(b)}</td><td>{e(c)}</td></tr>' for f, a, b, c in RESPOSTAS_FIO[nivel])
+    desc = ''.join(f'<li><strong>{e(n)}.</strong> {e(d)}</li>' for _, n, d in CASOS_FIO)
+    return f'<section class="casos-fio"><h2 class="grupo">Os três casos do curso</h2><p>Três casos atravessam os três níveis. A cada nível, veja o que cada lente diz sobre eles, com mais detalhe do que no nível anterior.</p><ul class="casos-lista">{desc}</ul><div class="tabela"><table class="compara"><thead>{cab}</thead><tbody>{linhas}</tbody></table></div></section>'
+def trilhas():
+    secs = ''
+    for t in TRILHAS:
+        ls = [next(l for l in TODAS if l['slug'] == s) for s in t['licoes']]
+        prog = f'<div class="barra-prog" id="pg-{t["s"]}" data-prog="{",".join(t["licoes"])}" style="max-width:420px"><i></i></div><small data-prog-t="pg-{t["s"]}"></small>'
+        cards = ''.join(f'<div class="trilha-item"><span class="trilha-n">{i + 1}</span>{cartao_licao(l)}</div>' for i, l in enumerate(ls))
+        secs += f'<section class="trilha-sec" id="{t["s"]}"><h2 class="grupo">{e(t["n"])} <small>{e(t["tempo"])} · {len(ls)} lições</small></h2><p>{e(t["d"])}</p>{prog}<div class="grade trilha-grade">{cards}</div></section>'
+    corpo = cabeca('Aprender', 'Trilhas de estudo', 'Sete caminhos curtos por tema. Cada um tem entre 7 e 9 lições, na ordem em que valem ser lidas, e guarda seu progresso.')
+    corpo += f'<div class="wrap secao" style="padding-top:18px"><div class="nota" style="margin-top:0"><strong>Como usar:</strong> escolha a trilha que responde à sua pergunta de agora e siga a ordem. As trilhas se cruzam; uma lição lida conta em todas. Para o curso completo, siga os três níveis: <a href="iniciante.html">Iniciante</a>, <a href="intermediario.html">Intermediário</a> e <a href="avancado.html">Avançado</a>.</div>{secs}</div>'
+    page('trilhas.html', 'Trilhas de estudo', 'Sete trilhas curtas de política por tema: duas horas, votar melhor, desinformação, perigos ideológicos, economia, mente política e ética.', corpo, atual='trilhas.html')
+def teste_nivel(slug, rot, ls):
+    itens = []
+    for l in ls:
+        d = DID2[l['slug']]
+        for q in [l['quiz']] + d['quiz']:
+            itens.append([q[0], q[1], q[2], q[3] + f' (Lição: {l["titulo"]}.)'])
+    dados = json.dumps(dict(itens=itens, n=10), ensure_ascii=False).replace('</', '<\\/')
+    corpo = cabeca(f'<a href="{slug}.html">{e(rot)}</a>', f'Teste do nível {rot}', f'Dez perguntas sorteadas entre as {len(itens)} do nível. Cada resposta diz em que lição rever o assunto. Refaça quantas vezes quiser: as perguntas mudam.')
+    corpo += f'<div class="wrap estreito secao"><div id="jogo" class="quiz" style="margin-top:0"><div class="placar"><span></span><span></span></div><div class="barra-prog"><i></i></div><div class="alvo" style="margin-top:14px"></div><button class="btn prox-q" type="button" style="margin-top:12px" hidden>Próxima</button></div><script type="application/json" id="dados-teste">{dados}</script><p class="legenda">Acertou 8 ou mais? Você está pronto para o próximo nível. Menos que isso: veja as lições indicadas e tente de novo. Para a revisão completa, uma pergunta por lição, use a <a href="revisao-{slug}.html">revisão do nível</a>.</p><p><a class="btn alt" href="{slug}.html">Voltar ao nível {e(rot)}</a></p></div>'
+    page(f'teste-{slug}.html', f'Teste do nível {rot}', f'Dez perguntas sorteadas sobre as lições do nível {rot} de política, com a lição a rever em cada resposta.', corpo, atual=f'{slug}.html')
+def minha_posicao():
+    vert = [dict(s=v['s'], n=v['n'], f=v['f'], x=v['x'], y=v['y'], r=v.get('r', '')) for v in V]
+    deb = {}
+    for d in DEBATES_P:
+        deb.setdefault(d['t'], [])
+        if len(deb[d['t']]) < 4: deb[d['t']].append([d['s'], d['n']])
+    dados = json.dumps(dict(vert=vert, deb=deb), ensure_ascii=False).replace('</', '<\\/')
+    campo = lambda i, rot: f'<label class="campo">{rot}<select id="{i}"></select></label>'
+    corpo = cabeca('Aprender', 'Minha posição política', 'Cinco escolhas desenham a sua posição: economia, costumes, método, democracia e quem conta. Veja as vertentes mais próximas e os debates que testam a posição. Fica salvo no seu navegador.')
+    corpo += f'''<div class="wrap estreito secao"><div id="minha-posicao" class="quiz" style="margin-top:0"><div class="grade" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">{campo('mp-econ', 'Economia: Estado ou mercado')}{campo('mp-cost', 'Costumes')}{campo('mp-met', 'Método de mudança')}{campo('mp-dem', 'Democracia')}{campo('mp-circ', 'Quem conta')}</div><div id="mp-saida" style="margin-top:18px"></div></div><script type="application/json" id="dados-mp">{dados}</script><div class="nota"><strong>Compare:</strong> o mapa das <a href="vertentes.html">vertentes políticas</a> mostra todas as correntes em dois eixos, e o <a href="https://ethicstest.biblioverse.org/" {EXT}>Teste de Visão Moral</a> mede a parte ética da sua visão a partir de casos. Posições declaradas e posições reveladas por casos nem sempre batem; a diferença é onde vale pensar.</div></div>'''
+    page('minha-posicao.html', 'Minha posição política', 'Monte sua posição política em cinco escolhas e veja as vertentes mais próximas e os debates que a testam.', corpo, atual='minha-posicao.html')
+
 def nivel(slug, rot, ls, titulo, desc, g):
     grupos = {}
     for l in ls: grupos.setdefault(l.get('grupo', ''), []).append(l)
@@ -381,10 +463,11 @@ def nivel(slug, rot, ls, titulo, desc, g):
     if slug == 'iniciante': cont += f'<h2 class="grupo">Saiba quem faz o quê</h2><div class="grade"><a class="cartao" href="cargos.html"><h3>O que cada cargo faz</h3><p>Vereador, prefeito, deputado, senador, presidente.</p></a><a class="cartao" href="poderes.html"><h3>Os três Poderes</h3><p>Quem faz as leis, quem executa, quem julga.</p></a>{cartao_ferr(*FERR[0])}</div>'
     if slug == 'intermediario': cont += f'<h2 class="grupo">No Brasil</h2><div class="grade"><a class="cartao" href="historia.html"><h3>História da política brasileira</h3><p>Da Colônia a 2026.</p></a><a class="cartao" href="partidos.html"><h3>Dossiê dos partidos</h3><p>Os {len(P)} partidos registrados no TSE.</p></a>{cartao_ferr(*FERR[2])}</div>'
     if slug == 'avancado': cont += f'<h2 class="grupo">Experimente</h2><div class="grade">{cartao_ferr(*FERR[8])}{cartao_ferr(*FERR[7])}</div>'
-    cont += f'<h2 class="grupo">Revise</h2><div class="grade"><a class="cartao" href="revisao-{slug}.html"><h3>Revisão do nível {e(rot)}</h3><p>{len(ls)} perguntas, uma por lição, com placar e volta para a lição em que errar.</p></a></div>'
+    cont += f'<h2 class="grupo">Revise</h2><div class="grade"><a class="cartao" href="revisao-{slug}.html"><h3>Revisão do nível {e(rot)}</h3><p>{len(ls)} perguntas, uma por lição, com placar e volta para a lição em que errar.</p></a><a class="cartao" href="teste-{slug}.html"><h3>Teste do nível</h3><p>Dez perguntas sorteadas entre as {3 * len(ls)} do nível. Mudam a cada vez.</p></a><a class="cartao" href="trilhas.html"><h3>Trilhas por tema</h3><p>Sete caminhos curtos que cruzam os níveis.</p></a></div>'
+    cont = f'<section class="revisao-esp" hidden><h2 class="grupo">Revise o que leu há mais tempo</h2><p>A memória precisa de revisão espaçada. Estas são as lições deste nível que você marcou como lidas há mais tempo.</p><div class="grade" id="rev-grade"></div></section>' + cont + casos_fio(slug)
     tot = sum(tempo_leitura(l['corpo']) for l in ls); h = round(tot / 60)
     dur = f'cerca de {h} hora{"s" if h > 1 else ""} de leitura' if h >= 1 else f'cerca de {tot} minutos de leitura'
-    como = f'''<div class="como-estudar"><h2>Como estudar este nível</h2><p>{len(ls)} lições em {len(grupos)} blocos, {dur}, em sessões de 10 a 15 minutos.</p><ol><li><strong>Siga a ordem dos blocos.</strong> Cada lição se apoia nas anteriores, e começa dizendo o que você vai aprender e o que ajuda ter lido antes.</li><li><strong>Não pule o fim da lição:</strong> os pontos para guardar, a pergunta para pensar e o teste rápido. Responder à pergunta de cabeça, antes de seguir, é o que fixa o conteúdo.</li><li><strong>Marque como lida</strong> para acompanhar seu progresso na barra acima.</li><li><strong>Feche com a <a href="revisao-{slug}.html">revisão do nível</a>:</strong> uma pergunta por lição, com placar.</li></ol></div>'''
+    como = f'''<div class="como-estudar"><h2>Como estudar este nível</h2><p>{len(ls)} lições em {len(grupos)} blocos, {dur}, em sessões de 10 a 15 minutos.</p><ol><li><strong>Siga a ordem dos blocos.</strong> Cada lição se apoia nas anteriores, e começa dizendo o que você vai aprender e o que ajuda ter lido antes.</li><li><strong>Não pule o fim da lição:</strong> os pontos para guardar, a pergunta para pensar e o teste rápido. Responder à pergunta de cabeça, antes de seguir, é o que fixa o conteúdo.</li><li><strong>Marque como lida</strong> para acompanhar seu progresso na barra acima.</li><li><strong>Feche com a <a href="revisao-{slug}.html">revisão do nível</a>:</strong> uma pergunta por lição, com placar; e o <a href="teste-{slug}.html">teste do nível</a>, dez perguntas sorteadas. Para estudar por tema, use as <a href="trilhas.html">trilhas</a>.</li></ol></div>'''
     prog = f'<div class="barra-prog" id="pg-{slug}" data-prog="{",".join(l["slug"] for l in ls)}" style="max-width:420px;background:#ffffff33"><i></i></div><small data-prog-t="pg-{slug}" style="color:#fff"></small>'
     page(f'{slug}.html', titulo, desc, cabeca(f'Nível {rot}', titulo, e(desc), meta=f'<div style="margin-top:1.1rem">{prog}</div>') + f'<div class="wrap secao" style="padding-top:18px">{como}{cont}</div>', atual=f'{slug}.html')
 
@@ -458,7 +541,9 @@ def licao(l, ls):
     texto = (nomes_para_mundo(tabelas(l["corpo"])) if l["slug"] in ("maiores-estadistas", "maiores-ativistas") else tabelas(l["corpo"])).replace("<!--MAPA-ED-->", f'<h3 id="mapa">Um mapa em coordenadas</h3>{mapa_ed()}')
     assert texto.count('<div class="ajuda">') == 1, l['slug']
     texto = texto.replace('<div class="ajuda">', objetivos(l) + '<div class="ajuda">', 1)
-    corpo = indice(l, ls) + topo + f'<div class="wrap layout"><article class="leitura">{texto}{debates_da_licao(l)}{fecho(l)}{bloco_quiz(l["quiz"])}{fontes(l["fontes"])}{pager}</article>{lado}</div>' + relacionados(l)
+    _k = texto.index('</section></div>', texto.index('class="ajuda"')) + len('</section></div>')
+    texto = glossa(texto[:_k] + caso_abre(l) + texto[_k:], l['titulo'])
+    corpo = indice(l, ls) + topo + f'<div class="wrap layout"><article class="leitura">{texto}{erro_pratica(l)}{debates_da_licao(l)}{fecho(l)}{quizzes(l)}{fontes(l["fontes"])}{pager}</article>{lado}</div>' + relacionados(l)
     page(f'{l["slug"]}.html', l['titulo'], l['resumo'], corpo, atual=f'{l["nivel"]}.html')
 
 # ---------- Brasil ----------
@@ -661,10 +746,13 @@ def mundo():
 
 # ---------- debates ----------
 def cartao_d(d, pre=''):
-    return f'<a class="cartao deb" href="{pre}{d["s"]}.html"><span class="linha-cartao"><span class="peso {d["p"][0]}">{e(ROT_PESO[d["p"][0]])}</span></span><h3>{e(d["n"])}</h3><p>{e(d["r"])}</p></a>'
+    return f'<a class="cartao deb item" data-t="{e(d["t"])}" data-p="{d["p"][0]}" href="{pre}{d["s"]}.html"><span class="linha-cartao"><span class="peso {d["p"][0]}">{e(ROT_PESO[d["p"][0]])}</span></span><h3>{e(d["n"])}</h3><p>{e(d["r"])}</p></a>'
 def debates_pub():
     assert len({d['s'] for d in DEBATES_P}) == len(DEBATES_P)
-    gr = ''.join(f'<h2 class="grupo">{e(t)}</h2><div class="grade">' + ''.join(cartao_d(d, 'debates/') for d in DEBATES_P if d['t'] == t) + '</div>' for t in TEMAS_D)
+    gr = ''.join(f'<section class="grupo-l"><h2 class="grupo">{e(t)}</h2><div class="grade">' + ''.join(cartao_d(d, 'debates/') for d in DEBATES_P if d['t'] == t) + '</div></section>' for t in TEMAS_D)
+    bots = '<button type="button" data-k="t" data-v="" aria-pressed="true">Todos</button>' + ''.join(f'<button type="button" data-k="t" data-v="{e(t)}" aria-pressed="false">{e(t)}</button>' for t in TEMAS_D)
+    botp = '<button type="button" data-k="p" data-v="" aria-pressed="true">Qualquer peso</button>' + ''.join(f'<button type="button" data-k="p" data-v="{k}" aria-pressed="false">{e(v)}</button>' for k, v in ROT_PESO.items())
+    gr = f'<input class="fq" id="fq" type="search" placeholder="Filtrar por nome ou tema" aria-label="Filtrar debates"/><div class="filtros" role="group" aria-label="Tema">{bots}</div><div class="filtros" role="group" aria-label="Peso">{botp}</div><p class="contagem" id="contagem" role="status"></p><div id="lista">{gr}</div>'
     leg = ''.join(f'<li><span class="peso {k}">{e(v)}</span></li>' for k, v in ROT_PESO.items())
     corpo = cabeca('Debates', 'Os principais debates políticos', f'{len(DEBATES_P)} temas que dividem o público: os dois lados, por que é complexo, e onde a lógica e os dados pesam mais.')
     corpo += f'''<div class="wrap secao"><div class="nota" style="margin-top:0"><strong>Como ler:</strong> não existe imparcialidade em dizer sempre que “os dois lados têm razão”. Em cada tema, mostramos a posição de cada lado e por que o debate é complexo. Quando a <a href="testar-visao-moral.html">imparcialidade</a>, a lógica e os dados pesam para um lado, dizemos isso, e explicamos por quê. Essa avaliação é do site e pode ser contestada.</div><ul class="leg-peso">{leg}</ul>{gr}<p class="legenda">Para ir além, veja os <a href="catalogo.html">cursos</a>, a <a href="biblioteca.html">biblioteca</a> e <a href="testar-visao-moral.html">como testar sua visão moral</a>.</p></div>'''
@@ -679,8 +767,11 @@ def debates_pub():
         i = DEBATES_P.index(d) % max(1, len(mesmos))
         rel = ''.join(cartao_d(x) for x in (mesmos[i:] + mesmos[:i])[:3])
         fontes_d = list(d.get('fx', [])) + [('Wikipédia: ' + d['n'], 'https://pt.wikipedia.org/w/index.php?search=' + quote(d['n'])), ('Buscar no Nexo Jornal', 'https://www.nexojornal.com.br/search?q=' + quote(d['n'])), ('Buscar no Politize!', 'https://www.politize.com.br/?s=' + quote(d['n']))]
+        bts = ''.join(f'<button type="button" data-v="{i}" aria-pressed="false">{e(x[0])}</button>' for i, x in enumerate((d['a'], d['b']))) + '<button type="button" data-v="ns" aria-pressed="false">Ainda não sei</button>'
+        pos1 = f'<div class="posicao" data-deb="{d["s"]}"><p class="k">Antes de ler: para que lado você pende?</p><div class="ops">{bts}</div><p class="fb" role="status"></p></div>'
+        pos2 = f'<div class="posicao depois" data-deb="{d["s"]}"><p class="k">E agora, depois de ler?</p><div class="ops">{bts}</div><p class="fb" role="status"></p></div>'
         corpo = cabeca('<a href="../debates.html">Debates</a> / ' + e(d['t']), d['n'], e(d['r']))
-        corpo += f'''<div class="wrap estreito leitura secao"><p class="abre">{e(d["v"])}</p><h2>A posição de cada lado</h2><div class="dois-lados">{lado(d["a"])}{lado(d["b"])}</div><p class="legenda">Posições gerais. Muita gente concorda em parte com cada lado.</p>{d.get("extra", "")}<h2>Por que é complexo</h2><ul>{"".join(f"<li>{e(x)}</li>" for x in d["c"])}</ul><h2>O que a lógica e os dados indicam</h2><div class="nota veredito {d["p"][0]}"><strong>{e(ROT_PESO[d["p"][0]])}</strong><p>{e(d["p"][1])}</p></div><p class="legenda">Avaliação do site, sujeita a críticas. <a href="../mudar-de-ideia.html">Evidências novas podem mudar esta avaliação.</a></p>{sub}<h2>Perguntas para pensar</h2><ol class="roteiro"><li>Qual parte é fato, e qual é valor?</li><li>Quem paga o preço de cada opção?</li><li>Eu aceitaria essa regra sem saber em que lugar estaria?</li><li>O que me faria mudar de ideia?</li></ol>{ler}{fontes(fontes_d)}</div><section class="relac"><div class="wrap"><h2>No mesmo tema</h2><div class="grade">{rel}</div></div></section>'''
+        corpo += f'''<div class="wrap estreito leitura secao"><p class="abre">{e(d["v"])}</p>{pos1}<h2>A posição de cada lado</h2><div class="dois-lados">{lado(d["a"])}{lado(d["b"])}</div><p class="legenda">Posições gerais. Muita gente concorda em parte com cada lado.</p>{d.get("extra", "")}<h2>Por que é complexo</h2><ul>{"".join(f"<li>{e(x)}</li>" for x in d["c"])}</ul><h2>O que a lógica e os dados indicam</h2><div class="nota veredito {d["p"][0]}"><strong>{e(ROT_PESO[d["p"][0]])}</strong><p>{e(d["p"][1])}</p></div><p class="legenda">Avaliação do site, sujeita a críticas. <a href="../mudar-de-ideia.html">Evidências novas podem mudar esta avaliação.</a></p>{pos2}{sub}<h2>Perguntas para pensar</h2><ol class="roteiro"><li>Qual parte é fato, e qual é valor?</li><li>Quem paga o preço de cada opção?</li><li>Eu aceitaria essa regra sem saber em que lugar estaria?</li><li>O que me faria mudar de ideia?</li></ol>{ler}{fontes(fontes_d)}</div><section class="relac"><div class="wrap"><h2>No mesmo tema</h2><div class="grade">{rel}</div></div></section>'''
         page(f'debates/{d["s"]}.html', d['n'], f'{d["n"]}: {d["r"]} Os dois lados e o que os dados indicam.', corpo, atual='debates.html')
 
 def sites_uteis():
@@ -959,20 +1050,20 @@ def sobre():
 <h2>Como apuramos</h2><p>Usamos Wikipédia, TSE, Senado, Câmara, agências de checagem e imprensa de referência, evitando portais muito à direita ou muito à esquerda. As votações vêm diretamente da API oficial da Câmara. Dados de partidos têm como base novembro de 2026 e mudam com frequência.</p><p>Os dossiês são resumos, não processos completos. Acusação não é condenação, e decisões são revistas. Ao ver um erro, mande a correção com a fonte.</p>
 <h2>Seus dados</h2><p>Não há cadastro. Lições lidas e fichas ficam só no seu navegador. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
 <h2>Parte da BiblioVerse</h2><p>Este site faz parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>'''
-    page('sobre.html', 'Sobre', 'Posição editorial e método de apuração do Política Para Iniciantes.', corpo)
+    page('sobre.html', 'Sobre', 'Posição editorial e método de apuração do Política Para Iniciantes.', corpo, atual='sobre.html')
 
 def arquivos():
     urls = ['index.html', 'comece-aqui.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'cargos.html', 'poderes.html', 'historia.html', 'partidos.html', 'ranking-da-mentira.html', 'ferramentas.html', 'biblioteca.html', 'sobre.html'] + [l['slug'] + '.html' for l in TODAS] + [f'partidos/{p["id"]}.html' for p in P] + [f'ferramentas/{f[0]}.html' for f in FERR] + ['politicos.html', 'vertentes.html', 'vieses.html'] + [f'vieses/{slug_v(x)}.html' for x in VIES] + [f'vertentes/{v["s"]}.html' for v in V] + [f'politicos/{f["slug"]}.html' for f in FIG]
     w = lambda n, t: open(os.path.join(ROOT, n), 'w', encoding='utf-8', newline='\n').write(t)
     w('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'<url><loc>{SITE}/{"" if u == "index.html" else u}</loc><lastmod>{ATUALIZADO}</lastmod></url>\n' for u in sorted(set(PAGINAS + urls) - {'404.html'})) + '</urlset>\n')
-    w('llms.txt', f'# {NOME}\n\n> Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.\n\n## Principais seções\n\n- [Comece aqui]({SITE}/comece-aqui.html)\n- [Catálogo de lições]({SITE}/catalogo.html)\n- [Política brasileira]({SITE}/brasil.html)\n- [Partidos]({SITE}/partidos.html)\n- [Políticos e figuras]({SITE}/politicos.html)\n- [Figuras internacionais]({SITE}/mundo.html)\n- [Principais debates]({SITE}/debates.html)\n- [Vertentes políticas]({SITE}/vertentes.html)\n- [Vieses cognitivos]({SITE}/vieses.html)\n- [Ferramentas]({SITE}/ferramentas.html)\n- [Biblioteca]({SITE}/biblioteca.html)\n- [Sites sobre política]({SITE}/sites.html)\n- [Indicadores internacionais]({SITE}/indicadores.html)\n- [Glossário de economia]({SITE}/glossario-economico.html)\n- [Sobre e método]({SITE}/sobre.html)\n')
+    w('llms.txt', f'# {NOME}\n\n> Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.\n\n## Principais seções\n\n- [Comece aqui]({SITE}/comece-aqui.html)\n- [Catálogo de lições]({SITE}/catalogo.html)\n- [Trilhas por tema]({SITE}/trilhas.html)\n- [Minha posição política]({SITE}/minha-posicao.html)\n- [Política brasileira]({SITE}/brasil.html)\n- [Partidos]({SITE}/partidos.html)\n- [Políticos e figuras]({SITE}/politicos.html)\n- [Figuras internacionais]({SITE}/mundo.html)\n- [Principais debates]({SITE}/debates.html)\n- [Vertentes políticas]({SITE}/vertentes.html)\n- [Vieses cognitivos]({SITE}/vieses.html)\n- [Ferramentas]({SITE}/ferramentas.html)\n- [Biblioteca]({SITE}/biblioteca.html)\n- [Sites sobre política]({SITE}/sites.html)\n- [Indicadores internacionais]({SITE}/indicadores.html)\n- [Glossário de economia]({SITE}/glossario-economico.html)\n- [Sobre e método]({SITE}/sobre.html)\n')
     w('robots.txt', f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
     w('CNAME', 'politicaparainiciantes.biblioverse.org\n')
     w('.nojekyll', '')
     w('.gitignore', '__pycache__/\n')
     w('manifest.webmanifest', json.dumps(dict(name=NOME, short_name='Política', start_url='/', display='standalone', background_color='#fbf9f5', theme_color='#14206b', icons=[dict(src='assets/icon.svg', sizes='any', type='image/svg+xml'), dict(src='assets/icon-192.png', sizes='192x192', type='image/png'), dict(src='assets/icon-512.png', sizes='512x512', type='image/png')]), ensure_ascii=False))
     w('assets/icon.svg', arte.LOGO.replace(' aria-hidden="true"', ' xmlns="http://www.w3.org/2000/svg"'))
-    busca = [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
+    busca = [dict(t='Trilhas por tema', d='Sete caminhos curtos de estudo', u='trilhas.html'), dict(t='Minha posição política', d='Cinco escolhas e as vertentes mais próximas', u='minha-posicao.html')] + [dict(t=x['n'], d='Indicador · ' + x['r'], u=f'indicadores/{x["s"]}.html') for x in IND] + [dict(t=t, d='Glossário · ' + d[:90], u='glossario-economico.html') for _, t, d, _ in GLOSSARIO] + [dict(t=f['nome'], d=f'{f["pais"]} · {f["quem"]}', u=f'mundo/{f["slug"]}.html') for f in MUN] + [dict(t=d['n'], d='Debate · ' + d['r'], u=f'debates/{d["s"]}.html') for d in DEBATES_P] + [dict(t='Figuras políticas internacionais', d='Governantes, estadistas, ativistas, jornalistas e extremistas', u='mundo.html'), dict(t='Os principais debates políticos', d='Os dois lados e o que os dados indicam', u='debates.html'), dict(t='Biblioteca de sites sobre política', d='Checagem, viés, investigação, transparência e observatórios', u='sites.html')] + [dict(t=l['titulo'], d=l['nivel_rot'] + ' · ' + l['resumo'], u=l['slug'] + '.html') for l in TODAS] + [dict(t=f'{p["s"]}: {p["n"]}', d=f'Partido nº {p["num"]} · {p["esp"]}', u=f'partidos/{p["id"]}.html') for p in P] + [dict(t=f[1], d='Ferramenta · ' + f[2], u=f'ferramentas/{f[0]}.html') for f in FERR] + [dict(t=x[1], d='Viés · ' + x[3], u=f'vieses/{slug_v(x)}.html') for x in VIES] + [dict(t=v['n'], d='Vertente · ' + v['r'], u=f'vertentes/{v["s"]}.html') for v in V] + [dict(t=t, d=d, u=u) for u, t, d in BR] + [dict(t=f['nome'], d=f'{f["cat"]} · {f["quem"]}', u=f'politicos/{f["slug"]}.html') for f in FIG]
     w('assets/busca.json', json.dumps(busca, ensure_ascii=False))
     # endereços antigos de senciocentrismo: redirecionam para sencientismo
     for _old, _new in (('senciocentrismo.html', 'sencientismo.html'), ('vertentes/senciocentrismo.html', 'senciocracia.html'), ('vertentes/sencientismo.html', 'senciocracia.html')):
@@ -980,9 +1071,9 @@ def arquivos():
     page('404.html', 'Página não encontrada', 'Esta página não existe.', cabeca('Erro 404', 'Página não encontrada', 'Volte para o <a href="/" style="color:#fff">início</a> ou use a busca.'))
 
 os.makedirs(os.path.join(ROOT, 'assets'), exist_ok=True)
-inicio(); comece(); catalogo()
+inicio(); comece(); catalogo(); trilhas(); minha_posicao()
 for s, r, ls, t, d, g in NIVEIS:
-    nivel(s, r, ls, t, d, g); revisao(s, r, ls, g)
+    nivel(s, r, ls, t, d, g); revisao(s, r, ls, g); teste_nivel(s, r, ls)
     for l in ls: licao(l, ls)
 figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); governos(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
 print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(FERR)} ferramentas.')

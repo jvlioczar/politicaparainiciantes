@@ -334,4 +334,99 @@
     };
     pi.forEach(function (i) { i.addEventListener('input', run); }); run();
   }
+
+  /* data das marcações (revisão espaçada) */
+  if (marca) marca.addEventListener('click', function () { var tt = ler('ppi-lidas-t', {}); var id = marca.dataset.id; if (lidas.indexOf(id) >= 0) tt[id] = Date.now(); else delete tt[id]; grava('ppi-lidas-t', tt); });
+  var rev = $('.revisao-esp');
+  if (rev) {
+    var tt2 = ler('ppi-lidas-t', {}), todas = $$('.cartao[data-licao]').filter(function (c) { return !c.closest('.revisao-esp'); });
+    var lidasAqui = todas.filter(function (c) { return lidas.indexOf(c.dataset.licao) >= 0; });
+    if (lidasAqui.length >= 3) {
+      lidasAqui.sort(function (a, b) { return (tt2[a.dataset.licao] || 0) - (tt2[b.dataset.licao] || 0); });
+      var rg = $('#rev-grade'); lidasAqui.slice(0, 3).forEach(function (c) { rg.appendChild(c.cloneNode(true)); });
+      rev.hidden = false;
+    }
+  }
+
+  /* teste do nível: dez perguntas sorteadas */
+  var dtn = $('#dados-teste');
+  if (dtn && $('#jogo')) {
+    var TN = JSON.parse(dtn.textContent), its = TN.itens.slice().sort(function () { return Math.random() - .5; }).slice(0, TN.n);
+    jogo($('#jogo'), its, function (x) { return x[1]; }, function (x) { return x[1][x[2]]; }, function (x) { return x[0]; }, function (x) { return x[3]; });
+  }
+
+  /* listas com filtro por grupo e busca (debates) */
+  var lst = $('#lista');
+  if (lst) {
+    var lc = $$('.item', lst), lg = $$('.grupo-l', lst), lq = $('#fq'), lcnt = $('#contagem'), lf = {};
+    var aplicaL = function () {
+      var t = norm(lq ? lq.value : ''), n = 0;
+      lc.forEach(function (c) { var ok = Object.keys(lf).every(function (k) { return !lf[k] || c.dataset[k] === lf[k]; }) && norm(c.textContent).indexOf(t) >= 0; c.hidden = !ok; if (ok) n++; });
+      lg.forEach(function (g) { g.hidden = !$$('.item', g).some(function (c) { return !c.hidden; }); });
+      if (lcnt) lcnt.textContent = n + (n === 1 ? ' item' : ' itens');
+    };
+    if (lq) lq.addEventListener('input', aplicaL);
+    $$('.filtros button[data-k]').forEach(function (b) { b.addEventListener('click', function () { lf[b.dataset.k] = b.dataset.v; $$('.filtros button[data-k="' + b.dataset.k + '"]').forEach(function (o) { o.setAttribute('aria-pressed', o === b); }); aplicaL(); }); });
+    aplicaL();
+  }
+
+  /* posição antes e depois, nos debates */
+  var posB = $$('.posicao');
+  if (posB.length) {
+    var PP = ler('ppi-pos', {});
+    posB.forEach(function (b) {
+      var s = b.dataset.deb, dep = b.classList.contains('depois'), fb = $('.fb', b), bts = $$('button', b), k = dep ? 1 : 0;
+      var pinta2 = function () { var cur = PP[s] || [null, null]; bts.forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.v === cur[k])); }); };
+      bts.forEach(function (x) {
+        x.addEventListener('click', function () {
+          var cur = PP[s] || [null, null]; cur[k] = x.dataset.v; PP[s] = cur; grava('ppi-pos', PP); pinta2();
+          if (!dep) { fb.textContent = 'Registrado. Leia os dois lados e responda de novo no fim da página.'; return; }
+          var a = cur[0];
+          if (a === null) fb.textContent = 'Você não registrou a posição antes de ler. Da próxima vez, tente: comparar o antes e o depois é o exercício.';
+          else if (a === x.dataset.v) fb.textContent = x.dataset.v === 'ns' ? 'Você continua sem posição. Pode ser que o debate esteja em aberto, ou que falte informação. Anote o que faria você decidir.' : 'Você manteve a posição. Pergunte-se: qual foi o melhor argumento do outro lado, e por que ele não bastou?';
+          else fb.textContent = 'Você mudou de posição depois de ler. É o que a lição sobre mudar de ideia pede quando o argumento convence; vale checar se mudou por razão ou por cansaço.';
+        });
+      });
+      pinta2();
+      if (dep) { var c0 = (PP[s] || [null])[0]; if (c0 !== null) { var r = bts.filter(function (x) { return x.dataset.v === c0; })[0]; if (r) fb.textContent = 'Antes de ler, você pendia para: ' + r.textContent + '.'; } }
+    });
+  }
+
+  /* minha posição política */
+  var mpd = $('#dados-mp');
+  if (mpd) {
+    var MP = JSON.parse(mpd.textContent), sel = {}, salvo = ler('ppi-minha', {});
+    var opc = function (id, lista, vazio) { var s = $('#' + id); s.appendChild(el('option', { value: '' }, vazio)); lista.forEach(function (o) { s.appendChild(el('option', { value: o[0] }, o[1])); }); if (salvo[id]) s.value = salvo[id]; sel[id] = s; };
+    opc('mp-econ', [['-80', 'Muito mais Estado: planejar e distribuir'], ['-40', 'Mais Estado: regular e redistribuir'], ['0', 'Equilíbrio: depende do setor'], ['40', 'Mais mercado: menos Estado e impostos'], ['80', 'Muito mais mercado: Estado mínimo']], 'Economia');
+    opc('mp-cost', [['-60', 'Progressista: ampliar direitos e liberdades'], ['0', 'Moderado: mudar com cautela'], ['60', 'Conservador: preservar tradições']], 'Costumes');
+    opc('mp-met', [['-70', 'Reforma gradual, dentro das regras'], ['0', 'Reformas rápidas, dentro das regras'], ['70', 'Ruptura: refazer o sistema']], 'Método');
+    opc('mp-dem', [['liberal', 'Democracia representativa com limites fortes'], ['direta', 'Mais democracia direta e participação'], ['epist', 'Mais peso a quem tem conhecimento'], ['forte', 'Um governo forte resolve melhor']], 'Democracia');
+    opc('mp-circ', [['pais', 'Os cidadãos do meu país'], ['humanos', 'Todos os humanos, inclusive estrangeiros e futuros'], ['sencientes', 'Todos os que podem sofrer, inclusive animais']], 'Quem conta');
+    var saida = $('#mp-saida');
+    var monta = function () {
+      var v = {}; Object.keys(sel).forEach(function (k) { v[k] = sel[k].value; }); grava('ppi-minha', v); saida.textContent = '';
+      if (!v['mp-econ'] && !v['mp-cost'] && !v['mp-met'] && !v['mp-dem'] && !v['mp-circ']) { saida.appendChild(el('p', { class: 'nota' }, 'Escolha as opções acima. O resultado aparece aqui e fica salvo no seu navegador.')); return; }
+      var p = el('div', { class: 'nota' });
+      if (v['mp-econ'] !== '' || v['mp-cost'] !== '') {
+        var x = .65 * (+v['mp-econ'] || 0) + .35 * (+v['mp-cost'] || 0), y = +v['mp-met'] || -40;
+        var perto = MP.vert.map(function (t) { return { t: t, d: Math.hypot(t.x - x, t.y - y) }; }).sort(function (a, b) { return a.d - b.d; }).slice(0, 3);
+        p.appendChild(document.createTextNode('No mapa das vertentes, sua posição fica mais perto de: '));
+        perto.forEach(function (q, i) { if (i) p.appendChild(document.createTextNode(', ')); p.appendChild(el('a', { href: base + 'vertentes/' + q.t.s + '.html' }, q.t.n)); });
+        p.appendChild(document.createTextNode('. O mapa é aproximado: ele mede eixos, não todas as suas ideias. '));
+      }
+      var txt = { liberal: 'Sobre a democracia, você fica com a representativa de limites fortes: tribunais, imprensa e oposição como freios ao vencedor.', direta: 'Sobre a democracia, você quer mais participação direta; a lição sobre democracia direta e epistocracia mostra o que isso ganha e arrisca.', epist: 'Sobre a democracia, você daria mais peso a quem sabe mais; a lição sobre epistocracia mostra a objeção principal: quem define o saber captura o poder.', forte: 'Sobre a democracia, você aceitaria um governo forte; a lição sobre o perigo de questionar a democracia e a história das ditaduras na América do Sul são o contraponto a ler.' };
+      if (v['mp-dem']) p.appendChild(document.createTextNode(' ' + txt[v['mp-dem']]));
+      var tc = { pais: ' Sobre quem conta, você para nos cidadãos do seu país: as lições sobre culpar o estrangeiro e sobre imparcialidade testam essa fronteira.', humanos: ' Sobre quem conta, você inclui todos os humanos: a lição sobre sencientismo pergunta se a fronteira da espécie é tão diferente das outras.', sencientes: ' Sobre quem conta, você inclui todos os que sofrem: a lição sobre política baseada na senciência mostra o que isso muda em leis e orçamentos.' };
+      if (v['mp-circ']) p.appendChild(document.createTextNode(tc[v['mp-circ']]));
+      saida.appendChild(p);
+      var temas = []; if (v['mp-econ']) temas.push('Economia e Estado'); if (v['mp-cost']) temas.push('Direitos e costumes'); if (v['mp-circ'] === 'sencientes') temas.push('Ambiente e animais'); if (v['mp-dem']) temas.push('Instituições');
+      var ds = []; temas.forEach(function (t) { (MP.deb[t] || []).slice(0, 2).forEach(function (d) { ds.push(d); }); });
+      if (ds.length) { var h = el('p', null, 'Debates que testam essa posição: '); ds.forEach(function (d, i) { if (i) h.appendChild(document.createTextNode(', ')); h.appendChild(el('a', { href: base + 'debates/' + d[0] + '.html' }, d[1])); }); h.appendChild(document.createTextNode('.')); saida.appendChild(h); }
+      if (v['mp-met'] === '70') saida.appendChild(el('p', { class: 'legenda' }, 'Você escolheu ruptura. A lição sobre o perigo das revoluções lista as perguntas a fazer antes: que limites o novo poder terá, e quem poderá tirá-lo?'));
+    };
+    Object.keys(sel).forEach(function (k) { sel[k].addEventListener('change', monta); }); monta();
+  }
+
+  /* glossário: toque abre a definição */
+  $$('.gl').forEach(function (g) { g.addEventListener('click', function () { $$('.gl.ativo').forEach(function (o) { if (o !== g) o.classList.remove('ativo'); }); g.classList.toggle('ativo'); }); });
 })();

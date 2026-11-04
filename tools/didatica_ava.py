@@ -1,0 +1,117 @@
+"""Camada didática extra, nível Avançado. Mesmo formato de didatica_ini.py."""
+E_AVA = {
+'atores-malevolentes': dict(
+ caso=('Um líder mente sem custo, humilha aliados, não sente culpa e parece gostar de punir. Seus apoiadores dizem que é “autêntico”.', 'Que traços são esses? Por que chegam ao poder, e como evitar?', 'Narcisismo, maquiavelismo, psicopatia e sadismo: a tétrade sombria. Chegam porque a política recompensa autoconfiança e agressividade. A lição mostra como evitar, separando conduta de diagnóstico.'),
+ erro=('“Político que não gosto é psicopata.”', 'Diagnóstico à distância é irresponsável; o que se avalia é conduta: mentir sem custo, crueldade, ausência de reparação. A lição fala de traços e comportamentos observáveis, não de rótulos clínicos.'),
+ ferr='ficha-do-candidato',
+ quiz=[('Por que atores malevolentes chegam ao poder?', ['Por azar', 'Porque a política recompensa autoconfiança, agressividade e ausência de escrúpulos, sobretudo em crises', 'Porque são inteligentes'], 1, 'O filtro eleitoral seleciona traços que também são perigosos.'),
+       ('Qual é a defesa institucional mais eficaz?', ['Testes psicológicos para candidatos', 'Limites ao poder que funcionem mesmo com uma pessoa má no cargo', 'Eleger só pessoas boas'], 1, 'Instituições devem supor o pior ocupante, não o melhor.')]),
+'fanatismo-ideologico': dict(
+ caso=('Imagine uma tecnologia poderosa nas mãos de um grupo com certeza absoluta de estar certo e disposição de punir quem discorda.', 'Por que essa combinação pode ser o maior risco do futuro? O que isso muda na política de hoje?', 'Certeza absoluta mais crueldade mais poder é a receita das piores atrocidades, e o poder cresce. A lição apresenta a tríade do fanatismo, o risco do bloqueio e o que isso pede da política comum.'),
+ erro=('“Fanatismo é problema de grupos marginais.”', 'Fanatismos chegaram ao poder em grandes países no século XX; e, com tecnologias mais poderosas, um fanatismo no poder pode se tornar irreversível. O risco é central, não marginal.'),
+ ferr=None,
+ quiz=[('O que é o “risco do bloqueio”?', ['Bloquear redes', 'Um regime ou valor que, com tecnologia suficiente, se torna impossível de corrigir', 'Bloqueio de estradas'], 1, 'Irreversibilidade é o que torna o cenário o pior.'),
+       ('O que a lição pede da política comum?', ['Ignorar o longo prazo', 'Preservar a capacidade de corrigir erros: pluralismo, limites e dúvida institucionalizada', 'Escolher o fanatismo certo'], 1, 'A proteção é manter aberta a possibilidade de mudar de ideia.')]),
+'genetica-e-politica': dict(
+ caso=('Estudos com gêmeos sugerem que parte das inclinações políticas tem influência genética.', 'Isso significa que a política está no DNA? O que “influenciar” quer dizer aqui?', 'Influenciar não é determinar: genes afetam temperamento e sensibilidade a ameaça, que interagem com ambiente e época. A lição explica os achados e os cuidados.'),
+ erro=('“Se é genético, não adianta argumentar.”', 'Influência genética sobre temperamento não fixa posições: as mesmas pessoas mudam de posição com a época e o ambiente. Argumento e experiência continuam a mover.'),
+ ferr=None,
+ quiz=[('O que os estudos com gêmeos encontraram?', ['Um gene da esquerda', 'Que gêmeos idênticos se parecem mais politicamente do que fraternos, sugerindo influência genética sobre inclinações', 'Nada'], 1, 'A influência é sobre traços gerais, não sobre partidos.'),
+       ('Qual é o cuidado principal ao ler esses estudos?', ['Nenhum', 'Não confundir influência estatística com destino individual nem usar os achados para desqualificar opiniões', 'Rejeitá-los'], 1, 'Explicar a origem de uma inclinação não diz se ela é justificada.')]),
+'inteligencia-nao-protege': dict(
+ caso=('Pessoas com mais conhecimento científico estão mais polarizadas sobre o clima, não menos.', 'Por quê? O que isso diz sobre ensinar lógica e dar informação?', 'Inteligência a serviço da crença: quem sabe mais é melhor em defender o que já acredita. A lição mostra as pesquisas, por que acontece e o que ensinar no lugar.'),
+ erro=('“Basta informar que as pessoas mudam.”', 'Informação é usada pelo raciocínio motivado para defender a posição; o que reduz o viés é curiosidade científica, humildade e o hábito de testar a própria crença, não mais dados.'),
+ ferr='teste-de-troca',
+ quiz=[('Por que mais conhecimento pode aumentar a polarização?', ['Porque o conhecimento é falso', 'Porque pessoas mais hábeis usam a habilidade para defender o que já acreditam', 'Porque polarização é boa'], 1, 'Kahan: a habilidade serve à identidade.'),
+       ('O que ensinar, então?', ['Mais lógica', 'Curiosidade, humildade intelectual e o hábito de perguntar o que me faria mudar de ideia', 'Nada'], 1, 'Curiosidade científica, não só conhecimento, reduz o viés.')]),
+'estereotipo-preconceito-discriminacao': dict(
+ caso=('Alguém pensa que um grupo é preguiçoso, sente desconforto perto de seus membros e, como chefe, não os contrata.', 'São três coisas ou uma? Qual delas a lei alcança, e qual a educação alcança?', 'Estereótipo (pensar), preconceito (sentir) e discriminação (agir): três coisas que se alimentam. A lei alcança a ação; a educação e o contato, as outras duas. A lição mostra de onde vêm e como reconhecer em si.'),
+ erro=('“Não sou preconceituoso, logo não discrimino.”', 'Discriminação pode vir de regras e hábitos sem preconceito consciente; e preconceito pode existir sem ação. Separar os três é o que permite agir sobre cada um.'),
+ ferr='teste-de-troca',
+ quiz=[('Discriminação é…', ['Pensar mal de um grupo', 'Agir de modo a tratar pior alguém por pertencer a um grupo', 'Sentir desconforto'], 1, 'É a parte que a lei alcança.'),
+       ('Como a política pode reforçar estereótipos?', ['Não pode', 'Usando grupos como bode expiatório e associando-os a ameaças em discursos e campanhas', 'Só com leis'], 1, 'O discurso político é uma das fontes mais poderosas de estereótipos.')]),
+'critica-ao-identitarismo': dict(
+ caso=('Um movimento conquistou direitos para um grupo. Agora, parte dele diz que só membros do grupo podem opinar sobre o tema, e que a verdade depende de quem fala.', 'O que acertou e o que se perdeu? Há uma saída?', 'A luta por reconhecimento trouxe direitos reais; quando a identidade vira o único critério, perde-se a possibilidade de argumento comum. A lição apresenta a origem, os acertos, as críticas e a saída pela universalidade.'),
+ erro=('“Criticar o identitarismo é ser contra os direitos das minorias.”', 'A crítica é a um método (identidade como único critério de verdade e de voz), não aos direitos conquistados. Boa parte dos críticos defende os mesmos direitos por via universalista.'),
+ ferr=None,
+ quiz=[('O que a política de identidade acertou?', ['Nada', 'Tornar visíveis injustiças específicas e conquistar direitos para grupos excluídos', 'Tudo'], 1, 'A crítica começa reconhecendo o acerto.'),
+       ('Qual é a saída que a lição propõe?', ['Abandonar os direitos', 'A universalidade: defender os direitos de cada grupo com razões que valem para todos', 'Mais identidade'], 1, 'Os mesmos direitos, com base em argumentos comuns.')]),
+'direta-ou-epistocracia': dict(
+ caso=('Dois amigos propõem reformas opostas: um quer referendos para tudo; o outro, que votos de quem entende mais valham mais.', 'O que cada proposta acerta e arrisca? Há caminhos do meio?', 'A direta leva a sério a igualdade e arrisca decisões mal informadas; a epistocracia leva a sério a competência e arrisca excluir e capturar. A lição mostra os argumentos, exemplos reais e os caminhos do meio.'),
+ erro=('“Quem sabe mais deveria decidir.”', 'Saber mais sobre fatos não é saber mais sobre o que os outros precisam, e quem define o “saber” ganha poder. A epistocracia tem argumentos, e esse risco é a resposta mais forte a ela.'),
+ ferr='voto-preferencial',
+ quiz=[('Qual é o principal argumento contra a epistocracia?', ['Que o povo é sábio', 'Que quem define a competência captura o poder, e os incompetentes também sofrem as decisões', 'Que é cara'], 1, 'O teste de competência tende a excluir quem já é excluído.'),
+       ('Qual é um caminho do meio?', ['Nenhum', 'Assembleias cidadãs sorteadas, com tempo e informação para deliberar', 'Abolir eleições'], 1, 'Combinam igualdade (sorteio) com competência (deliberação informada).')]),
+'melhorar-a-democracia': dict(
+ caso=('A sua cidade quer reduzir a fragmentação partidária e melhorar a representação. Há propostas de voto distrital, preferencial e cláusula de barreira.', 'Como avaliar uma reforma eleitoral? Que efeitos colaterais cada uma tem?', 'Regras mudam resultados: cada sistema favorece algo e custa algo. A lição dá o cardápio com prós e contras e um método para avaliar reformas.'),
+ erro=('“Existe um sistema eleitoral certo.”', 'Cada sistema troca representatividade por governabilidade ou vice-versa; o certo depende do problema que se quer resolver e do contexto. Reformas resolvem um problema e criam outro.'),
+ ferr='simulador-de-cadeiras',
+ quiz=[('O voto preferencial (ranqueado) tende a…', ['Favorecer extremos', 'Favorecer candidatos aceitáveis para a maioria e reduzir o voto útil', 'Eliminar partidos'], 1, 'O eleitor ordena preferências; o menos rejeitado tende a vencer.'),
+       ('Como avaliar uma reforma, segundo a lição?', ['Pelo partido que propõe', 'Pelo problema que resolve, pelos efeitos colaterais e pela evidência de onde foi aplicada', 'Pela novidade'], 1, 'Regras eleitorais têm consequências previsíveis em outros países.')]),
+'politicas-baseadas-em-evidencias': dict(
+ caso=('Um programa social parece funcionar: quem participa melhora. Mas quem participa é quem já estava motivado.', 'O programa funcionou? Como saber de verdade?', 'Comparar participantes com não participantes não basta; é preciso um grupo de comparação equivalente (sorteio, por exemplo). A lição mostra a hierarquia das evidências, o ciclo testar-medir-corrigir e os limites.'),
+ erro=('“Evidência decide a política.”', 'Evidência diz o que funciona para um fim; o fim é uma escolha de valor. E nem tudo pode ser testado; a lição mostra os limites e por que ainda assim vale tratar leis como hipóteses.'),
+ ferr='valor-ou-fato',
+ quiz=[('Por que um ensaio com sorteio é a evidência mais forte?', ['Porque é caro', 'Porque o sorteio torna os grupos equivalentes, e a diferença só pode vir do programa', 'Porque é moderno'], 1, 'Elimina o viés de seleção: quem participa é diferente de quem não participa.'),
+       ('Qual é um limite das políticas baseadas em evidência?', ['Não existe', 'O que foi testado num contexto pode não valer em outro, e valores não se testam', 'Evidência é sempre falsa'], 1, 'Validade externa e a escolha dos fins são os limites.')]),
+'pragmatismo-politico': dict(
+ caso=('Um governante abandona uma promessa de campanha porque os dados mostraram que não funcionaria. Outro abandona um princípio porque perderia votos.', 'Os dois são pragmáticos? Qual é a diferença?', 'Julgar ideias pelo que produzem é pragmatismo; abandonar princípios por conveniência é oportunismo com nome bonito. A lição mostra as duas éticas de Weber, exemplos que deram certo e quando o pragmatismo vira vício.'),
+ erro=('“Pragmático é quem não tem princípios.”', 'O pragmatismo de Dewey é um método: testar ideias pelos resultados. Ele pressupõe fins (princípios) e julga os meios. Sem fins, não é pragmatismo; é oportunismo.'),
+ ferr=None,
+ quiz=[('Para Weber, a ética da responsabilidade diz que…', ['Só as intenções contam', 'Quem governa responde pelas consequências previsíveis das suas escolhas, não só pela pureza das intenções', 'Tudo vale'], 1, 'A ética da convicção julga a intenção; a da responsabilidade, o efeito.'),
+       ('Quando o pragmatismo vira vício?', ['Sempre', 'Quando “o que funciona” passa a significar “o que me mantém no poder”', 'Nunca'], 1, 'O critério do resultado precisa de um fim que não seja o próprio poder.')]),
+'mandatos-coletivos': dict(
+ caso=('Cinco pessoas se candidatam juntas como “mandato coletivo”. Vencem. Na lei, só uma é deputada.', 'Como funciona na prática? O que promete e o que arrisca?', 'A titular assume compromissos com o grupo, sem reconhecimento legal; promete representar mais vozes e arrisca conflitos sem regra. A lição explica a origem, a lei, a promessa e os riscos.'),
+ erro=('“Mandato coletivo divide o poder oficialmente.”', 'A lei reconhece um só titular; o coletivo é um compromisso político, não jurídico. Isso é o que torna a prática interessante e frágil ao mesmo tempo.'),
+ ferr=None,
+ quiz=[('O que diz a lei sobre mandatos coletivos?', ['Reconhece todos', 'Só a pessoa eleita tem o mandato; o coletivo é acordo político', 'Proíbe'], 1, 'Propostas de regulamentação existem e não avançaram.'),
+       ('Qual é o principal risco?', ['Muitos votos', 'Conflitos internos sem regra de decisão e prestação de contas difusa', 'Falta de ideias'], 1, 'Quem responde quando o coletivo discorda da titular?')]),
+'presidencialismo-de-coalizao': dict(
+ caso=('Um presidente eleito com um partido pequeno precisa aprovar o orçamento. O Congresso tem trinta partidos.', 'Como ele governa? O que troca, com quem, e o que isso produz?', 'Cargos e emendas por apoio: a moeda do presidencialismo de coalizão. O Centrão é o nome do bloco que vende apoio. A lição mostra as regras, por que o Brasil chegou aqui e as vantagens e custos.'),
+ erro=('“Centrão é sinônimo de corrupção.”', 'O Centrão é um bloco de partidos sem ideologia fixa que negocia apoio por cargos e verbas; é fruto das regras, não só de caráter. Muda-se o comportamento mudando as regras que o produzem.'),
+ ferr='arvore-dos-partidos',
+ quiz=[('Qual é a “moeda” do presidencialismo de coalizão?', ['Votos', 'Cargos no governo e emendas ao orçamento em troca de apoio no Congresso', 'Discursos'], 1, 'É a forma de governar com um partido pequeno num Congresso fragmentado.'),
+       ('Por que o Brasil chegou a esse modelo?', ['Por acaso', 'Pela combinação de presidencialismo com representação proporcional e muitos partidos', 'Por tradição monárquica'], 1, 'Regras eleitorais explicam a fragmentação, e a fragmentação exige coalizão.')]),
+'progresso-moral-e-politico': dict(
+ caso=('A escravidão foi abolida por lei em 1888. O racismo continuou por mais de um século.', 'A lei mudou e as pessoas não? O que é progresso moral e o que é progresso político?', 'Progresso político muda leis e instituições; moral, valores e práticas. Nem sempre andam juntos, e nenhum é garantido. A lição dá critérios para saber se foi progresso e o que o faz acontecer.'),
+ erro=('“Se a lei mudou, o problema acabou.”', 'A lei pode mudar sem a prática mudar (e vice-versa). Progresso político sem progresso moral deixa instituições vazias; o contrário deixa valores sem garantia.'),
+ ferr=None,
+ quiz=[('Como saber se uma mudança foi progresso e não só mudança de costume?', ['Pela data', 'Se ela incluiu quem ficava fora e se aplica com coerência um princípio já aceito', 'Pela popularidade'], 1, 'Coerência e inclusão são os critérios da lição.'),
+       ('O que faz o progresso acontecer?', ['O tempo', 'Argumento, organização, exemplo e instituições que o consolidam', 'A tecnologia'], 1, 'Nada é automático; retrocessos acontecem.')]),
+'sencientismo': dict(
+ caso=('Uma lei de bem-estar animal é discutida. Os produtores têm lobby, os consumidores votam, os animais não têm nada.', 'Se podem sofrer, contam? Como isso entraria na política?', 'Se o critério é sentir, eles contam, e a política precisa de formas de representar quem não vota. A lição mostra o que o sencientismo faz com a política, as objeções e como apareceria na prática.'),
+ erro=('“Incluir animais é dar voto a vacas.”', 'Incluir é dar peso aos interesses deles nas decisões, com representantes e limites, como se faz com crianças. Ninguém propõe voto; propõe-se consideração.'),
+ ferr=None,
+ quiz=[('O que o sencientismo diz sobre quem conta?', ['Só humanos', 'Todo ser capaz de sofrer e de ter bem-estar conta, em proporção ao que está em jogo para ele', 'Só mamíferos'], 1, 'A espécie não é critério; a capacidade de sentir é.'),
+       ('Como o sencientismo apareceria na prática política?', ['Não apareceria', 'Em avaliações de impacto, representação institucional e limites à criação industrial', 'Em voto animal'], 1, 'Alguns países já têm comissários e dispositivos constitucionais.')]),
+'teorias-da-justica': dict(
+ caso=('Uma reforma tributária propõe taxar grandes fortunas para financiar renda básica.', 'O que Rawls diria? E Nozick? E um utilitarista? Por que discordam?', 'Rawls aceita se beneficiar os piores; Nozick rejeita como violação de direitos; o utilitarista compara o bem-estar total. A lição apresenta as teorias, onde aparecem na política brasileira e o debate sobre mérito, sorte e herança.'),
+ erro=('“Justiça é dar a cada um o que merece.”', 'Mérito é uma das respostas, e a mais frágil: talentos e oportunidades são em grande parte sorte. Rawls, Nozick, utilitaristas e suficientistas dão respostas diferentes, e a lição as compara.'),
+ ferr='valor-ou-fato',
+ quiz=[('O princípio da diferença de Rawls permite desigualdades quando…', ['Beneficiam os ricos', 'Beneficiam os que estão em pior situação', 'São merecidas'], 1, 'É o critério do véu da ignorância aplicado à distribuição.'),
+       ('Para Nozick, a redistribuição é…', ['Justa', 'Uma violação de direitos, porque o que foi adquirido com justiça é da pessoa', 'Obrigatória'], 1, 'Justiça, para ele, é a história da aquisição, não o padrão final.')]),
+'relativismo-e-circulo-moral': dict(
+ caso=('“Cada cultura tem sua moral; quem somos nós para julgar?” A frase é usada sobre uma prática que fere pessoas.', 'Se fosse verdadeira, o que diria sobre a abolição da escravidão? E sobre quem luta dentro da cultura?', 'Diria que a abolição não foi avanço e que o reformador está sempre errado. A lição mostra por que tolerância não é relativismo e como a expansão do círculo segue um princípio, não uma moda.'),
+ erro=('“Relativismo é a posição tolerante.”', 'Tolerância é um valor universal, que o relativismo não pode defender. Quem quer tolerância precisa de um padrão que valha para todos, e isso é o oposto do relativismo.'),
+ ferr='teste-de-troca',
+ quiz=[('Por que o relativismo tem dificuldade com a expansão do círculo moral?', ['Porque é antigo', 'Porque, se cada época tem sua moral, incluir escravizados e mulheres não foi avanço, só mudança', 'Porque é religioso'], 1, 'Progresso exige um critério que não seja a opinião da época.'),
+       ('Qual princípio explica a expansão do círculo?', ['A moda', 'A imparcialidade: um traço irrelevante para o que está em jogo deixa de servir para excluir', 'A economia'], 1, 'Cor, sexo, origem e espécie não mudam a capacidade de sofrer.')]),
+'politica-baseada-na-senciencia': dict(
+ caso=('Se o que importa é poder sentir, o orçamento da sua cidade seria o mesmo?', 'Que leis, instituições e prioridades mudariam? Que desafios apareceriam?', 'Avaliação de impacto sobre sencientes, representação, limites à criação industrial, prioridade ao sofrimento. A lição mostra de onde vem a ideia, como apareceria e os desafios de medir e de representar.'),
+ erro=('“Política baseada na senciência é só sobre animais.”', 'Inclui os animais, mas o critério muda prioridades também entre humanos: o sofrimento extremo e invisível ganha peso sobre o conforto visível. É uma lente sobre tudo.'),
+ ferr=None,
+ quiz=[('Qual é o principal desafio prático dessa política?', ['Faltam leis', 'Medir e comparar sofrimento entre seres muito diferentes, e representar quem não fala', 'Ninguém concorda'], 1, 'Incerteza sobre senciência e sobre intensidade é o problema técnico central.'),
+       ('O que muda na prioridade do gasto público?', ['Nada', 'Sofrimento intenso e invisível (criação industrial, dor sem tratamento) passa à frente do conforto visível', 'Só o gasto com animais'], 1, 'É a prioridade ao sofrimento aplicada ao orçamento.')]),
+'libertarismo-de-coracao-sangrante': dict(
+ caso=('Um liberal defende mercados livres e, ao mesmo tempo, diz que uma política só é justificada se beneficiar os mais pobres.', 'Isso é contradição? De onde vem essa corrente?', 'Não: o libertarismo de coração sangrante defende o mercado por causa dos pobres e aceita justiça social como critério. A lição mostra a origem, o que defendem e as críticas dos dois lados.'),
+ erro=('“Liberal econômico é indiferente aos pobres.”', 'Há liberais que defendem o mercado justamente como melhor caminho para os pobres e aceitam redistribuição onde o mercado falha. A disputa com a esquerda é sobre meios, não sobre a prioridade dos pobres.'),
+ ferr=None,
+ quiz=[('O que distingue o libertarismo de coração sangrante do libertarismo clássico?', ['Nada', 'Aceita que a justiça social é um critério legítimo e que o mercado deve ser julgado pelo que faz pelos pobres', 'Rejeita o mercado'], 1, 'Tomasi e Zwolinski são os nomes principais.'),
+       ('Qual é a crítica da esquerda a essa corrente?', ['Que é comunista', 'Que confia demais no mercado para resultados que a evidência mostra exigirem Estado', 'Que ignora os pobres'], 1, 'E a crítica libertária é que cede demais ao Estado.')]),
+'riscos-s-e-x': dict(
+ caso=('Uma pandemia projetada em laboratório, uma guerra nuclear, uma IA fora de controle, uma criação industrial em escala global permanente.', 'Que riscos são de extinção e quais de sofrimento? O que a política pode fazer antes?', 'Riscos X ameaçam a existência; riscos S, sofrimento em escala astronômica. A lição mostra as duas categorias, as políticas que ajudam (biossegurança, controle de armas, governança de IA, proteção animal) e as críticas.'),
+ erro=('“Riscos existenciais são ficção científica.”', 'Pandemias, armas nucleares e IA são riscos deste século, avaliados por instituições sérias. A crítica legítima é sobre prioridade e custo de oportunidade, não sobre existência.'),
+ ferr=None,
+ quiz=[('Qual política reduz riscos X e S ao mesmo tempo?', ['Nenhuma', 'Preservar instituições capazes de corrigir erros e evitar concentrações irreversíveis de poder', 'Mais armas'], 1, 'A capacidade de corrigir é a proteção comum.'),
+       ('Qual é a crítica mais séria às políticas de longo prazo?', ['Que o futuro não importa', 'Que recursos para cenários especulativos podem sair de quem sofre agora, com certeza', 'Que são de esquerda'], 1, 'A resposta é que os riscos deste século também ameaçam os vivos.')]),
+}
