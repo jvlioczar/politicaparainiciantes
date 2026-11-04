@@ -47,6 +47,7 @@ assert len({x['s'] for x in IND}) == len(IND)
 from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
 from didatica import D as DID, EXTRA as DID_EXTRA
+from quizzes import QUIZ as DID_QUIZ
 from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
@@ -93,6 +94,8 @@ LIVROS[:] = [(x[0], x[1], x[2], RENIVEL.get(x[0], x[3]), x[4]) for x in LIVROS] 
 META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
 META.update(META_DIREITO); REFORCO.update(REFORCO_DIREITO); INTERMEDIARIO.extend(LICOES_DIREITO)
 META.update(META_ECO_MUNDO); REFORCO.update(REFORCO_ECO_MUNDO)
+# quizzes de aplicação (tools/quizzes.py) substituem a pergunta de memorização de cada lição
+for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
 for _l in LICOES_ECO_MUNDO: GRUPOS[_l['slug']] = _l['grupo']
 _apos_g = next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'globalizacao')
 INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO
