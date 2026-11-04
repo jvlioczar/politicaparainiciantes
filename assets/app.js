@@ -119,7 +119,13 @@
     });
     raiz.appendChild(box); raiz.appendChild(fb);
   }
-  $$('[data-quiz]').forEach(function (z) { var d = JSON.parse(z.dataset.quiz); pergunta($('.alvo', z), d[0], d[1], d[2], d[3]); });
+  /* placar da página de revisão: conta respondidas e acertos */
+  var placar = $('#placar-rev'), respondidas = 0, acertos = 0;
+  function somaPlacar(ok) {
+    respondidas++; if (ok) acertos++;
+    placar.textContent = 'Placar: ' + acertos + ' acerto' + (acertos === 1 ? '' : 's') + ' em ' + respondidas + ' respondida' + (respondidas === 1 ? '' : 's') + ', de ' + placar.dataset.total + ' perguntas.' + (respondidas >= +placar.dataset.total ? (acertos === respondidas ? ' Tudo certo!' : ' Volte às lições das perguntas que errou.') : '');
+  }
+  $$('[data-quiz]').forEach(function (z) { var d = JSON.parse(z.dataset.quiz); pergunta($('.alvo', z), d[0], d[1], d[2], d[3], placar ? somaPlacar : null); });
   function jogo(raiz, itens, opsDe, certoDe, textoDe, explDe) {
     var i = 0, pts = 0, alvo = $('.alvo', raiz), plc = $('.placar', raiz), bar = $('.barra-prog i', raiz), prox = $('.prox-q', raiz);
     function mostra() {

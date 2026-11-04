@@ -46,6 +46,7 @@ for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == (
 assert len({x['s'] for x in IND}) == len(IND)
 from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
+from didatica import D as DID, EXTRA as DID_EXTRA
 from revisao import NOVAS_INICIANTE, NOVAS_INTERMEDIARIO, NOVAS_AVANCADO, OUTSIDER, COLETIVO, RENIVEL, LIVROS_VERTENTES, META_REVISAO, BASICO_REVISAO, REFORCO_REVISAO, GRUPOS, ORDEM_GRUPOS
 import arte
 
@@ -125,6 +126,12 @@ for l in INTERMEDIARIO + AVANCADO:
     blocos = f'<div class="ajuda"><section class="analogia"><h3>Uma analogia</h3><p>{e(x["analogia"])}</p></section><section class="crianca"><h3>Explicando para uma criança</h3><p>{e(x["crianca"])}</p></section></div>'
     fim = l['corpo'].index('</p>') + 4
     l['corpo'] = l['corpo'][:fim] + blocos + l['corpo'][fim:] + x.get('fundo', '')
+# camada didática: objetivos, pontos para guardar, pergunta para pensar e pré-requisitos de cada lição (tools/didatica.py)
+assert set(DID) == {l['slug'] for l in TODAS}, set(DID) ^ {l['slug'] for l in TODAS}
+POR_SLUG = {l['slug']: l for l in TODAS}
+for l in TODAS:
+    assert all(p in POR_SLUG for p in DID[l['slug']]['pre']), l['slug']
+    if l['slug'] in DID_EXTRA: l['corpo'] += DID_EXTRA[l['slug']]
 PARTIDO = {p['id']: p for p in P}
 for p in P: p.update(D[p['id']])
 PRESID = json.load(open(os.path.join(ROOT, 'data', 'presidenciais.json'), encoding='utf-8'))
@@ -302,6 +309,14 @@ def relacionados(l):
     return f'<section class="relac"><div class="wrap"><h2>Continue</h2><div class="grade">{"".join(cartao_licao(x) for x in alvos[:3])}</div></div></section>'
 def bloco_quiz(q):
     return f'<div class="quiz" data-quiz="{e(json.dumps(q, ensure_ascii=False))}"><p class="k">Teste rápido</p><div class="alvo"></div></div>'
+def objetivos(l):
+    d = DID[l['slug']]
+    pre = ', '.join(f'<a href="{p}.html">{e(POR_SLUG[p]["titulo"])}</a>' for p in d['pre'])
+    pre = f'<p class="pre">Ajuda ter lido: {pre}.</p>' if pre else ''
+    return f'<div class="objetivos"><p class="ti">Nesta lição, você vai</p><ul>{"".join(f"<li>{e(o)}</li>" for o in d["obj"])}</ul>{pre}</div>'
+def fecho(l):
+    d = DID[l['slug']]
+    return f'<section class="fecho"><h2>Para guardar</h2><ul>{"".join(f"<li>{e(g)}</li>" for g in d["guardar"])}</ul><div class="pensar"><p class="ti">Para pensar</p><p>{e(d["pensar"])}</p></div></section>'
 
 # ---------- início ----------
 def inicio():
@@ -341,7 +356,8 @@ def comece():
 <h2 style="margin-top:2.4rem">2. Saiba quem faz o quê</h2><div class="grade">{cartao_ferr(*FERR[0])}<a class="cartao" href="cargos.html"><h3>O que cada cargo faz</h3><p>Funções, mandatos e limites.</p></a><a class="cartao" href="poderes.html"><h3>Os Poderes</h3><p>Quem faz leis, quem executa, quem julga.</p></a></div>
 <h2 style="margin-top:2.4rem">3. Descubra o que você pensa</h2><div class="grade"><a class="cartao" href="https://ethicstest.biblioverse.org/" {EXT}><h3 class="ext">Teste de Visão Moral</h3><p>Como você pensa o certo e o errado.</p></a><a class="cartao" href="https://www.idrlabs.com/pt/coordenadas-politicas/teste.php" {EXT}><h3 class="ext">Teste de Coordenadas Políticas</h3><p>Sua posição em dois eixos.</p></a>{cartao_ferr(*FERR[5])}</div>
 <h2 style="margin-top:2.4rem">4. Olhe os partidos</h2><div class="grade">{cartao_ferr(*FERR[2])}{cartao_ferr(*FERR[3])}<a class="cartao" href="partidos.html"><h3>Todos os dossiês</h3><p>{len(P)} partidos.</p></a></div>
-<h2 style="margin-top:2.4rem">5. Entre nos debates</h2><div class="grade"><a class="cartao" href="debates.html"><h3>Os principais debates</h3><p>Os dois lados e o que os dados indicam.</p></a><a class="cartao" href="mundo.html"><h3>Figuras internacionais</h3><p>Quem governa, quem inspirou e quem causou o mal.</p></a><a class="cartao" href="sites.html"><h3>Sites sobre política</h3><p>Para checar e acompanhar por conta própria.</p></a></div></div>'''
+<h2 style="margin-top:2.4rem">5. Entre nos debates</h2><div class="grade"><a class="cartao" href="debates.html"><h3>Os principais debates</h3><p>Os dois lados e o que os dados indicam.</p></a><a class="cartao" href="mundo.html"><h3>Figuras internacionais</h3><p>Quem governa, quem inspirou e quem causou o mal.</p></a><a class="cartao" href="sites.html"><h3>Sites sobre política</h3><p>Para checar e acompanhar por conta própria.</p></a></div>
+<h2 style="margin-top:2.4rem">6. Teste o que aprendeu</h2><p>Uma pergunta por lição, com placar e volta para a lição em que errar.</p><div class="grade">{"".join(f'<a class="cartao" href="revisao-{s}.html"><h3>Revisão do nível {e(r)}</h3><p>{len(ls)} perguntas.</p></a>' for s, r, ls, *_ in NIVEIS)}</div></div>'''
     page('comece-aqui.html', 'Comece aqui', 'Um caminho curto para entender o básico de política.', corpo, atual='comece-aqui.html')
 
 def catalogo():
@@ -362,8 +378,27 @@ def nivel(slug, rot, ls, titulo, desc, g):
     if slug == 'iniciante': cont += f'<h2 class="grupo">Saiba quem faz o quê</h2><div class="grade"><a class="cartao" href="cargos.html"><h3>O que cada cargo faz</h3><p>Vereador, prefeito, deputado, senador, presidente.</p></a><a class="cartao" href="poderes.html"><h3>Os três Poderes</h3><p>Quem faz as leis, quem executa, quem julga.</p></a>{cartao_ferr(*FERR[0])}</div>'
     if slug == 'intermediario': cont += f'<h2 class="grupo">No Brasil</h2><div class="grade"><a class="cartao" href="historia.html"><h3>História da política brasileira</h3><p>Da Colônia a 2026.</p></a><a class="cartao" href="partidos.html"><h3>Dossiê dos partidos</h3><p>Os {len(P)} partidos registrados no TSE.</p></a>{cartao_ferr(*FERR[2])}</div>'
     if slug == 'avancado': cont += f'<h2 class="grupo">Experimente</h2><div class="grade">{cartao_ferr(*FERR[8])}{cartao_ferr(*FERR[7])}</div>'
+    cont += f'<h2 class="grupo">Revise</h2><div class="grade"><a class="cartao" href="revisao-{slug}.html"><h3>Revisão do nível {e(rot)}</h3><p>{len(ls)} perguntas, uma por lição, com placar e volta para a lição em que errar.</p></a></div>'
+    tot = sum(tempo_leitura(l['corpo']) for l in ls); h = round(tot / 60)
+    dur = f'cerca de {h} hora{"s" if h > 1 else ""} de leitura' if h >= 1 else f'cerca de {tot} minutos de leitura'
+    como = f'''<div class="como-estudar"><h2>Como estudar este nível</h2><p>{len(ls)} lições em {len(grupos)} blocos, {dur}, em sessões de 10 a 15 minutos.</p><ol><li><strong>Siga a ordem dos blocos.</strong> Cada lição se apoia nas anteriores, e começa dizendo o que você vai aprender e o que ajuda ter lido antes.</li><li><strong>Não pule o fim da lição:</strong> os pontos para guardar, a pergunta para pensar e o teste rápido. Responder à pergunta de cabeça, antes de seguir, é o que fixa o conteúdo.</li><li><strong>Marque como lida</strong> para acompanhar seu progresso na barra acima.</li><li><strong>Feche com a <a href="revisao-{slug}.html">revisão do nível</a>:</strong> uma pergunta por lição, com placar.</li></ol></div>'''
     prog = f'<div class="barra-prog" id="pg-{slug}" data-prog="{",".join(l["slug"] for l in ls)}" style="max-width:420px;background:#ffffff33"><i></i></div><small data-prog-t="pg-{slug}" style="color:#fff"></small>'
-    page(f'{slug}.html', titulo, desc, cabeca(f'Nível {rot}', titulo, e(desc), meta=f'<div style="margin-top:1.1rem">{prog}</div>') + f'<div class="wrap secao" style="padding-top:18px">{cont}</div>', atual=f'{slug}.html')
+    page(f'{slug}.html', titulo, desc, cabeca(f'Nível {rot}', titulo, e(desc), meta=f'<div style="margin-top:1.1rem">{prog}</div>') + f'<div class="wrap secao" style="padding-top:18px">{como}{cont}</div>', atual=f'{slug}.html')
+
+def revisao(slug, rot, ls, g):
+    grupos = {}
+    for l in ls: grupos.setdefault(l.get('grupo', ''), []).append(l)
+    cont = f'<div class="nota placar" id="placar-rev" data-total="{len(ls)}" role="status">Responda às perguntas para ver seu placar. Cada uma vem da lição indicada: se errar, o link leva de volta a ela.</div>'
+    for gr, its in grupos.items():
+        if gr: cont += f'<h2 class="grupo">{e(gr)}</h2>'
+        for l in its: cont += f'<div class="rev-item"><h3><a href="{l["slug"]}.html">Lição {l["i"] + 1}: {e(l["titulo"])}</a></h3>{bloco_quiz(l["quiz"])}</div>'
+    ordem = [n[0] for n in NIVEIS]
+    if slug != ordem[-1]:
+        seg = NIVEIS[ordem.index(slug) + 1]
+        cont += f'<div class="fim-nivel"><p class="ti">Pronto para o próximo nível?</p><p>Continue com {len(seg[2])} lições do nível {e(seg[1])}.</p><a class="btn {seg[5]}" href="{seg[0]}.html">Ir para o curso {e(seg[1])} →</a></div>'
+    else:
+        cont += f'<div class="fim-nivel"><p class="ti">Você concluiu o curso</p><p>Siga pelos debates, pelas vertentes e pelos dossiês dos partidos.</p><div class="fim-acoes"><a class="btn a" href="debates.html">Principais debates →</a><a class="btn alt" href="vertentes.html">Vertentes políticas</a></div></div>'
+    page(f'revisao-{slug}.html', f'Revisão do nível {rot}', f'{len(ls)} perguntas, uma por lição do nível {rot}, com placar e link de volta para cada lição.', cabeca(f'<a href="{slug}.html">{e(rot)}</a> / Revisão', f'Revisão do nível {rot}', f'Uma pergunta por lição. Responda, veja o placar e volte às lições em que errou.') + f'<div class="wrap secao revisao">{cont}</div>', atual=f'{slug}.html')
 
 LICAO_DEBATES = {
  'imposto-e-roubo': ['impostos', 'grandes-fortunas'], 'estado-e-mercado': ['tamanho-do-estado', 'privatizacao', 'estatizacao'], 'politicas-publicas': ['programas-sociais', 'subsidios'], 'bem-comum': ['programas-sociais', 'saude'],
@@ -405,15 +440,22 @@ def licao(l, ls):
     if prox: pager += f'<a class="prox" href="{prox["slug"]}.html"><small>Próxima →</small>{e(prox["titulo"])}</a>'
     pager += '</nav>'
     ordem = [n[0] for n in NIVEIS]
-    if not prox and l['nivel'] != ordem[-1]:
-        seg = NIVEIS[ordem.index(l['nivel']) + 1]
-        pager += f'<div class="fim-nivel"><p class="ti">Você chegou ao fim do nível {e(l["nivel_rot"])}</p><p>Continue com {len(seg[2])} lições do nível {e(seg[1])}.</p><a class="btn {seg[5]}" href="{seg[0]}.html">Ir para o curso {e(seg[1])} →</a></div>'
+    if not prox:
+        rev = f'<a class="btn alt" href="revisao-{l["nivel"]}.html">Revisar o nível: {len(ls)} perguntas</a>'
+        if l['nivel'] != ordem[-1]:
+            seg = NIVEIS[ordem.index(l['nivel']) + 1]
+            pager += f'<div class="fim-nivel"><p class="ti">Você chegou ao fim do nível {e(l["nivel_rot"])}</p><p>Revise o que aprendeu e continue com {len(seg[2])} lições do nível {e(seg[1])}.</p><div class="fim-acoes">{rev}<a class="btn {seg[5]}" href="{seg[0]}.html">Ir para o curso {e(seg[1])} →</a></div></div>'
+        else:
+            pager += f'<div class="fim-nivel"><p class="ti">Você concluiu o curso</p><p>Revise o nível {e(l["nivel_rot"])} e siga pelos debates, pelas vertentes e pelos dossiês.</p><div class="fim-acoes">{rev}<a class="btn a" href="debates.html">Principais debates →</a></div></div>'
     min_ = tempo_leitura(l['corpo'])
     tg = ''.join(f'<a class="tag" href="catalogo.html?tema={t}">{e(TEMAS[t])}</a>' for t in l['temas'])
     meta = f'<div class="meta"><span class="tipo {l["nivel"]}">{e(l["nivel_rot"])}</span>{tg}<span>{min_} min de leitura</span></div>'
     topo = cabeca(f'<a href="{l["nivel"]}.html">{e(l["nivel_rot"])}</a>' + (f' / {e(l["grupo"])}' if l.get('grupo') else ''), l['titulo'], e(l['resumo']), meta=meta)
     lado = f'''<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Nível</dt><dd>{e(l["nivel_rot"])}</dd><dt>Tempo</dt><dd>{min_} minutos</dd><dt>Temas</dt><dd>{e(", ".join(TEMAS[t] for t in l["temas"]))}</dd></dl></div><div class="caixa toc-caixa"><h2>Nesta lição</h2><ul class="toc"></ul></div><button class="marcar" type="button" data-id="{l["slug"]}">Marcar como lida</button></aside>'''
-    corpo = indice(l, ls) + topo + f'<div class="wrap layout"><article class="leitura">{(nomes_para_mundo(tabelas(l["corpo"])) if l["slug"] in ("maiores-estadistas", "maiores-ativistas") else tabelas(l["corpo"])).replace("<!--MAPA-ED-->", f'<h3 id="mapa">Um mapa em coordenadas</h3>{mapa_ed()}')}{debates_da_licao(l)}{bloco_quiz(l["quiz"])}{fontes(l["fontes"])}{pager}</article>{lado}</div>' + relacionados(l)
+    texto = (nomes_para_mundo(tabelas(l["corpo"])) if l["slug"] in ("maiores-estadistas", "maiores-ativistas") else tabelas(l["corpo"])).replace("<!--MAPA-ED-->", f'<h3 id="mapa">Um mapa em coordenadas</h3>{mapa_ed()}')
+    assert texto.count('<div class="ajuda">') == 1, l['slug']
+    texto = texto.replace('<div class="ajuda">', objetivos(l) + '<div class="ajuda">', 1)
+    corpo = indice(l, ls) + topo + f'<div class="wrap layout"><article class="leitura">{texto}{debates_da_licao(l)}{fecho(l)}{bloco_quiz(l["quiz"])}{fontes(l["fontes"])}{pager}</article>{lado}</div>' + relacionados(l)
     page(f'{l["slug"]}.html', l['titulo'], l['resumo'], corpo, atual=f'{l["nivel"]}.html')
 
 # ---------- Brasil ----------
@@ -937,7 +979,7 @@ def arquivos():
 os.makedirs(os.path.join(ROOT, 'assets'), exist_ok=True)
 inicio(); comece(); catalogo()
 for s, r, ls, t, d, g in NIVEIS:
-    nivel(s, r, ls, t, d, g)
+    nivel(s, r, ls, t, d, g); revisao(s, r, ls, g)
     for l in ls: licao(l, ls)
 figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); governos(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
 print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(FERR)} ferramentas.')

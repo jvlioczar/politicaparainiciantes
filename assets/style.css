@@ -277,6 +277,17 @@ select{max-width:100%}
 
 /* passagem para o próximo nível */
 .fim-nivel{background:var(--cartao);border-radius:18px;padding:24px;margin-top:22px;text-align:center;box-shadow:0 3px 16px #14206b12}.fim-nivel .ti{font:600 1.3rem var(--serif);color:var(--tinta);margin:0 0 .3rem}.fim-nivel p{margin:0 0 1rem}
+.fim-acoes{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+/* camada didática das lições */
+.objetivos{background:var(--cartao);border-radius:16px;padding:16px 20px;margin:0 0 1.3em;box-shadow:0 3px 16px #14206b12;font-size:1rem;line-height:1.5}
+.objetivos .ti,.pensar .ti{font:700 .76rem var(--sans);text-transform:uppercase;letter-spacing:.07em;color:var(--suave);margin:0 0 .5rem}
+.objetivos ul{margin:0;padding-left:1.2em}.objetivos li{margin-bottom:.3em}
+.objetivos .pre{margin:.8em 0 0;font:500 .9rem var(--sans);color:var(--suave)}
+.fecho{margin-top:1.4rem}.fecho ul{padding-left:1.2em}
+.pensar{background:var(--areia);border-left:4px solid var(--azul);border-radius:0 14px 14px 0;padding:14px 18px;margin:1.2em 0 0;font-size:1.05rem;line-height:1.5}.pensar p{margin:0}
+.como-estudar{background:var(--cartao);border-radius:18px;padding:20px 24px;margin:0 0 1.4rem;box-shadow:0 3px 16px #14206b12;line-height:1.55}.como-estudar h2{margin:0 0 .5rem;font-size:1.3rem}.como-estudar p{margin:0 0 .6rem}.como-estudar ol{margin:0;padding-left:1.3em}.como-estudar li{margin-bottom:.3em}
+.revisao .rev-item h3{margin:1.4rem 0 .2rem;font-size:1.1rem}.revisao .rev-item h3 a{text-decoration:none;color:var(--tinta)}.revisao .rev-item h3 a:hover{text-decoration:underline}.revisao .rev-item .quiz{margin:.4rem 0 1.2rem}
+.placar{font-weight:600;position:sticky;top:70px;z-index:5;box-shadow:0 3px 16px #14206b12}
 
 /* debates */
 .peso{display:inline-block;font:700 .68rem/1.25 var(--sans);padding:3px 8px;border-radius:6px}.peso.forte{background:#d6f2e5;color:#0e5c41}.peso.parcial{background:#fff1c9;color:#6a5100}.peso.aberto{background:#e2e0fb;color:#3d2db0}
