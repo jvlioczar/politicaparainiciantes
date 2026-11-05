@@ -151,6 +151,7 @@ for l in TODAS:
 PARTIDO = {p['id']: p for p in P}
 for p in P: p.update(D[p['id']])
 PRESID = json.load(open(os.path.join(ROOT, 'data', 'presidenciais.json'), encoding='utf-8'))
+SEM_WIKI = {'Guilherme Pallesi'}  # figuras sem artigo na Wikipédia
 PRESID['missao'] = [dict(ano='2026', cand='Renan Santos', pct='2,24', pos='4')]
 # nomes que a coleta da Wikipédia trouxe como marcação de imagem
 CORRIGE_CAND = {('agir', '1994'): 'Carlos Antônio Gomes', ('pcb', '2022'): 'Sofia Manzano'}
@@ -704,7 +705,7 @@ def figuras():
 <input class="fq" id="fq" type="search" placeholder="Buscar por nome" aria-label="Buscar figura"/>{bc}{bt}<p class="contagem" id="contagem" role="status"></p><div id="figuras">{gr}</div><p class="legenda">Procura alguém de fora do Brasil? Veja as <a href="mundo.html">figuras internacionais</a>.</p></div>'''
     page('politicos.html', 'Políticos e figuras políticas', 'Cards e dossiês de políticos e influenciadores brasileiros, da extrema-esquerda à extrema-direita.', corpo, atual='politicos.html')
     for f in FIG:
-        wiki = '' if f['wiki'] is None else W + quote(f['wiki'] or f['nome'], safe='()_').replace('%20', '_')
+        wiki = '' if f['wiki'] is None or f['nome'] in SEM_WIKI else W + quote(f['wiki'] or f['nome'], safe='()_').replace('%20', '_')
         par = PARTIDO.get(f['pid'])
         pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{pol_txt(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui nenhum caso de grande repercussão. Isso não significa que não exista: consulte as fontes abaixo.</p>'
         aviso = f'<div class="nota alerta aviso-pag"><strong>⚠ {AVISO}</strong> Esta categoria reúne discursos muito militantes. Confira o que é dito em mais de uma fonte.</div>' if extrema(f) else f'<div class="nota alerta aviso-pag"><strong>⚠ {ATENTO}</strong> Compare o que é dito com o que é feito, e com o que a mesma pessoa já defendeu.</div>' if alerta(f['cat']) else ''
