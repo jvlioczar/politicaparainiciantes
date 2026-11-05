@@ -3,7 +3,8 @@ sites (tools/crossover.py): edite num, copie para o outro. Cada par liga uma pá
 aprofunda o mesmo tema; o build de cada site mostra a caixa da direção que lhe cabe. Os títulos são copiados das páginas."""
 SITE_POL = 'https://politicaparainiciantes.biblioverse.org'
 SITE_ETI = 'https://eticaparainiciantes.biblioverse.org'
-PARES = [('primeiro-segundo-e-terceiro-mundo.html', 'pobreza-e-etica-global.html'),
+PARES = [('filosofia-politica.html', 'da-etica-a-politica.html'), ('filosofia-politica.html', 'filosofos.html'),
+ ('primeiro-segundo-e-terceiro-mundo.html', 'pobreza-e-etica-global.html'),
  ('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
  ('debates/aborto.html', 'debates/aborto.html'),
  ('debates/eutanasia.html', 'debates/eutanasia-e-suicidio-assistido.html'),
@@ -90,7 +91,8 @@ PARES = [('primeiro-segundo-e-terceiro-mundo.html', 'pobreza-e-etica-global.html
  ('estado-e-mercado.html', 'economia-politica-e-etica.html'),
  ('esquerda-e-direita.html', 'debates/qual-vertente-politica.html'),
  ('vertentes.html', 'debates/qual-vertente-politica.html')]
-TITULOS_POL = {'primeiro-segundo-e-terceiro-mundo.html': 'Primeiro, Segundo e Terceiro Mundo: o que querem dizer',
+TITULOS_POL = {'filosofia-politica.html': 'Filosofia política: as grandes perguntas e os pensadores',
+ 'primeiro-segundo-e-terceiro-mundo.html': 'Primeiro, Segundo e Terceiro Mundo: o que querem dizer',
  'teoria-dos-jogos.html': 'Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde',
  'bem-comum.html': 'Pensar no bem comum',
  'bets.html': 'Bets: como as apostas viraram problema público',
@@ -174,7 +176,8 @@ TITULOS_POL = {'primeiro-segundo-e-terceiro-mundo.html': 'Primeiro, Segundo e Te
  'valores-e-decisoes.html': 'Valores morais × decisões políticas',
  'vertentes.html': 'Vertentes políticas',
  'vieses-cognitivos.html': 'Como os vieses afetam seu julgamento'}
-TITULOS_ETI = {'evolucao-e-moral.html': 'Evolução, desmascaramento e moral',
+TITULOS_ETI = {'filosofos.html': 'Filósofos morais',
+ 'evolucao-e-moral.html': 'Evolução, desmascaramento e moral',
  'animais-e-a-politica.html': 'Animais e a política: cidadania e constituições',
  'argumentos-morais.html': 'Como funciona um argumento moral',
  'bioetica.html': 'Bioética: autonomia, consentimento e os quatro princípios',
