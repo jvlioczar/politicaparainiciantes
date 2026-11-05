@@ -360,3 +360,6 @@ select{max-width:100%}
 
 /* home: a capa ocupa a primeira tela e deixa só uma faixa do bloco seguinte, sem o texto dele */
 @media (min-width:821px){.capa{min-height:calc(100svh - var(--topo-capa,110px) - 36px);display:flex;flex-direction:column;justify-content:center}}
+
+/* trilhas: o cartão estica até a altura da linha da grade */
+.trilha-item{display:flex;flex-direction:column}.trilha-item>.cartao{flex:1}
