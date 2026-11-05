@@ -396,33 +396,60 @@
   var mpd = $('#dados-mp');
   if (mpd) {
     var MP = JSON.parse(mpd.textContent), sel = {}, salvo = ler('ppi-minha', {});
-    var opc = function (id, lista, vazio) { var s = $('#' + id); s.appendChild(el('option', { value: '' }, vazio)); lista.forEach(function (o) { s.appendChild(el('option', { value: o[0] }, o[1])); }); if (salvo[id]) s.value = salvo[id]; sel[id] = s; };
-    opc('mp-econ', [['-80', 'Muito mais Estado: planejar e distribuir'], ['-40', 'Mais Estado: regular e redistribuir'], ['0', 'Equilíbrio: depende do setor'], ['40', 'Mais mercado: menos Estado e impostos'], ['80', 'Muito mais mercado: Estado mínimo']], 'Economia');
-    opc('mp-cost', [['-60', 'Progressista: ampliar direitos e liberdades'], ['0', 'Moderado: mudar com cautela'], ['60', 'Conservador: preservar tradições']], 'Costumes');
-    opc('mp-met', [['-70', 'Reforma gradual, dentro das regras'], ['0', 'Reformas rápidas, dentro das regras'], ['70', 'Ruptura: refazer o sistema']], 'Método');
-    opc('mp-dem', [['liberal', 'Democracia representativa com limites fortes'], ['direta', 'Mais democracia direta e participação'], ['epist', 'Mais peso a quem tem conhecimento'], ['forte', 'Um governo forte resolve melhor']], 'Democracia');
-    opc('mp-circ', [['pais', 'Os cidadãos do meu país'], ['humanos', 'Todos os humanos, inclusive estrangeiros e futuros'], ['sencientes', 'Todos os que podem sofrer, inclusive animais']], 'Quem conta');
+    var opc = function (id, lista, vazio) { var s = $('#' + id); s.appendChild(el('option', { value: '' }, vazio)); lista.forEach(function (o) { s.appendChild(el('option', { value: o[0] }, o[1])); }); if (salvo[id] && lista.some(function (o) { return o[0] === salvo[id]; })) s.value = salvo[id]; sel[id] = s; };
+    opc('mp-econ', [['-90', 'Abolir a propriedade privada dos meios de produção'], ['-60', 'Muito Estado: planejar setores e redistribuir muito'], ['-30', 'Mais Estado: regular e redistribuir'], ['0', 'Equilíbrio: depende do setor'], ['30', 'Mais mercado: menos impostos e regras'], ['60', 'Muito mercado: Estado mínimo'], ['90', 'Nenhum Estado na economia: só contratos privados']], 'Economia');
+    opc('mp-cost', [['-95', 'Ultraprogressista: libertação total, novas formas de família e de gênero, libertação animal'], ['-60', 'Progressista: ampliar direitos e liberdades'], ['-30', 'Moderadamente progressista'], ['0', 'Moderado: mudar com cautela'], ['30', 'Moderadamente conservador'], ['60', 'Conservador: preservar tradições e instituições'], ['95', 'Ultraconservador: impor pela lei uma moral tradicional, muitas vezes religiosa']], 'Costumes');
+    opc('mp-lib', [['-80', 'O Estado não deve interferir na vida pessoal'], ['-40', 'Interferir pouco, só para evitar dano a outros'], ['0', 'Equilíbrio entre liberdade e ordem'], ['40', 'Ordem acima da liberdade, quando há conflito'], ['80', 'Autoridade forte: o Estado deve orientar a vida das pessoas']], 'Liberdade e autoridade');
+    opc('mp-met', [['conservar', 'Conservar o que existe'], ['gradual', 'Reformar aos poucos, dentro das regras'], ['rapida', 'Reformas grandes e rápidas, dentro das regras'], ['ruptura', 'Ruptura: refazer o sistema do zero'], ['passado-recente', 'Voltar a como o país era há algumas décadas'], ['passado-antigo', 'Restaurar uma ordem antiga: monarquia, religião oficial, hierarquias tradicionais']], 'Rumo da mudança');
+    opc('mp-dem', [['liberal', 'Democracia representativa com limites fortes'], ['direta', 'Mais democracia direta e participação'], ['epist', 'Mais peso a quem tem conhecimento'], ['forte', 'Um governo forte, com menos freios, resolve melhor'], ['sem-estado', 'Sem governo central: comunidades auto-organizadas']], 'Democracia');
+    opc('mp-circ', [['familia', 'Minha família, minha comunidade e meu povo'], ['pais', 'Os cidadãos do meu país'], ['humanos', 'Todos os humanos, inclusive estrangeiros e futuros'], ['sencientes', 'Todos os que podem sofrer, inclusive animais'], ['vida', 'Toda a vida e os ecossistemas']], 'Quem conta');
     var saida = $('#mp-saida');
+    var V = function (s) { return MP.vert.filter(function (t) { return t.s === s; })[0]; };
+    var link = function (p, s, txt) { var t = V(s); return t ? el('a', { href: base + 'vertentes/' + s + '.html' }, txt || t.n) : null; };
+    var licao = function (s, txt) { return el('a', { href: base + s + '.html' }, txt); };
+    var bloco = function (partes) { var p = el('p'); partes.forEach(function (x) { if (x) p.appendChild(typeof x === 'string' ? document.createTextNode(x) : x); }); return p; };
+    var lista = function (rotulo, slugs) { var ps = [rotulo]; slugs.filter(V).forEach(function (s, i) { if (i) ps.push(', '); ps.push(link(null, s)); }); ps.push('.'); return ps; };
     var monta = function () {
       var v = {}; Object.keys(sel).forEach(function (k) { v[k] = sel[k].value; }); grava('ppi-minha', v); saida.textContent = '';
-      if (!v['mp-econ'] && !v['mp-cost'] && !v['mp-met'] && !v['mp-dem'] && !v['mp-circ']) { saida.appendChild(el('p', { class: 'nota' }, 'Escolha as opções acima. O resultado aparece aqui e fica salvo no seu navegador.')); return; }
-      var p = el('div', { class: 'nota' });
-      if (v['mp-econ'] !== '' || v['mp-cost'] !== '') {
-        var x = .65 * (+v['mp-econ'] || 0) + .35 * (+v['mp-cost'] || 0), y = +v['mp-met'] || -40;
-        var perto = MP.vert.map(function (t) { return { t: t, d: Math.hypot(t.x - x, t.y - y) }; }).sort(function (a, b) { return a.d - b.d; }).slice(0, 3);
-        p.appendChild(document.createTextNode('No mapa das vertentes, sua posição fica mais perto de: '));
-        perto.forEach(function (q, i) { if (i) p.appendChild(document.createTextNode(', ')); p.appendChild(el('a', { href: base + 'vertentes/' + q.t.s + '.html' }, q.t.n)); });
-        p.appendChild(document.createTextNode('. O mapa é aproximado: ele mede eixos, não todas as suas ideias. '));
+      if (!Object.keys(v).some(function (k) { return v[k]; })) { saida.appendChild(el('p', { class: 'nota' }, 'Escolha as opções acima. O resultado aparece aqui e fica salvo no seu navegador.')); return; }
+      var nota = el('div', { class: 'nota' });
+      var econ = +v['mp-econ'] || 0, cost = +v['mp-cost'] || 0, lib = v['mp-lib'] === '' ? 0 : +v['mp-lib'];
+      var ajM = { conservar: 0, gradual: -5, rapida: 0, ruptura: 15, 'passado-recente': 10, 'passado-antigo': 25 }[v['mp-met']] || 0;
+      var ajD = { liberal: -10, direta: -15, epist: 10, forte: 35, 'sem-estado': -40 }[v['mp-dem']] || 0;
+      var x = Math.max(-100, Math.min(100, .75 * econ + .25 * cost)), y = Math.max(-100, Math.min(100, lib + ajM + ajD));
+      var perto = MP.vert.map(function (t) { return { t: t, d: Math.hypot(t.x - x, t.y - y) }; }).sort(function (a, b) { return a.d - b.d; }).slice(0, 3);
+      var ps = ['No mapa das vertentes (economia na horizontal, liberdade e autoridade na vertical), sua posição fica mais perto de: '];
+      perto.forEach(function (q, i) { if (i) ps.push(', '); ps.push(link(null, q.t.s)); }); ps.push('. O mapa é aproximado: ele mede eixos, não todas as suas ideias.');
+      nota.appendChild(bloco(ps));
+      /* extremos de costumes */
+      if (v['mp-cost'] === '-95') {
+        nota.appendChild(bloco(['No extremo progressista estão propostas como reconhecer em lei o poliamor e outras formas de família, retirar o gênero dos documentos, descriminalizar drogas e trabalho sexual e acabar com a exploração de animais. Esta última é o centro do sencientismo, para o qual todo ser que sente conta, de qualquer espécie: veja ', link(null, 'senciocracia'), ' e a lição sobre ', licao('politica-baseada-na-senciencia', 'política baseada na senciência'), '. A lição sobre ', licao('critica-ao-identitarismo', 'a crítica ao identitarismo'), ' mostra o que esse campo acerta e onde é criticado.']));
+        nota.appendChild(bloco(lista('Vertentes desse campo: ', ['senciocracia', 'progressismo', 'feminismo', 'anarquismo'])));
       }
-      var txt = { liberal: 'Sobre a democracia, você fica com a representativa de limites fortes: tribunais, imprensa e oposição como freios ao vencedor.', direta: 'Sobre a democracia, você quer mais participação direta; a lição sobre democracia direta e epistocracia mostra o que isso ganha e arrisca.', epist: 'Sobre a democracia, você daria mais peso a quem sabe mais; a lição sobre epistocracia mostra a objeção principal: quem define o saber captura o poder.', forte: 'Sobre a democracia, você aceitaria um governo forte; a lição sobre o perigo de questionar a democracia e a história das ditaduras na América do Sul são o contraponto a ler.' };
-      if (v['mp-dem']) p.appendChild(document.createTextNode(' ' + txt[v['mp-dem']]));
-      var tc = { pais: ' Sobre quem conta, você para nos cidadãos do seu país: as lições sobre culpar o estrangeiro e sobre imparcialidade testam essa fronteira.', humanos: ' Sobre quem conta, você inclui todos os humanos: a lição sobre sencientismo pergunta se a fronteira da espécie é tão diferente das outras.', sencientes: ' Sobre quem conta, você inclui todos os que sofrem: a lição sobre política baseada na senciência mostra o que isso muda em leis e orçamentos.' };
-      if (v['mp-circ']) p.appendChild(document.createTextNode(tc[v['mp-circ']]));
-      saida.appendChild(p);
-      var temas = []; if (v['mp-econ']) temas.push('Economia e Estado'); if (v['mp-cost']) temas.push('Direitos e costumes'); if (v['mp-circ'] === 'sencientes') temas.push('Ambiente e animais'); if (v['mp-dem']) temas.push('Instituições');
+      if (v['mp-cost'] === '95') {
+        nota.appendChild(bloco(['No extremo conservador estão propostas como proibir o aborto em qualquer caso, rever o casamento entre pessoas do mesmo sexo, tornar obrigatório o ensino religioso e dar à moral religiosa força de lei. A lição sobre ', licao('perigo-do-ultraconservadorismo', 'o perigo do ultraconservadorismo'), ' separa o que vale preservar do que impede corrigir injustiças, e a sobre ', licao('religiao-e-estado', 'religião e Estado'), ' discute o limite da laicidade.']));
+        nota.appendChild(bloco(lista('Vertentes desse campo: ', ['ultraconservadorismo', 'tradicionalismo', 'teocracia'])));
+      }
+      /* voltar ao passado */
+      if (v['mp-met'] === 'passado-recente' || v['mp-met'] === 'passado-antigo') {
+        nota.appendChild(bloco(['Querer voltar a uma época passada, desfazendo mudanças, é a marca do reacionarismo, diferente do conservadorismo, que quer preservar o presente e mudar devagar. ', v['mp-met'] === 'passado-antigo' ? 'Restaurar uma ordem antiga, com monarquia, religião oficial ou hierarquias tradicionais, é a versão mais radical. ' : 'Voltar algumas décadas costuma vir com a ideia de uma era de ouro de ordem e respeito. ', 'A lição sobre ', licao('perigo-do-reacionarismo', 'o perigo do reacionarismo'), ' pergunta para quem aquela época era boa.']));
+        nota.appendChild(bloco(lista('Vertentes desse campo: ', v['mp-met'] === 'passado-antigo' ? ['reacionarismo', 'monarquismo', 'tradicionalismo', 'integralismo'] : ['reacionarismo', 'tradicionalismo', 'conservadorismo'])));
+        if (cost < 0) nota.appendChild(bloco(['Você combinou costumes progressistas com voltar ao passado, uma combinação rara. Talvez queira restaurar algo específico, como direitos trabalhistas ou um Estado maior na economia; o rótulo de reacionário cabe mal a isso.']));
+      }
+      if (v['mp-met'] === 'ruptura') nota.appendChild(bloco(['Você escolheu refazer o sistema. A lição sobre ', licao('perigo-das-revolucoes', 'o perigo das revoluções'), ' lista as perguntas a fazer antes: que limites o novo poder terá, e quem poderá tirá-lo se der errado?']));
+      if (v['mp-met'] === 'conservar' && cost <= 0) nota.appendChild(bloco(['Conservar o que existe com costumes moderados ou progressistas é uma posição de cautela, que o ', link(null, 'centrismo'), ' e parte do ', link(null, 'conservadorismo'), ' compartilham.']));
+      /* democracia e autoridade */
+      var td = { liberal: 'Sobre a democracia, você fica com a representativa de limites fortes: tribunais, imprensa e oposição como freios ao vencedor.', direta: 'Você quer mais participação direta; a lição sobre democracia direta e epistocracia mostra o que isso ganha e arrisca.', epist: 'Você daria mais peso a quem sabe mais; a objeção principal é que quem define o saber captura o poder.', forte: 'Você aceitaria um governo forte com menos freios; a lição sobre o perigo de questionar a democracia e a história das ditaduras na América do Sul são o contraponto a ler.', 'sem-estado': 'Você dispensaria o governo central, como os anarquistas de esquerda e os anarcocapitalistas de direita, que discordam sobre quase tudo menos isso.' };
+      if (v['mp-dem']) nota.appendChild(bloco([td[v['mp-dem']]]));
+      if (v['mp-dem'] === 'sem-estado') nota.appendChild(bloco(lista('Vertentes desse campo: ', econ > 0 ? ['anarcocapitalismo', 'libertarianismo'] : ['anarquismo', 'anarcocomunismo', 'mutualismo'])));
+      if (v['mp-dem'] === 'forte' || lib >= 80) nota.appendChild(bloco(lista('Vertentes que defenderam governo forte: ', econ < 0 ? ['autoritarismo', 'marxismo-leninismo', 'populismo'] : ['autoritarismo', 'militarismo-autoritario', 'nacionalismo'])));
+      /* quem conta */
+      var tc = { familia: 'Sobre quem conta, você começa pelos seus. Deveres especiais com família e comunidade são legítimos; a lição sobre o perigo do tribalismo mostra quando eles viram desprezo pelos de fora.', pais: 'Sobre quem conta, você para nos cidadãos do seu país: as lições sobre culpar o estrangeiro e sobre imparcialidade testam essa fronteira.', humanos: 'Sobre quem conta, você inclui todos os humanos: a lição sobre sencientismo pergunta se a fronteira da espécie é tão diferente das outras.', sencientes: 'Sobre quem conta, você inclui todos os que sofrem: a lição sobre política baseada na senciência mostra o que isso muda em leis e orçamentos.', vida: 'Sobre quem conta, você inclui toda a vida e os ecossistemas. A crítica sencientista pergunta se um ecossistema conta por si ou pelos seres que sentem nele.' };
+      if (v['mp-circ']) { nota.appendChild(bloco([tc[v['mp-circ']]])); if (v['mp-circ'] === 'sencientes') nota.appendChild(bloco(lista('Vertente ligada: ', ['senciocracia']))); if (v['mp-circ'] === 'vida') nota.appendChild(bloco(lista('Vertentes ligadas: ', ['ambientalismo', 'ecossocialismo']))); }
+      saida.appendChild(nota);
+      var temas = []; if (v['mp-econ']) temas.push('Economia e Estado'); if (v['mp-cost']) temas.push('Direitos e costumes'); if (v['mp-circ'] === 'sencientes' || v['mp-circ'] === 'vida') temas.push('Ambiente e animais'); if (v['mp-dem'] || v['mp-lib']) temas.push('Instituições');
       var ds = []; temas.forEach(function (t) { (MP.deb[t] || []).slice(0, 2).forEach(function (d) { ds.push(d); }); });
       if (ds.length) { var h = el('p', null, 'Debates que testam essa posição: '); ds.forEach(function (d, i) { if (i) h.appendChild(document.createTextNode(', ')); h.appendChild(el('a', { href: base + 'debates/' + d[0] + '.html' }, d[1])); }); h.appendChild(document.createTextNode('.')); saida.appendChild(h); }
-      if (v['mp-met'] === '70') saida.appendChild(el('p', { class: 'legenda' }, 'Você escolheu ruptura. A lição sobre o perigo das revoluções lista as perguntas a fazer antes: que limites o novo poder terá, e quem poderá tirá-lo?'));
     };
     Object.keys(sel).forEach(function (k) { sel[k].addEventListener('change', monta); }); monta();
   }
