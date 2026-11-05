@@ -118,6 +118,11 @@ META.update(META_TJ); REFORCO.update(REFORCO_TJ); DID.update(DID_TJ); DID2.updat
 AVANCADO.extend(LICOES_TJ)
 for _l in LICOES_TJ: GRUPOS[_l['slug']] = GTJ
 if GTJ not in ORDEM_GRUPOS['avancado']: ORDEM_GRUPOS['avancado'].insert(ORDEM_GRUPOS['avancado'].index('Quem conta e o que é justo'), GTJ)
+# Primeiro, Segundo e Terceiro Mundo (tools/mundos.py), Intermediário, Conceitos essenciais
+from mundos import LICOES_MUNDOS, META_MUNDOS, REFORCO_MUNDOS, DID_MUNDOS, DID2_MUNDOS, GM
+META.update(META_MUNDOS); REFORCO.update(REFORCO_MUNDOS); DID.update(DID_MUNDOS); DID2.update(DID2_MUNDOS)
+INTERMEDIARIO.extend(LICOES_MUNDOS)
+for _l in LICOES_MUNDOS: GRUPOS[_l['slug']] = GM
 if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert(ORDEM_GRUPOS['intermediario'].index('Perguntas difíceis'), PB)
 # quizzes de aplicação (tools/quizzes.py) substituem a pergunta de memorização de cada lição
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
@@ -542,7 +547,7 @@ LICAO_DEBATES = {
  'economia-para-entender-politica': ['impostos', 'previdencia', 'autonomia-do-banco-central', 'jornada-6x1', 'pix-e-os-eua'], 'geopolitica': ['pix-e-os-eua', 'imigracao'], 'melhorar-a-democracia': ['voto-obrigatorio', 'sistema-eleitoral', 'reeleicao-e-mandatos'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'anistia-8-de-janeiro'], 'corrupcao': ['supersalarios', 'reforma-administrativa'], 'o-que-e-um-partido': ['sistema-eleitoral', 'representatividade'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas', 'idades-minimas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
 LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', 'subsidios'], 'impunidade': ['seguranca-publica', 'maioridade-penal', 'pena-de-morte', 'justicamento'], 'os-protegidos': ['poder-do-stf', 'anistia-8-de-janeiro', 'supersalarios', 'estado-protege-a-burguesia'], 'golpes-e-fraudes': ['pix-e-os-eua', 'bigtechs', 'regulamentacao-redes'], 'transparencia-dos-gastos': ['supersalarios', 'reforma-administrativa'], 'faccoes-e-sistema-prisional': ['drogas', 'narcoterrorismo', 'seguranca-publica', 'desmilitarizacao'], 'milicias': ['seguranca-publica', 'desmilitarizacao', 'armas'], 'desigualdade-social': ['grandes-fortunas', 'programas-sociais', 'meritocracia', 'impostos', 'cotas'], 'bets': ['apostas']})
-LICAO_DEBATES.update({'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
+LICAO_DEBATES.update({'primeiro-segundo-e-terceiro-mundo': ['imigracao', 'clima', 'subsidios'], 'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
 LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
 LICAO_DEBATES.setdefault('politicas-baseadas-em-evidencias', []).append('ia-no-governo')
 for _s in ('direito-animal', 'direito-ambiental', 'politica-baseada-na-senciencia', 'sencientismo'):

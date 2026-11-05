@@ -3,7 +3,8 @@ sites (tools/crossover.py): edite num, copie para o outro. Cada par liga uma pá
 aprofunda o mesmo tema; o build de cada site mostra a caixa da direção que lhe cabe. Os títulos são copiados das páginas."""
 SITE_POL = 'https://politicaparainiciantes.biblioverse.org'
 SITE_ETI = 'https://eticaparainiciantes.biblioverse.org'
-PARES = [('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
+PARES = [('primeiro-segundo-e-terceiro-mundo.html', 'pobreza-e-etica-global.html'),
+ ('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
  ('debates/aborto.html', 'debates/aborto.html'),
  ('debates/eutanasia.html', 'debates/eutanasia-e-suicidio-assistido.html'),
  ('debates/pena-de-morte.html', 'debates/pena-de-morte.html'),
@@ -89,7 +90,8 @@ PARES = [('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
  ('estado-e-mercado.html', 'economia-politica-e-etica.html'),
  ('esquerda-e-direita.html', 'debates/qual-vertente-politica.html'),
  ('vertentes.html', 'debates/qual-vertente-politica.html')]
-TITULOS_POL = {'teoria-dos-jogos.html': 'Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde',
+TITULOS_POL = {'primeiro-segundo-e-terceiro-mundo.html': 'Primeiro, Segundo e Terceiro Mundo: o que querem dizer',
+ 'teoria-dos-jogos.html': 'Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde',
  'bem-comum.html': 'Pensar no bem comum',
  'bets.html': 'Bets: como as apostas viraram problema público',
  'contrato-social.html': 'Contrato social: de Hobbes a Rawls',
