@@ -3,7 +3,8 @@ sites (tools/crossover.py): edite num, copie para o outro. Cada par liga uma pá
 aprofunda o mesmo tema; o build de cada site mostra a caixa da direção que lhe cabe. Os títulos são copiados das páginas."""
 SITE_POL = 'https://politicaparainiciantes.biblioverse.org'
 SITE_ETI = 'https://eticaparainiciantes.biblioverse.org'
-PARES = [('debates/aborto.html', 'debates/aborto.html'),
+PARES = [('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
+ ('debates/aborto.html', 'debates/aborto.html'),
  ('debates/eutanasia.html', 'debates/eutanasia-e-suicidio-assistido.html'),
  ('debates/pena-de-morte.html', 'debates/pena-de-morte.html'),
  ('debates/drogas.html', 'debates/drogas.html'),
@@ -88,7 +89,8 @@ PARES = [('debates/aborto.html', 'debates/aborto.html'),
  ('estado-e-mercado.html', 'economia-politica-e-etica.html'),
  ('esquerda-e-direita.html', 'debates/qual-vertente-politica.html'),
  ('vertentes.html', 'debates/qual-vertente-politica.html')]
-TITULOS_POL = {'bem-comum.html': 'Pensar no bem comum',
+TITULOS_POL = {'teoria-dos-jogos.html': 'Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde',
+ 'bem-comum.html': 'Pensar no bem comum',
  'bets.html': 'Bets: como as apostas viraram problema público',
  'contrato-social.html': 'Contrato social: de Hobbes a Rawls',
  'corrupcao.html': 'Corrupção: por que existe e o que funciona contra ela',
@@ -170,7 +172,8 @@ TITULOS_POL = {'bem-comum.html': 'Pensar no bem comum',
  'valores-e-decisoes.html': 'Valores morais × decisões políticas',
  'vertentes.html': 'Vertentes políticas',
  'vieses-cognitivos.html': 'Como os vieses afetam seu julgamento'}
-TITULOS_ETI = {'animais-e-a-politica.html': 'Animais e a política: cidadania e constituições',
+TITULOS_ETI = {'evolucao-e-moral.html': 'Evolução, desmascaramento e moral',
+ 'animais-e-a-politica.html': 'Animais e a política: cidadania e constituições',
  'argumentos-morais.html': 'Como funciona um argumento moral',
  'bioetica.html': 'Bioética: autonomia, consentimento e os quatro princípios',
  'circulo-moral.html': 'O círculo moral: quem conta e por quê',
