@@ -152,6 +152,12 @@ PARTIDO = {p['id']: p for p in P}
 for p in P: p.update(D[p['id']])
 PRESID = json.load(open(os.path.join(ROOT, 'data', 'presidenciais.json'), encoding='utf-8'))
 PRESID['missao'] = [dict(ano='2026', cand='Renan Santos', pct='2,24', pos='4')]
+# nomes que a coleta da Wikipédia trouxe como marcação de imagem
+CORRIGE_CAND = {('agir', '1994'): 'Carlos Antônio Gomes', ('pcb', '2022'): 'Sofia Manzano'}
+for _p, _ls in PRESID.items():
+    for _x in _ls:
+        _x['cand'] = CORRIGE_CAND.get((_p, _x['ano']), _x['cand'])
+        assert not re.search(r'\||\dpx|Imagem:', _x['cand']), (_p, _x)
 try: VOTOS = json.load(open(os.path.join(ROOT, 'data', 'votos.json'), encoding='utf-8'))
 except OSError: VOTOS = []
 # como cada partido aparece na API da Câmara
@@ -275,13 +281,14 @@ def page(path, title, desc, corpo, atual='', home=False):
 {f'<meta property="article:modified_time" content="{ATUALIZADO}"/>' if artigo else ''}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="theme-color" content="#14206b"/>
+<link rel="icon" href="{pre}favicon.ico" sizes="32x32"/>
 <link rel="icon" href="{pre}assets/icon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="{pre}assets/icon-180.png"/>
 <link rel="manifest" href="{pre}manifest.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400,100;0,9..144,600,100;0,9..144,700,100;1,9..144,500,100&display=swap"/>
-<link rel="stylesheet" href="{pre}assets/style.css"/>
+<link rel="stylesheet" href="{pre}assets/style.min.css?v={VERSAO}"/>
 <script src="https://biblioverse.org/superbar.js" async></script>
 </head>
 <body data-base="{pre}">
@@ -294,15 +301,16 @@ def page(path, title, desc, corpo, atual='', home=False):
 <button class="bbusca" type="button" aria-label="Buscar no site">🔍<span> Buscar</span> <kbd>Ctrl K</kbd></button>
 <button class="hamb" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
 </div></header>
-<div id="busca" hidden><div class="bcx" role="dialog" aria-label="Buscar no site"><input id="q" type="search" placeholder="Busque um tema ou partido" autocomplete="off"/><div class="res" id="res"></div></div></div>
+<div id="busca" hidden><div class="bcx" role="dialog" aria-label="Buscar no site"><input id="q" type="search" placeholder="Busque um tema ou partido" aria-label="Buscar no site" autocomplete="off"/><div class="res" id="res"></div></div></div>
 <main id="main">{corpo}</main>
 <footer class="rodape"><div class="wrap rodape-in">
-<div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>
+<div><strong>{NOME}</strong><p>Explicações objetivas e simples sobre política, sem camisa de partido. Com fontes e aberto a correções.</p><p>Parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p><p class="copy">© {ATUALIZADO[:4]} BiblioVerse. Atualizado em {ATUALIZADO[8:10]}/{ATUALIZADO[5:7]}/{ATUALIZADO[:4]}.</p></div>
 <div><p class="ti">Aprender</p><ul><li>{l('comece-aqui.html', 'Comece aqui')}</li><li>{l('iniciante.html', 'Iniciante')}</li><li>{l('intermediario.html', 'Intermediário')}</li><li>{l('avancado.html', 'Avançado')}</li><li>{l('vertentes.html', 'Vertentes políticas')}</li><li>{l('vieses.html', 'Vieses cognitivos')}</li><li>{l('trilhas.html', 'Trilhas por tema')}</li><li>{l('catalogo.html', 'Todas as lições')}</li><li>{l('minha-posicao.html', 'Minha posição política')}</li></ul></div>
 <div><p class="ti">Brasil</p><ul><li>{l('cargos.html', 'Cargos')}</li><li>{l('poderes.html', 'Poderes')}</li><li>{l('historia.html', 'História')}</li><li>{l('governos.html', 'Como o Brasil foi governado')}</li><li>{l('partidos.html', 'Partidos')}</li><li>{l('politicos.html', 'Políticos e figuras')}</li><li>{l('mundo.html', 'Figuras internacionais')}</li><li>{l('ranking-da-mentira.html', 'Ranking da mentira')}</li></ul></div>
 <div><p class="ti">Mais</p><ul><li>{l('ferramentas.html', 'Ferramentas')}</li><li>{l('indicadores.html', 'Indicadores internacionais')}</li><li>{l('glossario-economico.html', 'Glossário de economia')}</li><li>{l('biblioteca.html', 'Biblioteca')}</li><li>{l('sites.html', 'Sites sobre política')}</li><li>{l('debates.html', 'Principais debates')}</li><li>{l('sobre.html', 'Sobre')}</li><li>{l('privacidade.html', 'Política de privacidade')}</li></ul></div>
 </div></footer>
-<script src="{pre}assets/app.js" defer></script>
+<noscript><p class="nojs">A leitura funciona sem JavaScript. A busca, os menus suspensos, os testes e as ferramentas interativas precisam dele; o rodapé tem links para todas as seções.</p></noscript>
+<script src="{pre}assets/app.min.js?v={VERSAO}" defer></script>
 </body></html>
 '''
     html = html.replace('href="index.html"', 'href="./"').replace('href="../index.html"', 'href="../"')
@@ -1079,6 +1087,18 @@ def arquivos():
     page('404.html', 'Página não encontrada', 'Esta página não existe.', cabeca('Erro 404', 'Página não encontrada', 'Volte para o <a href="/" style="color:#fff">início</a> ou use a busca.'))
 
 os.makedirs(os.path.join(ROOT, 'assets'), exist_ok=True)
+def minifica():
+    import hashlib
+    try:
+        import rcssmin, rjsmin
+        cm, jm = rcssmin.cssmin, rjsmin.jsmin
+    except ImportError:
+        cm = jm = lambda s: s
+    css = open(os.path.join(ROOT, 'assets', 'style.css'), encoding='utf-8').read(); js = open(os.path.join(ROOT, 'assets', 'app.js'), encoding='utf-8').read()
+    open(os.path.join(ROOT, 'assets', 'style.min.css'), 'w', encoding='utf-8', newline='\n').write(cm(css))
+    open(os.path.join(ROOT, 'assets', 'app.min.js'), 'w', encoding='utf-8', newline='\n').write(jm(js))
+    return hashlib.sha1((css + js).encode()).hexdigest()[:8]
+VERSAO = minifica()
 inicio(); comece(); catalogo(); trilhas(); minha_posicao()
 for s, r, ls, t, d, g in NIVEIS:
     nivel(s, r, ls, t, d, g); revisao(s, r, ls, g); teste_nivel(s, r, ls)

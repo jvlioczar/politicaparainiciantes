@@ -37,6 +37,8 @@ ICONES = {
  'livro': lambda: r(9, 10, 21, 44, 'gC', 3) + r(34, 10, 21, 44, 'gV', 3),
  'urna': lambda: r(10, 26, 44, 30, 'gC', 4) + r(23, 8, 18, 24, 'gV', 2) + r(20, 32, 24, 3, 'gL'),
 }
+_ICO = [0]
 def icone(n):
-    return f'<svg class="ico" viewBox="0 0 64 64" aria-hidden="true">{DEFS.replace("gC", "gC" + n).replace("gV", "gV" + n).replace("gA", "gA" + n).replace("gL", "gL" + n)}{ICONES[n]().replace("#gC", "#gC" + n).replace("#gV", "#gV" + n).replace("#gA", "#gA" + n).replace("#gL", "#gL" + n)}</svg>'
+    _ICO[0] += 1; k = f'{n}{_ICO[0]}'
+    return f'<svg class="ico" viewBox="0 0 64 64" aria-hidden="true">{DEFS.replace("gC", "gC" + k).replace("gV", "gV" + k).replace("gA", "gA" + k).replace("gL", "gL" + k)}{ICONES[n]().replace("#gC", "#gC" + k).replace("#gV", "#gV" + k).replace("#gA", "#gA" + k).replace("#gL", "#gL" + k)}</svg>'
 LOGO = '<svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><defs><linearGradient id="lgA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ef5d7a"/><stop offset="1" stop-color="#f7b267"/></linearGradient><linearGradient id="lgB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3fb98a"/><stop offset="1" stop-color="#f4d06f"/></linearGradient><linearGradient id="lgC" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#7a5be0"/><stop offset="1" stop-color="#6fb1ec"/></linearGradient></defs><rect x="5" y="23" width="8" height="13" rx="2" fill="url(#lgB)"/><rect x="16" y="14" width="8" height="22" rx="2" fill="url(#lgA)"/><rect x="27" y="5" width="8" height="31" rx="2" fill="url(#lgC)"/></svg>'

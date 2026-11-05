@@ -331,3 +331,28 @@ select{max-width:100%}
 .casos-fio{margin-top:2.4rem}.casos-fio p{color:var(--suave)}.casos-lista{margin:.4em 0 1em 1.1em;padding:0}.casos-lista li{margin:.35em 0}.casos-fio th{text-align:left;vertical-align:top}.casos-fio td{vertical-align:top;font-size:.93rem}
 .trilha-sec{margin-bottom:2.4rem}.trilha-sec h2 small{font:500 .8rem var(--sans);color:var(--suave);text-transform:none;letter-spacing:0;margin-left:8px}.trilha-sec p{color:var(--suave);margin:.3em 0 .8em}.trilha-sec .barra-prog{margin-bottom:12px}.trilha-item{position:relative}.trilha-n{position:absolute;top:-10px;left:-8px;z-index:2;width:28px;height:28px;border-radius:50%;background:var(--noite);color:#fff;font:700 .85rem/28px var(--sans);text-align:center;box-shadow:0 2px 8px #0003}
 #minha-posicao .campo select{width:100%}
+/* checklist de lançamento (novembro de 2026) */
+/* contraste WCAG AA: mesmos tons, mais escuros onde o texto não alcançava 4,5:1 */
+:root{--suave:#585f85;--verde:#197756}
+.fam.f3,.ponto.f3{background:#25835e}.fam.f6,.ponto.f6{background:#936e22}
+.indice.iniciante{--nv:#197756}.indice.intermediario{--nv:#b83250}
+.btn{background-image:linear-gradient(90deg,#c2410c,#c93a5a)}.btn.v{background-image:linear-gradient(90deg,#7d6f1c,#17845e)}.btn.a{background-image:linear-gradient(90deg,#1b77ca,#7a5be0)}
+.rodape .copy{margin-top:.6rem;font-size:.85rem;opacity:.85}
+.nojs{margin:0;padding:10px 16px;background:#fff1c9;color:#4d3b00;font:500 .92rem var(--sans);text-align:center}
+.lista-mais{margin:0 0 1em;line-height:1.6}
+@media print{
+ @page{margin:18mm 16mm}
+ html,body{background:#fff!important;color:#000!important}
+ body{font-size:11pt;line-height:1.45}
+ .topo,.bvbar,#bvbar,.rodape,.lado,.relac,.cta,.indice,.pager,.fim-nivel,.marcar,.filtros,.fq,.contagem,.posicao,.nivel-acoes,.revisao-esp,.revisao,#busca,.hamb,.bbusca,.skip,.nojs,.quiz .ops,.quiz .fb,.prox-q,.cta-topo,.btn,details.mais summary{display:none!important}
+ .cabeca,.capa,.noite{background:#fff!important;color:#000!important;padding:0 0 10pt!important}
+ .cabeca::after,.capa svg,.ico{display:none!important}
+ .cabeca h1,.cabeca .lede,.cabeca .trilha,.cabeca a,h1,h2,h3{color:#000!important}
+ .wrap,.layout,.leitura{max-width:none!important;width:auto!important;display:block!important;padding:0!important}
+ a{color:#000!important;text-decoration:underline}
+ .leitura a[href^="http"]::after{content:" (" attr(href) ")";font-size:.85em;word-break:break-all}
+ .nota,.objetivos,.caso-abre,.ajuda section,.pensar,.caixa,.cartao,.quiz{background:#fff!important;box-shadow:none!important;border:1px solid #999!important;break-inside:avoid}
+ .caso-abre details{display:block}.caso-abre details>*{display:block!important}
+ table{break-inside:avoid}tr,img,svg{break-inside:avoid}h2,h3{break-after:avoid}
+ .gl{border:0}.gl::after{display:none!important}
+}
