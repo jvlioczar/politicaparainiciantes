@@ -3,7 +3,8 @@ sites (tools/crossover.py): edite num, copie para o outro. Cada par liga uma pá
 aprofunda o mesmo tema; o build de cada site mostra a caixa da direção que lhe cabe. Os títulos são copiados das páginas."""
 SITE_POL = 'https://politicaparainiciantes.biblioverse.org'
 SITE_ETI = 'https://eticaparainiciantes.biblioverse.org'
-PARES = [('filosofia-politica.html', 'da-etica-a-politica.html'), ('filosofia-politica.html', 'filosofos.html'),
+PARES = [('dinheiro-divida-e-dolar.html', 'economia-politica-e-etica.html'), ('escola-publica-e-universidade.html', 'debates/meritocracia.html'),
+ ('filosofia-politica.html', 'da-etica-a-politica.html'), ('filosofia-politica.html', 'filosofos.html'),
  ('primeiro-segundo-e-terceiro-mundo.html', 'pobreza-e-etica-global.html'),
  ('teoria-dos-jogos.html', 'evolucao-e-moral.html'),
  ('debates/aborto.html', 'debates/aborto.html'),
@@ -91,7 +92,8 @@ PARES = [('filosofia-politica.html', 'da-etica-a-politica.html'), ('filosofia-po
  ('estado-e-mercado.html', 'economia-politica-e-etica.html'),
  ('esquerda-e-direita.html', 'debates/qual-vertente-politica.html'),
  ('vertentes.html', 'debates/qual-vertente-politica.html')]
-TITULOS_POL = {'filosofia-politica.html': 'Filosofia política: as grandes perguntas e os pensadores',
+TITULOS_POL = {'dinheiro-divida-e-dolar.html': 'Dinheiro, dívida e dólar: a economia por trás da política', 'escola-publica-e-universidade.html': 'Escola pública, escola privada e a universidade pública',
+ 'filosofia-politica.html': 'Filosofia política: as grandes perguntas e os pensadores',
  'primeiro-segundo-e-terceiro-mundo.html': 'Primeiro, Segundo e Terceiro Mundo: o que querem dizer',
  'teoria-dos-jogos.html': 'Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde',
  'bem-comum.html': 'Pensar no bem comum',
