@@ -357,3 +357,6 @@ select{max-width:100%}
  table{break-inside:avoid}tr,img,svg{break-inside:avoid}h2,h3{break-after:avoid}
  .gl{border:0}.gl::after{display:none!important}
 }
+
+/* home: a capa ocupa a primeira tela e deixa só uma faixa do bloco seguinte, sem o texto dele */
+@media (min-width:821px){.capa{min-height:calc(100svh - var(--topo-capa,110px) - 36px);display:flex;flex-direction:column;justify-content:center}}

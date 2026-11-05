@@ -457,3 +457,10 @@
   /* glossário: toque abre a definição */
   $$('.gl').forEach(function (g) { g.addEventListener('click', function () { $$('.gl.ativo').forEach(function (o) { if (o !== g) o.classList.remove('ativo'); }); g.classList.toggle('ativo'); }); });
 })();
+
+/* home: mede a altura das barras acima da capa para que ela ocupe a primeira tela (CSS usa --topo-capa) */
+(function () {
+  var c = document.querySelector('.capa'); if (!c) return;
+  function mede() { document.documentElement.style.setProperty('--topo-capa', Math.round(c.getBoundingClientRect().top + window.scrollY) + 'px'); }
+  mede(); window.addEventListener('load', mede); window.addEventListener('resize', mede);
+})();
