@@ -86,7 +86,9 @@ D(SV,'saude','Saúde pública gratuita','SUS universal, planos privados, ou mist
  ('Mais mercado',['Concorrência reduz filas e custos','Parcerias aceleram atendimentos','Quem pode pagar alivia o sistema']),
  ('Sistema universal',['Saúde não deveria depender de renda','Prevenção e vacinas funcionam melhor em rede','Saúde privada também depende do SUS, como nos casos graves']),
  ['Modelos diferentes podem cobrir todos, como no Reino Unido e na Alemanha','O SUS tem sucessos mundiais e também filas','Subfinanciamento e má gestão se misturam'],
- ('forte','A ideia de cobertura universal tem forte defesa moral e bons resultados nos países ricos. O ponto aberto é o desenho: público, seguros regulados e parcerias podem funcionar, e a qualidade varia com o financiamento e a gestão.')),
+ ('forte','A ideia de cobertura universal tem forte defesa moral e bons resultados nos países ricos. O ponto aberto é o desenho: público, seguros regulados e parcerias podem funcionar, e a qualidade varia com o financiamento e a gestão.'),
+ [('Atenção básica','Postos de saúde e equipes de saúde da família resolvem a maior parte dos problemas e evitam internações.'),('Filas','Exames e cirurgias eletivas são o gargalo mais visível do SUS.'),('Saúde animal','Algumas cidades já oferecem hospitais veterinários públicos para tutores de baixa renda, e há quem defenda um “SUS dos animais”. Veja o debate sobre animais de rua.')],
+ [('Animais de rua','animais-de-rua.html')]),
 D(SV,'transporte-gratuito','Transporte público gratuito','Tarifa zero é direito à cidade ou conta que não fecha?','Mais de cem municípios brasileiros têm tarifa zero, a maioria pequenos. Oito cidades desistiram no último ano, em um levantamento recente.',
  ('A favor',['Dá acesso a trabalho, escola e saúde','Devolve renda aos mais pobres','Reduz carros, trânsito e poluição']),
  ('Contra',['Alguém paga: o custo nacional é estimado em dezenas de bilhões por ano','Lotação pode piorar','Melhor primeiro aumentar frota e qualidade']),
@@ -193,7 +195,9 @@ D(AN,'animais-de-rua','Animais de rua','Castrar, abrigar, sacrificar ou culpar o
  ('Foco em controle',['Risco de doenças e acidentes','Recolher e reduzir a população','Orçamento tem outras prioridades']),
  ('Foco em bem-estar',['Animais sofrem nas ruas','Castração em massa e adoção','Punição para abandono e maus-tratos']),
  ['Protetoras independentes carregam boa parte do trabalho','Abrigos enchem rápido e custam caro','Fauna silvestre também sofre com animais soltos'],
- ('forte','A castração em larga escala, a vacinação, a identificação e a adoção são mais éticas e tendem a ser mais eficazes no longo prazo do que recolher e matar, prática que foi sendo abandonada no Brasil.')),
+ ('forte','A castração em larga escala, a vacinação, a identificação e a adoção são mais éticas e tendem a ser mais eficazes no longo prazo do que recolher e matar, prática que foi sendo abandonada no Brasil.'),
+ [('O que diz a lei','A Lei 14.228/2021 proibiu os centros de controle de zoonoses de matar cães e gatos saudáveis, e a Lei 14.064/2020 aumentou a pena para maus-tratos a cães e gatos para 2 a 5 anos de reclusão.'),('Castração e adoção','Programas públicos de castração gratuita, microchip e feiras de adoção atacam a causa: o nascimento de novos animais sem dono.'),('Hospitais veterinários públicos','São Paulo mantém hospitais veterinários públicos desde 2012, e outras cidades criaram serviços parecidos para tutores de baixa renda. Há propostas de um “SUS dos animais” no Congresso; o debate é quanto custa e quem paga.'),('Abandono','Muitos animais de rua já tiveram dono. Abandonar é crime, mas a fiscalização é rara.')],
+ [('Política baseada na senciência','../politica-baseada-na-senciencia.html'),('Direitos animais','direitos-animais.html'),('Pragas urbanas e espécies invasoras','pragas-e-especies-invasoras.html')]),
 D(AN,'terras-indigenas','Terras indígenas e marco temporal','Direito originário ou segurança jurídica para produtores?','O STF rejeitou a tese do marco temporal em 2023, mas o Congresso aprovou uma lei em sentido contrário, e o debate seguiu.',
  ('A favor do marco',['Dá segurança a quem produz','Evita conflitos sobre terras antigas','Teme perdas para o agro']),
  ('Contra o marco',['Povos foram expulsos à força antes de 1988','Direito é anterior ao Estado','Terras indígenas protegem a floresta']),
@@ -329,6 +333,10 @@ DEBATES_P[:] = [PREVIDENCIA if d['s'] == 'previdencia' else d for d in DEBATES_P
 from direito import DEBATES_DIREITO, MD as _MD
 DEBATES_P += DEBATES_DIREITO
 if _MD not in TEMAS_D: TEMAS_D.append(_MD)
+from debates_tecnologia import DEBATES_TEC
+DEBATES_P += DEBATES_TEC
+from debates_animais import DEBATES_ANIMAIS
+DEBATES_P += DEBATES_ANIMAIS
 assert len({d['s'] for d in DEBATES_P}) == len(DEBATES_P)
 SITES_U.append(('Our World in Data','https://ourworldindata.org','Dados e gráficos sobre o mundo todo.','Dados e evidências',INT))
 SITES_U.append(('Sentient Media','https://sentientmedia.org','Jornalismo sobre pecuária e animais.','Notícias e reportagem',INT))

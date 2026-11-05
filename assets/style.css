@@ -273,6 +273,7 @@ select{max-width:100%}
 @media (max-width:820px){.mapa2.mapa-ed{height:920px}}
 
 /* memória das vítimas nas páginas de extremistas */
+.nota.cruzada{border-left:4px solid var(--noite)}.nota.cruzada p{margin:.35rem 0 .3rem}.nota.cruzada ul{margin:0;padding-left:1.2em}.nota.cruzada li{margin:.2rem 0}
 .nota.memorial{background:#f1f0f7;border-left:4px solid var(--noite)}.nota.memorial p{margin:.4rem 0 0}
 
 /* passagem para o próximo nível */

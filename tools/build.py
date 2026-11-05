@@ -1,6 +1,7 @@
 """Gera todas as páginas do site. Uso: python tools/build.py"""
 import json, os, re, sys, unicodedata
 from html import escape as e
+from crossover import caixa_politica  # ponte com o site irmão (tools/crossover.py, igual nos dois sites)
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from licoes_iniciante import INICIANTE
@@ -106,6 +107,11 @@ from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
 META.update(META_BR); REFORCO.update(REFORCO_BR); DID.update(DID_BR); DID2.update(DID2_BR)
 INTERMEDIARIO.extend(LICOES_BR)
 for _l in LICOES_BR: GRUPOS[_l['slug']] = PB
+# costumes e trânsito (tools/costumes_transito.py), no mesmo bloco
+from costumes_transito import LICOES_CT, META_CT, REFORCO_CT, DID_CT, DID2_CT
+META.update(META_CT); REFORCO.update(REFORCO_CT); DID.update(DID_CT); DID2.update(DID2_CT)
+INTERMEDIARIO.extend(LICOES_CT)
+for _l in LICOES_CT: GRUPOS[_l['slug']] = PB
 if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert(ORDEM_GRUPOS['intermediario'].index('Perguntas difíceis'), PB)
 # quizzes de aplicação (tools/quizzes.py) substituem a pergunta de memorização de cada lição
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
@@ -177,19 +183,32 @@ BR = [('cargos.html', 'O que cada cargo faz', 'De vereador a presidente: quem de
 ESP_POS = {'Extrema-esquerda': 6, 'Esquerda': 20, 'Centro-esquerda': 36, 'Centro': 50, 'Independente (declarado)': 54, 'Independente (declarado); centro-direita': 62, 'Centro a centro-direita': 58, 'Centro-direita': 68, 'Direita': 86}
 FAIXA = {'Extrema-esquerda': 'Esquerda', 'Esquerda': 'Esquerda', 'Centro-esquerda': 'Centro-esquerda', 'Centro': 'Centro', 'Independente (declarado)': 'Centro', 'Independente (declarado); centro-direita': 'Centro-direita', 'Centro a centro-direita': 'Centro-direita', 'Centro-direita': 'Centro-direita', 'Direita': 'Direita'}
 
-ATUALIZADO = '2026-11-05'
+ATUALIZADO = '2026-11-06'
 PAGINAS = []
 SECOES = {'debates': ('debates.html', 'Principais debates', 'Os dois lados, a complexidade e o que os dados indicam.'), 'mundo': ('mundo.html', 'Figuras internacionais', 'Trajetória, posições e controvérsias, com fontes.'), 'politicos': ('politicos.html', 'Políticos e figuras', 'Trajetória, posições e controvérsias, com fontes.'), 'vertentes': ('vertentes.html', 'Vertentes políticas', 'Ideias, história, forças e contradições explicadas.'), 'vieses': ('vieses.html', 'Vieses cognitivos', 'Entenda com exemplo e veja os efeitos no julgamento moral e político.'), 'partidos': ('partidos.html', 'Partidos', 'Dossiê com fontes.'), 'ferramentas': ('ferramentas.html', 'Ferramentas', 'Ferramenta interativa e gratuita, sem cadastro.'), 'indicadores': ('indicadores.html', 'Indicadores internacionais', 'O que mede, quem publica, onde o Brasil fica e os limites de cada índice.')}
 PAIS_NIVEL = {'iniciante.html': 'Iniciante', 'intermediario.html': 'Intermediário', 'avancado.html': 'Avançado'}
 HUBS = {'indicadores.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'partidos.html', 'politicos.html', 'mundo.html', 'debates.html', 'sites.html', 'vertentes.html', 'vieses.html', 'ferramentas.html', 'biblioteca.html', 'acompanhar.html'}
 
+DESC_CURTA = {  # descrições escritas à mão para páginas cujo resumo passa de 160 caracteres
+    'corrupcao.html': 'Corrupção não é só falta de caráter: é uma conta de incentivos. Quanto custa, o que funciona para combatê-la e por que o “salvador” não resolve.',
+    'divisao-internacional-do-trabalho.html': 'Modelo primário-exportador, desindustrialização e teoria da dependência: o que explica o lugar do Brasil na divisão internacional do trabalho.',
+    'guerra-ao-terror.html': 'Depois do 11 de Setembro, os EUA declararam guerra a um método. Duas décadas, trilhões de dólares e muitas mortes depois, o que se aprendeu?',
+    'perigo-do-outsider.html': '“Não sou político” virou a promessa mais vendida das eleições. O que é um outsider de verdade, por que ele atrai e o que costuma vir depois.',
+    'pragmatismo-politico.html': 'Julgar ideias pelo que produzem, e não pela bandeira: de onde vem o pragmatismo, quando é virtude e quando vira falta de princípio.',
+    'politicos/getulio-vargas.html': 'Getúlio Vargas: chefe do governo provisório, presidente constitucional, ditador do Estado Novo de 1937 a 1945 e presidente eleito de 1951 a 1954.',
+    'politicos/paulo-freire.html': 'Paulo Freire: educador (1921-1997), autor de “Pedagogia do Oprimido”, secretário de Educação de São Paulo e Patrono da Educação Brasileira.',
+}
 def desc_seo(path, desc):
     d = re.sub(r'\s+', ' ', re.sub('<[^>]+>', '', desc)).strip()
     if d and d[-1] not in '.!?…': d += '.'
     if len(d) < 70:
         sec = SECOES.get(path.split('/')[0]) if '/' in path else None
         d += ' ' + (sec[2] if sec else 'Explicação simples e com fontes, sem escolher time.')
-    if len(d) > 160: d = d[:157].rsplit(' ', 1)[0].rstrip(' ,;:') + '…'
+    if len(d) > 160 and path in DESC_CURTA: d = DESC_CURTA[path]
+    if len(d) > 160:
+        # prefere terminar numa frase inteira a cortar no meio
+        fim = max(d.rfind(x, 0, 160) for x in ('. ', '? ', '! '))
+        d = d[:fim + 1] if fim >= 69 else d[:157].rsplit(' ', 1)[0].rstrip(' ,;:') + '…'
     return d
 
 def dados(path, title, desc, url, atual, home):
@@ -242,6 +261,9 @@ def page(path, title, desc, corpo, atual='', home=False):
     erro = path == '404.html'
     desc = desc_seo(path, desc)
     corpo = titulos_ok(corpo)
+    _cx = caixa_politica(path, e)  # caixa do site irmão, antes do bloco de páginas relacionadas
+    _i = corpo.rfind('<section class="relac"')
+    corpo = corpo[:_i] + _cx + corpo[_i:] if _i >= 0 else corpo + _cx
     pre = '../' * path.count('/')
     url = SITE + '/' + ('' if path == 'index.html' else path)
     full = title if home else f'{title} | {NOME}'
@@ -514,6 +536,11 @@ LICAO_DEBATES = {
  'economia-para-entender-politica': ['impostos', 'previdencia', 'autonomia-do-banco-central', 'jornada-6x1', 'pix-e-os-eua'], 'geopolitica': ['pix-e-os-eua', 'imigracao'], 'melhorar-a-democracia': ['voto-obrigatorio', 'sistema-eleitoral', 'reeleicao-e-mandatos'], 'perigo-de-questionar-a-democracia': ['poder-do-stf', 'anistia-8-de-janeiro'], 'corrupcao': ['supersalarios', 'reforma-administrativa'], 'o-que-e-um-partido': ['sistema-eleitoral', 'representatividade'], 'perigo-do-maniqueismo': ['seguranca-publica', 'armas', 'idades-minimas'], 'politica-do-medo': ['seguranca-publica', 'imigracao'], 'etica-normativa': ['eutanasia', 'aborto'], 'esquerda-e-direita': ['tamanho-do-estado'], 'contrato-social': ['impostos'], 'perigo-das-revolucoes': ['reforma-agraria'],
 }
 LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', 'subsidios'], 'impunidade': ['seguranca-publica', 'maioridade-penal', 'pena-de-morte', 'justicamento'], 'os-protegidos': ['poder-do-stf', 'anistia-8-de-janeiro', 'supersalarios', 'estado-protege-a-burguesia'], 'golpes-e-fraudes': ['pix-e-os-eua', 'bigtechs', 'regulamentacao-redes'], 'transparencia-dos-gastos': ['supersalarios', 'reforma-administrativa'], 'faccoes-e-sistema-prisional': ['drogas', 'narcoterrorismo', 'seguranca-publica', 'desmilitarizacao'], 'milicias': ['seguranca-publica', 'desmilitarizacao', 'armas'], 'desigualdade-social': ['grandes-fortunas', 'programas-sociais', 'meritocracia', 'impostos', 'cotas'], 'bets': ['apostas']})
+LICAO_DEBATES.update({'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
+LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
+LICAO_DEBATES.setdefault('politicas-baseadas-em-evidencias', []).append('ia-no-governo')
+for _s in ('direito-animal', 'direito-ambiental', 'politica-baseada-na-senciencia', 'sencientismo'):
+    LICAO_DEBATES.setdefault(_s, []).append('pragas-e-especies-invasoras')
 APELIDOS_MUNDO = {'Franklin Roosevelt': 'Franklin D. Roosevelt', 'Mustafa Kemal Atatürk': 'Mustafa Kemal Atatürk', 'Martin Luther King Jr.': 'Martin Luther King Jr.'}
 def debates_da_licao(l):
     its = [d for d in DEBATES_P if d['s'] in LICAO_DEBATES.get(l['slug'], [])]
@@ -789,7 +816,10 @@ def debates_pub():
         pos2 = f'<div class="posicao depois" data-deb="{d["s"]}"><p class="k">E agora, depois de ler?</p><div class="ops">{bts}</div><p class="fb" role="status"></p></div>'
         corpo = cabeca('<a href="../debates.html">Debates</a> / ' + e(d['t']), d['n'], e(d['r']))
         corpo += f'''<div class="wrap estreito leitura secao"><p class="abre">{e(d["v"])}</p>{pos1}<h2>A posição de cada lado</h2><div class="dois-lados">{lado(d["a"])}{lado(d["b"])}</div><p class="legenda">Posições gerais. Muita gente concorda em parte com cada lado.</p>{d.get("extra", "")}<h2>Por que é complexo</h2><ul>{"".join(f"<li>{e(x)}</li>" for x in d["c"])}</ul><h2>O que a lógica e os dados indicam</h2><div class="nota veredito {d["p"][0]}"><strong>{e(ROT_PESO[d["p"][0]])}</strong><p>{e(d["p"][1])}</p></div><p class="legenda">Avaliação do site, sujeita a críticas. <a href="../mudar-de-ideia.html">Evidências novas podem mudar esta avaliação.</a></p>{pos2}{sub}<h2>Perguntas para pensar</h2><ol class="roteiro"><li>Qual parte é fato, e qual é valor?</li><li>Quem paga o preço de cada opção?</li><li>Eu aceitaria essa regra sem saber em que lugar estaria?</li><li>O que me faria mudar de ideia?</li></ol>{ler}{fontes(fontes_d)}</div><section class="relac"><div class="wrap"><h2>No mesmo tema</h2><div class="grade">{rel}</div></div></section>'''
-        page(f'debates/{d["s"]}.html', d['n'], f'{d["n"]}: {d["r"]} Os dois lados e o que os dados indicam.', corpo, atual='debates.html')
+        _r = d['r'] if d['r'][-1] in '.?!' else d['r'] + '.'
+        _dd = f'{d["n"]}. {_r}' if d['n'][-1] not in '?!.' else f'{d["n"]} {_r}'
+        if len(_dd) + 40 <= 160: _dd += ' Os dois lados e o que os dados indicam.'
+        page(f'debates/{d["s"]}.html', d['n'], _dd, corpo, atual='debates.html')
 
 def sites_uteis():
     gr = ''

@@ -330,3 +330,8 @@ assert len({f[0] for f in F}) == len(F)
 from presidentes import PRES
 assert not {x[0] for x in PRES} & {x[0] for x in F}, {x[0] for x in PRES} & {x[0] for x in F}
 F += PRES
+
+# polêmicas pesquisadas em novembro de 2026 para quem ainda não tinha nenhuma
+from polemicas_lote2 import POL2
+assert not set(POL2) - {x[0] for x in F}, set(POL2) - {x[0] for x in F}
+F = [x[:7] + (POL2[x[0]],) if x[0] in POL2 and not x[7] else x for x in F]
