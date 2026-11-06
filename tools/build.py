@@ -6,7 +6,7 @@ from nao_e import NAO_E
 def nao_e_html(nome, itens):
     li = ''.join(f'<li><p class="nao-e-dito">{e(d)}</p><p>{e(c)}</p></li>' for d, c in itens)
     return f'<h2 id="o-que-nao-e">O que não é {e(nome[0].lower() + nome[1:])}</h2><p class="legenda">Concepções erradas e espantalhos que costumam aparecer em conversas e debates, com a correção.</p><ul class="lista-nao-e">{li}</ul>'
-from crossover import caixa_politica  # ponte com o site irmão (tools/crossover.py, igual nos dois sites)
+from crossover import caixa_politica  # ponte com os sites irmãos (tools/crossover.py, igual nos três sites)
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from licoes_iniciante import INICIANTE
@@ -299,7 +299,7 @@ def page(path, title, desc, corpo, atual='', home=False):
     erro = path == '404.html'
     desc = desc_seo(path, desc)
     corpo = titulos_ok(corpo)
-    _cx = caixa_politica(path, e)  # caixa do site irmão, antes do bloco de páginas relacionadas
+    _cx = caixa_politica(path, e)  # caixa dos sites irmãos, antes do bloco de páginas relacionadas
     _i = corpo.rfind('<section class="relac"')
     corpo = corpo[:_i] + _cx + corpo[_i:] if _i >= 0 else corpo + _cx
     pre = '../' * path.count('/')
@@ -1139,6 +1139,7 @@ def sobre():
 <h2>Como apuramos</h2><p>Usamos Wikipédia, TSE, Senado, Câmara, agências de checagem e imprensa de referência, evitando portais muito à direita ou muito à esquerda. As votações vêm diretamente da API oficial da Câmara. Dados de partidos têm como base novembro de 2026 e mudam com frequência.</p><p>Os dossiês são resumos, não processos completos. Acusação não é condenação, e decisões são revistas. Ao ver um erro, mande a correção com a fonte.</p>
 <h2>Seus dados</h2><p>Não há cadastro. Lições lidas e fichas ficam só no seu navegador. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
 <h2>Parte da BiblioVerse</h2><p>Este site faz parte da <a href="https://biblioverse.org">BiblioVerse</a>.</p></div>'''
+    corpo += '''<div class="wrap secao" style="padding-top:0"><h2 class="grupo">Os sites irmãos</h2><p>Os três sites se cruzam: cada tema aqui aparece, nos outros dois, pelo seu lado ético, político ou científico.</p><div class="grade"><a class="cartao" href="https://cienciaparainiciantes.biblioverse.org/" target="_blank" rel="noopener"><span class="tipo">Site irmão</span><h3 class="ext" style="margin-top:.3rem">Ciência Para Iniciantes</h3><p>O que é ciência, método, evidência, correntes e pseudociências, do básico ao avançado.</p></a><a class="cartao" href="https://eticaparainiciantes.biblioverse.org/" target="_blank" rel="noopener"><span class="tipo">Site irmão</span><h3 class="ext" style="margin-top:.3rem">Ética Para Iniciantes</h3><p>Teorias éticas, círculo moral, metaética, dilemas e filósofos, do básico ao avançado.</p></a></div></div>'''  # cards dos sites irmãos (pedido de 2026-11-07)
     page('sobre.html', 'Sobre', 'Posição editorial e método de apuração do Política Para Iniciantes.', corpo, atual='sobre.html')
 
 def arquivos():
