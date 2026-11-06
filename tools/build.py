@@ -1,6 +1,11 @@
 """Gera todas as páginas do site. Uso: python tools/build.py"""
 import json, os, re, sys, unicodedata
 from html import escape as e
+
+from nao_e import NAO_E
+def nao_e_html(nome, itens):
+    li = ''.join(f'<li><p class="nao-e-dito">{e(d)}</p><p>{e(c)}</p></li>' for d, c in itens)
+    return f'<h2 id="o-que-nao-e">O que não é {e(nome[0].lower() + nome[1:])}</h2><p class="legenda">Concepções erradas e espantalhos que costumam aparecer em conversas e debates, com a correção.</p><ul class="lista-nao-e">{li}</ul>'
 from crossover import caixa_politica  # ponte com o site irmão (tools/crossover.py, igual nos dois sites)
 from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -900,6 +905,7 @@ def vertentes():
 <h2 style="margin:2.2rem 0 .8rem">Compare</h2><div class="grade" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-bottom:14px"><label class="campo">Vertente 1<select id="va"></select></label><label class="campo">Vertente 2<select id="vb"></select></label><label class="campo">Vertente 3<select id="vc"></select></label></div><div class="tabela"><table class="compara" id="vcomp"></table></div><script type="application/json" id="dados-vert">{dados}</script>
 <h2 style="margin:2.2rem 0 .8rem">Todas as vertentes</h2><input class="fq" id="vq" type="search" placeholder="Filtrar por nome ou ideia" aria-label="Filtrar vertentes"/><div class="filtros" id="vfam" role="group" aria-label="Família">{bots}</div><div id="vertentes">{gr}</div></div>"""
     page('vertentes.html', 'Vertentes políticas', 'Liberalismo, anarcocapitalismo, social-democracia, marxismo, anarquismo e outras correntes: ideias, história, críticas e o caso brasileiro.', corpo, atual='vertentes.html')
+    assert set(NAO_E) == {x['s'] for x in V}, set(NAO_E) ^ {x['s'] for x in V}
     for i, v in enumerate(V):
         pts = ''.join(f'<a href="../partidos/{p}.html" class="tipo">{e(PARTIDO[p]["s"])}</a>' for p in v['pa'])
         fgs = ''.join(f'<a href="../politicos/{fig_slug(n)}.html" class="tipo ferr">{e(n)}</a>' for n in v['fi'] if fig_slug(n))
@@ -917,7 +923,7 @@ def vertentes():
         corpo = cabeca('<a href="../vertentes.html">Vertentes políticas</a>', v['n'], e(v['r']), meta=f'<div class="meta"><span class="tipo fam f{COR_FAM[v["f"]]}">{e(v["f"])}</span></div>')
         corpo += f"""<div class="wrap layout"><article class="leitura">{aviso}<h2>A ideia central</h2><p>{e(v["i"])}</p>
 <h2>Como vê cada questão</h2><div class="tabela"><table><tbody><tr><th>Estado</th><td>{e(v["e"])}</td></tr><tr><th>Economia</th><td>{e(v["m"])}</td></tr><tr><th>Liberdades</th><td>{e(v["d"])}</td></tr><tr><th>Igualdade</th><td>{e(v["q"])}</td></tr></tbody></table></div>
-<h2>Pensadores e referências</h2><p>{e(v["p"])}</p><h2>Na história</h2><p>{e(v["h"])}</p><h2>No Brasil</h2><p>{e(v["b"])}</p>{liga}<h2>{"Por que atraiu pessoas" if v["apelo"] else "Pontos fortes: o que pode estar certo"}</h2><ul class="lista-forte">{"".join(f"<li>{e(x)}</li>" for x in v["forte"])}</ul>{'<p class="legenda">Explicar por que uma ideia atraiu pessoas não é dizer que ela está certa.</p>' if v["apelo"] else ''}<h2>Contradições</h2><ul class="lista-contra">{"".join(f"<li>{e(x)}</li>" for x in v["contra"])}</ul><h2>O que dizem os críticos</h2><p>{e(v["c"])}</p>
+<h2>Pensadores e referências</h2><p>{e(v["p"])}</p><h2>Na história</h2><p>{e(v["h"])}</p><h2>No Brasil</h2><p>{e(v["b"])}</p>{liga}<h2>{"Por que atraiu pessoas" if v["apelo"] else "Pontos fortes: o que pode estar certo"}</h2><ul class="lista-forte">{"".join(f"<li>{e(x)}</li>" for x in v["forte"])}</ul>{'<p class="legenda">Explicar por que uma ideia atraiu pessoas não é dizer que ela está certa.</p>' if v["apelo"] else ''}<h2>Contradições</h2><ul class="lista-contra">{"".join(f"<li>{e(x)}</li>" for x in v["contra"])}</ul><h2>O que dizem os críticos</h2><p>{e(v["c"])}</p>{nao_e_html(v["n"], NAO_E[v["s"]])}
 {fontes([(v.get("wl") or "Wikipédia: " + v["n"], wiki)] + v.get("fx", []))}<nav class="pager" aria-label="Vertentes"><a href="{ant["s"]}.html"><small>← Anterior</small>{e(ant["n"])}</a><a class="prox" href="{prox["s"]}.html"><small>Próxima →</small>{e(prox["n"])}</a></nav></article>{lado}</div><section class="relac"><div class="wrap"><h2>Vertentes próximas</h2><div class="grade">{"".join(cartao_v(x) for x in mesmas)}</div></div></section>"""
         page(f'vertentes/{v["s"]}.html', v['n'], v['r'], corpo, atual='vertentes.html')
 
