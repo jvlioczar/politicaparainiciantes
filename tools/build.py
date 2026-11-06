@@ -209,7 +209,7 @@ BR = [('cargos.html', 'O que cada cargo faz', 'De vereador a presidente: quem de
 ESP_POS = {'Extrema-esquerda': 6, 'Esquerda': 20, 'Centro-esquerda': 36, 'Centro': 50, 'Independente (declarado)': 54, 'Independente (declarado); centro-direita': 62, 'Centro a centro-direita': 58, 'Centro-direita': 68, 'Direita': 86}
 FAIXA = {'Extrema-esquerda': 'Esquerda', 'Esquerda': 'Esquerda', 'Centro-esquerda': 'Centro-esquerda', 'Centro': 'Centro', 'Independente (declarado)': 'Centro', 'Independente (declarado); centro-direita': 'Centro-direita', 'Centro a centro-direita': 'Centro-direita', 'Centro-direita': 'Centro-direita', 'Direita': 'Direita'}
 
-ATUALIZADO = '2026-11-06'
+ATUALIZADO = '2026-11-07'
 PAGINAS = []
 SECOES = {'debates': ('debates.html', 'Principais debates', 'Os dois lados, a complexidade e o que os dados indicam.'), 'mundo': ('mundo.html', 'Figuras internacionais', 'Trajetória, posições e controvérsias, com fontes.'), 'politicos': ('politicos.html', 'Políticos e figuras', 'Trajetória, posições e controvérsias, com fontes.'), 'vertentes': ('vertentes.html', 'Vertentes políticas', 'Ideias, história, forças e contradições explicadas.'), 'vieses': ('vieses.html', 'Vieses cognitivos', 'Entenda com exemplo e veja os efeitos no julgamento moral e político.'), 'partidos': ('partidos.html', 'Partidos', 'Dossiê com fontes.'), 'ferramentas': ('ferramentas.html', 'Ferramentas', 'Ferramenta interativa e gratuita, sem cadastro.'), 'indicadores': ('indicadores.html', 'Indicadores internacionais', 'O que mede, quem publica, onde o Brasil fica e os limites de cada índice.')}
 PAIS_NIVEL = {'iniciante.html': 'Iniciante', 'intermediario.html': 'Intermediário', 'avancado.html': 'Avançado'}
