@@ -387,3 +387,8 @@ select{max-width:100%}
 .lista-nao-e{list-style:none;padding:0;margin:.6rem 0 1.4rem;display:grid;gap:.7rem}.lista-nao-e li{background:var(--cartao);border:1px solid var(--linha);border-left:4px solid #c93a5a;border-radius:10px;padding:.8rem 1rem}.lista-nao-e p{margin:0}.lista-nao-e .nao-e-dito{font-weight:600;color:#c93a5a;margin-bottom:.3rem}.lista-nao-e .nao-e-dito::before{content:"✗ ";font-weight:700}
 /* caixa dos sites irmãos: rótulo de cada site */
 .nota.cruzada .ti{font:700 .72rem var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--suave);margin:.7rem 0 .15rem}.nota.cruzada .ti:first-of-type{margin-top:.4rem}
+
+/* superbar da BiblioVerse: a superbar usa as classes .ico e .tag, que este site também usa nos cards;
+   sem este bloco, os ícones dos itens herdam 52px de altura e os itens ficam com duas linhas */
+.bvbar-panel .ico{width:24px;height:auto;margin:0}
+.bvbar-panel .tag{font-family:inherit;font-weight:400;padding:0;border-radius:0;background:none;color:var(--p-muted)}
