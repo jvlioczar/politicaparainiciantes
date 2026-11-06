@@ -237,9 +237,22 @@ NAO_E = {
  ('“Progressismo é esquerda econômica.”', 'Há progressistas liberais na economia. O que define a corrente é a crença em que a sociedade pode melhorar por reformas, não a posição sobre o mercado.'),
  ('“Progressista acha que tudo que é novo é bom.”', 'O progressismo clássico pedia evidências e reformas testadas. A caricatura do “novo pelo novo” é o espantalho mais comum.'),
 ],
-'petismo-e-antipetismo': [
- ('“Petista é comunista.”', 'O PT governou com o mercado, pagou a dívida e fez alianças com o centro. Suas políticas são social-democratas; o programa comunista do início foi abandonado nos anos 1990.'),
- ('“Antipetista é bolsonarista.”', 'O antipetismo é mais antigo e mais amplo: inclui tucanos, liberais e parte da esquerda que rompeu com o PT. O bolsonarismo capturou parte dele, não todo.'),
+'petismo': [
+ ('“Petista é comunista.”', 'O PT governou com o mercado, pagou a dívida e fez alianças com o centro. Suas políticas são social-democratas; o programa socialista do início foi abandonado nos anos 1990.'),
+ ('“Petista vota no PT porque recebe Bolsa Família.”', 'Pesquisas mostram que a identidade petista é anterior aos programas e inclui classe média, sindicalistas e professores. Reduzir o voto dos pobres a compra é a tese que o antipetismo usa, não um dado.'),
  ('“O PT é o único partido corrupto.”', 'O PT teve escândalos grandes, como o mensalão e o petrolão. Mas as mesmas investigações alcançaram partidos de quase todo o espectro, como mostram os dossiês dos partidos neste site.'),
+ ('“Petismo é lulismo.”', 'O petismo é a identificação com o partido; o lulismo, com o líder e com um modo de governar. Há petistas que criticam Lula e lulistas que não gostam do PT.'),
+],
+'antipetismo': [
+ ('“Antipetista é bolsonarista.”', 'O antipetismo é mais antigo e mais amplo: inclui tucanos, liberais e parte da esquerda que rompeu com o PT. O bolsonarismo capturou parte dele, não todo.'),
+ ('“Antipetista é rico que odeia pobre.”', 'A rejeição ao PT é mais alta nas rendas mais altas, mas é grande também entre evangélicos de baixa renda e no interior do Sul e do Centro-Oeste. Não é uma classe, é uma identidade.'),
+ ('“Antipetismo é só a reação da elite à inclusão dos pobres.”', 'É uma das explicações, mas o antipetismo cresceu sobretudo depois do mensalão e da Lava Jato, em resposta a escândalos reais. Explicá-lo só por preconceito é o espantalho que o petismo usa.'),
+ ('“Ser contra o PT é ser contra a democracia.”', 'Rejeitar um partido é um direito democrático. O problema aparece quando a rejeição aceita qualquer meio, inclusive golpe, para impedir que ele governe.'),
+],
+'antibolsonarismo': [
+ ('“Antibolsonarista é petista.”', 'A frente de 2022 incluiu Alckmin, Marina Silva, Simone Tebet, Fernando Henrique Cardoso e liberais que nunca votaram no PT. O antibolsonarismo é mais largo que qualquer partido.'),
+ ('“Chamar o bolsonarismo de fascismo é só xingamento.”', 'Para parte dos antibolsonaristas é mesmo exagero, e eles preferem “extrema-direita” ou “populismo autoritário”. Os que usam “protofascismo” apontam traços específicos: culto ao líder, elogio à ditadura, inimigos internos e desprezo pela verdade. É um diagnóstico contestável, não um palavrão.'),
+ ('“Antibolsonarista é contra toda a direita.”', 'A tese central é que o bolsonarismo não é uma direita comum. Muitos antibolsonaristas apoiaram candidatos de direita, como Tebet e Alckmin, justamente para separar os dois.'),
+ ('“Antibolsonarismo é defender a censura do STF.”', 'Há antibolsonaristas que criticaram decisões do STF, como as de derrubar perfis e prender por discurso. O que une o campo é a defesa das urnas e da Constituição, não a aprovação de cada decisão.'),
 ],
 }

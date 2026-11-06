@@ -54,4 +54,6 @@ for v in V:
     v['apelo'] = v['s'] in APELO
 from vertentes_novas import NOVAS
 V.extend(NOVAS)
+from vertentes_identidades import IDENTIDADES
+V.extend(IDENTIDADES)
 V.sort(key=lambda v: FAMILIAS_V.index(v['f']))
