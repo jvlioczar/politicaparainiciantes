@@ -363,3 +363,22 @@ select{max-width:100%}
 
 /* trilhas: o cartão estica até a altura da linha da grade */
 .trilha-item{display:flex;flex-direction:column}.trilha-item>.cartao{flex:1}
+
+/* barra da página: ouvir, citar, imprimir (como no Questão de Ética) */
+.acoes-cap{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px}
+.acoes-cap button{font:600 .82rem var(--sans);border:0;background:var(--cartao);box-shadow:inset 0 0 0 1.5px var(--linha);color:var(--tinta);border-radius:99px;padding:6px 14px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.acoes-cap button:hover{background:var(--areia)}
+.acoes-cap button[aria-pressed="true"]{background:var(--noite);color:#fff;box-shadow:none}
+.leitura .lendo{background:linear-gradient(90deg,#4bbbe81f,transparent);box-shadow:-4px 0 0 var(--azul);border-radius:4px}
+.janela{border:0;border-radius:22px;padding:0;max-width:min(620px,calc(100vw - 32px));width:100%;box-shadow:0 30px 80px #0005;color:var(--texto);background:var(--cartao)}
+.janela::backdrop{background:#0007;backdrop-filter:blur(3px)}
+.jan-cab{display:flex;justify-content:space-between;align-items:center;padding:18px 22px 0}
+.jan-cab h2{margin:0;font-size:1.25rem}
+.jan-x{border:0;background:var(--areia);width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--tinta)}
+.jan-corpo{padding:10px 22px 22px;max-height:78vh;overflow:auto}
+.jan-corpo .fino{font-size:.88rem;color:var(--suave)}
+.cit-bloco{background:var(--papel);border-radius:14px;padding:12px 16px;margin:12px 0}
+.cit-ti{font:700 .76rem var(--sans);letter-spacing:.06em;color:var(--suave);margin:0 0 4px}
+.cit-txt{font-size:.92rem;line-height:1.55;margin:0 0 10px;word-break:break-word}
+.cit-bloco .btn{font-size:.9rem;padding:9px 18px}
+@media print{.acoes-cap,.janela{display:none!important}}

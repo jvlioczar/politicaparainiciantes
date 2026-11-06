@@ -464,3 +464,118 @@
   function mede() { document.documentElement.style.setProperty('--topo-capa', Math.round(c.getBoundingClientRect().top + window.scrollY) + 'px'); }
   mede(); window.addEventListener('load', mede); window.addEventListener('resize', mede);
 })();
+
+/* barra da página: ouvir (voz em pt-BR), como citar e imprimir ou PDF, adaptado do Questão de Ética */
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
+  var acoes = $('.acoes-cap'), raiz = $('.leitura');
+  if (!acoes || !raiz) return;
+  var dlg = null;
+  function modal(titulo, html) {
+    if (!dlg) {
+      dlg = document.createElement('dialog'); dlg.className = 'janela';
+      dlg.innerHTML = '<div class="jan-cab"><h2></h2><button type="button" class="jan-x" aria-label="Fechar">×</button></div><div class="jan-corpo"></div>';
+      document.body.appendChild(dlg);
+      $('.jan-x', dlg).addEventListener('click', function () { dlg.close(); });
+      dlg.addEventListener('click', function (ev) { if (ev.target === dlg) dlg.close(); });
+    }
+    $('h2', dlg).textContent = titulo; $('.jan-corpo', dlg).innerHTML = html;
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    return $('.jan-corpo', dlg);
+  }
+  function copiar(txt, btn) {
+    var ok = function () { if (btn) { var o = btn.textContent; btn.textContent = 'Copiado ✓'; setTimeout(function () { btn.textContent = o; }, 1600); } };
+    if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, function () {});
+    else { var t = document.createElement('textarea'); t.value = txt; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); ok(); } catch (x) {} t.parentNode.removeChild(t); }
+  }
+
+  /* ----- imprimir: abre as gavetas fechadas antes de imprimir e as devolve depois ----- */
+  window.addEventListener('beforeprint', function () { $$('details', raiz).forEach(function (d) { d.dataset.antes = d.open ? '1' : ''; d.open = true; }); });
+  window.addEventListener('afterprint', function () { $$('details', raiz).forEach(function (d) { d.open = d.dataset.antes === '1'; }); });
+  $('[data-acao="imprimir"]', acoes).addEventListener('click', function () { window.print(); });
+
+  /* ----- como citar ----- */
+  var MES = ['jan.', 'fev.', 'mar.', 'abr.', 'maio', 'jun.', 'jul.', 'ago.', 'set.', 'out.', 'nov.', 'dez.'];
+  $('[data-acao="citar"]', acoes).addEventListener('click', function () {
+    var d = new Date(), hoje = d.getDate() + ' ' + MES[d.getMonth()] + ' ' + d.getFullYear();
+    var abnt = (acoes.dataset.abnt || '').replace('{ACESSO}', hoje), apa = acoes.dataset.apa || '';
+    var limpo = function (h) { var t = document.createElement('div'); t.innerHTML = h; return t.textContent; };
+    var c = modal('Como citar esta página', '<p class="fino">Referência da página, com o link e a data de acesso de hoje. Confira as normas exigidas pela sua instituição.</p>' +
+      '<div class="cit-bloco"><p class="cit-ti">ABNT</p><p class="cit-txt">' + abnt + '</p><button type="button" class="btn alt" data-c="abnt">Copiar ABNT</button></div>' +
+      '<div class="cit-bloco"><p class="cit-ti">APA</p><p class="cit-txt">' + apa + '</p><button type="button" class="btn alt" data-c="apa">Copiar APA</button></div>');
+    $('[data-c="abnt"]', c).addEventListener('click', function () { copiar(limpo(abnt), this); });
+    $('[data-c="apa"]', c).addEventListener('click', function () { copiar(limpo(apa), this); });
+  });
+
+  /* ----- ouvir ----- */
+  var bOuvir = $('[data-acao="ouvir"]', acoes);
+  if (!('speechSynthesis' in window)) { bOuvir.hidden = true; return; }
+  var synth = window.speechSynthesis, fila = [], pos = 0, tocando = false, vel = 1, atual = null;
+  var bParar = document.createElement('button'); bParar.type = 'button'; bParar.innerHTML = '<span aria-hidden="true">■</span> Parar'; bParar.hidden = true;
+  var bVel = document.createElement('button'); bVel.type = 'button'; bVel.textContent = '1×'; bVel.title = 'Velocidade da leitura'; bVel.hidden = true;
+  bOuvir.after(bParar, bVel);
+  /* escolhe uma voz em português do Brasil; as vozes chegam depois do carregamento em vários navegadores */
+  var vozPt = null;
+  var escolheVoz = function () {
+    var vs = synth.getVoices(); if (!vs.length) return;
+    var nota = function (v) {
+      var l = (v.lang || '').replace('_', '-').toLowerCase(), n = (v.name || '').toLowerCase();
+      if (l !== 'pt-br' && !/portugu[eê]s.*brasil|brazil/.test(n)) return l.indexOf('pt') === 0 ? 1 : 0;
+      return 10 + (/natural|online|neural/.test(n) ? 4 : 0) + (/google/.test(n) ? 3 : 0) + (/microsoft/.test(n) ? 2 : 0) + (v.localService ? 0 : 1);
+    };
+    var melhor = vs.map(function (v) { return [nota(v), v]; }).filter(function (x) { return x[0] > 0; }).sort(function (a, b) { return b[0] - a[0]; })[0];
+    vozPt = melhor ? melhor[1] : null;
+  };
+  escolheVoz();
+  if ('onvoiceschanged' in synth) synth.addEventListener('voiceschanged', escolheVoz);
+  var voz = function () { if (!vozPt) escolheVoz(); return vozPt; };
+  /* o que é lido: o texto da coluna de leitura, sem quizzes, fontes, índices, enquetes, botões e tabelas */
+  var PULA = '.quiz, .fontes, .pager, .nota.cruzada, .marcar, .toc, .toc-caixa, .posicao, .links-d, .legenda, table, button, nav';
+  var monta = function () {
+    fila = [];
+    $$('h2, h3, h4, p, li, blockquote, dt, dd', raiz).forEach(function (b) {
+      if (b.closest(PULA)) return;
+      if (b.tagName === 'LI' && b.querySelector('p, li')) return; /* evita ler duas vezes */
+      var c = b.cloneNode(true); $$('sup, button', c).forEach(function (s) { s.parentNode.removeChild(s); });
+      var t = c.textContent.replace(/\s+/g, ' ').trim(); if (!t) return;
+      (t.match(/[^.!?;]+[.!?;]*\s*/g) || [t]).reduce(function (acc, f) {
+        if (acc.length && (acc[acc.length - 1] + f).length < 220) acc[acc.length - 1] += f; else acc.push(f);
+        return acc;
+      }, []).forEach(function (pedaco) { fila.push([b, pedaco]); });
+    });
+  };
+  var marca = function (b) {
+    if (atual) atual.classList.remove('lendo');
+    atual = b; if (!b) return; b.classList.add('lendo');
+    var r = b.getBoundingClientRect(); if (r.top < 80 || r.bottom > innerHeight) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  };
+  var fala = function () {
+    if (pos >= fila.length) { para(); return; }
+    var it = fila[pos], u = new SpeechSynthesisUtterance(it[1]);
+    var v = voz(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'pt-BR'; u.rate = vel;
+    u.onend = function () { if (!tocando) return; pos++; fala(); };
+    marca(it[0]); synth.speak(u);
+  };
+  var estado = function () {
+    bOuvir.setAttribute('aria-pressed', String(tocando));
+    bOuvir.innerHTML = tocando ? '<span aria-hidden="true">❚❚</span> Pausar' : '<span aria-hidden="true">▶</span> ' + (pos > 0 ? 'Continuar' : 'Ouvir');
+    bParar.hidden = bVel.hidden = !(tocando || pos > 0);
+  };
+  var para = function () { tocando = false; synth.cancel(); pos = 0; marca(null); estado(); };
+  bOuvir.addEventListener('click', function () {
+    if (!tocando && !voz() && !bOuvir.dataset.avisou) {
+      bOuvir.dataset.avisou = '1';
+      modal('Voz em português não encontrada', '<p>Seu navegador ou sistema não tem uma voz em português do Brasil instalada, então a leitura pode sair com sotaque de outra língua.</p><p class="fino">No Windows: Configurações → Hora e idioma → Fala → Adicionar vozes → Português (Brasil). No Android e no iPhone, a voz em português costuma vir nas configurações de acessibilidade ou de texto para fala. O Chrome e o Edge já trazem vozes em português na maioria dos computadores.</p>');
+    }
+    if (tocando) { tocando = false; synth.cancel(); estado(); return; }
+    if (!fila.length) monta();
+    tocando = true; estado(); fala();
+  });
+  bParar.addEventListener('click', para);
+  bVel.addEventListener('click', function () {
+    var vs = [1, 1.25, 1.5, 0.85]; vel = vs[(vs.indexOf(vel) + 1) % vs.length]; bVel.textContent = String(vel).replace('.', ',') + '×';
+    if (tocando) { synth.cancel(); setTimeout(fala, 60); }
+  });
+  window.addEventListener('pagehide', function () { synth.cancel(); });
+})();

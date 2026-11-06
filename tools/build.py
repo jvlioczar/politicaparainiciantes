@@ -185,7 +185,7 @@ CORRIGE_CAND = {('agir', '1994'): 'Carlos Antônio Gomes', ('pcb', '2022'): 'Sof
 for _p, _ls in PRESID.items():
     for _x in _ls:
         _x['cand'] = CORRIGE_CAND.get((_p, _x['ano']), _x['cand'])
-        assert not re.search(r'\||\dpx|Imagem:', _x['cand']), (_p, _x)
+        assert not re.search(r'\||\dpx\b|Imagem:', _x['cand']), (_p, _x)
 try: VOTOS = json.load(open(os.path.join(ROOT, 'data', 'votos.json'), encoding='utf-8'))
 except OSError: VOTOS = []
 # como cada partido aparece na API da Câmara
@@ -277,6 +277,17 @@ def mapa_ed(pre=''):
     return f'''<div class="mapa2 mapa-ed" role="group" aria-label="Mapa de esquerda e direita"><span class="eixo t">Ruptura</span><span class="eixo b">Reforma gradual</span><span class="eixo l">Esquerda</span><span class="eixo r">Direita</span>{dots}</div><div class="leg">{leg}</div>
 <p class="legenda">Na horizontal, a posição entre esquerda e direita. Na vertical, o quanto a corrente aceita mudar por dentro das regras ou quer romper com elas. São posições aproximadas e uma escolha editorial, discutível: este mapa descreve correntes, não mede você. Algumas, como o populismo, aparecem nos dois lados. Clique em uma para abrir.</p>'''
 
+def barra_leitura(path, title, url):
+    """Barra de ações da página (ouvir em pt-BR, como citar, imprimir ou PDF), como no Questão de Ética.
+    Entra nas páginas de leitura (as que têm coluna .leitura); o JS está em assets/app.js e o estilo em assets/style.css."""
+    ano = ATUALIZADO[:4]
+    abnt = f'{NOME.upper()}. {e(title)}. BiblioVerse, {ano}. Disponível em: {url}. Acesso em: {{ACESSO}}.'
+    apa = f'{NOME}. ({ano}). <em>{e(title)}</em>. BiblioVerse. {url}'
+    return (f'<div class="acoes-cap" data-abnt="{e(abnt)}" data-apa="{e(apa)}">'
+            '<button type="button" data-acao="ouvir" aria-pressed="false"><span aria-hidden="true">▶</span> Ouvir</button>'
+            '<button type="button" data-acao="citar"><span aria-hidden="true">❝</span> Como citar</button>'
+            '<button type="button" data-acao="imprimir"><span aria-hidden="true">⎙</span> Imprimir ou PDF</button></div>')
+
 def page(path, title, desc, corpo, atual='', home=False):
     PAGINAS.append(path)
     erro = path == '404.html'
@@ -287,6 +298,9 @@ def page(path, title, desc, corpo, atual='', home=False):
     corpo = corpo[:_i] + _cx + corpo[_i:] if _i >= 0 else corpo + _cx
     pre = '../' * path.count('/')
     url = SITE + '/' + ('' if path == 'index.html' else path)
+    if not erro and '<section class="cabeca">' in corpo and re.search(r'class="[^"]*\bleitura\b', corpo):
+        _ic = corpo.index('<section class="cabeca">'); _fc = corpo.index('</div></section>', _ic)
+        corpo = corpo[:_fc] + barra_leitura(path, title, url) + corpo[_fc:]
     full = title if home else f'{title} | {NOME}'
     if len(full) > 60: full = title
     artigo = atual in PAIS_NIVEL or path.split('/')[0] in ('vertentes', 'vieses')
