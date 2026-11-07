@@ -34,7 +34,7 @@ PROGRESSO = dict(slug='progresso-moral-e-politico', grupo='Quem conta', titulo='
 <ol class="roteiro"><li><strong>Menos sofrimento:</strong> há menos dor e morte evitáveis?</li><li><strong>Mais gente conta:</strong> quem era ignorado passou a ser considerado?</li><li><strong>Coerência:</strong> a mudança corrige uma contradição, como pregar liberdade e manter escravizados?</li><li><strong>Melhores razões:</strong> ela se apoia em argumentos, ou em força e preconceito? Veja <a href="mudar-de-ideia.html">mudar de ideia</a>.</li><li><strong>Quem vive a mudança:</strong> quem é afetado aceitaria essa regra, se pudesse escolher livremente?</li></ol>
 <h2>O que faz o progresso acontecer</h2>
 <ul>
-<li><strong>Ativistas:</strong> quase toda conquista teve gente que pagou caro por ela. Veja os <a href="maiores-ativistas.html">maiores ativistas</a>.</li>
+<li><strong>Ativistas e movimentos:</strong> quase toda conquista teve gente que pagou caro por ela, organizada em movimentos de quem estava fora do poder. Veja os <a href="maiores-ativistas.html">maiores ativistas</a> e a lição sobre <a href="movimentos-das-minorias.html">os movimentos das minorias e o progresso</a>.</li>
 <li><strong>Argumentos:</strong> mostrar que um valor já aceito leva a mais do que se admitia.</li>
 <li><strong>Empatia e convivência:</strong> conhecer quem era visto como “o outro”.</li>
 <li><strong>Instituições:</strong> leis, tribunais, imprensa e eleições tornam o avanço mais difícil de desfazer.</li>

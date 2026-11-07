@@ -35,6 +35,7 @@ from ultraconservadorismo import ULTRA, META_ULTRA
 from estrangeiro import ESTRANGEIRO, META_ESTRANGEIRO
 from testar_visao import TESTAR, META_TESTAR
 from progresso import PROGRESSO, META_PROGRESSO
+from movimentos import MOVIMENTOS, META_MOVIMENTOS, DID_MOVIMENTOS, DID2_MOVIMENTOS, QUIZ_MOVIMENTOS
 from avancado_novas import AV_NOVAS, META_AV, SUL, META_SUL
 from mapa_ed import ED
 from reforco import REFORCO
@@ -76,6 +77,7 @@ META['perigo-do-ultraconservadorismo'] = META_ULTRA
 META['perigo-de-culpar-o-estrangeiro'] = META_ESTRANGEIRO
 META['testar-visao-moral'] = META_TESTAR
 META['progresso-moral-e-politico'] = META_PROGRESSO
+META['movimentos-das-minorias'] = META_MOVIMENTOS
 META.update(META_INFORMACAO)
 INTERMEDIARIO[0:0] = CONCEITOS
 i_pos += len(CONCEITOS)
@@ -97,6 +99,7 @@ AVANCADO.extend(AV_NOVAS)
 META.update(META_AV)
 INTERMEDIARIO.append(NEM_TUDO)
 AVANCADO.insert(next(i for i, l in enumerate(AVANCADO) if l['slug'] == 'sencientismo'), PROGRESSO)
+AVANCADO.insert(next(i for i, l in enumerate(AVANCADO) if l['slug'] == 'progresso-moral-e-politico') + 1, MOVIMENTOS)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'vieses-cognitivos') + 1, MUDAR)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'mudar-de-ideia') + 1, TESTAR)
 INTERMEDIARIO.insert(next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'perigo-do-reacionarismo') + 1, ULTRA)
@@ -108,6 +111,7 @@ META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO
 META.update(META_DIREITO); REFORCO.update(REFORCO_DIREITO); INTERMEDIARIO.extend(LICOES_DIREITO)
 META.update(META_ECO_MUNDO); REFORCO.update(REFORCO_ECO_MUNDO)
 META.update(META_ECO_TRABALHO); REFORCO.update(REFORCO_ECO_TRABALHO); DID.update(DID_ECO_TRABALHO); DID2.update(DID2_ECO_TRABALHO); DID_QUIZ.update(QUIZ_ECO_TRABALHO)
+DID.update(DID_MOVIMENTOS); DID2.update(DID2_MOVIMENTOS); DID_QUIZ.update(QUIZ_MOVIMENTOS)
 # bloco Problemas sociais do Brasil (tools/brasil_problemas.py)
 from brasil_problemas import LICOES_BR, PB
 from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
@@ -596,6 +600,7 @@ LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', '
 LICAO_DEBATES.update({'dinheiro-divida-e-dolar': ['autonomia-do-banco-central', 'impostos', 'subsidios', 'pix-e-os-eua'], 'escola-publica-e-universidade': ['educacao', 'cotas', 'meritocracia', 'programas-sociais'], 'filosofia-politica': ['tamanho-do-estado', 'grandes-fortunas', 'liberdade-expressao-debate', 'poder-do-stf'], 'primeiro-segundo-e-terceiro-mundo': ['imigracao', 'clima', 'subsidios'], 'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
 LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
 LICAO_DEBATES['organizacao-do-trabalho'] = ['jornada-6x1', 'subsidios']
+LICAO_DEBATES['movimentos-das-minorias'] = ['cotas', 'identidade-lgbt', 'direitos-animais', 'aborto']
 for _s in ('divisao-internacional-do-trabalho', 'globalizacao', 'economia-para-entender-politica'): LICAO_DEBATES.setdefault(_s, []).append('mercado-interno-ou-exportacoes')
 LICAO_DEBATES.setdefault('politicas-baseadas-em-evidencias', []).append('ia-no-governo')
 for _s in ('direito-animal', 'direito-ambiental', 'politica-baseada-na-senciencia', 'sencientismo'):
