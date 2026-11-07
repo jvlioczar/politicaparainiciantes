@@ -1,5 +1,5 @@
 """Gera todas as páginas do site. Uso: python tools/build.py"""
-import json, os, re, sys, unicodedata
+import hashlib, json, os, re, sys, unicodedata
 from html import escape as e
 
 from nao_e import NAO_E
@@ -396,7 +396,20 @@ def relacionados(l):
     alvos = [x for x in TODAS if x['slug'] != l['slug'] and set(x['temas']) & set(l['temas'])]
     alvos.sort(key=lambda x: (x['nivel'] != l['nivel'], -len(set(x['temas']) & set(l['temas']))))
     return f'<section class="relac"><div class="wrap"><h2>Continue</h2><div class="grade">{"".join(cartao_licao(x) for x in alvos[:3])}</div></div></section>'
+def mistura(q):
+    """Embaralha as opções de forma estável (pelo texto da pergunta), para que a resposta certa não caia sempre na mesma posição."""
+    p, ops, c, x = q[0], list(q[1]), q[2], q[3]
+    h = int(hashlib.md5(p.encode('utf-8')).hexdigest(), 16)
+    certa = ops.pop(c)
+    k = (h // 7) % len(ops) if ops else 0
+    ops = ops[k:] + ops[:k]
+    alvo = h % (len(ops) + 1)
+    ops.insert(alvo, certa)
+    return [p, ops, alvo, x]
+
+
 def bloco_quiz(q, rot='Teste rápido'):
+    q = mistura(q)
     return f'<div class="quiz" data-quiz="{e(json.dumps(q, ensure_ascii=False))}"><p class="k">{e(rot)}</p><div class="alvo"></div></div>'
 def objetivos(l):
     d = DID[l['slug']]
@@ -515,7 +528,7 @@ def teste_nivel(slug, rot, ls):
     for l in ls:
         d = DID2[l['slug']]
         for q in [l['quiz']] + d['quiz']:
-            itens.append([q[0], q[1], q[2], q[3] + f' (Lição: {l["titulo"]}.)'])
+            itens.append(mistura([q[0], q[1], q[2], q[3] + f' (Lição: {l["titulo"]}.)']))
     dados = json.dumps(dict(itens=itens, n=10), ensure_ascii=False).replace('</', '<\\/')
     corpo = cabeca(f'<a href="{slug}.html">{e(rot)}</a>', f'Teste do nível {rot}', f'Dez perguntas sorteadas entre as {len(itens)} do nível. Cada resposta diz em que lição rever o assunto. Refaça quantas vezes quiser: as perguntas mudam.')
     corpo += f'<div class="wrap estreito secao"><div id="jogo" class="quiz" style="margin-top:0"><div class="placar"><span></span><span></span></div><div class="barra-prog"><i></i></div><div class="alvo" style="margin-top:14px"></div><button class="btn prox-q" type="button" style="margin-top:12px" hidden>Próxima</button></div><script type="application/json" id="dados-teste">{dados}</script><p class="legenda">Acertou 8 ou mais? Você está pronto para o próximo nível. Menos que isso: veja as lições indicadas e tente de novo. Para a revisão completa, uma pergunta por lição, use a <a href="revisao-{slug}.html">revisão do nível</a>.</p><p><a class="btn alt" href="{slug}.html">Voltar ao nível {e(rot)}</a></p></div>'
