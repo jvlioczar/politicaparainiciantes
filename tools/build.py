@@ -363,7 +363,7 @@ def page(path, title, desc, corpo, atual='', home=False):
 <script src="https://biblioverse.org/superbar.js" async></script>
 </head>
 <body data-base="{pre}">
-<nav id="bvbar" class="bvbar" data-current="politicaparainiciantes" data-offset="none" aria-label="BiblioVerse" style="position:relative;height:44px;background:linear-gradient(90deg,#4f7cff,#7a5cff)"><a href="https://biblioverse.org" style="color:#fff;line-height:44px;padding:0 14px;font-weight:700;text-decoration:none">BiblioVerse</a></nav>
+<nav id="bvbar" class="bvbar" data-current="politicaparainiciantes" data-offset="none" aria-label="BiblioVerse" style="position:relative;height:36px;background:linear-gradient(90deg,#4f7cff,#7a5cff)"><a href="https://biblioverse.org" style="color:#fff;line-height:36px;padding:0 14px;font-weight:700;text-decoration:none">BiblioVerse</a></nav>
 <a class="skip" href="#main">Pular para o conteúdo</a>
 <header class="topo"><div class="wrap topo-in">
 <a class="marca" href="{pre}index.html">{arte.LOGO}<span>Política<br/>Para Iniciantes</span></a>

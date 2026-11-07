@@ -455,7 +455,15 @@
   }
 
   /* glossário: toque abre a definição */
-  $$('.gl').forEach(function (g) { g.addEventListener('click', function () { $$('.gl.ativo').forEach(function (o) { if (o !== g) o.classList.remove('ativo'); }); g.classList.toggle('ativo'); }); });
+  function posGl(g) { var r = g.getBoundingClientRect(), vw = document.documentElement.clientWidth, w = Math.min(320, vw - 32); g.style.setProperty('--gl-w', w + 'px'); g.style.setProperty('--gl-x', Math.min(0, vw - 16 - r.left - w) + 'px'); }
+  function fechaGl() { $$('.gl.ativo').forEach(function (o) { o.classList.remove('ativo'); o.blur(); }); }
+  $$('.gl').forEach(function (g) {
+    g.addEventListener('mouseenter', function () { posGl(g); });
+    g.addEventListener('focus', function () { posGl(g); });
+    g.addEventListener('click', function (ev) { ev.stopPropagation(); posGl(g); var on = g.classList.contains('ativo'); fechaGl(); if (!on) g.classList.add('ativo'); });
+  });
+  document.addEventListener('click', fechaGl);
+  document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') fechaGl(); });
 })();
 
 /* home: mede a altura das barras acima da capa para que ela ocupe a primeira tela (CSS usa --topo-capa) */
