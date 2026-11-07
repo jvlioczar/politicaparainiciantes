@@ -72,4 +72,7 @@ GLOSSARIO = [
 (GE, 'Modelo', 'Uma simplificação da economia em equações ou regras, usada para prever e para testar ideias. Todo modelo deixa coisas de fora de propósito.', 'Previsões de PIB, de inflação e de impacto de reformas vêm de modelos, e discordâncias entre economistas costumam ser sobre que modelo usar.'),
 (GE, 'Nowcast e projeção', 'Nowcast é a estimativa do que está acontecendo agora, antes dos dados oficiais; projeção é a estimativa do futuro, com cenários e margens de erro.', 'Projeções do Focus, do FMI e do governo erram com regularidade; vale olhar o histórico de acertos de cada fonte.'),
 ]
+from economia_trabalho import GLOSSARIO_TRABALHO
+_i = max(i for i, g in enumerate(GLOSSARIO) if g[0] == GC) + 1
+GLOSSARIO[_i:_i] = GLOSSARIO_TRABALHO
 assert len({t for _, t, _, _ in GLOSSARIO}) == len(GLOSSARIO)

@@ -52,6 +52,7 @@ for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == (
 assert len({x['s'] for x in IND}) == len(IND)
 from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
+from economia_trabalho import LICOES_ECO_TRABALHO, META_ECO_TRABALHO, REFORCO_ECO_TRABALHO, DID_ECO_TRABALHO, DID2_ECO_TRABALHO, QUIZ_ECO_TRABALHO
 from didatica import D as DID, EXTRA as DID_EXTRA
 from quizzes import QUIZ as DID_QUIZ
 from didatica_ini import E_INI
@@ -106,6 +107,7 @@ LIVROS[:] = [(x[0], x[1], x[2], RENIVEL.get(x[0], x[3]), x[4]) for x in LIVROS] 
 META.update(META_REVISAO); BASICO.update(BASICO_REVISAO); REFORCO.update(REFORCO_REVISAO)
 META.update(META_DIREITO); REFORCO.update(REFORCO_DIREITO); INTERMEDIARIO.extend(LICOES_DIREITO)
 META.update(META_ECO_MUNDO); REFORCO.update(REFORCO_ECO_MUNDO)
+META.update(META_ECO_TRABALHO); REFORCO.update(REFORCO_ECO_TRABALHO); DID.update(DID_ECO_TRABALHO); DID2.update(DID2_ECO_TRABALHO); DID_QUIZ.update(QUIZ_ECO_TRABALHO)
 # bloco Problemas sociais do Brasil (tools/brasil_problemas.py)
 from brasil_problemas import LICOES_BR, PB
 from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
@@ -143,7 +145,8 @@ if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
 for _l in LICOES_ECO_MUNDO: GRUPOS[_l['slug']] = _l['grupo']
 _apos_g = next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'globalizacao')
-INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO
+INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO + LICOES_ECO_TRABALHO
+for _l in LICOES_ECO_TRABALHO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_DIREITO: GRUPOS[_l['slug']] = _l['grupo']
 def _apos(ls, slug, nova): ls.insert(next(i for i, l in enumerate(ls) if l['slug'] == slug) + 1, nova)
 _NI = {l['slug']: l for l in NOVAS_INICIANTE}; _NM = {l['slug']: l for l in NOVAS_INTERMEDIARIO}
@@ -592,6 +595,8 @@ LICAO_DEBATES = {
 LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', 'subsidios'], 'impunidade': ['seguranca-publica', 'maioridade-penal', 'pena-de-morte', 'justicamento'], 'os-protegidos': ['poder-do-stf', 'anistia-8-de-janeiro', 'supersalarios', 'estado-protege-a-burguesia'], 'golpes-e-fraudes': ['pix-e-os-eua', 'bigtechs', 'regulamentacao-redes'], 'transparencia-dos-gastos': ['supersalarios', 'reforma-administrativa'], 'faccoes-e-sistema-prisional': ['drogas', 'narcoterrorismo', 'seguranca-publica', 'desmilitarizacao'], 'milicias': ['seguranca-publica', 'desmilitarizacao', 'armas'], 'desigualdade-social': ['grandes-fortunas', 'programas-sociais', 'meritocracia', 'impostos', 'cotas'], 'bets': ['apostas']})
 LICAO_DEBATES.update({'dinheiro-divida-e-dolar': ['autonomia-do-banco-central', 'impostos', 'subsidios', 'pix-e-os-eua'], 'escola-publica-e-universidade': ['educacao', 'cotas', 'meritocracia', 'programas-sociais'], 'filosofia-politica': ['tamanho-do-estado', 'grandes-fortunas', 'liberdade-expressao-debate', 'poder-do-stf'], 'primeiro-segundo-e-terceiro-mundo': ['imigracao', 'clima', 'subsidios'], 'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
 LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
+LICAO_DEBATES['organizacao-do-trabalho'] = ['jornada-6x1', 'subsidios']
+for _s in ('divisao-internacional-do-trabalho', 'globalizacao', 'economia-para-entender-politica'): LICAO_DEBATES.setdefault(_s, []).append('mercado-interno-ou-exportacoes')
 LICAO_DEBATES.setdefault('politicas-baseadas-em-evidencias', []).append('ia-no-governo')
 for _s in ('direito-animal', 'direito-ambiental', 'politica-baseada-na-senciencia', 'sencientismo'):
     LICAO_DEBATES.setdefault(_s, []).append('pragas-e-especies-invasoras')
