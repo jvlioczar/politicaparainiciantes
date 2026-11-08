@@ -162,6 +162,8 @@ LULA = [
 ('Paulo Pimenta','',ESQ,POL,'pt','Ministro da Secom e da Reconstrução do Rio Grande do Sul','2023-2025',[]),
 ('Sidônio Palmeira','',CES,POL,'','Publicitário e ministro da Secom','desde 2025',[]),
 ('José Guimarães','',ESQ,POL,'pt','Ministro de Relações Institucionais','desde 2026',[]),
+('Ana Elisa','',ESQ,POL,'pt','Influenciadora digital e estudante de Direito de Divinópolis, eleita deputada federal por Minas Gerais em 2026, aos 21 anos, com 524 mil votos, a segunda maior votação do estado.','Filiada ao PT, fala de educação pública, direitos trabalhistas, igualdade racial e feminismo, e colaborou com a estratégia digital da campanha de Lula no segundo turno. Depois de eleita, foi alvo de ameaças de morte e de estupro nas redes, investigadas pela Polícia Federal. Categoria aproximada.',[]),
+('João Paulo Pacífico','',CES,INT,'','Empresário, escritor e ativista, fundador do Grupo Gaia, que levou cooperativas ligadas ao MST ao mercado de capitais.','Defende tributar mais as grandes fortunas, imposto progressivo e renda básica. Foi o único brasileiro a assinar a carta de milionários que, em Davos, pediram para pagar mais impostos. Categoria aproximada.',[]),
 ]
 _GOLPE = 'Integrou o governo Bolsonaro e foi condenado na ação sobre a trama golpista.'
 NOVAS_F += [(n, w, c, t, p, f'{q} do governo Bolsonaro ({d}).', _GOLPE if c == EXD else _B, x) for n, w, c, t, p, q, d, x in BOLSONARO]
