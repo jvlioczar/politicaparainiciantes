@@ -347,7 +347,7 @@ SITES_U.append(('Sentient Media','https://sentientmedia.org','Jornalismo sobre p
 # antigos sites de "Onde acompanhar", mesclados aqui
 from brasil import SITES as _SA
 _MAP = {'Investigação e bastidores': 'Jornalismo investigativo', 'Checar fatos': 'Checagem de fatos', 'Medir viés': 'Avaliação de viés midiático'}
-_dom = lambda u: u.split('//')[-1].split('/')[0].removeprefix('www.')
+_dom = lambda u: u.split('//')[-1].removeprefix('www.').rstrip('/')  # endereço completo: o G1 e o Fato ou Fake dividem o domínio
 _tem = {_dom(x[1]) for x in SITES_U}
 _nome = lambda n: n.lower().removeprefix('revista ').strip()  # evita o mesmo site com dois endereços
 _nomes = {_nome(x[0]) for x in SITES_U}
