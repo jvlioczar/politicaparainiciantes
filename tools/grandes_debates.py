@@ -332,6 +332,8 @@ from debates_2026 import DEBATES_REV, PREVIDENCIA
 DEBATES_P[:] = [PREVIDENCIA if d['s'] == 'previdencia' else d for d in DEBATES_P] + DEBATES_REV
 from economia_trabalho import DEBATE_MERCADO_INTERNO
 DEBATES_P.append(DEBATE_MERCADO_INTERNO)
+from debates_liberdade import DEBATE_LIBERAIS
+DEBATES_P.append(DEBATE_LIBERAIS)
 from direito import DEBATES_DIREITO, MD as _MD
 DEBATES_P += DEBATES_DIREITO
 if _MD not in TEMAS_D: TEMAS_D.append(_MD)

@@ -223,7 +223,7 @@ PAIS_NIVEL = {'iniciante.html': 'Iniciante', 'intermediario.html': 'Intermediár
 HUBS = {'indicadores.html', 'catalogo.html', 'iniciante.html', 'intermediario.html', 'avancado.html', 'brasil.html', 'partidos.html', 'politicos.html', 'mundo.html', 'debates.html', 'sites.html', 'vertentes.html', 'vieses.html', 'ferramentas.html', 'biblioteca.html', 'acompanhar.html'}
 
 DESC_CURTA = {  # descrições escritas à mão para páginas cujo resumo passa de 160 caracteres
-    'politicos/ana-elisa.html': 'Ana Elisa: influenciadora e estudante de Direito de Divinópolis, eleita deputada federal pelo PT de Minas em 2026, aos 21 anos, com 524 mil votos.', 'vertentes/antibolsonarismo.html': 'A rejeição ao bolsonarismo, visto por progressistas e parte do centro como extrema-direita e protofascista: ditadura, minorias e manipulação da verdade.',
+    'debates/liberais-contra-a-liberdade.html': 'Se impostos, cooperativas ou o socialismo dessem mais liberdade, o liberal que os rejeita se contradiz? Liberdade negativa, positiva e o que a história mostra.', 'politicos/ana-elisa.html': 'Ana Elisa: influenciadora e estudante de Direito de Divinópolis, eleita deputada federal pelo PT de Minas em 2026, aos 21 anos, com 524 mil votos.', 'vertentes/antibolsonarismo.html': 'A rejeição ao bolsonarismo, visto por progressistas e parte do centro como extrema-direita e protofascista: ditadura, minorias e manipulação da verdade.',
     'corrupcao.html': 'Corrupção não é só falta de caráter: é uma conta de incentivos. Quanto custa, o que funciona para combatê-la e por que o “salvador” não resolve.',
     'divisao-internacional-do-trabalho.html': 'Modelo primário-exportador, desindustrialização e teoria da dependência: o que explica o lugar do Brasil na divisão internacional do trabalho.',
     'guerra-ao-terror.html': 'Depois do 11 de Setembro, os EUA declararam guerra a um método. Duas décadas, trilhões de dólares e muitas mortes depois, o que se aprendeu?',
@@ -600,6 +600,7 @@ LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', '
 LICAO_DEBATES.update({'dinheiro-divida-e-dolar': ['autonomia-do-banco-central', 'impostos', 'subsidios', 'pix-e-os-eua'], 'escola-publica-e-universidade': ['educacao', 'cotas', 'meritocracia', 'programas-sociais'], 'filosofia-politica': ['tamanho-do-estado', 'grandes-fortunas', 'liberdade-expressao-debate', 'poder-do-stf'], 'primeiro-segundo-e-terceiro-mundo': ['imigracao', 'clima', 'subsidios'], 'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
 LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
 LICAO_DEBATES['organizacao-do-trabalho'] = ['jornada-6x1', 'subsidios']
+for _s in ('estado-e-mercado', 'imposto-e-roubo', 'filosofia-politica', 'teorias-da-justica'): LICAO_DEBATES.setdefault(_s, []).append('liberais-contra-a-liberdade')
 LICAO_DEBATES['movimentos-das-minorias'] = ['cotas', 'identidade-lgbt', 'direitos-animais', 'aborto']
 for _s in ('divisao-internacional-do-trabalho', 'globalizacao', 'economia-para-entender-politica'): LICAO_DEBATES.setdefault(_s, []).append('mercado-interno-ou-exportacoes')
 LICAO_DEBATES.setdefault('politicas-baseadas-em-evidencias', []).append('ia-no-governo')
