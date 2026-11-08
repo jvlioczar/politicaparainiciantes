@@ -463,6 +463,8 @@
     g.addEventListener('click', function (ev) { ev.stopPropagation(); posGl(g); var on = g.classList.contains('ativo'); fechaGl(); if (!on) g.classList.add('ativo'); });
   });
   document.addEventListener('click', fechaGl);
+  var posTodos = function () { $$('.gl').forEach(posGl); };
+  posTodos(); window.addEventListener('resize', posTodos);
   document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') fechaGl(); });
 })();
 
