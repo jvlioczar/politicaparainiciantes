@@ -203,7 +203,7 @@ dict(slug='checagem-de-fatos', titulo='Fake news e checagem de fatos', resumo='M
 </ul>
 <p>Agências também erram e também são criticadas. A diferença é que mostram as fontes, publicam o método e corrigem em público. Isso é o que permite conferir.</p>
 <div class="cta"><a class="btn" href="ranking-da-mentira.html">Ver o Ranking da mentira</a><a class="btn alt" href="acompanhar.html">Onde acompanhar política</a></div>
-''', fontes=[('Anatomia da desinformação eleitoral (2026)', 'https://uploads.agencialupa.org/2026/07/RELATORIO-ANATOMIA-DA-DESINFORMACAO-ELEITORAL_LUPA-FINAL.pdf'), ('Biblioteca Antigolpes: checagem', 'https://antiscam.biblioverse.org/#verificar-antes-de-confiar--checagem-de-fatos-e-boatos'), ('Biblioteca de Dados: jornalismo e checagem', 'https://data.biblioverse.org/#jornalismo-de-dados-e-checagem')]),
+''', fontes=[('Anatomia da desinformação eleitoral (2026)', 'https://uploads.agencialupa.org/2026/07/RELATORIO-ANATOMIA-DA-DESINFORMACAO-ELEITORAL_LUPA-FINAL.pdf'), ('Biblioteca Antigolpes: checagem', 'https://biblioverse.org/antiscam/#verificar-antes-de-confiar--checagem-de-fatos-e-boatos'), ('Biblioteca de Dados: jornalismo e checagem', 'https://biblioverse.org/data/#jornalismo-de-dados-e-checagem')]),
 
 dict(slug='sem-binarismo', titulo='Sair do nós contra eles', resumo='Política não é torcida. Quem trata assim perde a chance de aprender e de resolver problemas.', corpo='''
 <p class="abre">O debate na internet costuma funcionar como jogo de torcidas: meu time acerta sempre, o outro erra sempre. São embates, não debates. A meta vira vencer, não entender.</p>

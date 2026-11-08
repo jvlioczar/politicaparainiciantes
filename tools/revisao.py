@@ -304,7 +304,7 @@ dict(slug='pesquisas-eleitorais', grupo=DR, titulo='Como ler uma pesquisa eleito
 <li><strong>Não vote pela pesquisa.</strong> O “voto útil” é uma escolha legítima, mas baseada em uma fotografia que pode estar errada. Veja <a href="como-votar-bem.html">como votar bem</a>.</li>
 </ol>
 <div class="nota"><strong>Pesquisa muda o eleitor?</strong> Há evidência de um pequeno efeito de “ir com o vencedor” e de voto útil, e por isso alguns países proíbem a divulgação nos últimos dias. O Brasil permite até o dia da eleição. O efeito existe, mas é menor do que a reclamação de quem está atrás sugere. Veja o <a href="vieses/bandwagon-effect.html">efeito de adesão</a>.</div>
-''', fontes=[('TSE: pesquisas eleitorais', 'https://www.tse.jus.br/eleicoes/pesquisa-eleitoral'), ('Pesquisa eleitoral (Wikipédia)', 'https://pt.wikipedia.org/wiki/Pesquisa_eleitoral'), ('Margem de erro (Wikipédia)', 'https://pt.wikipedia.org/wiki/Margem_de_erro'), ('Amostragem (Wikipédia)', 'https://pt.wikipedia.org/wiki/Amostragem_(estat%C3%ADstica)'), ('Biblioteca de Dados: estatística para leigos', 'https://data.biblioverse.org/')]),
+''', fontes=[('TSE: pesquisas eleitorais', 'https://www.tse.jus.br/eleicoes/pesquisa-eleitoral'), ('Pesquisa eleitoral (Wikipédia)', 'https://pt.wikipedia.org/wiki/Pesquisa_eleitoral'), ('Margem de erro (Wikipédia)', 'https://pt.wikipedia.org/wiki/Margem_de_erro'), ('Amostragem (Wikipédia)', 'https://pt.wikipedia.org/wiki/Amostragem_(estat%C3%ADstica)'), ('Biblioteca de Dados: estatística para leigos', 'https://biblioverse.org/data/')]),
 ]
 
 META_REVISAO = {
