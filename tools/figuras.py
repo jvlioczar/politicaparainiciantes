@@ -325,6 +325,8 @@ from figuras_novas import NOVAS_F
 F.extend(NOVAS_F)
 from lote_debates_livros import FIGS_NOVAS
 F.extend(FIGS_NOVAS)
+from candidatos import CAND_FIG
+F.extend(CAND_FIG)
 assert len({f[0] for f in F}) == len(F)
 
 # ex-presidentes acrescentados em novembro de 2026

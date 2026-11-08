@@ -11,7 +11,7 @@ DEBATES = {
  'Guilherme Boulos': [('2018', f'Candidato pelo PSOL. Debates: {D18}.')],
  'Cabo Daciolo': [('2018', 'Candidato pelo Patriota. Debates da Band, da RedeTV!, do SBT e da Record.')],
  'Fernando Haddad': [('2018', 'Candidato pelo PT após o TSE barrar Lula. Debates da Aparecida, do SBT, da Record e da Globo no 1º turno. Não houve debate no 2º turno.')],
- 'Luiz Inácio Lula da Silva': [('2022', 'Candidato pelo PT, eleito. Debates da Band e da Globo no 1º turno, e o da Band no 2º. Faltou ao do SBT.'), ('2026', 'Reeleito. Faltou ao debate da Band no 1º turno e foi ao da Globo no 2º turno.')],
+ 'Luiz Inácio Lula da Silva': [('2022', 'Candidato pelo PT, eleito. Debates da Band e da Globo no 1º turno, e o da Band no 2º. Faltou ao do SBT.'), ('2026', 'Candidato à reeleição pelo PT. Faltou ao debate da Band no 1º turno e foi ao da Globo no 2º turno.')],
  'Simone Tebet': [('2022', 'Candidata pelo MDB. Debates da Band, do SBT e da Globo.')],
  'Soraya Thronicke': [('2022', 'Candidata pelo União Brasil. Debates da Band, do SBT e da Globo.')],
  "Felipe d'Avila": [('2022', 'Candidato pelo Novo. Debates da Band, do SBT e da Globo.')],

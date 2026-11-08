@@ -18,6 +18,8 @@ from extras import NOVA, DESPOLITIZADO, NEM_TUDO, META, TEMAS
 from figuras import F, CATEGORIAS, TIPOS
 from vertentes import V, FAMILIAS_V
 from debates import DEBATES, ANTIGOS
+from candidatos import HIST, ANOTA, ELEICOES
+HIST_ANOS = set(ELEICOES)
 from vieses import V as VIES, CATS
 from vieses_explica import E as VIES_E
 from vieses_wiki import W as VIES_W
@@ -772,11 +774,19 @@ PONDER = {n: (d, u) for n, d, u in PESSOAS}
 for f in FIG:
     if f['nome'] in PONDER: f['quem'], f['perfil'] = PONDER[f['nome']]
 assert all(any(f['nome'] == n for f in FIG) for n in PONDER)
-for n in list(DEBATES) + list(ANTIGOS):
+for n in list(DEBATES) + list(ANTIGOS) + list(HIST):
     assert any(f['nome'] == n for f in FIG), n
+def _resto(t):  # o que vem depois da primeira frase ("Candidato pelo X."), como os debates de que participou
+    return re.sub(r'^Candidat[oa][^.]*\.\s*', '', t)
 for f in FIG:
-    f['cand'] = DEBATES.get(f['nome'], []) + ANTIGOS.get(f['nome'], [])
-    f['deb'] = f['nome'] in DEBATES
+    _n = f['nome']; _deb = dict(DEBATES.get(_n, [])); _ant = dict(ANTIGOS.get(_n, []))
+    _c = []
+    for _a, _t in HIST.get(_n, []):
+        _x = [_t, ANOTA.get((_n, _a), ''), _resto(_deb.get(_a, ''))]
+        _c.append((_a, ' '.join(x for x in _x if x)))
+    _c += [(a, t) for a, t in _ant.items() if a not in dict(HIST.get(_n, []))]  # como a vice de Brizola em 1998
+    f['cand'] = _c
+    f['deb'] = _n in HIST
 FIG.sort(key=lambda f: (CATEGORIAS.index(f['cat']), slug_de(f['nome'])))
 assert len({f['slug'] for f in FIG}) == len(FIG)
 def extrema(f): return f['cat'].startswith('Extrema')
@@ -787,10 +797,10 @@ def liga_nomes(txt):
     return txt
 def cartao_fig(f, pre=''):
     aviso = f'<span class="aviso-ext">⚠ {alerta(f["cat"])}</span>' if alerta(f['cat']) else ''
-    return f'<a class="cartao fig" href="{pre}{f["slug"]}.html" data-cat="{e(f["cat"])}" data-tipo="{e(f["tipo"])}" data-deb="{1 if f["deb"] else ""}"><h3>{e(f["nome"])}</h3><span class="linha-cartao">{tag_cat(f["cat"])}<span class="tipo ferr">{e(f["tipo"])}</span>{'<span class="tipo intermediario">Debate presidencial</span>' if f['deb'] else ''}</span><p>{e(f["quem"])}</p>{aviso}</a>'
+    return f'<a class="cartao fig" href="{pre}{f["slug"]}.html" data-cat="{e(f["cat"])}" data-tipo="{e(f["tipo"])}" data-deb="{1 if f["deb"] else ""}"><h3>{e(f["nome"])}</h3><span class="linha-cartao">{tag_cat(f["cat"])}<span class="tipo ferr">{e(f["tipo"])}</span>{'<span class="tipo intermediario">Disputou a Presidência</span>' if f['deb'] else ''}</span><p>{e(f["quem"])}</p>{aviso}</a>'
 def figuras():
     bc = '<div class="filtros" role="group" aria-label="Espectro"><button type="button" data-k="cat" data-v="" aria-pressed="true">Todas</button>' + ''.join(f'<button type="button" data-k="cat" data-v="{c}" aria-pressed="false">{c}</button>' for c in CATEGORIAS) + '</div>'
-    bt = '<div class="filtros" role="group" aria-label="Tipo"><button type="button" data-k="tipo" data-v="" aria-pressed="true">Todos os tipos</button>' + ''.join(f'<button type="button" data-k="tipo" data-v="{c}" aria-pressed="false">{c}</button>' for c in TIPOS) + '</div><div class="filtros" role="group" aria-label="Debates"><button type="button" data-k="deb" data-v="" aria-pressed="true">Com ou sem debate</button><button type="button" data-k="deb" data-v="1" aria-pressed="false">Foram a debates presidenciais na TV (2018, 2022 e 2026)</button></div>'
+    bt = '<div class="filtros" role="group" aria-label="Tipo"><button type="button" data-k="tipo" data-v="" aria-pressed="true">Todos os tipos</button>' + ''.join(f'<button type="button" data-k="tipo" data-v="{c}" aria-pressed="false">{c}</button>' for c in TIPOS) + '</div><div class="filtros" role="group" aria-label="Candidaturas"><button type="button" data-k="deb" data-v="" aria-pressed="true">Todas as figuras</button><button type="button" data-k="deb" data-v="1" aria-pressed="false">Disputaram a Presidência (1989 a 2026)</button></div>'
     gr = ''
     for c in CATEGORIAS:
         its = [f for f in FIG if f['cat'] == c]
@@ -805,7 +815,7 @@ def figuras():
         par = PARTIDO.get(f['pid'])
         pol = ''.join(f'<div class="caso"><span class="st {st}">{ROTULO[st]}</span><p style="margin-top:.35rem">{pol_txt(x)}</p></div>' for st, x in f['pol']) or '<p>Não registramos aqui nenhum caso de grande repercussão. Isso não significa que não exista: consulte as fontes abaixo.</p>'
         aviso = f'<div class="nota alerta aviso-pag"><strong>⚠ {AVISO}</strong> Esta categoria reúne discursos muito militantes. Confira o que é dito em mais de uma fonte.</div>' if extrema(f) else f'<div class="nota alerta aviso-pag"><strong>⚠ {ATENTO}</strong> Compare o que é dito com o que é feito, e com o que a mesma pessoa já defendeu.</div>' if alerta(f['cat']) else ''
-        fontes_f = ([('Wikipédia: ' + f['nome'], wiki)] if wiki else []) + [(f'Wikipédia: eleição presidencial de {x[0]}', f'https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_{x[0]}') for x in DEBATES.get(f['nome'], [])] + [('Buscar na Lupa', 'https://www.agencialupa.org/?s=' + quote(f['nome'])), ('Buscar no Aos Fatos', 'https://www.aosfatos.org/noticias/?q=' + quote(f['nome'])), ('Buscar no Nexo Jornal', 'https://www.nexojornal.com.br/search?q=' + quote(f['nome']))]
+        fontes_f = ([('Wikipédia: ' + f['nome'], wiki)] if wiki else []) + [(f'Wikipédia: eleição presidencial de {x[0]}', f'https://pt.wikipedia.org/wiki/Elei%C3%A7%C3%A3o_presidencial_no_Brasil_em_{x[0]}') for x in sorted({c[0] for c in f['cand'] if c[0] in HIST_ANOS})] + [('Buscar na Lupa', 'https://www.agencialupa.org/?s=' + quote(f['nome'])), ('Buscar no Aos Fatos', 'https://www.aosfatos.org/noticias/?q=' + quote(f['nome'])), ('Buscar no Nexo Jornal', 'https://www.nexojornal.com.br/search?q=' + quote(f['nome']))]
         lado = f'<aside class="lado"><div class="caixa"><h2>Em resumo</h2><dl><dt>Categoria</dt><dd>{e(f["cat"])}</dd><dt>Tipo</dt><dd>{e(f["tipo"])}</dd>' + (f'<dt>Partido</dt><dd><a href="../partidos/{par["id"]}.html">{e(par["s"])}</a></dd>' if par else '') + '</dl></div></aside>'
         mesmos = [x for x in FIG if x['cat'] == f['cat'] and x['slug'] != f['slug']]
         i = FIG.index(f) % max(1, len(mesmos))
@@ -1207,3 +1217,7 @@ for s, r, ls, t, d, g in NIVEIS:
     for l in ls: licao(l, ls)
 figuras(); mundo(); debates_pub(); sites_uteis(); vertentes(); vieses(); indicadores(); glossario(); governos(); brasil_hub(); cargos(); poderes(); historia(); partidos(); ferramentas(); ranking(); acompanhar(); biblioteca(); sobre(); privacidade(); arquivos()
 print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(FERR)} ferramentas.')
+
+# índice de busca com subtítulos e conteúdo de todas as páginas
+from indice_busca import enriquece
+print(f'{enriquece(ROOT, PAGINAS)} entradas no índice de busca.')
