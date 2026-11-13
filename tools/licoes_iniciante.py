@@ -133,6 +133,7 @@ dict(slug='palavras-em-disputa', titulo='Palavras em disputa: liberdade e conser
 <li><strong>Povo:</strong> todos, ou só quem concorda comigo?</li>
 <li><strong>Liberal:</strong> no Brasil, costuma significar pró-mercado; nos EUA, progressista. Veja <a href="esquerda-e-direita-pelo-mundo.html">esquerda e direita pelo mundo</a>.</li>
 <li><strong>Patriota, família, ordem, igualdade:</strong> quem está incluído, e quem fica de fora?</li>
+<li><strong>Coletivista e individualista:</strong> viraram xingamentos dos dois lados. Veja <a href="coletivismo-e-individualismo.html">coletivismo e individualismo</a>.</li>
 </ul>
 ''', fontes=[('Dois conceitos de liberdade', 'https://pt.wikipedia.org/wiki/Isaiah_Berlin'), ('Animal Rights Without Liberation', 'https://cup.columbia.edu/book/animal-rights-without-liberation/9780231151832'), ('Vídeo indicado: Reel sobre liberdade e conservar', 'https://www.instagram.com/reels/DOvxsydgNeV/'), ('Post indicado no Instagram', 'https://www.instagram.com/p/DTk-B15Dn0V')]),
 

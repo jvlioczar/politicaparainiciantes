@@ -55,6 +55,7 @@ for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == (
 assert len({x['s'] for x in IND}) == len(IND)
 from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
+from coletivismo import LICOES_COLETIVISMO, META_COLETIVISMO, REFORCO_COLETIVISMO, DID_COLETIVISMO, DID2_COLETIVISMO, QUIZ_COLETIVISMO
 from espectro_paises import LICOES_ESPECTRO, META_ESPECTRO, REFORCO_ESPECTRO, DID_ESPECTRO, DID2_ESPECTRO, QUIZ_ESPECTRO
 from economia_trabalho import LICOES_ECO_TRABALHO, META_ECO_TRABALHO, REFORCO_ECO_TRABALHO, DID_ECO_TRABALHO, DID2_ECO_TRABALHO, QUIZ_ECO_TRABALHO
 from didatica import D as DID, EXTRA as DID_EXTRA
@@ -116,6 +117,7 @@ META.update(META_ECO_MUNDO); REFORCO.update(REFORCO_ECO_MUNDO)
 META.update(META_ECO_TRABALHO); REFORCO.update(REFORCO_ECO_TRABALHO); DID.update(DID_ECO_TRABALHO); DID2.update(DID2_ECO_TRABALHO); DID_QUIZ.update(QUIZ_ECO_TRABALHO)
 DID.update(DID_MOVIMENTOS); DID2.update(DID2_MOVIMENTOS); DID_QUIZ.update(QUIZ_MOVIMENTOS)
 META.update(META_ESPECTRO); REFORCO.update(REFORCO_ESPECTRO); DID.update(DID_ESPECTRO); DID2.update(DID2_ESPECTRO); DID_QUIZ.update(QUIZ_ESPECTRO)
+META.update(META_COLETIVISMO); REFORCO.update(REFORCO_COLETIVISMO); DID.update(DID_COLETIVISMO); DID2.update(DID2_COLETIVISMO); DID_QUIZ.update(QUIZ_COLETIVISMO)
 # bloco Problemas sociais do Brasil (tools/brasil_problemas.py)
 from brasil_problemas import LICOES_BR, PB
 from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
@@ -153,7 +155,8 @@ if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
 for _l in LICOES_ECO_MUNDO: GRUPOS[_l['slug']] = _l['grupo']
 _apos_g = next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'globalizacao')
-INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO + LICOES_ECO_TRABALHO + LICOES_ESPECTRO
+INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO + LICOES_ECO_TRABALHO + LICOES_ESPECTRO + LICOES_COLETIVISMO
+for _l in LICOES_COLETIVISMO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_ESPECTRO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_ECO_TRABALHO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_DIREITO: GRUPOS[_l['slug']] = _l['grupo']
@@ -605,6 +608,7 @@ LICAO_DEBATES.update({'dividas-e-devedores': ['programas-sociais', 'impostos', '
 LICAO_DEBATES.update({'dinheiro-divida-e-dolar': ['autonomia-do-banco-central', 'impostos', 'subsidios', 'pix-e-os-eua'], 'escola-publica-e-universidade': ['educacao', 'cotas', 'meritocracia', 'programas-sociais'], 'filosofia-politica': ['tamanho-do-estado', 'grandes-fortunas', 'liberdade-expressao-debate', 'poder-do-stf'], 'primeiro-segundo-e-terceiro-mundo': ['imigracao', 'clima', 'subsidios'], 'teoria-dos-jogos': ['clima', 'armas-nucleares', 'pix-e-os-eua', 'impostos'], 'para-o-bem-e-para-o-mal': ['seguranca-publica', 'programas-sociais'], 'transito-e-mobilidade': ['transporte-gratuito', 'seguranca-publica']})
 LICAO_DEBATES.setdefault('privacidade', []).append('ia-na-seguranca-publica')
 LICAO_DEBATES['organizacao-do-trabalho'] = ['jornada-6x1', 'subsidios']
+LICAO_DEBATES['coletivismo-e-individualismo'] = ['liberais-contra-a-liberdade', 'tamanho-do-estado', 'impostos', 'liberdade-expressao-debate', 'cotas']
 LICAO_DEBATES['esquerda-e-direita-pelo-mundo'] = ['armas', 'aborto', 'drogas', 'imigracao', 'religiao-estado']
 for _s in ('estado-e-mercado', 'imposto-e-roubo', 'filosofia-politica', 'teorias-da-justica'): LICAO_DEBATES.setdefault(_s, []).append('liberais-contra-a-liberdade')
 LICAO_DEBATES['movimentos-das-minorias'] = ['cotas', 'identidade-lgbt', 'direitos-animais', 'aborto']
