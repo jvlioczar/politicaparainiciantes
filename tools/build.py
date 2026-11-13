@@ -1225,3 +1225,8 @@ print(f'{len(TODAS)} lições, {len(P)} partidos, {len(VOTOS)} votações, {len(
 # índice de busca com subtítulos e conteúdo de todas as páginas
 from indice_busca import enriquece
 print(f'{enriquece(ROOT, PAGINAS)} entradas no índice de busca.')
+
+# leitura por buscadores e IAs: JSON-LD por tipo de página, llms.txt e llms-full.txt
+from ia import enriquece as _enriquece, llms as _llms
+_llms(ROOT, SITE, NOME, ATUALIZADO, _enriquece(ROOT, SITE))
+print('JSON-LD enriquecido; llms.txt e llms-full.txt escritos.')

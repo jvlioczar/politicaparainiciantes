@@ -2,6 +2,10 @@
 
 > Guia gratuito de política em português, em três níveis, com fontes, dossiês de partidos, vertentes, vieses cognitivos e ferramentas.
 
+Guia educativo gratuito, em português do Brasil, publicado pela BiblioVerse. Cada página traz as fontes ao final; classificações e veredictos são estimativas editoriais explicadas na própria página e abertas a correção.
+
+Atualizado em 08/11/2026. Texto completo das lições e artigos em [llms-full.txt](https://politicaparainiciantes.biblioverse.org/llms-full.txt).
+
 ## Principais seções
 
 - [Comece aqui](https://politicaparainiciantes.biblioverse.org/comece-aqui.html)
@@ -21,3 +25,460 @@
 - [Indicadores internacionais](https://politicaparainiciantes.biblioverse.org/indicadores.html)
 - [Glossário de economia](https://politicaparainiciantes.biblioverse.org/glossario-economico.html)
 - [Sobre e método](https://politicaparainiciantes.biblioverse.org/sobre.html)
+
+## Lições do nível Iniciante
+
+- [Fake news e checagem de fatos](https://politicaparainiciantes.biblioverse.org/checagem-de-fatos.html): Mentira viraliza porque mexe com a emoção. Como se defender em dois minutos.
+- [Como uma lei é feita](https://politicaparainiciantes.biblioverse.org/como-uma-lei-e-feita.html): Da ideia à sanção: quem pode propor, por onde o projeto passa, quem pode barrar e o que acontece quando a lei contraria a Constituição.
+- [Como votar da melhor forma](https://politicaparainiciantes.biblioverse.org/como-votar-bem.html): Um roteiro simples: conheça a história, leia as propostas, cheque os números, pense além de você.
+- [Democracia, sem enrolação](https://politicaparainiciantes.biblioverse.org/democracia.html): Mais do que votar: direitos, imprensa livre, tribunais e troca pacífica de poder.
+- [Esquerda e direita](https://politicaparainiciantes.biblioverse.org/esquerda-e-direita.html): De onde vêm os termos, os valores comuns a cada lado e por que o rótulo ajuda, mas não basta.
+- [As grandes teorias da ética](https://politicaparainiciantes.biblioverse.org/etica-normativa.html): Consequências, deveres ou caráter: as três famílias que mais moldam como pensamos o certo e o errado.
+- [Política para iniciantes](https://politicaparainiciantes.biblioverse.org/iniciante.html): Os conceitos, sem enrolação: o que é política, o que está por trás dela e como votar melhor.
+- [O que é política?](https://politicaparainiciantes.biblioverse.org/o-que-e-politica.html): A palavra vem de pólis. Política é a disputa sobre o que vale para todos, e nem sempre é feita com boas ideias.
+- [Para que servem os partidos](https://politicaparainiciantes.biblioverse.org/o-que-e-um-partido.html): Ninguém se elege sem partido no Brasil. O que eles fazem, de onde vem o dinheiro deles, por que são tantos e como avaliar um.
+- [O que está por trás das decisões?](https://politicaparainiciantes.biblioverse.org/o-que-esta-por-tras.html): Há uma parte difícil de enxergar: os interesses, e os valores morais de onde eles vêm.
+- [Palavras em disputa: liberdade e conservar](https://politicaparainiciantes.biblioverse.org/palavras-em-disputa.html): Esquerda e direita usam as mesmas palavras e querem dizer coisas diferentes.
+- [O perigo de ser despolitizado](https://politicaparainiciantes.biblioverse.org/perigo-de-ser-despolitizado.html): Parece que as decisões políticas não afetam seu dia a dia. Elas afetam, do café da manhã à hora de dormir.
+- [Revisão do nível Iniciante](https://politicaparainiciantes.biblioverse.org/revisao-iniciante.html): 13 perguntas, uma por lição do nível Iniciante, com placar e link de volta para cada lição.
+- [Sair do nós contra eles](https://politicaparainiciantes.biblioverse.org/sem-binarismo.html): Política não é torcida. Quem trata assim perde a chance de aprender e de resolver problemas.
+- [Teste do nível Iniciante](https://politicaparainiciantes.biblioverse.org/teste-iniciante.html): Dez perguntas sorteadas sobre as lições do nível Iniciante de política, com a lição a rever em cada resposta.
+- [Valores morais × decisões políticas](https://politicaparainiciantes.biblioverse.org/valores-e-decisoes.html): Primeiro: o que queremos? Depois: o que funciona? Misturar as duas perguntas gera a maior parte da confusão.
+
+## Lições do nível Intermediário
+
+- [A América do Sul e as ditaduras](https://politicaparainiciantes.biblioverse.org/america-do-sul-e-ditaduras.html): Golpes, Operação Condor e transições: por que o continente viveu tantas ditaduras, e o que ficou disso.
+- [Pensar no bem comum](https://politicaparainiciantes.biblioverse.org/bem-comum.html): Pensar nos que estão na pior situação, garantir o básico bom para todos e olhar o longo prazo.
+- [Bets: como as apostas viraram problema público](https://politicaparainiciantes.biblioverse.org/bets.html): Legalizadas em 2018 e reguladas em 2025, as casas de aposta cresceram com patrocínio e influenciadores. O que mostram os dados sobre vício, dívida e regulação.
+- [Blocos econômicos: Mercosul, BRICS, OCDE e os outros clubes](https://politicaparainiciantes.biblioverse.org/blocos-economicos.html): O que cada bloco é, o que não é, por que o Brasil entra em uns e bate à porta de outros, e o que isso muda para o país.
+- [O perigo das câmaras de eco](https://politicaparainiciantes.biblioverse.org/camaras-de-eco.html): Em grupos fechados, ninguém contesta. As ideias se repetem, ficam mais extremas e podem levar à violência.
+- [Cambridge Analytica: seus dados na campanha](https://politicaparainiciantes.biblioverse.org/cambridge-analytica.html): Um teste de personalidade coletou dados de até 87 milhões de pessoas. O vazamento foi real. O poder de manipular, nem tanto.
+- [Coletivismo e individualismo: o grupo ou a pessoa?](https://politicaparainiciantes.biblioverse.org/coletivismo-e-individualismo.html): Os dois termos têm sentidos diferentes na moral, na economia e na cultura. Há coletivismos de esquerda e de direita, e individualismos com e sem Estado.
+- [Como ler a grande mídia com senso crítico](https://politicaparainiciantes.biblioverse.org/como-ler-a-midia-tradicional.html): Jornais e emissoras têm método, correção e responsabilidade. Também têm dono, linha editorial, anunciantes e erros históricos.
+- [Como comparar projetos políticos](https://politicaparainiciantes.biblioverse.org/comparar-projetos.html): O que cada proposta quer dizer, quanto custa, quem paga e o que as evidências esperam dela.
+- [Contrato social: de Hobbes a Rawls](https://politicaparainiciantes.biblioverse.org/contrato-social.html): Por que aceitamos ter governo? A ideia de um acordo em que abrimos mão de algo em troca de proteção e direitos.
+- [Corrupção: por que existe e o que funciona contra ela](https://politicaparainiciantes.biblioverse.org/corrupcao.html): Corrupção não é só falta de caráter: é uma conta de incentivos. Quanto custa, o que funciona para combatê-la e por que o “salvador” não resolve.
+- [Desigualdade: o tamanho, as causas e o que funciona](https://politicaparainiciantes.biblioverse.org/desigualdade-social.html): O Brasil está entre os países mais desiguais do mundo. De onde vem isso, como a desigualdade afeta todos e o que os dados mostram sobre reduzi-la.
+- [Dinheiro, dívida e dólar: a economia por trás da política](https://politicaparainiciantes.biblioverse.org/dinheiro-divida-e-dolar.html): Dívida interna e externa, o poder do dólar, as reservas internacionais e por que imprimir dinheiro gera inflação: o que esses temas têm a ver com quem governa.
+- [Direito ambiental: quem responde pela floresta](https://politicaparainiciantes.biblioverse.org/direito-ambiental.html): O Brasil tem uma das legislações ambientais mais avançadas do mundo e uma das piores fiscalizações.
+- [Direito animal: de coisa a ser que sente](https://politicaparainiciantes.biblioverse.org/direito-animal.html): No Código Civil, animais ainda são bens; na Constituição, a crueldade é proibida; nos tribunais, a senciência já é reconhecida.
+- [Direito internacional: as regras entre países](https://politicaparainiciantes.biblioverse.org/direito-internacional.html): Não existe polícia mundial, e mesmo assim países cumprem a maior parte das regras.
+- [Direitos humanos: de onde vêm e por que valem para todos](https://politicaparainiciantes.biblioverse.org/direitos-humanos.html): A frase “direitos humanos para humanos direitos” inverte o conceito: eles existem justamente para quem o Estado tem motivo para maltratar.
+- [Dívidas: quem deve, quem paga e quem sai ganhando](https://politicaparainiciantes.biblioverse.org/dividas-e-devedores.html): Recuperação judicial, Refis, renegociações e o limite de cinco anos no Serasa: quando a segunda chance é justa e quando premia a má gestão.
+- [Por que o Brasil exporta matéria-prima e importa tecnologia](https://politicaparainiciantes.biblioverse.org/divisao-internacional-do-trabalho.html): Modelo primário-exportador, desindustrialização e teoria da dependência: o que explica o lugar do Brasil na divisão internacional do trabalho.
+- [Economia básica para entender política](https://politicaparainiciantes.biblioverse.org/economia-para-entender-politica.html): PIB, inflação, juros, dívida e déficit aparecem em quase todo debate. O que cada um significa, como afeta sua vida e por que os políticos brigam por eles.
+- [Escola pública, escola privada e a universidade pública](https://politicaparainiciantes.biblioverse.org/escola-publica-e-universidade.html): Por que quem estudou em escola pública tem menos chance de entrar na universidade pública gratuita, o que as cotas mudaram e o que isso diz sobre meritocracia.
+- [Esquerda e direita pelo mundo: a régua muda de país](https://politicaparainiciantes.biblioverse.org/esquerda-e-direita-pelo-mundo.html): O centro de um país é a esquerda de outro: por que democratas, conservadores britânicos e a direita brasileira não cabem na mesma régua.
+- [Estado demais, privatização demais](https://politicaparainiciantes.biblioverse.org/estado-e-mercado.html): Os dois extremos têm custos conhecidos. A boa pergunta é sobre cada setor.
+- [Facções: como o tráfico tomou prisões e periferias](https://politicaparainiciantes.biblioverse.org/faccoes-e-sistema-prisional.html): Como PCC e Comando Vermelho nasceram nos presídios, dominam territórios e lavam dinheiro, e o que a evidência diz sobre confronto, prisão e inteligência.
+- [Filosofia política: as grandes perguntas e os pensadores](https://politicaparainiciantes.biblioverse.org/filosofia-politica.html): Por que obedecer ao governo, o que é justo, quanta liberdade e quanta igualdade: as perguntas centrais da filosofia política e os pensadores, de Platão a Rawls.
+- [Geopolítica: o jogo entre países](https://politicaparainiciantes.biblioverse.org/geopolitica.html): Geografia, recursos, armas e alianças explicam por que países agem como agem. E como o Brasil entra nisso.
+- [Globalização: quem ganha e quem perde](https://politicaparainiciantes.biblioverse.org/globalizacao.html): Pessoas, mercadorias, dinheiro e ideias circulam mais do que nunca. Tirou muita gente da pobreza, e deixou outros para trás.
+- [Golpes e fraudes: por que o golpista sai na frente](https://politicaparainiciantes.biblioverse.org/golpes-e-fraudes.html): Pix, contas laranja, falso atendente e lavagem por fintechs: por que o rastreamento falha, o dano raramente volta e o que bancos e Estado devem fazer.
+- [Guerra ao terror: o custo de vinte anos](https://politicaparainiciantes.biblioverse.org/guerra-ao-terror.html): Depois do 11 de Setembro, os EUA declararam guerra a um método. Duas décadas, trilhões de dólares e muitas mortes depois, o que se aprendeu?
+- [Imposto é roubo?](https://politicaparainiciantes.biblioverse.org/imposto-e-roubo.html): Não, em si: é a contrapartida de um contrato social que paga o que é de todos. Mas pode ser injusto, e vale cobrar como é usado.
+- [Impunidade: por que tantos crimes ficam sem resposta](https://politicaparainiciantes.biblioverse.org/impunidade.html): Homicídios não esclarecidos, processos que prescrevem, mortes no trânsito, menores, violência doméstica e ruas inseguras: o que é fato e o que é mito.
+- [Política intermediária](https://politicaparainiciantes.biblioverse.org/intermediario.html): Como nossa mente nos engana, os grandes perigos e as perguntas difíceis.
+- [A liberdade de expressão deve ser irrestrita?](https://politicaparainiciantes.biblioverse.org/liberdade-de-expressao.html): Quase ninguém defende liberdade total na prática. A questão é onde pôr os limites, e quem os define.
+- [Os maiores ativistas políticos da história](https://politicaparainiciantes.biblioverse.org/maiores-ativistas.html): Gente sem cargo que mudou leis e costumes. Quem foram, o que conquistaram e por que é preciso ver mais do que o mito.
+- [Os maiores estadistas do mundo](https://politicaparainiciantes.biblioverse.org/maiores-estadistas.html): Não existe lista oficial. Uma seleção de quem construiu instituições ou evitou o pior, com o legado e a sombra de cada um.
+- [Por que boas pessoas se dividem](https://politicaparainiciantes.biblioverse.org/mente-moralista.html): Jonathan Haidt: primeiro a intuição, depois a justificativa. E os dois lados têm paladares morais diferentes.
+- [Milícias: quando polícia, política e crime se misturam](https://politicaparainiciantes.biblioverse.org/milicias.html): De “autodefesa” a máfia: como agentes do Estado viraram donos de território, serviços e votos, o caso Marielle e o que separa a polícia honesta da milícia.
+- [Mudar de ideia: quando é virtude](https://politicaparainiciantes.biblioverse.org/mudar-de-ideia.html): Rever uma crença diante de argumento melhor é força. Ceder à pressão, ou duvidar de tudo menos do seu líder, não é.
+- [Nem tudo é político](https://politicaparainiciantes.biblioverse.org/nem-tudo-e-politico.html): Muita coisa tem um lado político, mas gostar de azul não é uma posição de governo. Por que tanta gente diz o contrário?
+- [O perigo de avaliar políticos por projetos aprovados](https://politicaparainiciantes.biblioverse.org/numero-de-projetos.html): “Aprovou 50 projetos” não diz se fez bem ou mal. Veja que interesses defende e como vota.
+- [Quem manda na fábrica: do taylorismo ao aplicativo](https://politicaparainiciantes.biblioverse.org/organizacao-do-trabalho.html): Taylorismo, fordismo, toyotismo e uberização são jeitos de organizar o trabalho, e cada um redistribui controle, salário e qualificação.
+- [Os protegidos: dinheiro, farda e foro diante da Justiça](https://politicaparainiciantes.biblioverse.org/os-protegidos.html): Por que empresários, militares, juízes e políticos costumam escapar: foro, imunidade, prescrição, justiça militar, anistia, e as exceções recentes.
+- [Para o bem e para o mal: costumes brasileiros e política](https://politicaparainiciantes.biblioverse.org/para-o-bem-e-para-o-mal.html): Jeitinho, lei de Gérson, lixo na rua e esperteza no trânsito, mas também solidariedade e hospitalidade: como hábitos do dia a dia moldam a política.
+- [O perigo da mídia alternativa extremista](https://politicaparainiciantes.biblioverse.org/perigo-da-midia-alternativa.html): Mídia independente pode revelar o que ninguém conta. Alinhada a um extremo, costuma moldar a realidade para caber na causa.
+- [O perigo das revoluções](https://politicaparainiciantes.biblioverse.org/perigo-das-revolucoes.html): Mais ligadas à extrema-esquerda. Prometem refazer tudo, e costumam concentrar poder.
+- [O perigo de culpar o estrangeiro](https://politicaparainiciantes.biblioverse.org/perigo-de-culpar-o-estrangeiro.html): Culpar imigrantes por tudo não se sustenta nos dados, e a ideia de povos superiores não se sustenta na moral. Onde nascemos é a loteria da vida.
+- [O perigo de questionar a democracia](https://politicaparainiciantes.biblioverse.org/perigo-de-questionar-a-democracia.html): Melhorar é uma coisa. Abandonar é outra. Como separar crítica de golpismo.
+- [O perigo do fanatismo político](https://politicaparainiciantes.biblioverse.org/perigo-do-fanatismo.html): Certeza absoluta, inimigo total e vontade de punir: a receita de muitas das piores atrocidades.
+- [Maniqueísmo e simplificação](https://politicaparainiciantes.biblioverse.org/perigo-do-maniqueismo.html): O mundo não é luz contra trevas, e problemas complexos não têm solução de uma frase.
+- [Idolatria, messianismo e massa de manobra](https://politicaparainiciantes.biblioverse.org/perigo-do-messianismo.html): Político é funcionário público, não salvador. Quem tem um “mito” para de fiscalizar.
+- [O mito do outsider](https://politicaparainiciantes.biblioverse.org/perigo-do-outsider.html): “Não sou político” virou a promessa mais vendida das eleições. O que é um outsider de verdade, por que ele atrai e o que costuma vir depois.
+- [O perigo do populismo](https://politicaparainiciantes.biblioverse.org/perigo-do-populismo.html): “O povo puro contra a elite corrupta”, com um líder que fala por todos.
+- [O perigo do reacionarismo](https://politicaparainiciantes.biblioverse.org/perigo-do-reacionarismo.html): Mais ligado à extrema-direita. A promessa de voltar a uma era de ouro que nunca existiu.
+- [O perigo do tribalismo e dos pacotes de ideias](https://politicaparainiciantes.biblioverse.org/perigo-do-tribalismo.html): Comprar o pacote inteiro do seu lado é mais fácil do que pensar. Avalie cada ideia pelo mérito e pela viabilidade.
+- [O perigo do ultraconservadorismo](https://politicaparainiciantes.biblioverse.org/perigo-do-ultraconservadorismo.html): Blindar hábitos e culturas só porque são antigos impede de corrigir o que é injusto. Isso vale, em grau menor, também para o conservadorismo comum.
+- [O perigo dos bots](https://politicaparainiciantes.biblioverse.org/perigo-dos-bots.html): Contas automatizadas criam a impressão de que “todo mundo” pensa assim. Mas nem todo discordante é robô.
+- [O perigo de se informar por WhatsApp e Telegram](https://politicaparainiciantes.biblioverse.org/perigo-dos-grupos-de-mensagem.html): Vem de quem você confia, sem autor, sem contexto e sem correção. É assim que boatos ganham força nos grupos.
+- [Como ler uma pesquisa eleitoral](https://politicaparainiciantes.biblioverse.org/pesquisas-eleitorais.html): Pesquisa é fotografia, não previsão. O que significam amostra, margem de erro e votos válidos, por que elas erram e como reconhecer uma pesquisa falsa.
+- [Mercado, mídia e crime no governo](https://politicaparainiciantes.biblioverse.org/poder-paralelo.html): Três poderes que ninguém elegeu podem capturar quem foi eleito. Explicação simples e com fontes, sem escolher time.
+- [O perigo da política baseada no medo](https://politicaparainiciantes.biblioverse.org/politica-do-medo.html): Medo, raiva e nojo fazem agir sem pensar. Muitos políticos usam isso para ganhar votos, com alarmismo e inimigos sob medida.
+- [Políticas públicas e orçamento](https://politicaparainiciantes.biblioverse.org/politicas-publicas.html): Como uma ideia vira programa, de onde vem o dinheiro e como ele é disputado.
+- [Primeiro, Segundo e Terceiro Mundo: o que querem dizer](https://politicaparainiciantes.biblioverse.org/primeiro-segundo-e-terceiro-mundo.html): Os termos nasceram da Guerra Fria, não de um ranking de riqueza. De onde vieram, por que mudaram de sentido e o que se usa hoje para comparar países.
+- [Regras cegas e desobediência civil](https://politicaparainiciantes.biblioverse.org/regras-e-desobediencia.html): Lei não é sinônimo de justiça. Quando é legítimo desobedecer, e como. Explicação simples e com fontes, sem escolher time.
+- [Religião e Estado](https://politicaparainiciantes.biblioverse.org/religiao-e-estado.html): Estado laico protege crentes e não crentes. Misturar os dois costuma terminar mal para ambos.
+- [Todas as crenças devem ser respeitadas?](https://politicaparainiciantes.biblioverse.org/respeitar-crencas.html): Pessoas merecem respeito. Crenças merecem exame. Misturar as duas coisas protege as ideias ruins.
+- [Revisão do nível Intermediário](https://politicaparainiciantes.biblioverse.org/revisao-intermediario.html): 71 perguntas, uma por lição do nível Intermediário, com placar e link de volta para cada lição.
+- [Sofismo: vencer sem ter razão](https://politicaparainiciantes.biblioverse.org/sofismo.html): A política muitas vezes se vence na aparência ou no grito. Vendedores de ideias manipulam a verdade para acumular capital político e social.
+- [Teoria da ferradura](https://politicaparainiciantes.biblioverse.org/teoria-da-ferradura.html): Os extremos se tocam? Em certos métodos, sim. Nas ideias, nem sempre. Explicação simples e com fontes, sem escolher time.
+- [Como testar se sua visão moral e política é boa?](https://politicaparainiciantes.biblioverse.org/testar-visao-moral.html): Véu da ignorância, regra de ouro e universalidade: três testes de imparcialidade para saber se você defende um princípio ou só o seu lado.
+- [Teste do nível Intermediário](https://politicaparainiciantes.biblioverse.org/teste-intermediario.html): Dez perguntas sorteadas sobre as lições do nível Intermediário de política, com a lição a rever em cada resposta.
+- [Trânsito: por que o Brasil mata tanto nas ruas](https://politicaparainiciantes.biblioverse.org/transito-e-mobilidade.html): Mais de 30 mil mortes por ano, motos, velocidade, álcool e a política por trás dos radares, das multas e do transporte público.
+- [Transparência: para onde vai o dinheiro público](https://politicaparainiciantes.biblioverse.org/transparencia-dos-gastos.html): Lei de Acesso à Informação, portais, sigilos de cem anos, orçamento secreto e emendas Pix: o que já é público, o que ainda se esconde e como fiscalizar.
+- [Um sistema não serve para todos](https://politicaparainiciantes.biblioverse.org/um-sistema-para-todos.html): O que funciona na Dinamarca não se transfere automaticamente para o Brasil.
+- [Como os vieses afetam seu julgamento](https://politicaparainiciantes.biblioverse.org/vieses-cognitivos.html): Vemos as contradições do adversário com facilidade. As de quem gostamos, quase nunca.
+
+## Lições do nível Avançado
+
+- [Atores malevolentes e a Tétrade Sombria](https://politicaparainiciantes.biblioverse.org/atores-malevolentes.html): Narcisismo, maquiavelismo, psicopatia e sadismo: quando traços sombrios chegam ao poder.
+- [Política avançada](https://politicaparainiciantes.biblioverse.org/avancado.html): Quem chega ao poder, como reformar a democracia e quem deve contar. Explicação simples e com fontes, sem escolher time.
+- [A crítica ao identitarismo e ao pós-modernismo](https://politicaparainiciantes.biblioverse.org/critica-ao-identitarismo.html): A luta por reconhecimento trouxe direitos. Mas, quando a identidade vira o único critério, surgem riscos. E o identitarismo existe à esquerda e à direita.
+- [Democracia direta × epistocracia](https://politicaparainiciantes.biblioverse.org/direta-ou-epistocracia.html): Dar mais poder a todos, ou mais peso a quem sabe mais? Duas respostas opostas à crise da representação.
+- [Estereótipo, preconceito e discriminação na política](https://politicaparainiciantes.biblioverse.org/estereotipo-preconceito-discriminacao.html): Pensar, sentir e agir: três coisas diferentes, que se alimentam e que a política pode reforçar ou combater.
+- [Fanatismo ideológico no longo prazo](https://politicaparainiciantes.biblioverse.org/fanatismo-ideologico.html): Por que certa combinação de certeza absoluta e crueldade pode ser o grande risco do futuro.
+- [Genética e comportamento político](https://politicaparainiciantes.biblioverse.org/genetica-e-politica.html): Estudos com gêmeos sugerem que os genes influenciam parte das nossas inclinações políticas. Influenciar não é determinar.
+- [Inteligência a serviço da crença](https://politicaparainiciantes.biblioverse.org/inteligencia-nao-protege.html): Ensinar lógica e dar informação pode tornar as pessoas mais hábeis em defender o que já acreditam. Por isso, também é preciso ensinar humildade.
+- [O libertarismo de coração sangrante](https://politicaparainiciantes.biblioverse.org/libertarismo-de-coracao-sangrante.html): Uma corrente liberal defende mercados livres justamente por, e para, os mais pobres. E aceita que a justiça social importa.
+- [Candidaturas coletivas e mandatos compartilhados](https://politicaparainiciantes.biblioverse.org/mandatos-coletivos.html): Um grupo se candidata junto, mas só uma pessoa tem o mandato na lei. O que é, de onde veio, o que promete, os riscos e como avaliar um mandato coletivo.
+- [Ideias para melhorar a democracia](https://politicaparainiciantes.biblioverse.org/melhorar-a-democracia.html): Voto preferencial, direitos universais, cosmopolitismo, evidências. Um cardápio com prós e contras.
+- [Os movimentos das minorias e o progresso](https://politicaparainiciantes.biblioverse.org/movimentos-das-minorias.html): Abolicionismo, feminismo, antirracismo, LGBT, deficiência e animais: quase todo avanço moral veio de quem estava fora do poder.
+- [Política baseada na senciência](https://politicaparainiciantes.biblioverse.org/politica-baseada-na-senciencia.html): Se o que importa é poder sentir, como seriam leis, orçamentos e instituições que levassem isso a sério?
+- [Políticas baseadas em evidências](https://politicaparainiciantes.biblioverse.org/politicas-baseadas-em-evidencias.html): Tratar leis como hipóteses: testar, medir e corrigir. De onde vem a ideia, como funciona, seus limites e por que os políticos resistem.
+- [Pragmatismo como postura política](https://politicaparainiciantes.biblioverse.org/pragmatismo-politico.html): Julgar ideias pelo que produzem, e não pela bandeira: de onde vem o pragmatismo, quando é virtude e quando vira falta de princípio.
+- [Presidencialismo de coalizão e Centrão](https://politicaparainiciantes.biblioverse.org/presidencialismo-de-coalizao.html): Por que o presidente do Brasil precisa negociar tanto, e o que isso produz.
+- [Progresso moral e progresso político](https://politicaparainiciantes.biblioverse.org/progresso-moral-e-politico.html): O mundo pode melhorar de verdade? Como saber, por que moral e leis nem sempre andam juntas, e por que nenhum avanço é garantido.
+- [Por que é difícil ser relativista diante da inclusão](https://politicaparainiciantes.biblioverse.org/relativismo-e-circulo-moral.html): Se toda moral fosse relativa, a abolição não teria sido um avanço. A expansão do círculo moral segue um princípio: a imparcialidade.
+- [Revisão do nível Avançado](https://politicaparainiciantes.biblioverse.org/revisao-avancado.html): 21 perguntas, uma por lição do nível Avançado, com placar e link de volta para cada lição.
+- [Políticas para prevenir riscos-s e riscos-x](https://politicaparainiciantes.biblioverse.org/riscos-s-e-x.html): Alguns riscos poderiam acabar com a humanidade, e outros, criar sofrimento em escala gigantesca. A política pode ajudar a evitá-los.
+- [Inclusão moral e sencientismo](https://politicaparainiciantes.biblioverse.org/sencientismo.html): Se pode sofrer, conta. O círculo moral cresceu ao longo da história, e talvez não tenha terminado de crescer.
+- [Teoria dos jogos: ganha-ganha, ganha-perde e perde-perde](https://politicaparainiciantes.biblioverse.org/teoria-dos-jogos.html): Dilema do prisioneiro, tragédia dos comuns e economia comportamental: por que cooperar é difícil, e como as regras certas tornam a cooperação possível.
+- [Teorias da justiça para a política](https://politicaparainiciantes.biblioverse.org/teorias-da-justica.html): Rawls, Nozick, utilitaristas, prioritaristas e suficientistas: como dividir o que é de todos?
+- [Teste do nível Avançado](https://politicaparainiciantes.biblioverse.org/teste-avancado.html): Dez perguntas sorteadas sobre as lições do nível Avançado de política, com a lição a rever em cada resposta.
+
+## Ferramentas
+
+- [Árvore dos partidos](https://politicaparainiciantes.biblioverse.org/ferramentas/arvore-dos-partidos.html): De onde veio cada sigla, de Arena a Missão. Ferramenta interativa e gratuita, sem cadastro.
+- [Como os partidos votaram](https://politicaparainiciantes.biblioverse.org/ferramentas/como-votaram.html): Dados oficiais da Câmara, partido por partido, em votações decisivas. Ferramenta interativa e gratuita, sem cadastro.
+- [Comparador de partidos](https://politicaparainiciantes.biblioverse.org/ferramentas/comparador.html): Coloque até três partidos lado a lado. Ferramenta interativa e gratuita, sem cadastro.
+- [Ficha do candidato](https://politicaparainiciantes.biblioverse.org/ferramentas/ficha-do-candidato.html): Um checklist que fica salvo no seu navegador. Ferramenta interativa e gratuita, sem cadastro.
+- [Que truque é esse?](https://politicaparainiciantes.biblioverse.org/ferramentas/que-truque-e-esse.html): Identifique os sofismas mais comuns em frases políticas. Ferramenta interativa e gratuita, sem cadastro.
+- [Quem faz o quê?](https://politicaparainiciantes.biblioverse.org/ferramentas/quem-faz-o-que.html): Um problema, sete cargos. Você sabe quem cobrar? Ferramenta interativa e gratuita, sem cadastro.
+- [Simulador de cadeiras](https://politicaparainiciantes.biblioverse.org/ferramentas/simulador-de-cadeiras.html): Veja como votos viram vagas em uma eleição proporcional. Ferramenta interativa e gratuita, sem cadastro.
+- [Teste de troca](https://politicaparainiciantes.biblioverse.org/ferramentas/teste-de-troca.html): Você julgaria o mesmo ato de quem você rejeita? Ferramenta interativa e gratuita, sem cadastro.
+- [Valor ou fato?](https://politicaparainiciantes.biblioverse.org/ferramentas/valor-ou-fato.html): Treine separar o que se discute com argumento moral do que se checa com dados.
+- [Simulador de voto preferencial](https://politicaparainiciantes.biblioverse.org/ferramentas/voto-preferencial.html): Os mesmos eleitores, duas regras, resultados diferentes. Ferramenta interativa e gratuita, sem cadastro.
+
+## Figuras internacionais
+
+- [Abelardo de la Espriella](https://politicaparainiciantes.biblioverse.org/mundo/abelardo-de-la-espriella.html): Abelardo de la Espriella: Advogado e presidente da Colômbia, eleito em 2026.
+- [Abraham Lincoln](https://politicaparainiciantes.biblioverse.org/mundo/abraham-lincoln.html): Abraham Lincoln: Presidente dos EUA na Guerra Civil, assassinado em 1865.
+- [Adolf Hitler](https://politicaparainiciantes.biblioverse.org/mundo/adolf-hitler.html): Adolf Hitler: Líder nazista e ditador da Alemanha de 1933 a 1945. Trajetória, posições e controvérsias, com fontes.
+- [Alexei Navalny](https://politicaparainiciantes.biblioverse.org/mundo/alexei-navalny.html): Alexei Navalny: Opositor de Putin que expôs corrupção e morreu na prisão em 2024.
+- [Alfredo Stroessner](https://politicaparainiciantes.biblioverse.org/mundo/alfredo-stroessner.html): Alfredo Stroessner: General e ditador do Paraguai de 1954 a 1989 (1912-2006).
+- [Andrei Sakharov](https://politicaparainiciantes.biblioverse.org/mundo/andrei-sakharov.html): Andrei Sakharov: Físico soviético, dissidente e Nobel da Paz (1921-1989).
+- [Andrés Manuel López Obrador](https://politicaparainiciantes.biblioverse.org/mundo/andres-manuel-lopez-obrador.html): Andrés Manuel López Obrador: Presidente do México de 2018 a 2024. Trajetória, posições e controvérsias, com fontes.
+- [Andy Burnham](https://politicaparainiciantes.biblioverse.org/mundo/andy-burnham.html): Andy Burnham: Primeiro-ministro britânico desde 2026, depois da renúncia de Keir Starmer.
+- [Angela Davis](https://politicaparainiciantes.biblioverse.org/mundo/angela-davis.html): Angela Davis: Filósofa, ativista e ex-militante do Partido Comunista. Trajetória, posições e controvérsias, com fontes.
+- [Angela Merkel](https://politicaparainiciantes.biblioverse.org/mundo/angela-merkel.html): Angela Merkel: Chanceler da Alemanha de 2005 a 2021. Trajetória, posições e controvérsias, com fontes.
+- [Anna Politkovskaya](https://politicaparainiciantes.biblioverse.org/mundo/anna-politkovskaya.html): Anna Politkovskaya: Jornalista que denunciou abusos na Chechênia, assassinada em 2006.
+- [António de Oliveira Salazar](https://politicaparainiciantes.biblioverse.org/mundo/antonio-de-oliveira-salazar.html): António de Oliveira Salazar: Ditador de Portugal de 1932 a 1968 (1889-1970).
+- [Augusto Pinochet](https://politicaparainiciantes.biblioverse.org/mundo/augusto-pinochet.html): Augusto Pinochet: General e ditador do Chile de 1973 a 1990 (1915-2006).
+- [Aung San Suu Kyi](https://politicaparainiciantes.biblioverse.org/mundo/aung-san-suu-kyi.html): Aung San Suu Kyi: Líder contra a ditadura e Nobel da Paz. Trajetória, posições e controvérsias, com fontes.
+- [Barack Obama](https://politicaparainiciantes.biblioverse.org/mundo/barack-obama.html): Barack Obama: Presidente dos EUA de 2009 a 2017, o primeiro negro no cargo.
+- [Bashar al-Assad](https://politicaparainiciantes.biblioverse.org/mundo/bashar-al-assad.html): Bashar al-Assad: Ditador da Síria de 2000 até ser derrubado, em dezembro de 2024.
+- [Benito Mussolini](https://politicaparainiciantes.biblioverse.org/mundo/benito-mussolini.html): Benito Mussolini: Criador do fascismo e ditador da Itália de 1922 a 1943 (1883-1945).
+- [Benjamin Netanyahu](https://politicaparainiciantes.biblioverse.org/mundo/benjamin-netanyahu.html): Benjamin Netanyahu: Primeiro-ministro de Israel por mais tempo do que qualquer outro.
+- [Bill Clinton](https://politicaparainiciantes.biblioverse.org/mundo/bill-clinton.html): Bill Clinton: Presidente dos EUA de 1993 a 2001. Trajetória, posições e controvérsias, com fontes.
+- [Bob Woodward](https://politicaparainiciantes.biblioverse.org/mundo/bob-woodward.html): Bob Woodward: Repórter do Washington Post, revelou o caso Watergate. Trajetória, posições e controvérsias, com fontes.
+- [Carl Bernstein](https://politicaparainiciantes.biblioverse.org/mundo/carl-bernstein.html): Carl Bernstein: Parceiro de Woodward na cobertura de Watergate. Trajetória, posições e controvérsias, com fontes.
+- [Charles de Gaulle](https://politicaparainiciantes.biblioverse.org/mundo/charles-de-gaulle.html): Charles de Gaulle: Líder da França Livre e fundador da Quinta República.
+- [Christiane Amanpour](https://politicaparainiciantes.biblioverse.org/mundo/christiane-amanpour.html): Christiane Amanpour: Correspondente internacional da CNN. Trajetória, posições e controvérsias, com fontes.
+- [Claudia Sheinbaum](https://politicaparainiciantes.biblioverse.org/mundo/claudia-sheinbaum.html): Claudia Sheinbaum: Cientista e presidente do México desde 2024, a primeira mulher no cargo.
+- [Cyril Ramaphosa](https://politicaparainiciantes.biblioverse.org/mundo/cyril-ramaphosa.html): Cyril Ramaphosa: Ex-sindicalista, presidente da África do Sul desde 2018.
+- [Daphne Caruana Galizia](https://politicaparainiciantes.biblioverse.org/mundo/daphne-caruana-galizia.html): Daphne Caruana Galizia: Jornalista anticorrupção, assassinada em 2017.
+- [Deng Xiaoping](https://politicaparainiciantes.biblioverse.org/mundo/deng-xiaoping.html): Deng Xiaoping: Líder da China entre as décadas de 1970 e 1990. Trajetória, posições e controvérsias, com fontes.
+- [Desmond Tutu](https://politicaparainiciantes.biblioverse.org/mundo/desmond-tutu.html): Desmond Tutu: Arcebispo anglicano, líder contra o apartheid e Nobel da Paz (1931-2021).
+- [Dmitry Muratov](https://politicaparainiciantes.biblioverse.org/mundo/dmitry-muratov.html): Dmitry Muratov: Editor do jornal Novaya Gazeta e Nobel da Paz em 2021.
+- [Donald Trump](https://politicaparainiciantes.biblioverse.org/mundo/donald-trump.html): Donald Trump: Presidente dos EUA de 2017 a 2021 e desde 2025. Trajetória, posições e controvérsias, com fontes.
+- [Edward R. Murrow](https://politicaparainiciantes.biblioverse.org/mundo/edward-r-murrow.html): Edward R. Murrow: Pioneiro do jornalismo de TV, enfrentou o macarthismo (1908-1965).
+- [Efraín Ríos Montt](https://politicaparainiciantes.biblioverse.org/mundo/efrain-rios-montt.html): Efraín Ríos Montt: General e ditador da Guatemala de 1982 a 1983 (1926-2018).
+- [Emmanuel Macron](https://politicaparainiciantes.biblioverse.org/mundo/emmanuel-macron.html): Emmanuel Macron: Presidente da França desde 2017. Trajetória, posições e controvérsias, com fontes.
+- [Emmeline Pankhurst](https://politicaparainiciantes.biblioverse.org/mundo/emmeline-pankhurst.html): Emmeline Pankhurst: Líder das sufragistas britânicas (1858-1928). Trajetória, posições e controvérsias, com fontes.
+- [Evo Morales](https://politicaparainiciantes.biblioverse.org/mundo/evo-morales.html): Evo Morales: Primeiro presidente indígena da Bolívia, de 2006 a 2019. Trajetória, posições e controvérsias, com fontes.
+- [Fareed Zakaria](https://politicaparainiciantes.biblioverse.org/mundo/fareed-zakaria.html): Fareed Zakaria: Jornalista e colunista de política internacional. Trajetória, posições e controvérsias, com fontes.
+- [Fidel Castro](https://politicaparainiciantes.biblioverse.org/mundo/fidel-castro.html): Fidel Castro: Líder da Revolução Cubana, governou Cuba de 1959 a 2008.
+- [Francisco Franco](https://politicaparainiciantes.biblioverse.org/mundo/francisco-franco.html): Francisco Franco: General e ditador da Espanha de 1939 a 1975. Trajetória, posições e controvérsias, com fontes.
+- [François Duvalier](https://politicaparainiciantes.biblioverse.org/mundo/francois-duvalier.html): François Duvalier: “Papa Doc”, ditador do Haiti de 1957 a 1971. Trajetória, posições e controvérsias, com fontes.
+- [Franklin D. Roosevelt](https://politicaparainiciantes.biblioverse.org/mundo/franklin-d-roosevelt.html): Franklin D. Roosevelt: Presidente dos EUA de 1933 a 1945. Trajetória, posições e controvérsias, com fontes.
+- [Frederick Douglass](https://politicaparainiciantes.biblioverse.org/mundo/frederick-douglass.html): Frederick Douglass: Escravizado que fugiu e virou grande orador abolicionista (1818-1895).
+- [Friedrich Merz](https://politicaparainiciantes.biblioverse.org/mundo/friedrich-merz.html): Friedrich Merz: Chanceler da Alemanha desde 2025. Trajetória, posições e controvérsias, com fontes.
+- [George Orwell](https://politicaparainiciantes.biblioverse.org/mundo/george-orwell.html): George Orwell: Escritor e jornalista, autor de “1984” e “A Revolução dos Bichos” (1903-1950).
+- [George Washington](https://politicaparainiciantes.biblioverse.org/mundo/george-washington.html): George Washington: Primeiro presidente dos EUA (1732-1799). Trajetória, posições e controvérsias, com fontes.
+- [Giorgia Meloni](https://politicaparainiciantes.biblioverse.org/mundo/giorgia-meloni.html): Giorgia Meloni: Primeira-ministra da Itália desde 2022. Trajetória, posições e controvérsias, com fontes.
+- [Glenn Greenwald](https://politicaparainiciantes.biblioverse.org/mundo/glenn-greenwald.html): Glenn Greenwald: Jornalista que divulgou os documentos de Snowden e a Vaza Jato.
+- [Greta Thunberg](https://politicaparainiciantes.biblioverse.org/mundo/greta-thunberg.html): Greta Thunberg: Ativista climática, criou as greves escolares pelo clima.
+- [Harriet Tubman](https://politicaparainiciantes.biblioverse.org/mundo/harriet-tubman.html): Harriet Tubman: Abolicionista que levou escravizados à liberdade (cerca de 1822-1913).
+- [Harvey Milk](https://politicaparainiciantes.biblioverse.org/mundo/harvey-milk.html): Harvey Milk: Um dos primeiros políticos abertamente gays eleitos nos EUA, assassinado em 1978.
+- [Heinrich Himmler](https://politicaparainiciantes.biblioverse.org/mundo/heinrich-himmler.html): Heinrich Himmler: Chefe da SS e um dos principais organizadores do Holocausto (1900-1945).
+- [Henry Spira](https://politicaparainiciantes.biblioverse.org/mundo/henry-spira.html): Henry Spira: Ativista que negociou mudanças em testes com animais (1927-1998).
+- [Hideki Tojo](https://politicaparainiciantes.biblioverse.org/mundo/hideki-tojo.html): Hideki Tojo: General e primeiro-ministro do Japão de 1941 a 1944, executado em 1948.
+- [Hugo Chávez](https://politicaparainiciantes.biblioverse.org/mundo/hugo-chavez.html): Hugo Chávez: Presidente da Venezuela de 1999 a 2013. Trajetória, posições e controvérsias, com fontes.
+- [Ida B. Wells](https://politicaparainiciantes.biblioverse.org/mundo/ida-b-wells.html): Ida B. Wells: Jornalista que denunciou os linchamentos (1862-1931). Trajetória, posições e controvérsias, com fontes.
+- [Idi Amin](https://politicaparainiciantes.biblioverse.org/mundo/idi-amin.html): Idi Amin: Militar e ditador de Uganda de 1971 a 1979 (c. 1925-2003). Trajetória, posições e controvérsias, com fontes.
+- [Jacinda Ardern](https://politicaparainiciantes.biblioverse.org/mundo/jacinda-ardern.html): Jacinda Ardern: Primeira-ministra da Nova Zelândia de 2017 a 2023. Trajetória, posições e controvérsias, com fontes.
+- [Jamal Khashoggi](https://politicaparainiciantes.biblioverse.org/mundo/jamal-khashoggi.html): Jamal Khashoggi: Jornalista crítico do governo saudita, assassinado em 2018 no consulado em Istambul.
+- [Javier Milei](https://politicaparainiciantes.biblioverse.org/mundo/javier-milei.html): Javier Milei: Economista e presidente da Argentina desde 2023. Trajetória, posições e controvérsias, com fontes.
+- [Jawaharlal Nehru](https://politicaparainiciantes.biblioverse.org/mundo/jawaharlal-nehru.html): Jawaharlal Nehru: Primeiro-ministro da Índia independente, de 1947 a 1964.
+- [Joe Biden](https://politicaparainiciantes.biblioverse.org/mundo/joe-biden.html): Joe Biden: Presidente dos EUA de 2021 a 2025. Trajetória, posições e controvérsias, com fontes.
+- [John F. Kennedy](https://politicaparainiciantes.biblioverse.org/mundo/john-f-kennedy.html): John F. Kennedy: Presidente dos EUA, assassinado em 1963. Trajetória, posições e controvérsias, com fontes.
+- [Jorge Videla](https://politicaparainiciantes.biblioverse.org/mundo/jorge-videla.html): Jorge Videla: General e ditador da Argentina de 1976 a 1981 (1925-2013).
+- [José Antonio Kast](https://politicaparainiciantes.biblioverse.org/mundo/jose-antonio-kast.html): José Antonio Kast: Presidente do Chile desde 2026. Trajetória, posições e controvérsias, com fontes.
+- [Josef Stálin](https://politicaparainiciantes.biblioverse.org/mundo/josef-stalin.html): Josef Stálin: Ditador da União Soviética, de meados da década de 1920 até 1953.
+- [Joseph Goebbels](https://politicaparainiciantes.biblioverse.org/mundo/joseph-goebbels.html): Joseph Goebbels: Ministro da Propaganda da Alemanha nazista (1897-1945).
+- [Julian Assange](https://politicaparainiciantes.biblioverse.org/mundo/julian-assange.html): Julian Assange: Fundador do WikiLeaks. Trajetória, posições e controvérsias, com fontes.
+- [Kim Il-sung](https://politicaparainiciantes.biblioverse.org/mundo/kim-il-sung.html): Kim Il-sung: Fundador da Coreia do Norte e de sua dinastia, governou de 1948 a 1994.
+- [Konrad Adenauer](https://politicaparainiciantes.biblioverse.org/mundo/konrad-adenauer.html): Konrad Adenauer: Primeiro chanceler da Alemanha Ocidental, de 1949 a 1963.
+- [Lech Wałęsa](https://politicaparainiciantes.biblioverse.org/mundo/lech-wa-esa.html): Lech Wałęsa: Líder do sindicato Solidariedade, Nobel da Paz e presidente polonês.
+- [Lee Jae-myung](https://politicaparainiciantes.biblioverse.org/mundo/lee-jae-myung.html): Lee Jae-myung: Presidente da Coreia do Sul desde 2025. Trajetória, posições e controvérsias, com fontes.
+- [Lee Kuan Yew](https://politicaparainiciantes.biblioverse.org/mundo/lee-kuan-yew.html): Lee Kuan Yew: Fundador da Singapura moderna, primeiro-ministro de 1959 a 1990.
+- [Leopoldo II da Bélgica](https://politicaparainiciantes.biblioverse.org/mundo/leopoldo-ii-da-belgica.html): Leopoldo II da Bélgica: Rei da Bélgica e dono do chamado Estado Livre do Congo, de 1885 a 1908.
+- [Liu Xiaobo](https://politicaparainiciantes.biblioverse.org/mundo/liu-xiaobo.html): Liu Xiaobo: Dissidente e Nobel da Paz, morreu sob custódia em 2017. Trajetória, posições e controvérsias, com fontes.
+- [Mahatma Gandhi](https://politicaparainiciantes.biblioverse.org/mundo/mahatma-gandhi.html): Mahatma Gandhi: Líder da independência indiana pela não violência (1869-1948).
+- [Malala Yousafzai](https://politicaparainiciantes.biblioverse.org/mundo/malala-yousafzai.html): Malala Yousafzai: Sobreviveu a um ataque do Talibã e luta pela educação de meninas.
+- [Malcolm X](https://politicaparainiciantes.biblioverse.org/mundo/malcolm-x.html): Malcolm X: Líder negro, assassinado em 1965. Trajetória, posições e controvérsias, com fontes.
+- [Mao Tsé-Tung](https://politicaparainiciantes.biblioverse.org/mundo/mao-tse-tung.html): Mao Tsé-Tung: Fundador da China comunista, governou de 1949 a 1976. Trajetória, posições e controvérsias, com fontes.
+- [Margaret Thatcher](https://politicaparainiciantes.biblioverse.org/mundo/margaret-thatcher.html): Margaret Thatcher: Primeira-ministra britânica de 1979 a 1990. Trajetória, posições e controvérsias, com fontes.
+- [Maria Ressa](https://politicaparainiciantes.biblioverse.org/mundo/maria-ressa.html): Maria Ressa: Jornalista do Rappler e Nobel da Paz em 2021. Trajetória, posições e controvérsias, com fontes.
+- [Mark Carney](https://politicaparainiciantes.biblioverse.org/mundo/mark-carney.html): Mark Carney: Primeiro-ministro do Canadá desde 2025, ex-presidente de bancos centrais.
+- [Martin Luther King Jr.](https://politicaparainiciantes.biblioverse.org/mundo/martin-luther-king-jr.html): Martin Luther King Jr.: Líder dos direitos civis e Nobel da Paz, assassinado em 1968.
+- [Mengistu Haile Mariam](https://politicaparainiciantes.biblioverse.org/mundo/mengistu-haile-mariam.html): Mengistu Haile Mariam: Líder militar da Etiópia de 1977 a 1991. Trajetória, posições e controvérsias, com fontes.
+- [Michelle Bachelet](https://politicaparainiciantes.biblioverse.org/mundo/michelle-bachelet.html): Michelle Bachelet: Presidente do Chile em dois mandatos e ex-alta comissária da ONU para direitos humanos.
+- [Mikhail Gorbachev](https://politicaparainiciantes.biblioverse.org/mundo/mikhail-gorbachev.html): Mikhail Gorbachev: Último líder da União Soviética (1931-2022). Trajetória, posições e controvérsias, com fontes.
+- [Mojtaba Khamenei](https://politicaparainiciantes.biblioverse.org/mundo/mojtaba-khamenei.html): Mojtaba Khamenei: Líder supremo do Irã desde 2026, após a morte do pai, Ali Khamenei.
+- [Mustafa Kemal Atatürk](https://politicaparainiciantes.biblioverse.org/mundo/mustafa-kemal-ataturk.html): Mustafa Kemal Atatürk: Fundador da Turquia moderna (1881-1938). Trajetória, posições e controvérsias, com fontes.
+- [Narendra Modi](https://politicaparainiciantes.biblioverse.org/mundo/narendra-modi.html): Narendra Modi: Primeiro-ministro da Índia desde 2014. Trajetória, posições e controvérsias, com fontes.
+- [Narges Mohammadi](https://politicaparainiciantes.biblioverse.org/mundo/narges-mohammadi.html): Narges Mohammadi: Ativista presa, Nobel da Paz em 2023. Trajetória, posições e controvérsias, com fontes.
+- [Nelson Mandela](https://politicaparainiciantes.biblioverse.org/mundo/nelson-mandela.html): Nelson Mandela: Preso por 27 anos e presidente da África do Sul de 1994 a 1999.
+- [Nicolae Ceaușescu](https://politicaparainiciantes.biblioverse.org/mundo/nicolae-ceausescu.html): Nicolae Ceaușescu: Ditador comunista da Romênia de 1965 a 1989. Trajetória, posições e controvérsias, com fontes.
+- [Nicolás Maduro](https://politicaparainiciantes.biblioverse.org/mundo/nicolas-maduro.html): Nicolás Maduro: Presidente da Venezuela de 2013 até ser capturado pelos EUA, em janeiro de 2026.
+- [Otto von Bismarck](https://politicaparainiciantes.biblioverse.org/mundo/otto-von-bismarck.html): Otto von Bismarck: Chanceler que unificou a Alemanha no século XIX. Trajetória, posições e controvérsias, com fontes.
+- [Pedro Sánchez](https://politicaparainiciantes.biblioverse.org/mundo/pedro-sanchez.html): Pedro Sánchez: Primeiro-ministro da Espanha desde 2018. Trajetória, posições e controvérsias, com fontes.
+- [Pepe Mujica](https://politicaparainiciantes.biblioverse.org/mundo/pepe-mujica.html): Pepe Mujica: Ex-guerrilheiro e presidente do Uruguai de 2010 a 2015 (1935-2025).
+- [Pol Pot](https://politicaparainiciantes.biblioverse.org/mundo/pol-pot.html): Pol Pot: Líder do Khmer Vermelho, governou o Camboja de 1975 a 1979. Trajetória, posições e controvérsias, com fontes.
+- [Prabowo Subianto](https://politicaparainiciantes.biblioverse.org/mundo/prabowo-subianto.html): Prabowo Subianto: Ex-general e presidente da Indonésia desde 2024. Trajetória, posições e controvérsias, com fontes.
+- [Radovan Karadžić](https://politicaparainiciantes.biblioverse.org/mundo/radovan-karadzic.html): Radovan Karadžić: Líder político dos sérvios da Bósnia, psiquiatra de formação.
+- [Rafael Trujillo](https://politicaparainiciantes.biblioverse.org/mundo/rafael-trujillo.html): Rafael Trujillo: Ditador da República Dominicana de 1930 até ser assassinado, em 1961.
+- [Recep Tayyip Erdoğan](https://politicaparainiciantes.biblioverse.org/mundo/recep-tayyip-erdogan.html): Recep Tayyip Erdoğan: Governa a Turquia desde 2003, como primeiro-ministro e depois presidente.
+- [Rigoberta Menchú](https://politicaparainiciantes.biblioverse.org/mundo/rigoberta-menchu.html): Rigoberta Menchú: Líder indígena e Nobel da Paz em 1992. Trajetória, posições e controvérsias, com fontes.
+- [Rodrigo Paz](https://politicaparainiciantes.biblioverse.org/mundo/rodrigo-paz.html): Rodrigo Paz: Presidente da Bolívia, eleito em 2025. Trajetória, posições e controvérsias, com fontes.
+- [Ronald Reagan](https://politicaparainiciantes.biblioverse.org/mundo/ronald-reagan.html): Ronald Reagan: Presidente dos EUA de 1981 a 1989. Trajetória, posições e controvérsias, com fontes.
+- [Rosa Parks](https://politicaparainiciantes.biblioverse.org/mundo/rosa-parks.html): Rosa Parks: Ativista que se recusou a ceder o lugar no ônibus, em 1955.
+- [Ruhollah Khomeini](https://politicaparainiciantes.biblioverse.org/mundo/ruhollah-khomeini.html): Ruhollah Khomeini: Líder da Revolução Iraniana e líder supremo de 1979 a 1989.
+- [Ryszard Kapuściński](https://politicaparainiciantes.biblioverse.org/mundo/ryszard-kapuscinski.html): Ryszard Kapuściński: Repórter de guerras e revoluções (1932-2007). Trajetória, posições e controvérsias, com fontes.
+- [Saddam Hussein](https://politicaparainiciantes.biblioverse.org/mundo/saddam-hussein.html): Saddam Hussein: Ditador do Iraque de 1979 a 2003, executado em 2006. Trajetória, posições e controvérsias, com fontes.
+- [Salvador Allende](https://politicaparainiciantes.biblioverse.org/mundo/salvador-allende.html): Salvador Allende: Presidente socialista do Chile, morto no golpe de 1973.
+- [Sanae Takaichi](https://politicaparainiciantes.biblioverse.org/mundo/sanae-takaichi.html): Sanae Takaichi: Primeira-ministra do Japão, a primeira mulher no cargo.
+- [Seymour Hersh](https://politicaparainiciantes.biblioverse.org/mundo/seymour-hersh.html): Seymour Hersh: Revelou o massacre de My Lai e os abusos de Abu Ghraib.
+- [Slobodan Milošević](https://politicaparainiciantes.biblioverse.org/mundo/slobodan-milosevic.html): Slobodan Milošević: Presidente da Sérvia e da Iugoslávia na década de 1990 (1941-2006).
+- [Talaat Paxá](https://politicaparainiciantes.biblioverse.org/mundo/talaat-paxa.html): Talaat Paxá: Líder otomano e principal organizador do genocídio armênio (1874-1921).
+- [Théoneste Bagosora](https://politicaparainiciantes.biblioverse.org/mundo/theoneste-bagosora.html): Théoneste Bagosora: Militar apontado como um dos principais organizadores do genocídio de Ruanda (1941-2021).
+- [Tony Blair](https://politicaparainiciantes.biblioverse.org/mundo/tony-blair.html): Tony Blair: Primeiro-ministro britânico de 1997 a 2007. Trajetória, posições e controvérsias, com fontes.
+- [Tucker Carlson](https://politicaparainiciantes.biblioverse.org/mundo/tucker-carlson.html): Tucker Carlson: Comentarista conservador, ex-Fox News. Trajetória, posições e controvérsias, com fontes.
+- [Viktor Orbán](https://politicaparainiciantes.biblioverse.org/mundo/viktor-orban.html): Viktor Orbán: Primeiro-ministro da Hungria de 2010 a 2026. Trajetória, posições e controvérsias, com fontes.
+- [Vladimir Lênin](https://politicaparainiciantes.biblioverse.org/mundo/vladimir-lenin.html): Vladimir Lênin: Líder da Revolução Bolchevique de 1917 e fundador da União Soviética (1870-1924).
+- [Vladimir Putin](https://politicaparainiciantes.biblioverse.org/mundo/vladimir-putin.html): Vladimir Putin: Comanda a Rússia desde 2000, como presidente ou primeiro-ministro.
+- [Volodymyr Zelensky](https://politicaparainiciantes.biblioverse.org/mundo/volodymyr-zelensky.html): Volodymyr Zelensky: Ex-comediante e presidente da Ucrânia desde 2019, líder do país na guerra contra a Rússia.
+- [Walter Cronkite](https://politicaparainiciantes.biblioverse.org/mundo/walter-cronkite.html): Walter Cronkite: Âncora da CBS, chamado de “o homem mais confiável dos EUA” (1916-2009).
+- [Wangari Maathai](https://politicaparainiciantes.biblioverse.org/mundo/wangari-maathai.html): Wangari Maathai: Fundadora do Movimento Cinturão Verde e Nobel da Paz (1940-2011).
+- [Willy Brandt](https://politicaparainiciantes.biblioverse.org/mundo/willy-brandt.html): Willy Brandt: Chanceler da Alemanha Ocidental, Nobel da Paz em 1971. Trajetória, posições e controvérsias, com fontes.
+- [Winston Churchill](https://politicaparainiciantes.biblioverse.org/mundo/winston-churchill.html): Winston Churchill: Primeiro-ministro britânico na Segunda Guerra. Trajetória, posições e controvérsias, com fontes.
+- [Xi Jinping](https://politicaparainiciantes.biblioverse.org/mundo/xi-jinping.html): Xi Jinping: Presidente da China e líder do Partido Comunista desde o início da década de 2010.
+
+## Indicadores internacionais
+
+- [Ambiente de negócios e competitividade](https://politicaparainiciantes.biblioverse.org/indicadores/ambiente-de-negocios.html): Quanto é fácil abrir, operar e fechar uma empresa. O Doing Business acabou em escândalo e foi substituído.
+- [Câmbio e reservas internacionais](https://politicaparainiciantes.biblioverse.org/indicadores/cambio.html): O preço do dólar em reais, o que o move e por que o Brasil guarda centenas de bilhões de dólares em reserva.
+- [Índice de Percepção da Corrupção](https://politicaparainiciantes.biblioverse.org/indicadores/corrupcao-ipc.html): O ranking de corrupção mais citado. Mede percepção, e não casos provados, e isso muda tudo na leitura.
+- [Índice de Democracia (The Economist)](https://politicaparainiciantes.biblioverse.org/indicadores/democracia-eiu.html): O ranking de democracia mais citado na imprensa. Classifica os países em quatro tipos de regime.
+- [Índices de desempenho ambiental e climático](https://politicaparainiciantes.biblioverse.org/indicadores/desempenho-ambiental.html): Como cada país cuida do ar, da água, da biodiversidade e do clima, e se está fazendo a sua parte no Acordo de Paris.
+- [Taxa de desemprego](https://politicaparainiciantes.biblioverse.org/indicadores/desemprego.html): A parcela de quem procurou trabalho e não encontrou. Não conta quem desistiu nem quem está subocupado.
+- [Dívida pública em relação ao PIB](https://politicaparainiciantes.biblioverse.org/indicadores/divida-publica.html): Tudo o que o governo deve, comparado ao tamanho da economia. É a medida que o mercado e as agências de risco mais olham.
+- [PISA e indicadores de educação](https://politicaparainiciantes.biblioverse.org/indicadores/educacao-pisa.html): A prova internacional que compara o que alunos de 15 anos sabem em leitura, matemática e ciências.
+- [Emissões de gases de efeito estufa](https://politicaparainiciantes.biblioverse.org/indicadores/emissoes.html): Quanto cada país emite, no total, por pessoa e ao longo da história. Três contas que levam a conclusões diferentes.
+- [Índice Global de Escravidão](https://politicaparainiciantes.biblioverse.org/indicadores/escravidao-moderna.html): Estima quantas pessoas vivem em trabalho forçado ou casamento forçado em cada país, e como os governos respondem.
+- [Índice do Estado de Direito (World Justice Project)](https://politicaparainiciantes.biblioverse.org/indicadores/estado-de-direito.html): Mede se as leis valem para todos, inclusive para o governo, e se a Justiça funciona na prática.
+- [Relatório Mundial da Felicidade](https://politicaparainiciantes.biblioverse.org/indicadores/felicidade.html): O ranking de felicidade mais citado do mundo. Mede como as pessoas avaliam a própria vida, e explica por quê.
+- [Fome e insegurança alimentar](https://politicaparainiciantes.biblioverse.org/indicadores/fome.html): Quantas pessoas não comem o suficiente. O Brasil saiu e voltou ao Mapa da Fome em uma década.
+- [Freedom in the World (Freedom House)](https://politicaparainiciantes.biblioverse.org/indicadores/freedom-house.html): Classifica os países em livres, parcialmente livres e não livres, pelos direitos políticos e liberdades civis.
+- [Índice de Gini](https://politicaparainiciantes.biblioverse.org/indicadores/gini.html): Mede a desigualdade de renda em um só número. Quanto mais perto de 1, mais concentrada a renda.
+- [Indicadores de Governança do Banco Mundial](https://politicaparainiciantes.biblioverse.org/indicadores/governanca.html): Seis medidas de como um país é governado, usadas por investidores e agências de desenvolvimento.
+- [Índice de Desenvolvimento Humano (IDH)](https://politicaparainiciantes.biblioverse.org/indicadores/idh.html): Renda, saúde e educação em um só número. Foi criado para mostrar que desenvolvimento é mais do que PIB.
+- [Índice Global de Disparidade de Gênero](https://politicaparainiciantes.biblioverse.org/indicadores/igualdade-de-genero.html): A distância entre homens e mulheres em economia, educação, saúde e política, e quanto falta para fechá-la.
+- [Inflação e índices de preços](https://politicaparainiciantes.biblioverse.org/indicadores/inflacao.html): A alta geral dos preços, medida por uma cesta de produtos. No Brasil, o número oficial é o IPCA.
+- [Índice de Liberdade de Imprensa (RSF)](https://politicaparainiciantes.biblioverse.org/indicadores/liberdade-de-imprensa.html): Mede se jornalistas podem trabalhar sem censura, violência, pressão econômica ou prisão.
+- [Índices de liberdade econômica](https://politicaparainiciantes.biblioverse.org/indicadores/liberdade-economica.html): Quanto o Estado deixa as pessoas produzir, trocar e possuir. Dois rankings de institutos liberais, úteis e com viés declarado.
+- [Índice dos Objetivos de Desenvolvimento Sustentável](https://politicaparainiciantes.biblioverse.org/indicadores/ods.html): Quanto cada país avançou nas 17 metas que a ONU fixou para 2030, de pobreza zero a ação climática.
+- [Índice Global da Paz e Estados frágeis](https://politicaparainiciantes.biblioverse.org/indicadores/paz-global.html): Quão violento e quão estável é um país, medido por conflitos, militarização, crime e capacidade do Estado.
+- [PIB e PIB per capita](https://politicaparainiciantes.biblioverse.org/indicadores/pib.html): A soma de tudo o que um país produz. É o número mais citado da economia, e um dos mais mal usados.
+- [Linhas de pobreza e pobreza multidimensional](https://politicaparainiciantes.biblioverse.org/indicadores/pobreza.html): Quantas pessoas vivem com menos do que um mínimo. Depende de onde se traça a linha, e há várias.
+- [Índice de Proteção Animal](https://politicaparainiciantes.biblioverse.org/indicadores/protecao-animal.html): Compara leis e políticas de proteção aos animais em 50 países. O único índice global sobre o tema.
+- [Expectativa de vida e mortalidade infantil](https://politicaparainiciantes.biblioverse.org/indicadores/saude.html): Os dois indicadores de saúde mais comparados no mundo, e os que mais mudaram no último século.
+- [Taxa Selic e juros reais](https://politicaparainiciantes.biblioverse.org/indicadores/selic.html): A taxa básica de juros do país, que o Banco Central usa para controlar a inflação e que define o custo de todo o crédito.
+- [V-Dem: Variedades da Democracia](https://politicaparainiciantes.biblioverse.org/indicadores/v-dem.html): A maior base de dados sobre democracia do mundo, feita por milhares de especialistas. É a referência acadêmica.
+
+## Partidos
+
+- [AGIR: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/agir.html): Agir: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [AVANTE: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/avante.html): Avante: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [CIDADANIA: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/cidadania.html): Cidadania: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [DC: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/dc.html): Democracia Cristã: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [DEMOCRATA: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/democrata.html): Democrata: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [MDB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/mdb.html): Movimento Democrático Brasileiro: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [MISSÃO: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/missao.html): Partido Missão: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [MOBILIZA: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/mobiliza.html): Mobilização Nacional: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [NOVO: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/novo.html): Partido Novo: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PCB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pcb.html): Partido Comunista Brasileiro: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PCdoB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pcdob.html): Partido Comunista do Brasil: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PCO: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pco.html): Partido da Causa Operária: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PDT: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pdt.html): Partido Democrático Trabalhista: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PL: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pl.html): Partido Liberal: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PODE: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pode.html): Podemos: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PP: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pp.html): Progressistas: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PRD: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/prd.html): Partido Renovação Democrática: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PRTB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/prtb.html): Partido Renovador Trabalhista Brasileiro: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PSB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/psb.html): Partido Socialista Brasileiro: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PSD: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/psd.html): Partido Social Democrático: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PSDB: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/psdb.html): Partido da Social Democracia Brasileira: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PSOL: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/psol.html): Partido Socialismo e Liberdade: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PSTU: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pstu.html): Partido Socialista dos Trabalhadores Unificado: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PT: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pt.html): Partido dos Trabalhadores: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [PV: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/pv.html): Partido Verde: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [REDE: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/rede.html): Rede Sustentabilidade: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [REPUBLICANOS: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/republicanos.html): Republicanos: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [SOLIDARIEDADE: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/solidariedade.html): Solidariedade: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [UNIÃO: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/uniao.html): União Brasil: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+- [UP: dossiê do partido](https://politicaparainiciantes.biblioverse.org/partidos/up.html): Unidade Popular: fundação, presidentes, escândalos, votos e mudanças de alinhamento.
+
+## Principais debates
+
+- [Legalização do aborto](https://politicaparainiciantes.biblioverse.org/debates/aborto.html): Legalização do aborto. Direito da mulher ou proteção da vida em formação? Os dois lados e o que os dados indicam.
+- [Alistamento militar obrigatório](https://politicaparainiciantes.biblioverse.org/debates/alistamento-militar.html): Alistamento militar obrigatório. Dever cívico, loteria injusta ou tradição sem função? Os dois lados e o que os dados indicam.
+- [Animais de rua](https://politicaparainiciantes.biblioverse.org/debates/animais-de-rua.html): Animais de rua. Castrar, abrigar, sacrificar ou culpar os donos? Os dois lados e o que os dados indicam.
+- [Anistia aos condenados pelo 8 de janeiro](https://politicaparainiciantes.biblioverse.org/debates/anistia-8-de-janeiro.html): Anistia aos condenados pelo 8 de janeiro. Perdoar ou reduzir as penas de quem atacou as sedes dos Três Poderes? Os dois lados e o que os dados indicam.
+- [Vício em apostas](https://politicaparainiciantes.biblioverse.org/debates/apostas.html): Vício em apostas. Liberdade de apostar ou problema de saúde pública? Os dois lados e o que os dados indicam.
+- [O Brasil deveria ter armas nucleares?](https://politicaparainiciantes.biblioverse.org/debates/armas-nucleares.html): O Brasil deveria ter armas nucleares? Dissuasão e prestígio contra custo, isolamento e a Constituição. Os dois lados e o que os dados indicam.
+- [Armamento da população](https://politicaparainiciantes.biblioverse.org/debates/armas.html): Armamento da população. Arma defende o cidadão ou aumenta as mortes? Os dois lados e o que os dados indicam.
+- [Autonomia do Banco Central e os juros](https://politicaparainiciantes.biblioverse.org/debates/autonomia-do-banco-central.html): Autonomia do Banco Central e os juros. Quem deve decidir a taxa de juros: técnicos com mandato, ou o governo eleito? Os dois lados e o que os dados indicam.
+- [Bigtechs](https://politicaparainiciantes.biblioverse.org/debates/bigtechs.html): Bigtechs. Inovação ou poder demais? Os dois lados e o que os dados indicam.
+- [Políticas ambientais e mudanças climáticas](https://politicaparainiciantes.biblioverse.org/debates/clima.html): Políticas ambientais e mudanças climáticas. Desenvolvimento econômico ou preservação e transição? Os dois lados e o que os dados indicam.
+- [Cotas sociais e cotas raciais](https://politicaparainiciantes.biblioverse.org/debates/cotas.html): Cotas sociais e cotas raciais. Reservar vagas por renda, por escola pública ou por raça? Os dois lados e o que os dados indicam.
+- [Desemprego](https://politicaparainiciantes.biblioverse.org/debates/desemprego.html): Desemprego. Menos encargos ou mais proteção e investimento? Os dois lados e o que os dados indicam.
+- [Desmilitarização da polícia](https://politicaparainiciantes.biblioverse.org/debates/desmilitarizacao.html): Desmilitarização da polícia. Polícia civil unificada ou manter o modelo militar? Os dois lados e o que os dados indicam.
+- [Direitos dos animais](https://politicaparainiciantes.biblioverse.org/debates/direitos-animais.html): Direitos dos animais. Animais merecem direitos, ou só bom trato? Os dois lados e o que os dados indicam.
+- [Liberação das drogas](https://politicaparainiciantes.biblioverse.org/debates/drogas.html): Liberação das drogas. Proibir, descriminalizar ou legalizar? Os dois lados e o que os dados indicam.
+- [Educação gratuita e vouchers](https://politicaparainiciantes.biblioverse.org/debates/educacao.html): Educação gratuita e vouchers. Sistema público universal ou escolha com vouchers e escolas privadas? Os dois lados e o que os dados indicam.
+- [O Estado protege a burguesia?](https://politicaparainiciantes.biblioverse.org/debates/estado-protege-a-burguesia.html): O Estado protege a burguesia? A tese marxista de que o Estado é o comitê dos donos do capital.
+- [Estatização de empresas essenciais](https://politicaparainiciantes.biblioverse.org/debates/estatizacao.html): Estatização de empresas essenciais. O Estado deve assumir serviços essenciais em mãos privadas? Os dois lados e o que os dados indicam.
+- [Eutanásia e suicídio assistido](https://politicaparainiciantes.biblioverse.org/debates/eutanasia.html): Eutanásia e suicídio assistido. Direito a morrer com dignidade ou risco para os vulneráveis? Os dois lados e o que os dados indicam.
+- [Evidências ou valores: como decidir?](https://politicaparainiciantes.biblioverse.org/debates/evidencias-debate.html): Evidências ou valores: como decidir? Decidir por dados ou por valores? Os dois lados e o que os dados indicam.
+- [Fake news](https://politicaparainiciantes.biblioverse.org/debates/fake-news.html): Fake news. Punir a mentira, ou educar contra ela? Os dois lados e o que os dados indicam.
+- [Taxação de grandes fortunas](https://politicaparainiciantes.biblioverse.org/debates/grandes-fortunas.html): Taxação de grandes fortunas. Tributar patrimônio muito alto reduz a desigualdade, ou espanta o capital? Os dois lados e o que os dados indicam.
+- [Tecnologia, IA e robôs na segurança pública](https://politicaparainiciantes.biblioverse.org/debates/ia-na-seguranca-publica.html): Tecnologia, IA e robôs na segurança pública. Câmeras inteligentes e robôs tornam as ruas mais seguras, ou criam um RoboCop sem controle?
+- [Inteligência artificial para governar](https://politicaparainiciantes.biblioverse.org/debates/ia-no-governo.html): Inteligência artificial para governar. Máquinas podem decidir políticas, escrever leis e corrigir erros humanos? Os dois lados e o que os dados indicam.
+- [Idades mínimas: dirigir, beber, votar, consentir e ser preso](https://politicaparainiciantes.biblioverse.org/debates/idades-minimas.html): Idades mínimas: dirigir, beber, votar, consentir e ser preso. Que idade para cada coisa, e as regras fazem sentido quando vistas juntas?
+- [Políticas de identidade, gênero e direitos LGBTQIA+](https://politicaparainiciantes.biblioverse.org/debates/identidade-lgbt.html): Políticas de identidade, gênero e direitos LGBTQIA+. Direitos iguais, família tradicional e os limites das pautas identitárias.
+- [Igualdade salarial](https://politicaparainiciantes.biblioverse.org/debates/igualdade-salarial.html): Igualdade salarial. Lei resolve, ou as diferenças vêm de escolhas? Os dois lados e o que os dados indicam.
+- [Imigração, fronteiras e globalização](https://politicaparainiciantes.biblioverse.org/debates/imigracao.html): Imigração, fronteiras e globalização. Fronteiras rígidas e soberania, ou acolhimento humanitário? Os dois lados e o que os dados indicam.
+- [Carga tributária e impostos](https://politicaparainiciantes.biblioverse.org/debates/impostos.html): Carga tributária e impostos. Reduzir impostos, ou cobrar de forma mais progressiva? Os dois lados e o que os dados indicam.
+- [Regulamentação da inteligência artificial](https://politicaparainiciantes.biblioverse.org/debates/inteligencia-artificial.html): Regulamentação da inteligência artificial. Inovar primeiro ou prevenir danos? Os dois lados e o que os dados indicam.
+- [Fim da escala 6x1 e redução da jornada](https://politicaparainiciantes.biblioverse.org/debates/jornada-6x1.html): Fim da escala 6x1 e redução da jornada. Seis dias de trabalho por um de folga: mudar a lei, ou negociar por setor? Os dois lados e o que os dados indicam.
+- [Justiçamento ou reeducação: bandido bom é bandido morto?](https://politicaparainiciantes.biblioverse.org/debates/justicamento.html): Justiçamento ou reeducação: bandido bom é bandido morto? Punir com a morte, ou punir com a lei e recuperar? Os dois lados e o que os dados indicam.
+- [Liberais podem ir contra a liberdade?](https://politicaparainiciantes.biblioverse.org/debates/liberais-contra-a-liberdade.html): Se impostos, cooperativas ou o socialismo dessem mais liberdade, o liberal que os rejeita se contradiz? Liberdade negativa, positiva e o que a história mostra.
+- [Liberdade de expressão irrestrita e discurso de ódio](https://politicaparainiciantes.biblioverse.org/debates/liberdade-expressao-debate.html): Liberdade de expressão irrestrita e discurso de ódio. Falar tudo, ou leis contra o ódio para proteger minorias? Os dois lados e o que os dados indicam.
+- [Maioridade penal](https://politicaparainiciantes.biblioverse.org/debates/maioridade-penal.html): Maioridade penal. Reduzir a idade penal diminui o crime? Os dois lados e o que os dados indicam.
+- [Crescer pelo mercado interno ou pelas exportações](https://politicaparainiciantes.biblioverse.org/debates/mercado-interno-ou-exportacoes.html): Crescer pelo mercado interno ou pelas exportações. O país cresce mais vendendo para o próprio povo ou vendendo para fora?
+- [Meritocracia](https://politicaparainiciantes.biblioverse.org/debates/meritocracia.html): Meritocracia. Cada um tem o que merece, ou o ponto de partida decide quase tudo? Os dois lados e o que os dados indicam.
+- [Combate ao narcoterrorismo](https://politicaparainiciantes.biblioverse.org/debates/narcoterrorismo.html): Combate ao narcoterrorismo. Tratar facções como terroristas funciona? Os dois lados e o que os dados indicam.
+- [Pena de morte](https://politicaparainiciantes.biblioverse.org/debates/pena-de-morte.html): Pena de morte. Justiça para crimes graves ou erro irreversível? Os dois lados e o que os dados indicam.
+- [Petróleo na Margem Equatorial e transição energética](https://politicaparainiciantes.biblioverse.org/debates/petroleo-margem-equatorial.html): Petróleo na Margem Equatorial e transição energética. Explorar petróleo na costa da Amazônia, ou deixar no fundo do mar? Os dois lados e o que os dados indicam.
+- [Pix, bandeiras de cartão e a pressão dos EUA](https://politicaparainiciantes.biblioverse.org/debates/pix-e-os-eua.html): Pix, bandeiras de cartão e a pressão dos EUA. Um sistema público de pagamentos gratuito é conquista ou concorrência desleal?
+- [Poder do STF](https://politicaparainiciantes.biblioverse.org/debates/poder-do-stf.html): Poder do STF. Guardião da Constituição ou ativismo judicial? Os dois lados e o que os dados indicam.
+- [Pragas urbanas e espécies invasoras: quem controla quem?](https://politicaparainiciantes.biblioverse.org/debates/pragas-e-especies-invasoras.html): Pragas urbanas e espécies invasoras: quem controla quem? Matar, afastar ou esterilizar ratos, pombos, javalis e invasoras? E quem causou o problema?
+- [Aposentadoria e Previdência](https://politicaparainiciantes.biblioverse.org/debates/previdencia.html): Aposentadoria e Previdência. Quem paga a aposentadoria de quem, com que idade e com que regras? Os dois lados e o que os dados indicam.
+- [Privatização de estatais](https://politicaparainiciantes.biblioverse.org/debates/privatizacao.html): Privatização de estatais. Vender estatais melhora o serviço, ou entrega patrimônio público? Os dois lados e o que os dados indicam.
+- [Programas sociais e assistencialismo](https://politicaparainiciantes.biblioverse.org/debates/programas-sociais.html): Programas sociais e assistencialismo. Redistribuição de renda tira da pobreza ou cria dependência? Os dois lados e o que os dados indicam.
+- [Pseudociências na saúde pública](https://politicaparainiciantes.biblioverse.org/debates/pseudociencias.html): Pseudociências na saúde pública. O SUS deve pagar por práticas sem evidência? Os dois lados e o que os dados indicam.
+- [Fim da reeleição e mandato de cinco anos](https://politicaparainiciantes.biblioverse.org/debates/reeleicao-e-mandatos.html): Fim da reeleição e mandato de cinco anos. Deixar o eleitor renovar o governante, ou impedir o uso da máquina para se perpetuar?
+- [Reforma administrativa e estabilidade dos servidores](https://politicaparainiciantes.biblioverse.org/debates/reforma-administrativa.html): Reforma administrativa e estabilidade dos servidores. Avaliar e demitir quem não trabalha, ou proteger o serviço público da política?
+- [Reforma agrária e redistribuição de terras](https://politicaparainiciantes.biblioverse.org/debates/reforma-agraria.html): Reforma agrária e redistribuição de terras. Justiça no campo ou ameaça à propriedade e à produção? Os dois lados e o que os dados indicam.
+- [Reforma trabalhista](https://politicaparainiciantes.biblioverse.org/debates/reforma-trabalhista.html): Reforma trabalhista. Flexibilizar leis ou fortalecer direitos e sindicatos? Os dois lados e o que os dados indicam.
+- [Regulamentação das redes](https://politicaparainiciantes.biblioverse.org/debates/regulamentacao-redes.html): Regulamentação das redes. Responsabilizar plataformas ou proteger a liberdade? Os dois lados e o que os dados indicam.
+- [Religião e Estado laico](https://politicaparainiciantes.biblioverse.org/debates/religiao-estado.html): Religião e Estado laico. Até onde vai a fé na política? Os dois lados e o que os dados indicam.
+- [Representatividade de minorias](https://politicaparainiciantes.biblioverse.org/debates/representatividade.html): Representatividade de minorias. Mais mulheres, negros e indígenas no poder, ou o que importa são as ideias? Os dois lados e o que os dados indicam.
+- [Saúde pública gratuita](https://politicaparainiciantes.biblioverse.org/debates/saude.html): Saúde pública gratuita. SUS universal, planos privados, ou mistura? Os dois lados e o que os dados indicam.
+- [Segurança pública](https://politicaparainiciantes.biblioverse.org/debates/seguranca-publica.html): Segurança pública. Penas duras ou prevenção e ressocialização? Os dois lados e o que os dados indicam.
+- [Reforma política: distrital, lista fechada ou proporcional?](https://politicaparainiciantes.biblioverse.org/debates/sistema-eleitoral.html): Reforma política: distrital, lista fechada ou proporcional? Como transformar votos em cadeiras: o modelo brasileiro e suas alternativas.
+- [Subsídios](https://politicaparainiciantes.biblioverse.org/debates/subsidios.html): Subsídios. Dinheiro público para quem produz: estímulo ou privilégio? Os dois lados e o que os dados indicam.
+- [Supersalários no setor público](https://politicaparainiciantes.biblioverse.org/debates/supersalarios.html): Supersalários no setor público. Pagamentos acima do teto são direito ou privilégio? Os dois lados e o que os dados indicam.
+- [Tamanho do Estado e papel na economia](https://politicaparainiciantes.biblioverse.org/debates/tamanho-do-estado.html): Tamanho do Estado e papel na economia. Livre mercado ou regulação e presença estatal? Os dois lados e o que os dados indicam.
+- [Terras indígenas e marco temporal](https://politicaparainiciantes.biblioverse.org/debates/terras-indigenas.html): Terras indígenas e marco temporal. Direito originário ou segurança jurídica para produtores? Os dois lados e o que os dados indicam.
+- [Trabalho informal e negociação com o patrão](https://politicaparainiciantes.biblioverse.org/debates/trabalho-informal.html): Trabalho informal e negociação com o patrão. Liberdade para negociar, ou proteção para quem tem menos poder? Os dois lados e o que os dados indicam.
+- [Transporte público gratuito](https://politicaparainiciantes.biblioverse.org/debates/transporte-gratuito.html): Transporte público gratuito. Tarifa zero é direito à cidade ou conta que não fecha? Os dois lados e o que os dados indicam.
+- [Voto obrigatório](https://politicaparainiciantes.biblioverse.org/debates/voto-obrigatorio.html): Voto obrigatório. Dever cívico ou liberdade de não votar? Os dois lados e o que os dados indicam.
+
+## Vertentes políticas
+
+- [Ambientalismo e política verde](https://politicaparainiciantes.biblioverse.org/vertentes/ambientalismo.html): A natureza e o clima no centro das decisões. Ideias, história, forças e contradições explicadas.
+- [Anarcocapitalismo](https://politicaparainiciantes.biblioverse.org/vertentes/anarcocapitalismo.html): Nenhum Estado: até justiça e segurança seriam contratadas no mercado. Ideias, história, forças e contradições explicadas.
+- [Anarcocomunismo](https://politicaparainiciantes.biblioverse.org/vertentes/anarcocomunismo.html): Sem Estado, sem dinheiro e com bens em comum. Ideias, história, forças e contradições explicadas.
+- [Anarcossindicalismo](https://politicaparainiciantes.biblioverse.org/vertentes/anarcossindicalismo.html): Sindicatos revolucionários como caminho e como base da nova sociedade.
+- [Anarquismo](https://politicaparainiciantes.biblioverse.org/vertentes/anarquismo.html): Nenhum poder imposto: nem Estado, nem patrão. Ideias, história, forças e contradições explicadas.
+- [Antibolsonarismo](https://politicaparainiciantes.biblioverse.org/vertentes/antibolsonarismo.html): A rejeição ao bolsonarismo, visto por progressistas e parte do centro como extrema-direita e protofascista: ditadura, minorias e manipulação da verdade.
+- [Antipetismo](https://politicaparainiciantes.biblioverse.org/vertentes/antipetismo.html): A rejeição ao PT: a identidade partidária negativa mais forte do país e a principal força de organização da direita desde 2014.
+- [Autoritarismo](https://politicaparainiciantes.biblioverse.org/vertentes/autoritarismo.html): Poder concentrado, sem freios reais, com oposição limitada. Existe à esquerda e à direita.
+- [Bolsonarismo](https://politicaparainiciantes.biblioverse.org/vertentes/bolsonarismo.html): Movimento em torno de Jair Bolsonaro: conservador, antipetista e armamentista.
+- [Centrismo e terceira via](https://politicaparainiciantes.biblioverse.org/vertentes/centrismo.html): Combinar mercado e proteção social, com soluções caso a caso. Ideias, história, forças e contradições explicadas.
+- [Comunismo](https://politicaparainiciantes.biblioverse.org/vertentes/comunismo.html): O objetivo: uma sociedade sem classes, sem propriedade privada e, no fim, sem Estado.
+- [Comunitarismo](https://politicaparainiciantes.biblioverse.org/vertentes/comunitarismo.html): A comunidade forma quem somos: direitos não bastam. Ideias, história, forças e contradições explicadas.
+- [Conservadorismo](https://politicaparainiciantes.biblioverse.org/vertentes/conservadorismo.html): Instituições e tradições guardam sabedoria: mude com cuidado. Ideias, história, forças e contradições explicadas.
+- [Cosmopolitismo](https://politicaparainiciantes.biblioverse.org/vertentes/cosmopolitismo.html): Todo ser humano importa, independentemente da fronteira. Ideias, história, forças e contradições explicadas.
+- [Democracia cristã](https://politicaparainiciantes.biblioverse.org/vertentes/democracia-crista.html): Política orientada pela doutrina social da Igreja: mercado com solidariedade.
+- [Desenvolvimentismo](https://politicaparainiciantes.biblioverse.org/vertentes/desenvolvimentismo.html): O Estado deve puxar a industrialização para sair do subdesenvolvimento.
+- [Direita radical](https://politicaparainiciantes.biblioverse.org/vertentes/direita-radical.html): Aceita o voto, mas tensiona a democracia liberal. Ideias, história, forças e contradições explicadas.
+- [Ecossocialismo](https://politicaparainiciantes.biblioverse.org/vertentes/ecossocialismo.html): Sem superar o capitalismo não haveria solução para a crise ecológica. Ideias, história, forças e contradições explicadas.
+- [Extrema-direita](https://politicaparainiciantes.biblioverse.org/vertentes/extrema-direita.html): Rejeição da democracia liberal ou dos direitos iguais, em nome da nação, da ordem ou da hierarquia.
+- [Extrema-esquerda](https://politicaparainiciantes.biblioverse.org/vertentes/extrema-esquerda.html): Busca superar o capitalismo por ruptura, em geral rejeitando a democracia liberal como insuficiente.
+- [Fascismo](https://politicaparainiciantes.biblioverse.org/vertentes/fascismo.html): Nação acima de tudo, líder único, violência política e fim da democracia.
+- [Feminismo](https://politicaparainiciantes.biblioverse.org/vertentes/feminismo.html): Igualdade entre mulheres e homens, em direitos e na prática. Ideias, história, forças e contradições explicadas.
+- [Integralismo](https://politicaparainiciantes.biblioverse.org/vertentes/integralismo.html): A versão brasileira do fascismo, com o lema “Deus, Pátria e Família”. Ideias, história, forças e contradições explicadas.
+- [Liberal-conservadorismo](https://politicaparainiciantes.biblioverse.org/vertentes/liberal-conservadorismo.html): Liberal na economia, conservador nos costumes. Ideias, história, forças e contradições explicadas.
+- [Liberalismo clássico](https://politicaparainiciantes.biblioverse.org/vertentes/liberalismo-classico.html): A liberdade individual vem primeiro: o poder do Estado precisa ser limitado por lei.
+- [Libertarianismo e minarquismo](https://politicaparainiciantes.biblioverse.org/vertentes/libertarianismo.html): O Estado deve fazer quase nada além de polícia, justiça e defesa. Ideias, história, forças e contradições explicadas.
+- [Lulismo](https://politicaparainiciantes.biblioverse.org/vertentes/lulismo.html): Política de reduzir a pobreza sem confrontar o capital, em torno de Lula.
+- [Maoísmo](https://politicaparainiciantes.biblioverse.org/vertentes/maoismo.html): Revolução comunista a partir dos camponeses e guerra popular prolongada.
+- [Marxismo-leninismo e stalinismo](https://politicaparainiciantes.biblioverse.org/vertentes/marxismo-leninismo.html): Partido de vanguarda toma o poder e dirige o Estado rumo ao socialismo.
+- [Marxismo](https://politicaparainiciantes.biblioverse.org/vertentes/marxismo.html): A história é movida pela luta de classes, e o capitalismo explora o trabalho.
+- [Autoritarismo militar](https://politicaparainiciantes.biblioverse.org/vertentes/militarismo-autoritario.html): Militares no poder em nome da ordem, contra políticos e subversão. Ideias, história, forças e contradições explicadas.
+- [Monarquismo](https://politicaparainiciantes.biblioverse.org/vertentes/monarquismo.html): Um rei ou rainha como chefe de Estado, acima dos partidos. Ideias, história, forças e contradições explicadas.
+- [Mutualismo](https://politicaparainiciantes.biblioverse.org/vertentes/mutualismo.html): Mercado sem capitalismo: cooperativas e crédito mútuo. Ideias, história, forças e contradições explicadas.
+- [Nacionalismo](https://politicaparainiciantes.biblioverse.org/vertentes/nacionalismo.html): A nação como principal unidade política e de lealdade. Ideias, história, forças e contradições explicadas.
+- [Nazismo](https://politicaparainiciantes.biblioverse.org/vertentes/nazismo.html): Fascismo racista: uma hierarquia de raças que levou ao genocídio. Ideias, história, forças e contradições explicadas.
+- [Neoconservadorismo](https://politicaparainiciantes.biblioverse.org/vertentes/neoconservadorismo.html): Conservadorismo com política externa ativa para espalhar a democracia.
+- [Neoliberalismo](https://politicaparainiciantes.biblioverse.org/vertentes/neoliberalismo.html): Menos Estado na economia: privatizar, desregular e controlar gastos. Ideias, história, forças e contradições explicadas.
+- [Petismo](https://politicaparainiciantes.biblioverse.org/vertentes/petismo.html): A identificação com o PT: a identidade partidária positiva mais forte do Brasil, em torno de Lula e dos programas sociais.
+- [Populismo](https://politicaparainiciantes.biblioverse.org/vertentes/populismo.html): “O povo puro” contra “a elite corrupta”, com um líder como voz do povo.
+- [Progressismo](https://politicaparainiciantes.biblioverse.org/vertentes/progressismo.html): A sociedade pode e deve melhorar, ampliando direitos e usando ciência e reformas.
+- [Reacionarismo](https://politicaparainiciantes.biblioverse.org/vertentes/reacionarismo.html): Voltar a uma ordem anterior, vista como melhor do que a atual. Ideias, história, forças e contradições explicadas.
+- [Sencientismo e senciocracia](https://politicaparainiciantes.biblioverse.org/vertentes/senciocracia.html): Colocar os seres sencientes no centro da política, e um governo que os represente e proteja.
+- [Social-democracia](https://politicaparainiciantes.biblioverse.org/vertentes/social-democracia.html): Capitalismo regulado e um Estado de bem-estar forte, pela via democrática.
+- [Social-liberalismo](https://politicaparainiciantes.biblioverse.org/vertentes/social-liberalismo.html): Liberdade real exige também educação, saúde e oportunidades. Ideias, história, forças e contradições explicadas.
+- [Socialismo democrático](https://politicaparainiciantes.biblioverse.org/vertentes/socialismo-democratico.html): Superar o capitalismo pelo voto, mantendo liberdades. Ideias, história, forças e contradições explicadas.
+- [Teocracia e fundamentalismo religioso](https://politicaparainiciantes.biblioverse.org/vertentes/teocracia.html): Lei e governo subordinados a uma doutrina religiosa. Ideias, história, forças e contradições explicadas.
+- [Teologia da Libertação](https://politicaparainiciantes.biblioverse.org/vertentes/teologia-da-libertacao.html): Cristianismo com “opção preferencial pelos pobres”. Ideias, história, forças e contradições explicadas.
+- [Totalitarismo](https://politicaparainiciantes.biblioverse.org/vertentes/totalitarismo.html): O Estado busca controlar tudo: política, economia, cultura e pensamento.
+- [Trabalhismo](https://politicaparainiciantes.biblioverse.org/vertentes/trabalhismo.html): Direitos dos trabalhadores e Estado protetor, com forte tradição brasileira.
+- [Tradicionalismo](https://politicaparainiciantes.biblioverse.org/vertentes/tradicionalismo.html): A tradição, sobretudo religiosa, como fonte de autoridade e de verdade.
+- [Trotskismo](https://politicaparainiciantes.biblioverse.org/vertentes/trotskismo.html): Revolução internacional permanente, contra a burocracia stalinista. Ideias, história, forças e contradições explicadas.
+- [Ultraconservadorismo](https://politicaparainiciantes.biblioverse.org/vertentes/ultraconservadorismo.html): Conservadorismo levado ao limite, com rejeição forte a mudanças sociais.
+- [Ultranacionalismo](https://politicaparainiciantes.biblioverse.org/vertentes/ultranacionalismo.html): A nação acima de qualquer outro valor, inclusive contra os direitos de outros.
+
+## Optional
+
+- Políticos e figuras: 555 páginas, listadas no [sitemap](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
+- Vieses cognitivos: 276 páginas, listadas no [sitemap](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
+- [Mapa do site](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
+- [Texto completo](https://politicaparainiciantes.biblioverse.org/llms-full.txt)
