@@ -42,6 +42,7 @@ SOFISMO = dict(slug='sofismo', grupo='Os perigos', titulo='Sofismo: vencer sem t
 <tr><td>Humilhar o adversário</td><td>Melhores valores: quem a proposta protege, e quem deixa de fora?</td></tr>
 <tr><td>Quantidade de afirmações</td><td>Melhores evidências: o que os estudos mostram?</td></tr>
 </tbody></table>
+<p>Por que o público dá a vitória a quem domina a cena, e como assistir a um debate sem cair nisso, está na lição <a href="quem-ganhou-o-debate.html">quem ganhou o debate?</a>.</p>
 <p>Isso é humano: decidimos rápido e a atenção é limitada. Carisma também não é defeito, e saber comunicar faz parte da política. Só não prova que alguém tem razão. Por isso, “ganhou o debate” quase sempre quer dizer “pareceu melhor”, e não “estava certo”.</p>
 <div class="nota"><strong>Faça o teste:</strong> depois de um debate, leia a transcrição, sem imagem nem som. Veja o que sobra quando tiram o tom de voz, e confira os números nas <a href="checagem-de-fatos.html">agências de checagem</a>.</div>
 <h2>Dizer o que dá voto</h2>

@@ -55,6 +55,7 @@ for _x in IND_EXTRA: IND.insert(next(i for i, y in enumerate(IND) if y['s'] == (
 assert len({x['s'] for x in IND}) == len(IND)
 from direito import LICOES_DIREITO, META_DIREITO, REFORCO_DIREITO
 from economia_mundo import LICOES_ECO_MUNDO, META_ECO_MUNDO, REFORCO_ECO_MUNDO
+from quem_ganhou import LICOES_QUEM_GANHOU, META_QUEM_GANHOU, REFORCO_QUEM_GANHOU, DID_QUEM_GANHOU, DID2_QUEM_GANHOU, QUIZ_QUEM_GANHOU
 from coletivismo import LICOES_COLETIVISMO, META_COLETIVISMO, REFORCO_COLETIVISMO, DID_COLETIVISMO, DID2_COLETIVISMO, QUIZ_COLETIVISMO
 from espectro_paises import LICOES_ESPECTRO, META_ESPECTRO, REFORCO_ESPECTRO, DID_ESPECTRO, DID2_ESPECTRO, QUIZ_ESPECTRO
 from economia_trabalho import LICOES_ECO_TRABALHO, META_ECO_TRABALHO, REFORCO_ECO_TRABALHO, DID_ECO_TRABALHO, DID2_ECO_TRABALHO, QUIZ_ECO_TRABALHO
@@ -118,6 +119,7 @@ META.update(META_ECO_TRABALHO); REFORCO.update(REFORCO_ECO_TRABALHO); DID.update
 DID.update(DID_MOVIMENTOS); DID2.update(DID2_MOVIMENTOS); DID_QUIZ.update(QUIZ_MOVIMENTOS)
 META.update(META_ESPECTRO); REFORCO.update(REFORCO_ESPECTRO); DID.update(DID_ESPECTRO); DID2.update(DID2_ESPECTRO); DID_QUIZ.update(QUIZ_ESPECTRO)
 META.update(META_COLETIVISMO); REFORCO.update(REFORCO_COLETIVISMO); DID.update(DID_COLETIVISMO); DID2.update(DID2_COLETIVISMO); DID_QUIZ.update(QUIZ_COLETIVISMO)
+META.update(META_QUEM_GANHOU); REFORCO.update(REFORCO_QUEM_GANHOU); DID.update(DID_QUEM_GANHOU); DID2.update(DID2_QUEM_GANHOU); DID_QUIZ.update(QUIZ_QUEM_GANHOU)
 # bloco Problemas sociais do Brasil (tools/brasil_problemas.py)
 from brasil_problemas import LICOES_BR, PB
 from brasil_problemas_did import META_BR, REFORCO_BR, DID_BR, DID2_BR
@@ -155,7 +157,8 @@ if PB not in ORDEM_GRUPOS['intermediario']: ORDEM_GRUPOS['intermediario'].insert
 for _s, _q in DID_QUIZ.items(): META[_s] = (META[_s][0], _q)
 for _l in LICOES_ECO_MUNDO: GRUPOS[_l['slug']] = _l['grupo']
 _apos_g = next(i for i, l in enumerate(INTERMEDIARIO) if l['slug'] == 'globalizacao')
-INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO + LICOES_ECO_TRABALHO + LICOES_ESPECTRO + LICOES_COLETIVISMO
+INTERMEDIARIO[_apos_g + 1:_apos_g + 1] = LICOES_ECO_MUNDO + LICOES_ECO_TRABALHO + LICOES_ESPECTRO + LICOES_COLETIVISMO + LICOES_QUEM_GANHOU
+for _l in LICOES_QUEM_GANHOU: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_COLETIVISMO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_ESPECTRO: GRUPOS[_l['slug']] = _l['grupo']
 for _l in LICOES_ECO_TRABALHO: GRUPOS[_l['slug']] = _l['grupo']

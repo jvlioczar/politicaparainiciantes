@@ -135,7 +135,7 @@ Qual foi a última notícia política que você compartilhou? Você conseguiria 
 
 ← AnteriorComo votar da melhor formaVocê chegou ao fim do nível Iniciante
 
-Revise o que aprendeu e continue com 71 lições do nível Intermediário.
+Revise o que aprendeu e continue com 72 lições do nível Intermediário.
 
 Revisar o nível: 13 perguntasIr para o curso Intermediário →
 
@@ -1662,7 +1662,7 @@ Por que o Brasil, diferentemente da Argentina, nunca julgou os agentes da ditadu
 
 Revise o que aprendeu e continue com 21 lições do nível Avançado.
 
-Revisar o nível: 71 perguntasIr para o curso Avançado →
+Revisar o nível: 72 perguntasIr para o curso Avançado →
 
 ---
 
@@ -4002,7 +4002,7 @@ Se você pudesse mudar uma coisa no caminho entre a escola pública e a universi
 - Exame Nacional do Ensino Médio (Wikipédia)
 - Programa Universidade para Todos (Wikipédia)
 
-← AnteriorDinheiro, dívida e dólar: a economia por trás da políticaPróxima →Como os vieses afetam seu julgamento
+← AnteriorDinheiro, dívida e dólar: a economia por trás da políticaPróxima →Quem ganhou o debate? Força, aparência e verdade
 
 ---
 
@@ -8664,6 +8664,121 @@ Quando alguém diz “isso é coisa de Terceiro Mundo”, o que a pessoa está q
 
 ---
 
+# Quem ganhou o debate? Força, aparência e verdade
+
+Fonte: https://politicaparainiciantes.biblioverse.org/quem-ganhou-o-debate.html · Intermediário
+
+O público costuma dar a vitória a quem se impõe, interrompe e acua o adversário, como numa luta. Mas quem tem razão depende dos fatos e da coerência.
+
+Terminado um debate na TV, a pergunta que domina as redes é uma só: quem ganhou? E a resposta, quase sempre, sai como num ringue. Ganha quem falou mais alto, quem interrompeu, quem deixou o outro sem graça, quem produziu o melhor corte para o celular. Só que um debate não é uma luta. A pergunta que importa para o eleitor é outra: quem disse a verdade, quem tem propostas que fazem sentido, quem é coerente com o que já fez. As duas perguntas raramente têm a mesma resposta.
+
+Nesta lição, você vai
+
+- Explicar por que o público tende a dar a vitória a quem domina a cena num debate
+- Reconhecer os vieses envolvidos: halo, excesso de confiança, confirmação e efeito manada
+- Avaliar um debate pelo conteúdo, com perguntas sobre verdade, resposta, proposta e coerência
+
+Ajuda ter lido: Como os vieses afetam seu julgamento, Fake news e checagem de fatos.
+
+Uma analogia
+
+É como escolher um médico pelo modo como ele discute com outro médico na TV. O que fala mais alto e corta o colega parece mais seguro, mas a pergunta que importa é quem acertou o diagnóstico. Para saber isso, é preciso olhar os exames, não a briga.
+
+Explicando para uma criança
+
+Imagine duas crianças discutindo quem tem razão sobre a resposta de uma conta. Uma grita mais alto e não deixa a outra falar. Parece que ela ganhou, mas quem acertou a conta é quem fez a soma certa. Para saber, é só conferir a conta, e não ver quem gritou mais.
+
+Antes de ler: o que você faria?
+
+Depois de um debate, um candidato que interrompeu o adversário várias vezes e fez uma frase de efeito domina os cortes nas redes. As checagens mostram que três das suas cinco afirmações com números eram falsas.
+
+Quem ganhou o debate?
+
+Ver o que a lição responde
+
+Depende da pergunta. Na estética do ringue, ele ganhou. Na pergunta que importa para o voto, quem disse a verdade e tem propostas coerentes, perdeu. A lição mostra por que o público tende a confundir as duas e como separá-las.
+
+## A estética do ringue
+
+Quem assiste a um debate avalia, em boa parte, a performance: postura, segurança, voz, reação ao ataque. São sinais que o cérebro lê rápido e que pesam muito.
+
+- Julgamentos em segundos. Pesquisas sobre “fatias finas” de comportamento, como as de Nalini Ambady e Robert Rosenthal, mostram que formamos impressões fortes sobre alguém em poucos segundos de vídeo, antes de entender o que a pessoa diz. Um estudo publicado na Science em 2005 mostrou que avaliar a cara de competência de candidatos que nunca se viu previa boa parte dos resultados de eleições ao Senado dos EUA. Veja o efeito halo .
+
+- Segurança parece competência. Quem fala com certeza parece saber mais, mesmo quando erra. Quem admite dúvida, mesmo com razão, parece fraco. Veja o excesso de confiança .
+
+- Dominar a cena parece vencer. Interromper, falar por cima, não deixar o outro concluir e partir para o ataque pessoal dão a impressão de força. Mas cada interrupção também tira do público a chance de ouvir uma resposta inteira.
+
+- A torcida decide antes. Pesquisas feitas logo após os debates nos EUA mostram que a maioria dos eleitores de cada partido acha que o próprio candidato venceu. Muitos assistem para confirmar o que já pensam. Veja o viés de confirmação .
+
+- O veredito é construído depois. Num estudo sobre um debate de 2004 nos EUA, Kim Fridkin e colegas mostraram que os comentários feitos depois do debate na TV mudaram a avaliação de quem tinha assistido. Hoje esse papel é dos cortes nas redes: o trecho que viraliza vira “a” verdade do debate para quem não assistiu. Veja o efeito manada .
+
+## Por que isso é um problema social
+
+Se o público premia quem se impõe, as campanhas aprendem a lição: treinam ataques, frases de efeito e interrupções, não propostas. O debate deixa de servir para comparar ideias e vira espetáculo. Isso tem quatro efeitos ruins:
+
+- Premia a agressividade. Candidatos que respeitam o tempo do outro e respondem com calma parecem perdedores, mesmo quando trazem os melhores dados.
+
+- Favorece quem mente com segurança. Uma afirmação falsa dita com firmeza leva segundos; desmenti-la leva minutos. O sofismo chama de galope de Gish a tática de despejar afirmações mais rápido do que é possível refutar.
+
+- Pune comportamentos de forma desigual. Pesquisas de psicologia social indicam que a mesma assertividade é lida de modos diferentes conforme quem a exibe; mulheres, por exemplo, costumam ser mais penalizadas quando interrompem ou elevam o tom.
+
+- Esvazia o voto informado. Quem decide pelo espetáculo vota em quem lutou melhor na TV, não em quem governaria melhor. Veja como votar bem .
+
+O filósofo Jürgen Habermas descreveu o ideal de uma discussão democrática como aquela em que só vale “a força sem coerção do melhor argumento”. O debate de ringue faz o contrário: o argumento da força toma o lugar da força do argumento.
+
+## Uma ressalva justa
+
+Nem toda performance é irrelevante. Manter a calma sob ataque, responder com clareza e conhecer os números de cabeça dizem algo sobre como alguém governaria sob pressão. O problema não é observar a forma; é deixar que ela substitua o conteúdo. Segurança com os fatos certos vale muito; segurança com os fatos errados é o pior dos casos.
+
+## Como assistir a um debate com olhar crítico
+
+| Pergunta | O que observar |
+
+| É verdade? | Anote as afirmações com números e confira depois nas checagens. Agências como Lupa e Aos Fatos verificam debates ao vivo. Veja checagem de fatos |
+
+| Respondeu à pergunta? | Desviar para outro tema ou atacar o adversário não é resposta |
+
+| A proposta é concreta? | O que, quanto custa, de onde vem o dinheiro e o que já se sabe de políticas parecidas |
+
+| É coerente? | Bate com o que a pessoa já fez e já defendeu, e com o restante do que disse no próprio debate |
+
+| Quem interrompeu, e por quê? | Interromper para corrigir um dado é diferente de interromper para impedir a resposta |
+
+| Eu mudaria de ideia? | Se o seu candidato tivesse dito exatamente o que o outro disse, você acharia certo? É o teste de trocar os lados |
+
+- Assista à íntegra, não aos cortes. O trecho que viraliza foi escolhido por quem queria um vencedor.
+- Espere as checagens antes de dar o veredito. Saber quem ganhou na hora é saber quem pareceu ganhar.
+- Separe as duas notas. Uma para a performance, outra para o conteúdo. Pergunte qual delas deve decidir o seu voto.
+- Desconfie da própria torcida. Se você achou que o seu candidato venceu, é exatamente o que a maioria dos torcedores de cada lado acha. Veja sair do nós contra eles .
+
+Para guardar: o público tende a dar a vitória a quem domina a cena, interrompe e acua o adversário, como numa luta. Mas quem tem razão depende dos fatos e da coerência, não da força. Quando o espetáculo decide, as campanhas aprendem a lutar em vez de propor, e quem mente com segurança leva vantagem. Assista à íntegra, espere as checagens, separe performance de conteúdo e desconfie do seu próprio veredito.
+
+Erro comum: “Quem acuou o outro ganhou o debate.” Acuar mostra domínio da cena, não razão. Quem tem razão depende de os fatos estarem certos e de as propostas fazerem sentido, o que só se sabe conferindo.
+
+## Para guardar
+
+- No ringue, ganha quem se impõe; no voto, deveria ganhar quem tem razão e propostas coerentes.
+- Quando o espetáculo decide, as campanhas aprendem a lutar em vez de propor, e quem mente com segurança leva vantagem.
+- Assista à íntegra, espere as checagens e separe a nota da performance da nota do conteúdo.
+
+Para pensar
+
+Lembre o último debate a que você assistiu. Quem você achou que ganhou, e por quê? Se tirasse o tom de voz e as interrupções, o resultado seria o mesmo?
+
+## Fontes e leituras
+
+- Inferences of Competence from Faces Predict Election Outcomes (2005)
+- Thin-slicing (Wikipédia)
+- United States presidential debates (Wikipédia)
+- Gish gallop (Wikipédia)
+- Discourse ethics (Wikipédia)
+- Agência Lupa
+- Aos Fatos
+
+← AnteriorEscola pública, escola privada e a universidade públicaPróxima →Como os vieses afetam seu julgamento
+
+---
+
 # Regras cegas e desobediência civil
 
 Fonte: https://politicaparainiciantes.biblioverse.org/regras-e-desobediencia.html · Intermediário
@@ -9073,6 +9188,8 @@ Muitas vezes, quem vence não tem os melhores argumentos, as melhores evidência
 | Humilhar o adversário | Melhores valores: quem a proposta protege, e quem deixa de fora? |
 
 | Quantidade de afirmações | Melhores evidências: o que os estudos mostram? |
+
+Por que o público dá a vitória a quem domina a cena, e como assistir a um debate sem cair nisso, está na lição quem ganhou o debate?.
 
 Isso é humano: decidimos rápido e a atenção é limitada. Carisma também não é defeito, e saber comunicar faz parte da política. Só não prova que alguém tem razão. Por isso, “ganhou o debate” quase sempre quer dizer “pareceu melhor”, e não “estava certo”.
 
@@ -9795,7 +9912,7 @@ Quando foi a última vez que você criticou publicamente um erro de alguém do s
 - Humildade intelectual e voto
 - Reasoned Politics (2022)
 
-← AnteriorEscola pública, escola privada e a universidade públicaPróxima →Mudar de ideia: quando é virtude
+← AnteriorQuem ganhou o debate? Força, aparência e verdadePróxima →Mudar de ideia: quando é virtude
 
 ---
 
