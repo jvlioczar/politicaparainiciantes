@@ -479,7 +479,7 @@ Atualizado em 08/11/2026. Texto completo das lições e artigos em [llms-full.tx
 
 ## Optional
 
-- Políticos e figuras: 558 páginas, listadas no [sitemap](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
+- Políticos e figuras: 559 páginas, listadas no [sitemap](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
 - Vieses cognitivos: 276 páginas, listadas no [sitemap](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
 - [Mapa do site](https://politicaparainiciantes.biblioverse.org/sitemap.xml)
 - [Texto completo](https://politicaparainiciantes.biblioverse.org/llms-full.txt)
