@@ -52,8 +52,9 @@ BASICO = {
 </tbody></table>
 <p>Quase toda boa discussão fica mais clara quando se descobre em qual camada está o desacordo.</p>
 <h2>Uma armadilha</h2>
-<p>Às vezes, fingimos discutir fatos quando o desacordo é de valores, e buscamos só os estudos que nos favorecem. O contrário também ocorre: chamar de “questão de opinião” algo que os dados poderiam responder. Separar as duas coisas protege contra os dois erros.</p>''',
- fontes=[('O problema do “é” e “deve” (Wikipédia)', 'https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem')]),
+<p>Às vezes, fingimos discutir fatos quando o desacordo é de valores, e buscamos só os estudos que nos favorecem. O contrário também ocorre: chamar de “questão de opinião” algo que os dados poderiam responder. Separar as duas coisas protege contra os dois erros.</p>
+<p>Dois cuidados a mais. O desejo de uma conclusão distorce até os fatos: quem não quer contribuir com uma causa tende a acreditar, sem provas, que todo o dinheiro doado é desviado. E muito desacordo que parece de valores é, na verdade, de crenças: duas pessoas podem concordar que é preciso proteger as crianças e discordar só sobre o efeito de uma lei. Antes de concluir que o outro tem valores ruins, vale perguntar em que fato ele acredita.</p>''',
+ fontes=[('O problema do “é” e “deve” (Wikipédia)', 'https://en.wikipedia.org/wiki/Is%E2%80%93ought_problem'), ('Os Elementos da Filosofia Moral', 'https://www.google.com/search?tbm=bks&q=Rachels+Os+Elementos+da+Filosofia+Moral')]),
 'etica-normativa': dict(
  analogia='Pense em três avaliadores de um mesmo restaurante. Um olha o resultado: a comida ficou boa e os clientes saíram felizes? Outro olha as regras: a cozinha seguiu as normas, mesmo se a comida ficou ruim? O terceiro olha o caráter: esse cozinheiro é honesto e cuidadoso? Os três podem dar notas diferentes ao mesmo prato.',
  crianca='Você quebrou um vaso sem querer. Uma pessoa pergunta: “alguém se machucou?”. Outra diz: “a regra era não jogar bola em casa”. Uma terceira pergunta: “você contou a verdade?”. As três querem saber se foi certo ou errado, mas olham para coisas diferentes.',

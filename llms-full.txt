@@ -1535,6 +1535,8 @@ Quase toda boa discussão fica mais clara quando se descobre em qual camada est�
 
 Às vezes, fingimos discutir fatos quando o desacordo é de valores, e buscamos só os estudos que nos favorecem. O contrário também ocorre: chamar de “questão de opinião” algo que os dados poderiam responder. Separar as duas coisas protege contra os dois erros.
 
+Dois cuidados a mais. O desejo de uma conclusão distorce até os fatos: quem não quer contribuir com uma causa tende a acreditar, sem provas, que todo o dinheiro doado é desviado. E muito desacordo que parece de valores é, na verdade, de crenças: duas pessoas podem concordar que é preciso proteger as crianças e discordar só sobre o efeito de uma lei. Antes de concluir que o outro tem valores ruins, vale perguntar em que fato ele acredita.
+
 Erro comum: “Os dados decidem a política.” Dados resolvem a parte factual (o que funciona para chegar lá); a parte moral (o que queremos) precisa de argumento. Quem diz que os dados decidem tudo está escondendo o valor que escolheu.
 
 Pratique: Valor ou fato?. Treine separar o que se discute com argumento moral do que se checa com dados.
@@ -1553,6 +1555,7 @@ Pegue uma frase política que você ouviu esta semana e separe: o que nela é va
 
 - Reasoned Politics (2022)
 - O problema do “é” e “deve” (Wikipédia)
+- Os Elementos da Filosofia Moral
 
 ← AnteriorO que está por trás das decisões?Próxima →As grandes teorias da ética
 
