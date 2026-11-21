@@ -357,6 +357,10 @@ Primeiro, somam-se os votos de cada partido ou federação. Divide-se o total de
 
 Por isso, olhe também quem está na mesma lista. Seu voto em alguém que você admira pode ajudar a eleger outra pessoa do partido.
 
+## Um voto faz diferença?
+
+A chance de um único voto decidir uma eleição grande é minúscula. Mas o filósofo Derek Parfit lembrou que chance pequena não é o mesmo que importância nenhuma: ela deve ser multiplicada pelo tamanho do que está em jogo. Se o resultado afeta milhões de pessoas por anos, uma chance ínfima de decidir, vezes um efeito enorme, ainda pode valer muito mais do que o tempo gasto para se informar e votar bem. Além disso, o voto também conta somado aos de quem pensa parecido, e no sistema proporcional ajuda a definir quantas vagas cada partido leva.
+
 Erro comum: “Meu voto para deputado não muda nada.” É o que mais muda: deputados fazem as leis e o orçamento, e o seu voto conta para a chapa inteira. A conta do quociente eleitoral é o que a lição explica.
 
 Pratique: Ficha do candidato. Um checklist que fica salvo no seu navegador.
@@ -376,6 +380,7 @@ Para o próximo voto, que fonte você consultaria para checar a história do can
 - Tudo que você precisa saber para votar
 - TSE
 - Politize!
+- Reasons and Persons
 
 ← AnteriorPara que servem os partidosPróxima →Fake news e checagem de fatos
 

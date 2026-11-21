@@ -125,8 +125,10 @@ BASICO = {
 </tbody></table>
 <h2>Como seu voto para deputado conta</h2>
 <p>Primeiro, somam-se os votos de cada partido ou federação. Divide-se o total de votos válidos pelas vagas: esse é o quociente eleitoral. As vagas vão para os partidos conforme esse cálculo e, dentro de cada um, para os mais votados, com um mínimo individual. Experimente no <a href="ferramentas/simulador-de-cadeiras.html">simulador de cadeiras</a>.</p>
-<p>Por isso, olhe também quem está na mesma lista. Seu voto em alguém que você admira pode ajudar a eleger outra pessoa do partido.</p>''',
- fontes=[]),
+<p>Por isso, olhe também quem está na mesma lista. Seu voto em alguém que você admira pode ajudar a eleger outra pessoa do partido.</p>
+<h2>Um voto faz diferença?</h2>
+<p>A chance de um único voto decidir uma eleição grande é minúscula. Mas o filósofo Derek Parfit lembrou que chance pequena não é o mesmo que importância nenhuma: ela deve ser multiplicada pelo tamanho do que está em jogo. Se o resultado afeta milhões de pessoas por anos, uma chance ínfima de decidir, vezes um efeito enorme, ainda pode valer muito mais do que o tempo gasto para se informar e votar bem. Além disso, o voto também conta somado aos de quem pensa parecido, e no sistema proporcional ajuda a definir quantas vagas cada partido leva.</p>''',
+ fontes=[('Reasons and Persons', 'https://www.google.com/search?tbm=bks&q=Parfit+Reasons+and+Persons')]),
 'checagem-de-fatos': dict(
  analogia='A desinformação é como um vírus: quanto mais gente passa adiante, mais forte fica, e muitos transmitem sem saber. Checar antes de compartilhar é como lavar as mãos. Não acaba com a doença, mas protege você e quem está por perto.',
  crianca='Lembra a brincadeira do telefone sem fio? A frase vai mudando até virar outra coisa. Na internet é parecido, e às vezes alguém muda de propósito. Por isso, quando uma notícia parecer muito esquisita, pergunte a um adulto e procure em outro lugar antes de contar para os amigos.',
