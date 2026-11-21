@@ -2806,7 +2806,7 @@ Erro comum: “Corrupção é falta de caráter; basta eleger gente honesta.” 
 
 Pratique: Como os partidos votaram. Dados oficiais da Câmara, partido por partido, em votações decisivas.
 
-No debate público: Supersalários no setor público, Reforma administrativa e estabilidade dos servidores.
+No debate público: Supersalários no setor público, Reforma administrativa e estabilidade dos servidores, Corrupção deve ser crime hediondo?.
 
 ## Para guardar
 
@@ -5130,7 +5130,7 @@ Erro comum: “A solução é aumentar todas as penas.” Penas maiores mudam po
 
 Pratique: Valor ou fato?. Treine separar o que se discute com argumento moral do que se checa com dados.
 
-No debate público: Segurança pública, Maioridade penal, Pena de morte, Justiçamento ou reeducação: bandido bom é bandido morto?.
+No debate público: Segurança pública, Maioridade penal, Pena de morte, Justiçamento ou reeducação: bandido bom é bandido morto?, Corrupção deve ser crime hediondo?.
 
 ## Para guardar
 
@@ -12614,6 +12614,31 @@ O aquecimento causado por humanos é consenso científico. O debate político é
 
 ## O que a lógica e os dados indicam
 A lógica e os dados pesam mais para um ladoNegar o aquecimento causado por humanos não se sustenta. O debate legítimo é sobre ritmo, custo e quem paga. Pensar o ambiente deve incluir também os animais afetados.
+
+Avaliação do site, sujeita a críticas. Evidências novas podem mudar esta avaliação.
+
+---
+
+# Corrupção deve ser crime hediondo?
+
+Fonte: https://politicaparainiciantes.biblioverse.org/debates/corrupcao-hedionda.html · Principais debates
+
+Corrupção deve ser crime hediondo? A corrupção espalha danos por toda a sociedade e corrói a confiança.
+
+Crimes hediondos são os que a lei considera de máxima gravidade: a Lei 8.072/1990 inclui, entre outros, homicídio qualificado, latrocínio, estupro e extorsão mediante sequestro. Eles não admitem fiança, anistia, graça ou indulto, e o condenado demora mais para mudar de regime na prisão. A corrupção não está na lista. Propostas para incluí-la voltam sempre: o Senado aprovou uma em 2013, depois dos protestos de junho, e as “10 Medidas contra a Corrupção”, do Ministério Público Federal, propuseram em 2016 tornar hedionda a corrupção de valores muito altos. Nenhuma virou lei. O argumento central a favor é o dano: o corrupto não atinge uma vítima, atinge milhões, e o dinheiro desviado da saúde, da merenda ou da obra pública também mata, só que sem rosto.
+
+ Posições gerais. Muita gente concorda em parte com cada lado.
+
+## Por que é complexo
+
+- A frase “a corrupção é pior que um assassinato” depende da escala: um grande desvio na saúde pode causar mais mortes do que um homicídio; uma propina pequena, não. Por isso as propostas mais sérias limitam o caráter hediondo à corrupção de valores muito altos
+- O dano da corrupção é real, mas difícil de medir; estimativas citadas no debate brasileiro, como a da Fiesp de 2010, falam em perdas de 1,4% a 2,3% do PIB por ano, com grande incerteza
+- Severidade e certeza da pena são coisas diferentes: é possível concordar que a corrupção é gravíssima e ainda assim achar que a prioridade é punir de fato, e não punir mais no papel
+- Recuperar o dinheiro desviado, proibir o condenado de ocupar cargos e de contratar com o poder público e proteger quem denuncia são medidas que atacam o incentivo do corrupto sem depender do rótulo
+- Quem defende tornar a corrupção hedionda e quem é contra costuma concordar no diagnóstico (a corrupção causa danos enormes e fica impune) e divergir no remédio
+
+## O que a lógica e os dados indicam
+Os dados ajudam, mas os valores seguem em disputaO argumento do dano é forte: a corrupção em grande escala atinge milhões de pessoas, mata de forma indireta e corrói a confiança nas instituições, e por isso pode ser tão grave quanto, ou mais grave do que, crimes que já são hediondos. A comparação com o assassinato vale para grandes esquemas, não para toda corrupção, o que favorece a versão limitada a valores altos. Mas a evidência sobre dissuasão indica que a certeza da punição pesa mais do que o tamanho da pena, e no Brasil o problema principal é a impunidade. Tornar a corrupção hedionda pode ser justo como expressão da sua gravidade; sozinho, tem pouca chance de reduzi-la sem investigações que cheguem ao fim, julgamento em prazo razoável e recuperação do dinheiro.
 
 Avaliação do site, sujeita a críticas. Evidências novas podem mudar esta avaliação.
 
