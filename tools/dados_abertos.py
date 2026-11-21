@@ -1,0 +1,68 @@
+"""Lição de Conceitos essenciais (2026-11-21): concorrência, monopólio e democracia, e os sistemas abertos de dados
+(Open Finance, Open Insurance, Open Health e Open Energy). Mesmos campos de quem_ganhou.py."""
+CE = 'Conceitos essenciais'
+W = 'https://en.wikipedia.org/wiki/'
+
+LICOES_DADOS_ABERTOS = [
+dict(slug='dados-abertos-e-concorrencia', grupo=CE, titulo='Monopólio, democracia e dados: Open Finance e os sistemas abertos', resumo='Poucas empresas dominando um setor é um problema econômico e também político. Feudos digitais, e como o Open Finance, o Open Insurance, o Open Health e o Open Energy tentam abrir mercados devolvendo aos clientes o controle dos próprios dados.', corpo='''
+<p class="abre">Trocar de banco no Brasil sempre deu trabalho. O banco antigo conhece o seu histórico, o seu salário e as suas contas; o banco novo não sabe nada, e por isso cobra mais caro ou nega crédito. Essa vantagem de quem já tem os dados é uma das razões de poucos bancos dominarem o mercado. O Open Finance tenta mudar isso com uma ideia simples: os dados são do cliente, e ele pode levá-los para onde quiser.</p>
+<h2>Por que monopólio é assunto de democracia</h2>
+<p>Quando poucas empresas dominam um setor, os preços sobem, a qualidade cai e a inovação desacelera, porque o cliente não tem para onde ir. Esse é o problema econômico. Mas há também um problema político: poder econômico concentrado vira poder político, por meio de lobby, financiamento de campanhas e influência sobre quem deveria regular o setor. O juiz americano Louis Brandeis, no começo do século XX, chamou isso de “maldição da grandeza”.</p>
+<p>Por isso as democracias criaram leis de defesa da concorrência, também chamadas de antitruste. Nos Estados Unidos, a primeira foi a Lei Sherman, de 1890. No Brasil, a Lei 12.529/2011 organiza o sistema, e o <strong>Cade</strong> (Conselho Administrativo de Defesa Econômica) julga fusões e pune cartéis e abusos de quem domina um mercado.</p>
+<h2>Dados: a nova barreira de entrada</h2>
+<p>Na economia digital, a vantagem de quem chegou primeiro muitas vezes não é a fábrica nem a marca, e sim os dados. Quem tem anos de informação sobre os clientes avalia riscos melhor, oferece produtos sob medida e prende o cliente pelo custo de começar do zero em outro lugar. Os economistas chamam isso de <strong>custo de troca</strong>. A Lei Geral de Proteção de Dados (LGPD) já prevê o direito à portabilidade dos dados pessoais; os sistemas abertos tentam fazer esse direito funcionar na prática, com regras técnicas comuns e consentimento do cliente.</p>
+<h2>Feudos digitais</h2>
+<p>Alguns autores vão além e dizem que as grandes plataformas viraram <strong>feudos digitais</strong>. A ideia, chamada de tecnofeudalismo, aparece no economista francês Cédric Durand (2020) e no ex-ministro grego Yanis Varoufakis, em “Tecnofeudalismo” (2023). Nas plataformas, o usuário é como o servo que trabalha a terra do senhor: produz os dados e o conteúdo que dão valor ao feudo, sem ser dono deles. Lojistas e aplicativos pagam uma espécie de renda para estar dentro dos muros, em comissões e taxas, e sair custa caro, porque os contatos, o histórico e a reputação ficam presos lá dentro. O senhor do feudo não compete no mercado: ele é o próprio mercado e define as regras.</p>
+<p>A imagem é discutida. Críticos lembram que as plataformas ainda disputam usuários e anunciantes entre si, que os preços de muitos serviços digitais caíram e que chamar de feudalismo uma economia com salários, contratos e lucro é mais metáfora do que descrição. Mesmo quem rejeita o termo, porém, reconhece o problema que ele aponta: efeitos de rede e dados presos tornam alguns mercados digitais difíceis de contestar. A resposta que as democracias têm testado é derrubar os muros com regras de <strong>portabilidade e interoperabilidade</strong>. A Lei de Mercados Digitais da União Europeia (DMA, 2022) obriga as maiores plataformas, chamadas de “guardiãs de acesso”, a permitir que os usuários levem seus dados e que serviços rivais se conectem a elas. Os sistemas abertos brasileiros seguem a mesma lógica em bancos, seguros, saúde e energia.</p>
+<h2>Os quatro sistemas abertos</h2>
+<table><thead><tr><th>Sistema</th><th>O que é</th><th>Situação no Brasil</th></tr></thead><tbody>
+<tr><td><strong>Open Finance</strong></td><td>Compartilhamento, com consentimento, de dados de contas, cartões, crédito e investimentos entre instituições financeiras, e iniciação de pagamentos por outra instituição</td><td>Criado pelo Banco Central e pelo Conselho Monetário Nacional em 2020, começou em 2021 como Open Banking e foi ampliado e renomeado em 2022. Funciona em fases e já reúne dezenas de milhões de consentimentos</td></tr>
+<tr><td><strong>Open Insurance</strong></td><td>O mesmo modelo para seguros: dados de apólices e sinistros compartilhados com consentimento, para comparar e trocar de seguradora com mais facilidade</td><td>Regulado pela Superintendência de Seguros Privados (Susep), com regras de 2021 e implantação em fases</td></tr>
+<tr><td><strong>Open Health</strong></td><td>Proposta de compartilhar dados de clientes de planos de saúde entre operadoras, para estimular a concorrência</td><td>Anunciada pelo Ministério da Saúde em 2022, sofreu críticas de especialistas e entidades de defesa do consumidor e não foi implantada nos moldes anunciados</td></tr>
+<tr><td><strong>Open Energy</strong></td><td>Ideia de dar ao consumidor acesso e portabilidade dos seus dados de consumo de energia, para comparar fornecedores e tarifas</td><td>Ligada à abertura do mercado livre de energia: desde 2024, consumidores de alta tensão podem escolher o fornecedor, e a reforma do setor elétrico prevê a abertura gradual para os pequenos consumidores</td></tr>
+</tbody></table>
+<h2>O exemplo de fora</h2>
+<p>O Open Banking nasceu como política de concorrência. No Reino Unido, a autoridade antitruste (CMA) investigou o mercado de bancos de varejo e concluiu, em 2016, que os grandes bancos não precisavam competir pelos clientes antigos. Como remédio, obrigou os nove maiores a abrir os dados dos clientes, com consentimento, em formato padronizado, o que começou em 2018. Na União Europeia, a diretiva de serviços de pagamento (PSD2) fez algo parecido. O Brasil se inspirou nos dois e foi além, incluindo crédito, investimentos e seguros.</p>
+<h2>O que pode dar errado</h2>
+<ul class="lista-contra">
+<li><strong>Privacidade e golpes.</strong> Mais dados circulando significa mais pontos de vazamento, e golpistas podem tentar enganar o cliente para conseguir o consentimento.</li>
+<li><strong>Consentimento de fachada.</strong> Se o cliente aceita sem entender, como acontece com termos de uso, o controle é só formal.</li>
+<li><strong>Dados sensíveis.</strong> Na saúde, o risco é maior: operadoras poderiam usar dados para selecionar clientes saudáveis e afastar os doentes, o contrário do que um seguro de saúde deve fazer. A LGPD trata dados de saúde como sensíveis, com regras mais rígidas.</li>
+<li><strong>Troca de dono do poder.</strong> Se as grandes empresas de tecnologia entram no mercado financeiro com os próprios dados e os dos bancos, a concentração pode só mudar de lugar.</li>
+<li><strong>Quem aproveita.</strong> Quem tem mais educação financeira e digital tende a usar melhor o sistema; sem cuidado, o ganho fica com quem já está melhor.</li>
+</ul>
+<h2>A disputa política por trás</h2>
+<p>Os sistemas abertos agradam a lados diferentes por motivos diferentes. Liberais veem neles mais mercado e mais escolha, sem o Estado definir preços. Quem defende mais regulação vê o Estado enfrentando grandes grupos e protegendo o consumidor. O desacordo está nos detalhes: quanto obrigar, quem paga os custos de implantação, quanto proteger a privacidade e se o Estado deve ir além, criando serviços públicos de base, como fez com o Pix. O ponto comum é que concorrência não surge sozinha: depende de regras e de órgãos reguladores independentes e capazes de enfrentar quem domina o mercado.</p>
+<div class="nota"><strong>Para guardar:</strong> monopólio é problema econômico, porque encarece e piora os serviços, e político, porque poder econômico concentrado vira poder político. Na economia digital, os dados do cliente são uma barreira de entrada, e as grandes plataformas podem funcionar como feudos murados. Os sistemas abertos, como o Open Finance, devolvem ao cliente o controle desses dados, com consentimento, para que ele possa comparar e trocar de empresa. Funcionam se o consentimento for real, a segurança for alta e a regulação impedir que a concentração só mude de lugar.</div>
+''', fontes=[('Open Finance Brasil (Banco Central)', 'https://www.bcb.gov.br/estabilidadefinanceira/openfinance'), ('Open Finance Brasil', 'https://openfinancebrasil.org.br/'), ('Open Insurance (Susep)', 'https://www.gov.br/susep/pt-br/assuntos/open-insurance'), ('Cade: Conselho Administrativo de Defesa Econômica', 'https://www.gov.br/cade/pt-br'), ('Lei 12.529/2011 (defesa da concorrência)', 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm'), ('Lei Geral de Proteção de Dados', 'https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm'), ('Open banking (Wikipédia)', W + 'Open_banking'), ('Retail banking market investigation (CMA)', 'https://www.gov.uk/cma-cases/review-of-banking-for-small-and-medium-sized-businesses-smes-in-the-uk'), ('Competition law (Wikipédia)', W + 'Competition_law'), ('Technofeudalism (Wikipédia)', W + 'Technofeudalism'), ('Digital Markets Act (Comissão Europeia)', 'https://digital-markets-act.ec.europa.eu/index_en')]),
+]
+
+META_DADOS_ABERTOS = {
+ 'dados-abertos-e-concorrencia': (['economia', 'democracia'], ('Qual é a ideia central do Open Finance?', ['O banco passa a ser dono dos dados do cliente', 'Os dados são do cliente, que pode compartilhá-los com outra instituição, com consentimento', 'O governo passa a ver todas as contas'], 1, 'Com os dados, outras instituições podem oferecer condições melhores, e trocar de banco fica mais fácil.')),
+}
+
+REFORCO_DADOS_ABERTOS = {
+ 'dados-abertos-e-concorrencia': dict(
+  analogia='É como trocar de médico levando o seu prontuário. Sem ele, o médico novo começa do zero, pede todos os exames de novo e você acaba ficando com o antigo por comodidade. Com o prontuário na mão, você escolhe o melhor atendimento. Os sistemas abertos tentam dar a cada cliente o seu “prontuário” de banco, seguro ou energia.',
+  crianca='Imagine que só uma lojinha da escola sabe do que você gosta, e por isso cobra o que quer. Se você pudesse mostrar para outras lojinhas a sua lista de preferidos, todas iam disputar para vender mais barato para você. É isso que esses sistemas fazem: deixam você mostrar a sua lista para quem quiser.'),
+}
+
+DID_DADOS_ABERTOS = {
+ 'dados-abertos-e-concorrencia': dict(
+  obj=['Explicar por que a concentração de mercado é um problema econômico e democrático', 'Entender como os dados do cliente funcionam como barreira de entrada e o que é custo de troca', 'Descrever o Open Finance, o Open Insurance, o Open Health e o Open Energy, com seus benefícios e riscos'],
+  guardar=['Monopólio encarece os serviços e concentra poder político, por isso as democracias têm leis antitruste e o Cade.', 'Na economia digital, quem tem os dados do cliente leva vantagem; os sistemas abertos devolvem ao cliente o controle desses dados.', 'Funcionam se o consentimento for real, a segurança for alta e a concentração não só mudar de lugar.'],
+  pensar='Há quanto tempo você está no mesmo banco, operadora de celular ou plano de saúde? Ficou porque é o melhor ou porque trocar dá trabalho?', pre=['estado-e-mercado', 'economia-para-entender-politica']),
+}
+
+DID2_DADOS_ABERTOS = {
+ 'dados-abertos-e-concorrencia': dict(
+  caso=('Uma operadora de plano de saúde propõe acessar, com o consentimento dos clientes, o histórico médico guardado por outras operadoras, para oferecer planos mais baratos.', 'Que benefício e que risco essa ideia traz?', 'O benefício é mais concorrência e preços melhores para quem troca de plano. O risco é a operadora usar os dados para aceitar só os saudáveis e afastar os doentes. Por isso dados de saúde exigem regras mais rígidas, e o Open Health sofreu críticas.'),
+  erro=('“Se o mercado é livre, a concorrência aparece sozinha.”', 'Em mercados com custo de troca alto e dados concentrados, os grandes podem se manter sem competir. A concorrência muitas vezes depende de regras, como as do Open Finance, e de reguladores capazes de aplicá-las.'),
+  ferr=None,
+  quiz=[('Por que o poder de mercado concentrado é também um problema democrático?', ['Porque empresas grandes não pagam impostos', 'Porque poder econômico concentrado pode virar poder político, por lobby e influência sobre os reguladores', 'Porque a Constituição proíbe empresas grandes'], 1, 'É a preocupação que levou às leis antitruste.'),
+        ('Qual é um risco específico de um Open Health mal desenhado?', ['Os planos ficarem mais caros para todos', 'As operadoras usarem os dados para selecionar só clientes saudáveis', 'O SUS deixar de existir'], 1, 'A seleção de risco vai contra a função de um seguro de saúde, e dados de saúde são sensíveis pela LGPD.')]),
+}
+
+QUIZ_DADOS_ABERTOS = {
+ 'dados-abertos-e-concorrencia': ('No Reino Unido, por que a autoridade antitruste obrigou os grandes bancos a abrir os dados dos clientes?', ['Para o governo fiscalizar as contas', 'Porque concluiu que os bancos não precisavam competir pelos clientes antigos, e a abertura facilitaria a troca', 'Porque os bancos pediram'], 1, 'O Open Banking nasceu como remédio de política de concorrência.'),
+}
