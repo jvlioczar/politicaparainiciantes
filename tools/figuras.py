@@ -173,7 +173,7 @@ F = [
 ('Roberto Freire','Roberto Freire (político)',CEN,POL,'cidadania','Ex-líder do PPS e candidato em 1989.','Do comunismo à social-democracia. Apoiou o impeachment de Dilma e foi ministro de Temer.',[]),
 ('Eliziane Gama','',CES,POL,'pt','Senadora pelo Maranhão, relatora da CPMI do 8 de Janeiro.','Evangélica, de centro-esquerda.',[]),
 ('Alessandro Molon','',CES,POL,'psb','Ex-deputado federal do Rio.','Socialista moderado.',[]),
-('Túlio Gadêlha','',CES,POL,'psd','Deputado federal por Pernambuco.','Social-ambientalista.',[]),
+('Túlio Gadêlha','',CES,POL,'psd','Deputado federal por Pernambuco e candidato ao Senado em 2026.','Ativista social-ambientalista, deputado federal desde 2019, eleito pelo PDT e depois na Rede. Em 2026 entrou no PSD da governadora Raquel Lyra para disputar o Senado, apresentando-se como aliado de Lula, e não foi eleito. Categoria aproximada.',[]),
 ('Randolfe Rodrigues','',CES,POL,'pt','Senador pelo Amapá.','Oriundo do PSOL e da Rede, foi líder do governo.',[]),
 ('José Alencar','',CDI,POL,'republicanos','Empresário e vice de Lula (1931-2011).','Empresário liberal, de partidos de centro-direita, que se aliou a Lula. Crítico dos juros.',[]),
 ('Jaques Wagner','',CES,POL,'pt','Senador e ex-governador da Bahia.','Moderado do PT.',[]),
