@@ -87,6 +87,8 @@ NOVAS_F = [
 ('Júlia Zardo',None,DIR,POL,'novo','Vereadora de Porto Alegre pelo Novo.','Faz oposição à esquerda na Câmara Municipal. Em 2026 disputou uma vaga no Congresso, sem se eleger. Categoria aproximada.',[]),
 ('Renata Barreto',None,DIR,INF,'','Economista e influenciadora bolsonarista, que vive nos Estados Unidos.','Comenta economia e política com críticas à esquerda. Categoria aproximada.',[('politico','[Processou a economista Olivia Sensata por uma publicação que, segundo ela, insinuava que recebia dinheiro público para elogiar o governo Bolsonaro, e perdeu](https://www.congressoemfoco.com.br/noticia/7461/renata-barreto-x-olivia-sensata-justica-nega-recurso-de-influenciadora-bolsonarista): a Justiça entendeu que, como figura pública, ela está sujeita a críticas.')]),
 ('Camila Leite',None,CDI,INF,'','Advogada e influenciadora de política, apresentadora do podcast Chora no Banho.','Liberal, apoiadora do Instituto de Formação de Líderes (IFL). Categoria aproximada.',[]),
+('Nine Borges',None,DIR,INF,'','Pesquisadora com doutorado em educação e influenciadora conservadora, com cerca de meio milhão de seguidores.','Dedica-se à crítica do que chama de agenda woke e da “ideologia de gênero”, com cursos e palestras contra a teoria queer e sobre identidade trans. Categoria aproximada.',[]),
+('Mariana Brito',None,CEN,JOR,'','Jornalista, analista de política e estrategista de comunicação para campanhas eleitorais, com mais de 600 mil seguidores.','Dá cursos de introdução à política que apresentam as correntes antes de julgá-las. Não declara posição partidária. Categoria aproximada.',[]),
 ]
 # nome, wiki, categoria, tipo, partido, pasta, período, polêmicas
 BOLSONARO = [
