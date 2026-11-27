@@ -89,6 +89,7 @@ NOVAS_F = [
 ('Camila Leite',None,CDI,INF,'','Advogada e influenciadora de política, apresentadora do podcast Chora no Banho.','Liberal, apoiadora do Instituto de Formação de Líderes (IFL). Categoria aproximada.',[]),
 ('Nine Borges',None,DIR,INF,'','Pesquisadora com doutorado em educação e influenciadora conservadora, com cerca de meio milhão de seguidores.','Dedica-se à crítica do que chama de agenda woke e da “ideologia de gênero”, com cursos e palestras contra a teoria queer e sobre identidade trans. Categoria aproximada.',[]),
 ('Mariana Brito',None,CEN,JOR,'','Jornalista, analista de política e estrategista de comunicação para campanhas eleitorais, com mais de 600 mil seguidores.','Dá cursos de introdução à política que apresentam as correntes antes de julgá-las. Não declara posição partidária. Categoria aproximada.',[]),
+('Renato Battista',None,DIR,POL,'missao','Dirigente nacional do Missão e do MBL, candidato a deputado estadual por São Paulo em 2026.','Um dos coordenadores do MBL e dirigente do partido Missão, criado pelo movimento. Em 2026 recebeu cerca de 90 mil votos para a Assembleia de São Paulo, mas não se elegeu: o Missão fez só uma cadeira no estado. Liberal na economia e crítico da esquerda, na linha do MBL. Categoria aproximada.',[]),
 ]
 # nome, wiki, categoria, tipo, partido, pasta, período, polêmicas
 BOLSONARO = [
